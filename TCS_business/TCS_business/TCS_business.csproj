@@ -49,12 +49,6 @@
     <Compile Include="CONTROLER\GameConfig.cs" />
     <Compile Include="CONTROLER\GUIManager.cs" />
     <Compile Include="CONTROLER\TCSBusinessApplication.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="MODEL\GameState.cs" />
     <Compile Include="MODEL\Player.cs" />
     <Compile Include="MODEL\PlayerData.cs" />
