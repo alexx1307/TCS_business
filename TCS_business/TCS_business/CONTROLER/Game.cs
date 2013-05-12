@@ -9,7 +9,6 @@ namespace TCS_business.CONTROLER
 {
     public class Game
     {
-        
         private readonly GameConfig gameConfigData;
         internal GameState gameStateData;
         public Game(GameConfig gameConfig)

@@ -37,6 +37,7 @@ namespace TCS_business.CONTROLER
         {
             try
             {
+                game = new Game(gameConfigData);
                 guiManager = new GuiManager();
                 guiManager.InitializeMainWindow();
                 gameConfigData = new GameConfigBuilder().build();
@@ -52,7 +53,6 @@ namespace TCS_business.CONTROLER
         {
             try
             {
-                game = new Game(gameConfigData);
                 game.Start();
             }catch(Exception e){
                 guiManager.ShowErrorMessage("Error during starting game");
@@ -70,7 +70,8 @@ namespace TCS_business.CONTROLER
             }
             else
             {
-                game.registerNewPlayer();
+                Player newPlayer = guiManager.ShowAddPlayerDialog();
+                game.registerNewPlayer(newPlayer);
                 if (game.AllPlayersJoined())
                 {
                     guiManager.EnableRunGameButton();
