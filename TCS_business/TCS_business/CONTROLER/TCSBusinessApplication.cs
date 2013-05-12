@@ -10,15 +10,35 @@ namespace TCS_business.CONTROLER
 {
     public class TCSBusinessApplication
     {
+        static TCSBusinessApplication instance;
         GuiManager guiManager;
+
+
+        public GuiManager GuiManager
+        {
+            get { return guiManager; }
+        }
+
+
         GameConfig gameConfigData;
         Game game;
+        public static TCSBusinessApplication getInstance()
+        {
+            if (instance == null)
+                instance = new TCSBusinessApplication();
+            return instance;
+        }
+        private TCSBusinessApplication()
+        {
+            
+        }
         public void Initialize()
         {
             try
             {
-                guiManager = GuiManager.getGUIManager();
+                guiManager = new GuiManager();
                 guiManager.InitializeMainWindow();
+                gameConfigData = new GameConfigBuilder().build();
             }
             catch (Exception e)
             {
@@ -44,10 +64,6 @@ namespace TCS_business.CONTROLER
         public void ShowGameConfigDialog()
         {
             gameConfigData = guiManager.ShowGameConfigDialog();
-            if (gameConfigData != null)
-            {
-                guiManager.EnableAddPlayerButton();
-            }
         }
         public void ShowAddPlayerDialog()
         {
@@ -71,12 +87,17 @@ namespace TCS_business.CONTROLER
         public void Run()
         {
             guiManager.ShowMainWindow();
-
+            
         }
 
         internal static void Exit()
         {
             Environment.Exit(1);
+        }
+
+        internal GameConfig getLastConfigData()
+        {
+            return gameConfigData;
         }
     }
 }

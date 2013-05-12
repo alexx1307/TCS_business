@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using TCS_business.VIEW;
 namespace TCS_business.MODEL
 {
     /// <summary>
@@ -29,7 +29,7 @@ namespace TCS_business.MODEL
         /// </summary>
         public void ShowList()
         {
-            new TCS_business.VIEW.ListOfPlayersForm();
+            new ListOfPlayersForm();
         }
 
     }

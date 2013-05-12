@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TCS_business.CONTROLER;
-namespace TCS_business
+
+namespace WindowsFormsApplication1
 {
     static class Program
     {
@@ -14,9 +14,9 @@ namespace TCS_business
         [STAThread]
         static void Main()
         {
-            TCSBusinessApplication app = TCSBusinessApplication.getInstance();
-            app.Initialize();
-            app.Run();           
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
         }
     }
 }
