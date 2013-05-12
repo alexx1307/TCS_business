@@ -15,7 +15,7 @@ namespace TCS_business.CONTROLER
         public byte counter = 0;
 
         /// <summary>
-        /// Adds player to the list.
+        /// Adds player to the list. Sets ID of a player.
         /// </summary>
         /// <param name="p">Player to add.</param>
         public void Add(MODEL.Player p)

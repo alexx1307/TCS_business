@@ -33,10 +33,11 @@ namespace TCS_business.CONTROLER
 
         /// <summary>
         /// <author> Anita Ciosek </author>
+        /// Register player.
         /// </summary>
-        internal void registerNewPlayer()
+        internal void registerNewPlayer(Player p)
         {
-            new VIEW.AddPlayer();
+            PlayersList.Add(p);
         }
     }
 }

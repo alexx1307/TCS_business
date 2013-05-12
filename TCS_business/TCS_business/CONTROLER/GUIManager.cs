@@ -32,7 +32,6 @@ namespace TCS_business.CONTROLER
         }
        
         public Player ShowAddPlayerDialog() {
-
             AddPlayer addPlayer = new AddPlayer();
             if (addPlayer.ShowDialog() == DialogResult.OK)
                 return addPlayer.ResultPlayer;
