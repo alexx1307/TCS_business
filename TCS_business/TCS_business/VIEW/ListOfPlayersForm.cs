@@ -18,7 +18,7 @@ namespace TCS_business.VIEW
         public ListOfPlayersForm()
         {
             InitializeComponent();
-            foreach (TCS_business.MODEL.Player p in TCS_business.MODEL.ListOfPlayers.list)
+            foreach (TCS_business.MODEL.Player p in CONTROLER.ListOfPlayers.list)
             {
                 listView1.Items.Add(p.Name); //for now it is only name to show
             }
