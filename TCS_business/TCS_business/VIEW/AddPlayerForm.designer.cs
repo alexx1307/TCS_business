@@ -1,4 +1,4 @@
-﻿namespace AddPlayer
+﻿namespace TCS_business.VIEW
 {
     partial class AddPlayer
     {

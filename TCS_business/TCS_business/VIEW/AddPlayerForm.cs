@@ -23,8 +23,8 @@ namespace TCS_business.VIEW
             {
                 String s = textBox1.Text;
                 this.Close();
-                Player p = new Player(s);
-                ListOfPlayers.list.Add(p);
+                TCS_business.MODEL.Player p = new TCS_business.MODEL.Player(s);
+                TCS_business.MODEL.ListOfPlayers.list.Add(p);
             }
 
         }
