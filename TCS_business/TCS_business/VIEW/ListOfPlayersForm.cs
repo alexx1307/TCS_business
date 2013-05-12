@@ -9,6 +9,10 @@ using System.Windows.Forms;
 
 namespace TCS_business.VIEW
 {
+    /// <summary>
+    /// <author> Anita Ciosek </author>
+    /// Class to show info about players in a game.
+    /// </summary>
     public partial class ListOfPlayersForm : Form
     {
         public ListOfPlayersForm()
@@ -16,8 +20,7 @@ namespace TCS_business.VIEW
             InitializeComponent();
             foreach (TCS_business.MODEL.Player p in TCS_business.MODEL.ListOfPlayers.list)
             {
-               
-                listView1.Items.Add(p.Name);
+                listView1.Items.Add(p.Name); //for now it is only name to show
             }
             
             

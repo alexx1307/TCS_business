@@ -9,6 +9,10 @@ using System.Windows.Forms;
 
 namespace TCS_business.VIEW
 {
+    /// <summary>
+    /// <author> Anita Ciosek </author>
+    /// Shows the form where player can enter his name and adds him to list of players.
+    /// </summary>
     public partial class AddPlayer : Form
     {
         public AddPlayer()
@@ -23,6 +27,7 @@ namespace TCS_business.VIEW
             {
                 String s = textBox1.Text;
                 this.Close();
+                // tu powinien byc jakis limit graczy ustawiony, ze jesli wiecej niz limit to nie dodaje nowego
                 TCS_business.MODEL.Player p = new TCS_business.MODEL.Player(s);
                 TCS_business.MODEL.ListOfPlayers.list.Add(p);
             }
