@@ -51,19 +51,22 @@ namespace TCS_business.CONTROLER
         }
         public void ShowAddPlayerDialog()
         {
-            if (game.isNextPlayerRequired())
-            {
-                game.AddNextPlayer(guiManager.ShowAddPlayerDialog());
-            }
-            else
+            Debug.Assert(game != null);
+            if (game.AllPlayersJoined())
             {
                 guiManager.ShowMessage("All required players are present");
             }
-            if (game.AllPlayersJoined())
+            else
             {
-                guiManager.EnableRunGameButton();
-                guiManager.DisableAddPlayerButton(); //temporarily before we will make web application
+                game.AddNextPlayer(guiManager.ShowAddPlayerDialog());
+                if (game.AllPlayersJoined())
+                {
+                    guiManager.EnableRunGameButton();
+                    guiManager.DisableAddPlayerButton(); //temporarily before we will make net application
+                }
             }
+
+            
         }
         public void Run()
         {

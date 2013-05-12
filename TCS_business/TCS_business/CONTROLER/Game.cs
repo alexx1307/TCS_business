@@ -15,17 +15,14 @@ namespace TCS_business.CONTROLER
             //todo: Kostek
         }
 
-        internal bool isNextPlayerRequired()
-        {
-            throw new NotImplementedException();
-        }
+        //todo: Zygmunt
 
         internal void AddNextPlayer(Player player)
         {
             throw new NotImplementedException();
         }
 
-        internal bool AllPlayersJoined()
+        internal bool AllPlayersJoined() //tells whether the needed number of players joined the game 
         {
             throw new NotImplementedException();
         }
