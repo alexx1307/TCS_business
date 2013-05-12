@@ -54,7 +54,7 @@
     <Compile Include="MODEL\Dice.cs" />
     <Compile Include="MODEL\Field.cs" />
     <Compile Include="MODEL\GameState.cs" />
-    <Compile Include="MODEL\ListOfPlayers.cs" />
+    <Compile Include="CONTROLER\ListOfPlayers.cs" />
     <Compile Include="MODEL\Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

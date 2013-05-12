@@ -58,7 +58,7 @@ namespace TCS_business.CONTROLER
             }
             else
             {
-                game.AddNextPlayer(guiManager.ShowAddPlayerDialog());
+                guiManager.ShowAddPlayerDialog();
                 if (game.AllPlayersJoined())
                 {
                     guiManager.EnableRunGameButton();
