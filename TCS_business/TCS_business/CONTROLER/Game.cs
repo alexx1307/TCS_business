@@ -30,10 +30,13 @@ namespace TCS_business.CONTROLER
             //porownanie ilosci zarejestrowanych graczy z wartoscia z gameConfig.playersNumber
             return false; //prowizoryczna wartosc zeby uruchomic program
         }
-        //todo: Anita tu jest miejsce na dodanie ziomka do listy graczy a w metodzie wyzej zwracanie 
-        internal void registerNewPlayer(Player newPlayer)
+
+        /// <summary>
+        /// <author> Anita Ciosek </author>
+        /// </summary>
+        internal void registerNewPlayer()
         {
-            throw new NotImplementedException();
+            new VIEW.AddPlayer();
         }
     }
 }

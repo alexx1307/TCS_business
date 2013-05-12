@@ -70,8 +70,7 @@ namespace TCS_business.CONTROLER
             }
             else
             {
-                Player newPlayer = guiManager.ShowAddPlayerDialog();
-                game.registerNewPlayer(newPlayer);
+                game.registerNewPlayer();
                 if (game.AllPlayersJoined())
                 {
                     guiManager.EnableRunGameButton();
