@@ -11,7 +11,7 @@ namespace TCS_business.CONTROLER
     {
         
         private readonly GameConfig gameConfigData;
-        internal private GameState gameStateData;
+        internal GameState gameStateData;
         public Game(GameConfig gameConfig)
         {
             this.gameConfigData = gameConfig;
