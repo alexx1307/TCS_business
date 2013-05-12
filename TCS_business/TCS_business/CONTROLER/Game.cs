@@ -12,6 +12,7 @@ namespace TCS_business.CONTROLER
         public void Start()
         {
             throw new NotImplementedException();
+            //todo: Kostek
         }
 
         internal bool isNextPlayerRequired()
@@ -20,6 +21,11 @@ namespace TCS_business.CONTROLER
         }
 
         internal void AddNextPlayer(Player player)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal bool AllPlayersJoined()
         {
             throw new NotImplementedException();
         }

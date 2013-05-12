@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,32 +28,41 @@ namespace TCS_business.CONTROLER
         }
         public void RunGame()
         {
-            if (gameConfigData == null)
+
+            Debug.Assert(gameConfigData != null);
+            try
             {
-                gameConfigData = guiManager.ShowGameConfigDialog(); // in particular gameConfigData could still be null
+                game = GameBuilder.build();
             }
-            else
+            catch (Exception e)
             {
-                try
-                {
-                    game = GameBuilder.build();
-                }
-                catch (Exception e)
-                {
-                    guiManager.ShowErrorMessage(e.Message);
-                }
-                game.Start();
+                guiManager.ShowErrorMessage(e.Message);
             }
+            game.Start();
+
         }
         public void ShowGameConfigDialog()
         {
             gameConfigData = guiManager.ShowGameConfigDialog();
+            if (gameConfigData != null)
+            {
+                guiManager.EnableAddPlayerButton();
+            }
         }
         public void ShowAddPlayerDialog()
         {
             if (game.isNextPlayerRequired())
             {
                 game.AddNextPlayer(guiManager.ShowAddPlayerDialog());
+            }
+            else
+            {
+                guiManager.ShowMessage("All required players are present");
+            }
+            if (game.AllPlayersJoined())
+            {
+                guiManager.EnableRunGameButton();
+                guiManager.DisableAddPlayerButton(); //temporarily before we will make web application
             }
         }
         public void Run()
