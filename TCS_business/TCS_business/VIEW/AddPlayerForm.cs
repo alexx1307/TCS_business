@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using TCS_business.MODEL;
+using TCS_business.CONTROLER;
 namespace TCS_business.VIEW
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace TCS_business.VIEW
                 this.Close();
                 // tu powinien byc jakis limit graczy ustawiony, ze jesli wiecej niz limit to nie dodaje nowego
                 this.DialogResult = DialogResult.OK;
-                resultPlayer = new TCS_business.MODEL.Player(s);
+                resultPlayer = new TCS_business.MODEL.Player(s, TCSBusinessApplication.getInstance().game.gameStateData.PlayersList.Count());
             }
 
         }

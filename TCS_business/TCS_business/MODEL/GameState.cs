@@ -8,6 +8,7 @@ namespace TCS_business.MODEL
 {
     class GameState
     {
-        //todo: Zygmunt
+        public List<Player> PlayersList = new List<Player>();
+        public int activePlayer;
     }
 }

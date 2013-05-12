@@ -9,12 +9,13 @@ namespace TCS_business.CONTROLER
 {
     public class Game
     {
-        ListOfPlayers PlayersList = new ListOfPlayers();
+        
         private readonly GameConfig gameConfigData;
-
+        internal private GameState gameStateData;
         public Game(GameConfig gameConfig)
         {
             this.gameConfigData = gameConfig;
+            this.gameStateData = new GameState();
         }
 
         public void Start()
@@ -27,8 +28,7 @@ namespace TCS_business.CONTROLER
 
         internal bool AllPlayersJoined() //tells whether the needed number of players joined the game 
         {
-            
-            return PlayersList.counter == gameConfigData.playersNumber;
+            return gameStateData.PlayersList.Count() == gameConfigData.playersNumber;
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace TCS_business.CONTROLER
         /// </summary>
         internal void registerNewPlayer(Player p)
         {
-            PlayersList.Add(p);
+            gameStateData.PlayersList.Add(p);
         }
     }
 }

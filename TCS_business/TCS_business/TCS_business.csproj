@@ -48,7 +48,6 @@
     <Compile Include="CONTROLER\Game.cs" />
     <Compile Include="CONTROLER\GameConfig.cs" />
     <Compile Include="CONTROLER\GuiManager.cs" />
-    <Compile Include="CONTROLER\ListOfPlayers.cs" />
     <Compile Include="CONTROLER\TCSBusinessApplication.cs" />
     <Compile Include="MODEL\Dice.cs" />
     <Compile Include="MODEL\GameState.cs" />

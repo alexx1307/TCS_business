@@ -22,7 +22,7 @@ namespace TCS_business.CONTROLER
 
 
         GameConfig gameConfigData;
-        Game game;
+        internal Game game;
         public static TCSBusinessApplication getInstance()
         {
             if (instance == null)

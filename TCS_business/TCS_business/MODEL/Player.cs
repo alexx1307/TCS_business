@@ -16,7 +16,7 @@ namespace TCS_business.MODEL
         //List<Field> fields;
         //List<Card> cards;
         public string Name;
-        public byte Id;
+        public int Id;
         public int Cash;
         Boolean inJail = false;
 
@@ -25,10 +25,11 @@ namespace TCS_business.MODEL
         /// It sets default amount of Cash.
         /// </summary>
         /// <param name="s">Name of Player</param>
-        public Player(string s)
+        public Player(string s,int id)
         {
             Name = s;
             Cash = 1000;
+            Id = id;
         }
 
         /// <summary>
