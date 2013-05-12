@@ -32,5 +32,10 @@ namespace TCS_business.VIEW
         {
             CONTROLER.TCSBusinessApplication.Exit();
         }
+
+        private void runToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TCSBusinessApplication.getInstance().RunGame();
+        }
     }
 }
