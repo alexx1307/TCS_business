@@ -49,7 +49,9 @@
     <Compile Include="CONTROLER\GameConfig.cs" />
     <Compile Include="CONTROLER\GuiManager.cs" />
     <Compile Include="CONTROLER\TCSBusinessApplication.cs" />
+    <Compile Include="MODEL\Board.cs" />
     <Compile Include="MODEL\Dice.cs" />
+    <Compile Include="MODEL\Field.cs" />
     <Compile Include="MODEL\GameState.cs" />
     <Compile Include="MODEL\Player.cs" />
     <Compile Include="Program.cs" />

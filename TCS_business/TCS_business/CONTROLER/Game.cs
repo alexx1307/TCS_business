@@ -11,16 +11,46 @@ namespace TCS_business.CONTROLER
     {
         private readonly GameConfig gameConfigData;
         internal GameState gameStateData;
+        private Board board;
+
         public Game(GameConfig gameConfig)
         {
             this.gameConfigData = gameConfig;
             this.gameStateData = new GameState();
         }
 
+
         public void Start()
         {
-            throw new NotImplementedException();
-            //todo: Kostek
+            board = Board.GetInstance();
+            board.Init(gameStateData);
+            loop();
+        }
+
+        private void loop()
+        {
+            while (!IsEnd())
+            {
+                //???
+            }
+        }
+
+        /// <summary>
+        ///  Simple function which checks whether there is in the game 
+        ///  two or more players with positive amount of money
+        /// </summary>
+        /// <returns>
+        ///  <c>true</c> if there is two or more such players, 
+        ///  <c>false</c> otherwise
+        /// </returns>
+        private bool IsEnd()
+        {
+            int positive = 0;
+            foreach (Player player in gameStateData.PlayersList)
+            {
+                if (player.Cash > 0) positive++;
+            }
+            return positive < 2;
         }
 
         //todo: Zygmunt 

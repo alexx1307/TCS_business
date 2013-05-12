@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Dice
+namespace TCS_business.MODEL
 {
     /// <summary>
     /// <author> Anita Ciosek </author>
