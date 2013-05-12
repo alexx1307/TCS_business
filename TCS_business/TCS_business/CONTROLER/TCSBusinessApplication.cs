@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TCS_business.MODEL;
 
 namespace TCS_business.CONTROLER
 {
@@ -39,6 +40,7 @@ namespace TCS_business.CONTROLER
                 guiManager = new GuiManager();
                 guiManager.InitializeMainWindow();
                 gameConfigData = new GameConfigBuilder().build();
+               
             }
             catch (Exception e)
             {
@@ -48,18 +50,13 @@ namespace TCS_business.CONTROLER
         }
         public void RunGame()
         {
-
-            Debug.Assert(gameConfigData != null);
             try
             {
-                game = GameBuilder.build();
+                game = new Game(gameConfigData);
+                game.Start();
+            }catch(Exception e){
+                guiManager.ShowErrorMessage("Error during starting game");
             }
-            catch (Exception e)
-            {
-                guiManager.ShowErrorMessage(e.Message);
-            }
-            game.Start();
-
         }
         public void ShowGameConfigDialog()
         {
@@ -67,14 +64,14 @@ namespace TCS_business.CONTROLER
         }
         public void ShowAddPlayerDialog()
         {
-            Debug.Assert(game != null);
             if (game.AllPlayersJoined())
             {
                 guiManager.ShowMessage("All required players are present");
             }
             else
             {
-                guiManager.ShowAddPlayerDialog();
+                Player newPlayer = guiManager.ShowAddPlayerDialog();
+                game.registerNewPlayer(newPlayer);
                 if (game.AllPlayersJoined())
                 {
                     guiManager.EnableRunGameButton();

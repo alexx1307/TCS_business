@@ -46,13 +46,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CONTROLER\Game.cs" />
-    <Compile Include="CONTROLER\GameBuilder.cs" />
     <Compile Include="CONTROLER\GameConfig.cs" />
     <Compile Include="CONTROLER\GuiManager.cs" />
     <Compile Include="CONTROLER\TCSBusinessApplication.cs" />
     <Compile Include="MODEL\Dice.cs" />
     <Compile Include="MODEL\GameState.cs" />
-    <Compile Include="CONTROLER\ListOfPlayers.cs" />
     <Compile Include="MODEL\Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,12 +65,6 @@
     </Compile>
     <Compile Include="VIEW\GameConfigDialog.Designer.cs">
       <DependentUpon>GameConfigDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VIEW\ListOfPlayersForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VIEW\ListOfPlayersForm.designer.cs">
-      <DependentUpon>ListOfPlayersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\MainWindow.cs">
       <SubType>Form</SubType>
@@ -95,9 +87,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\GameConfigDialog.resx">
       <DependentUpon>GameConfigDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VIEW\ListOfPlayersForm.resx">
-      <DependentUpon>ListOfPlayersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

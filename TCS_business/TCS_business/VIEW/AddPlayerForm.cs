@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using TCS_business.MODEL;
 namespace TCS_business.VIEW
 {
     /// <summary>
@@ -15,6 +15,11 @@ namespace TCS_business.VIEW
     /// </summary>
     public partial class AddPlayer : Form
     {
+        Player resultPlayer;
+        public Player ResultPlayer
+        {
+            get { return resultPlayer; }
+        }
         public AddPlayer()
         {
             InitializeComponent();
@@ -28,8 +33,8 @@ namespace TCS_business.VIEW
                 String s = textBox1.Text;
                 this.Close();
                 // tu powinien byc jakis limit graczy ustawiony, ze jesli wiecej niz limit to nie dodaje nowego
-                MODEL.Player p = new TCS_business.MODEL.Player(s);
-                CONTROLER.ListOfPlayers.list.Add(p);
+                this.DialogResult = DialogResult.OK;
+                resultPlayer = new TCS_business.MODEL.Player(s);
             }
 
         }

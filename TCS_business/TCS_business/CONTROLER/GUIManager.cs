@@ -21,7 +21,7 @@ namespace TCS_business.CONTROLER
 
             
         
-        } // todo: pawel
+        } // todo: pawel //pozostale wlasciwosci
         public GameConfig ShowGameConfigDialog() {
             GameConfigDialog gameConfigDialog = new GameConfigDialog();
             if (gameConfigDialog.ShowDialog() == DialogResult.OK)
@@ -30,21 +30,16 @@ namespace TCS_business.CONTROLER
             }
             else return TCSBusinessApplication.getInstance().getLastConfigData();
         }
-<<<<<<< HEAD
-        public Player ShowAddPlayerDialog() { throw new NotImplementedException(); } // todo: Anita //napisalas ze juz zrobilas wiec wystarczy tylko podpiac pod te metode 
-=======
-        public int InitializeMainWindow() { throw new NotImplementedException(); } //todo: pawel //returns 0 if the window is correctly initialized  //todo: pawel
-        public void ShowMainWindow() { throw new NotImplementedException(); } // todo: pawel
-        public GameConfig ShowGameConfigDialog() { 
-            throw new NotImplementedException(); 
-        } //todo: Anita //if config data is filled incorrectly this method should return null!
-
+       
         public Player ShowAddPlayerDialog() {
-            new TCS_business.VIEW.AddPlayer();
-            return null;
-        } // todo: Anita //napisalas ze juz zrobilas wiec wystarczy tylko podpiac pod te metode 
 
->>>>>>> b46f265a2b796ac9e204f6cd90e7299396979c3e
+            AddPlayer addPlayer = new AddPlayer();
+            if (addPlayer.ShowDialog() == DialogResult.OK)
+                return addPlayer.ResultPlayer;
+            else
+                return null;
+        } 
+
         //todo: pawel proste funkcje zmieniajace stan okienka np umozliwienie lub zablokowanie wywolania jakichs okienek itd
         public void ShowErrorMessage(String msg) //mozesz zmienic te funkcje zeby poprawnie korzystala z watku od GUI - zrobilem ja na szybko gdy potrzebowalem
         {

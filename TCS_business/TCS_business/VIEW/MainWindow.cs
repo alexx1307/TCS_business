@@ -25,7 +25,7 @@ namespace TCS_business.VIEW
 
         private void registerNewPlayerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            TCSBusinessApplication.getInstance().ShowAddPlayerDialog();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
