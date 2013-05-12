@@ -12,7 +12,7 @@ namespace TCS_business.CONTROLER
     class ListOfPlayers
     {
         public static List<MODEL.Player> list = new List<MODEL.Player>();
-        byte counter = 0;
+        public byte counter = 0;
 
         /// <summary>
         /// Adds player to the list.

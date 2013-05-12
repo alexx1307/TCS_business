@@ -11,7 +11,7 @@ namespace TCS_business.CONTROLER
         public static readonly int maxPlayersNumber = 8;
         public static readonly TimeSpan maxTurnTime = new TimeSpan(0, 10, 0);
         TimeSpan turnTime;
-        int playersNumber;
+        public int playersNumber;
         public TimeSpan TurnTime
         {
             get { return turnTime; }

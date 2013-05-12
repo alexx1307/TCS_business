@@ -9,6 +9,7 @@ namespace TCS_business.CONTROLER
 {
     public class Game
     {
+        ListOfPlayers PlayersList = new ListOfPlayers();
         private readonly GameConfig gameConfigData;
 
         public Game(GameConfig gameConfig)
@@ -27,8 +28,7 @@ namespace TCS_business.CONTROLER
         internal bool AllPlayersJoined() //tells whether the needed number of players joined the game 
         {
             
-            //porownanie ilosci zarejestrowanych graczy z wartoscia z gameConfig.playersNumber
-            return false; //prowizoryczna wartosc zeby uruchomic program
+            return PlayersList.counter == gameConfigData.playersNumber;
         }
 
         /// <summary>
