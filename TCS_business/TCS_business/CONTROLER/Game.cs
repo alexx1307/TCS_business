@@ -11,10 +11,16 @@ namespace TCS_business.CONTROLER
 {
     public class Game
     {
-        private readonly GameConfig gameConfigData;
-        internal GameState gameStateData;
+        private GameConfig gameConfigData;
+        private GameState gameStateData;
         private Board board;
         private Dice dice;
+        private bool isRunning;
+
+
+        public int PlayersNumber { 
+            get { return gameStateData.PlayersList.Count; } 
+        }
 
         /// <summary>
         ///  Counts time of each turn
@@ -40,13 +46,16 @@ namespace TCS_business.CONTROLER
         /// </summary>
         public void Start()
         {
+
             board.Init(gameStateData);
             int seconds = gameConfigData.TurnTime.Seconds;
             int minutes = gameConfigData.TurnTime.Minutes;
             int miliseconds = seconds * 1000 + minutes * 60000;
             this.timer = new System.Timers.Timer(miliseconds);
             this.timer.Elapsed += new ElapsedEventHandler(OnTimeoutEvent);
+            this.isRunning = true;
             Loop();
+            this.isRunning = false;
         }
 
         /// <summary>
@@ -70,8 +79,8 @@ namespace TCS_business.CONTROLER
                 Monitor.Wait(endOfTurn);    /* wait for the end of the turn 
                                              * (i.e. user ended his/her turn or run out of time) */
                 timer.Stop();               // end of the countdown
-                gameStateData.activePlayer += 1 % gameConfigData.playersNumber; 
-                                            // update active player id
+                gameStateData.activePlayer += 1 % gameConfigData.playersNumber;
+                // update active player id
             }
         }
 
@@ -103,7 +112,6 @@ namespace TCS_business.CONTROLER
             return positive < 2;
         }
 
-        //todo: Zygmunt 
 
         internal bool AllPlayersJoined() //tells whether the needed number of players joined the game 
         {
@@ -118,5 +126,19 @@ namespace TCS_business.CONTROLER
         {
             gameStateData.PlayersList.Add(p);
         }
+        internal void resetPlayerList()
+        {
+            gameStateData.PlayersList.Clear();
+        }
+        public void setGameConfigData(GameConfig gameConfigData)
+        {
+            if (isRunning)
+                throw new InvalidOperationException("Cannot change game config during execution");
+            this.gameConfigData = gameConfigData;
+
+
+        }
+
+
     }
 }

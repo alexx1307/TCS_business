@@ -12,7 +12,7 @@ namespace TCS_business.CONTROLER
     
     public class GuiManager          //maybe should this class  use singleton pattern? 
     {
-        Form mainWindow;
+        MainWindow mainWindow;
         public void InitializeMainWindow() {
             mainWindow = new MainWindow();
         } 
@@ -58,19 +58,28 @@ namespace TCS_business.CONTROLER
 
         internal void ShowMessage(string p)
         {
-            throw new NotImplementedException();
+            MessageBox.Show(p);
         }
-
-        internal void DisableAddPlayerButton()
+        internal void UpdateMainWindow(ApplicationState appState)
         {
-            throw new NotImplementedException();
-        }
-
-        //this method invokes GUI methods to update and repaint main game view 
-        //(when for example turn was changed or someone buy something and it's cash changed)
-        void UpdateGameView()   
-        {
-            throw new NotImplementedException();
+            switch (appState)
+            {
+                case ApplicationState.WAITING_FOR_PLAYERS:
+                    mainWindow.EnableAddingPlayers();
+                    mainWindow.DisableGameRun();
+                    break;
+                case ApplicationState.READY_FOR_GAME:
+                    mainWindow.DisableAddingPlayers();
+                    mainWindow.EnsableGameRun();
+                    break;
+                case ApplicationState.GAME_IN_PROGRESS:
+                    mainWindow.DisableAddingPlayers();
+                    mainWindow.DisableGameRun();
+                    break;
+                default:
+                    System.Diagnostics.Debug.Assert(false, "Unknown enum type");
+                    break;
+            }
         }
     }
 }

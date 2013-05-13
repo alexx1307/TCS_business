@@ -36,8 +36,29 @@ namespace TCS_business.VIEW
         private void runToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TCSBusinessApplication.getInstance().RunGame();
+            
         }
 
 
+
+        internal void EnableAddingPlayers()
+        {
+            registerNewPlayerToolStripMenuItem.Enabled = true;
+        }
+
+        internal void DisableGameRun()
+        {
+            runToolStripMenuItem.Enabled = false;
+        }
+
+        internal void EnsableGameRun()
+        {
+            runToolStripMenuItem.Enabled = true;
+        }
+
+        internal void DisableAddingPlayers()
+        {
+            registerNewPlayerToolStripMenuItem.Enabled = false;
+        }
     }
 }

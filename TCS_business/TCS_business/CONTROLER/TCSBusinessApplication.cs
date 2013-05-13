@@ -9,11 +9,18 @@ using TCS_business.MODEL;
 
 namespace TCS_business.CONTROLER
 {
+    enum ApplicationState
+    {
+        WAITING_FOR_PLAYERS,
+        READY_FOR_GAME,
+        GAME_IN_PROGRESS
+
+    }
     public class TCSBusinessApplication
     {
         static TCSBusinessApplication instance;
         GuiManager guiManager;
-
+        ApplicationState appState;
 
         public GuiManager GuiManager
         {
@@ -37,9 +44,11 @@ namespace TCS_business.CONTROLER
             try
             {
                 gameConfigData = new GameConfigBuilder().build();
+                appState = ApplicationState.WAITING_FOR_PLAYERS;
                 game = new Game(gameConfigData);
                 guiManager = new GuiManager();
                 guiManager.InitializeMainWindow();
+                guiManager.UpdateMainWindow(appState);
             }
             catch (Exception e)
             {
@@ -49,17 +58,38 @@ namespace TCS_business.CONTROLER
         }
         public void RunGame()
         {
+            if (appState != ApplicationState.READY_FOR_GAME)
+                guiManager.ShowMessage("Game cannot be launched right now");
             try
             {
+                appState = ApplicationState.GAME_IN_PROGRESS;
+                guiManager.UpdateMainWindow(appState);
                 game.Start();
-            }catch(Exception e){
-                guiManager.ShowErrorMessage("Error during starting game");
             }
+            catch (Exception e)
+            {
+                guiManager.ShowErrorMessage("Error during game start");
+            }
+            finally
+            {
+                appState = ApplicationState.WAITING_FOR_PLAYERS;
+                game.resetPlayerList();
+                guiManager.UpdateMainWindow(appState);
+            }
+
         }
         public void ShowGameConfigDialog()
         {
             gameConfigData = guiManager.ShowGameConfigDialog();
+            if (gameConfigData.PlayersNumber < game.PlayersNumber)
+            {
+                game.resetPlayerList();
+                appState = ApplicationState.WAITING_FOR_PLAYERS;
+                guiManager.UpdateMainWindow(appState);
+            }
+            game.setGameConfigData(gameConfigData);
         }
+      
         public void ShowAddPlayerDialog()
         {
             if (game.AllPlayersJoined())
@@ -72,8 +102,8 @@ namespace TCS_business.CONTROLER
                 game.registerNewPlayer(newPlayer);
                 if (game.AllPlayersJoined())
                 {
-                    guiManager.EnableRunGameButton();
-                    guiManager.DisableAddPlayerButton(); //temporarily before we will make net application
+                    appState = ApplicationState.READY_FOR_GAME;
+                    guiManager.UpdateMainWindow(appState);
                 }
             }
 
