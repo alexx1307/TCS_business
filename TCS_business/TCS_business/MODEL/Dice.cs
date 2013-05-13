@@ -11,7 +11,7 @@ namespace TCS_business.MODEL
     /// </summary>
     class Dice
     {
-        Dice(){}
+        public Dice(){}
 
         /// <summary>
         /// Simulates a roll of the dice

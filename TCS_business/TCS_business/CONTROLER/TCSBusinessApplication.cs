@@ -37,11 +37,10 @@ namespace TCS_business.CONTROLER
         {
             try
             {
+                gameConfigData = new GameConfigBuilder().build();
                 game = new Game(gameConfigData);
                 guiManager = new GuiManager();
                 guiManager.InitializeMainWindow();
-                gameConfigData = new GameConfigBuilder().build();
-               
             }
             catch (Exception e)
             {
