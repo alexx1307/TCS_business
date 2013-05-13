@@ -47,7 +47,10 @@ namespace TCS_business.MODEL
             if (board == null) board = new Board();
             return board;
         }
-        private Board() { }
+        private Board() {
+            positions = new Dictionary<Player, int>();
+        
+        }
         #endregion
 
         /// <summary>

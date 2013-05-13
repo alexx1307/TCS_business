@@ -46,7 +46,6 @@ namespace TCS_business.CONTROLER
         /// </summary>
         public void Start()
         {
-
             board.Init(gameStateData);
             int seconds = gameConfigData.TurnTime.Seconds;
             int minutes = gameConfigData.TurnTime.Minutes;

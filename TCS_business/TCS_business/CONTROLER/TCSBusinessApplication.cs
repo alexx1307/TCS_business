@@ -68,7 +68,7 @@ namespace TCS_business.CONTROLER
             }
             catch (Exception e)
             {
-                guiManager.ShowErrorMessage("Error during game start");
+                guiManager.ShowErrorMessage("Error during game executution: "+e.Message);
             }
             finally
             {
@@ -117,7 +117,7 @@ namespace TCS_business.CONTROLER
 
         internal static void Exit()
         {
-            Environment.Exit(1);
+            Environment.Exit(0);
         }
 
         internal GameConfig getLastConfigData()
