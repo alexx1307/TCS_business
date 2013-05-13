@@ -31,7 +31,6 @@ namespace TCS_business.CONTROLER
         }
         private TCSBusinessApplication()
         {
-            
         }
         public void Initialize()
         {
