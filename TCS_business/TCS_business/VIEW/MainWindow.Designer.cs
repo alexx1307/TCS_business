@@ -37,7 +37,6 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -52,11 +51,11 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.SuspendLayout();
@@ -148,14 +147,6 @@
             this.panel1.Size = new System.Drawing.Size(440, 440);
             this.panel1.TabIndex = 2;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(480, 51);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(144, 46);
-            this.panel2.TabIndex = 3;
-            // 
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -172,7 +163,7 @@
             this.splitContainer1.Location = new System.Drawing.Point(3, 40);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Size = new System.Drawing.Size(195, 31);
-            this.splitContainer1.SplitterDistance = 90;
+            this.splitContainer1.SplitterDistance = 93;
             this.splitContainer1.TabIndex = 1;
             // 
             // pictureBox1
@@ -289,15 +280,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "miejsce na guziki";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "miejsce na komunikaty";
-            // 
             // pictureBox5
             // 
             this.pictureBox5.Location = new System.Drawing.Point(632, 51);
@@ -315,9 +297,28 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "animacja kostki ";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(480, 49);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(146, 47);
+            this.textBox1.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(502, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "komunikaty";
+            // 
             // MainWindow
             // 
             this.ClientSize = new System.Drawing.Size(693, 506);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.panel7);
@@ -325,15 +326,12 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainWindow";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
@@ -369,7 +367,6 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -384,9 +381,10 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
 
     }
 }
