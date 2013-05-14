@@ -84,9 +84,9 @@ namespace TCS_business.CONTROLER
         }
         public void UpdatePlayersList()
         {
-            int PlayersNumber = TCSBusinessApplication.getInstance().game.gameStateData.PlayersList.Count();
-            String name = TCSBusinessApplication.getInstance().game.gameStateData.PlayersList[PlayersNumber-1].Name;
-            switch(PlayersNumber)
+            int playersNumber = TCSBusinessApplication.getInstance().game.PlayersNumber;
+            String name = TCSBusinessApplication.getInstance().game.gameStateData.PlayersList.ElementAt(playersNumber-1).Name;
+            switch(playersNumber)
             {
                 case 1:
                     mainWindow.setPlayer1(name);
