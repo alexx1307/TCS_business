@@ -60,7 +60,7 @@ namespace TCS_business.CONTROLER
         {
             MessageBox.Show(p);
         }
-        internal void UpdateMainWindow(ApplicationState appState)
+        internal void UpdateMainWindowButtons(ApplicationState appState)
         {
             switch (appState)
             {
@@ -80,6 +80,11 @@ namespace TCS_business.CONTROLER
                     System.Diagnostics.Debug.Assert(false, "Unknown enum type");
                     break;
             }
+
+        }
+        public void UpdatePlayersList()
+        {
+            //todo:Zygmunt
         }
     }
 }

@@ -16,7 +16,7 @@ namespace TCS_business.VIEW
     /// </summary>
     public partial class AddPlayer : Form
     {
-        public Player resultPlayer;
+        Player resultPlayer;
         public Player ResultPlayer
         {
             get { return resultPlayer; }

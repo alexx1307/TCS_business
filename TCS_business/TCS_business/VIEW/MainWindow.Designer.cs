@@ -335,7 +335,6 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 2;
-            this.label4.Text =NameList[0];
             // 
             // label5
             // 
@@ -344,7 +343,6 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 2;
-            this.label5.Text = NameList[1];
             // 
             // label6
             // 
@@ -353,7 +351,6 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 13);
             this.label6.TabIndex = 2;
-            this.label6.Text = NameList[2];
             // 
             // label7
             // 
@@ -362,7 +359,6 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 2;
-            this.label7.Text = NameList[3];
             // 
             // MainWindow
             // 

@@ -80,6 +80,7 @@ namespace TCS_business.CONTROLER
                 timer.Stop();               // end of the countdown
                 gameStateData.activePlayer += 1 % gameConfigData.playersNumber;
                 // update active player id
+                //TCSBusinessApplication.getInstance().GuiManager.UpdatePlayerListPanel();
             }
         }
 

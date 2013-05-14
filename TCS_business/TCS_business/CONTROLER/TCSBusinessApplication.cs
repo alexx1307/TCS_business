@@ -48,7 +48,7 @@ namespace TCS_business.CONTROLER
                 game = new Game(gameConfigData);
                 guiManager = new GuiManager();
                 guiManager.InitializeMainWindow();
-                guiManager.UpdateMainWindow(appState);
+                guiManager.UpdateMainWindowButtons(appState);
             }
             catch (Exception e)
             {
@@ -63,7 +63,7 @@ namespace TCS_business.CONTROLER
             try
             {
                 appState = ApplicationState.GAME_IN_PROGRESS;
-                guiManager.UpdateMainWindow(appState);
+                guiManager.UpdateMainWindowButtons(appState);
                 game.Start();
             }
             catch (Exception e)
@@ -74,7 +74,7 @@ namespace TCS_business.CONTROLER
             {
                 appState = ApplicationState.WAITING_FOR_PLAYERS;
                 game.resetPlayerList();
-                guiManager.UpdateMainWindow(appState);
+                guiManager.UpdateMainWindowButtons(appState);
             }
 
         }
@@ -85,7 +85,7 @@ namespace TCS_business.CONTROLER
             {
                 game.resetPlayerList();
                 appState = ApplicationState.WAITING_FOR_PLAYERS;
-                guiManager.UpdateMainWindow(appState);
+                guiManager.UpdateMainWindowButtons(appState);
             }
             game.setGameConfigData(gameConfigData);
         }
@@ -103,8 +103,9 @@ namespace TCS_business.CONTROLER
                 if (game.AllPlayersJoined())
                 {
                     appState = ApplicationState.READY_FOR_GAME;
-                    guiManager.UpdateMainWindow(appState);
+                    guiManager.UpdateMainWindowButtons(appState);
                 }
+                guiManager.UpdatePlayersList();
             }
 
             
