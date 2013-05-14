@@ -15,6 +15,7 @@ namespace TCS_business.VIEW
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
         private void gameSettingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -60,5 +61,6 @@ namespace TCS_business.VIEW
         {
             registerNewPlayerToolStripMenuItem.Enabled = false;
         }
+
     }
 }

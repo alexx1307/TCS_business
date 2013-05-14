@@ -13,7 +13,7 @@ namespace TCS_business.MODEL
 
     public class Player
     {
-        //List<Field> fields;
+        List<Field> fields;
         //List<Card> cards;
         public string Name;
         public int Id;

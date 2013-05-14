@@ -16,7 +16,7 @@ namespace TCS_business.VIEW
     /// </summary>
     public partial class AddPlayer : Form
     {
-        Player resultPlayer;
+        public Player resultPlayer;
         public Player ResultPlayer
         {
             get { return resultPlayer; }
@@ -36,7 +36,13 @@ namespace TCS_business.VIEW
                 // tu powinien byc jakis limit graczy ustawiony, ze jesli wiecej niz limit to nie dodaje nowego
                 this.DialogResult = DialogResult.OK;
                 resultPlayer = new TCS_business.MODEL.Player(s, TCSBusinessApplication.getInstance().game.PlayersNumber);
+                MainWindow.NameList[MainWindow.nr++] = s;
             }
+
+        }
+
+        private void AddPlayer_Load(object sender, EventArgs e)
+        {
 
         }
     }

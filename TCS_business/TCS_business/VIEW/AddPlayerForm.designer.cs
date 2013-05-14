@@ -71,6 +71,7 @@
             this.MinimizeBox = false;
             this.Name = "AddPlayer";
             this.Text = "Add Player";
+            this.Load += new System.EventHandler(this.AddPlayer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
