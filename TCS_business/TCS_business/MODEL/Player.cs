@@ -10,7 +10,13 @@ namespace TCS_business.MODEL
     /// <author> Anita Ciosek </author>
     /// Class representing player in a game.
     /// </summary>
-
+    enum ColoursList
+    {
+        RED,
+        GREEN,
+        YELLOW,
+        BLUE
+    }
     public class Player
     {
         List<Field> fields;
@@ -19,6 +25,7 @@ namespace TCS_business.MODEL
         public int Id;
         public int Cash;
         Boolean inJail = false;
+        ColoursList colour;
 
         /// <summary>
         /// Constructs new Player with the specified name.

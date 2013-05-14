@@ -84,7 +84,23 @@ namespace TCS_business.CONTROLER
         }
         public void UpdatePlayersList()
         {
-            //todo:Zygmunt
+            int PlayersNumber = TCSBusinessApplication.getInstance().game.gameStateData.PlayersList.Count();
+            String name = TCSBusinessApplication.getInstance().game.gameStateData.PlayersList[PlayersNumber-1].Name;
+            switch(PlayersNumber)
+            {
+                case 1:
+                    mainWindow.setPlayer1(name);
+                    break;
+                case 2:
+                    mainWindow.setPlayer2(name);
+                    break;
+                case 3:
+                    mainWindow.setPlayer3(name);
+                    break;
+                case 4:
+                    mainWindow.setPlayer4(name);
+                    break;
+            }
         }
     }
 }

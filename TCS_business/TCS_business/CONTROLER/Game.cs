@@ -12,7 +12,7 @@ namespace TCS_business.CONTROLER
     public class Game
     {
         private GameConfig gameConfigData;
-        private GameState gameStateData;
+        internal GameState gameStateData;
         private Board board;
         private Dice dice;
         private bool isRunning;

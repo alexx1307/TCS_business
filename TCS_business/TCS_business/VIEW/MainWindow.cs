@@ -39,9 +39,26 @@ namespace TCS_business.VIEW
             TCSBusinessApplication.getInstance().RunGame();
             
         }
-
-
-
+        internal void setPlayer1(String name)
+        {
+            label8.Text = name;
+            label12.Text = "1000";
+        }
+        internal void setPlayer2(String name)
+        {
+            label9.Text = name;
+            label13.Text = "1000";
+        }
+        internal void setPlayer3(String name)
+        {
+            label10.Text = name;
+            label14.Text = "1000";
+        }
+        internal void setPlayer4(String name)
+        {
+            label11.Text = name;
+            label15.Text = "1000";
+        }
         internal void EnableAddingPlayers()
         {
             registerNewPlayerToolStripMenuItem.Enabled = true;
