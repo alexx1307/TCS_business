@@ -39,25 +39,18 @@ namespace TCS_business.VIEW
             TCSBusinessApplication.getInstance().RunGame();
             
         }
-        internal void setPlayer1(String name)
+        internal void setPlayers()
         {
-            label8.Text = name;
-            label12.Text = "1000";
-        }
-        internal void setPlayer2(String name)
-        {
-            label9.Text = name;
-            label13.Text = "1000";
-        }
-        internal void setPlayer3(String name)
-        {
-            label10.Text = name;
-            label14.Text = "1000";
-        }
-        internal void setPlayer4(String name)
-        {
-            label11.Text = name;
-            label15.Text = "1000";
+            Label[] tab = new Label[2*4];
+            tab[0] = label8; tab[1] = label12;
+            tab[2] = label9; tab[3] = label13;
+            tab[4] = label10; tab[5] = label14;
+            tab[6] = label11; tab[7] = label15;
+            for (int i = 0; i < TCSBusinessApplication.getInstance().game.gameStateData.PlayersList.Count(); i++)
+            {
+                tab[2 * i].Text = TCSBusinessApplication.getInstance().game.gameStateData.PlayersList.ElementAt(i).Name;
+                tab[2 * i + 1].Text = TCSBusinessApplication.getInstance().game.gameStateData.PlayersList.ElementAt(i).Cash.ToString();
+            }
         }
         internal void EnableAddingPlayers()
         {
