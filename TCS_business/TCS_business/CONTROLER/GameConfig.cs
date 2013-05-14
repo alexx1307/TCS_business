@@ -35,8 +35,8 @@ namespace TCS_business.CONTROLER
 
         public GameConfigBuilder()
         {
-            turnTime = new TimeSpan(0, 1, 0);
-            playersNumber = 4;
+            turnTime = new TimeSpan(0, 0, 3);
+            playersNumber = 2;
         }
         public GameConfig build()
         {

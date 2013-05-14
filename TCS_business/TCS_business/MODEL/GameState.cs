@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace TCS_business.MODEL
 {
     class GameState
     {
-        public List<Player> PlayersList = new List<Player>();
+        public ConcurrentBag<Player> PlayersList = new ConcurrentBag<Player>();
         public int activePlayer;
     }
 }

@@ -70,12 +70,6 @@ namespace TCS_business.CONTROLER
             {
                 guiManager.ShowErrorMessage("Error during game executution: "+e.Message);
             }
-            finally
-            {
-                appState = ApplicationState.WAITING_FOR_PLAYERS;
-                game.resetPlayerList();
-                guiManager.UpdateMainWindowButtons(appState);
-            }
 
         }
         public void ShowGameConfigDialog()

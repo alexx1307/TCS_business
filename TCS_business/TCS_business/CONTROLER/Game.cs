@@ -16,10 +16,10 @@ namespace TCS_business.CONTROLER
         private Board board;
         private Dice dice;
         private bool isRunning;
-
-
-        public int PlayersNumber { 
-            get { return gameStateData.PlayersList.Count; } 
+        private Thread gameThread;
+        public int PlayersNumber
+        {
+            get { return gameStateData.PlayersList.Count; }
         }
 
         /// <summary>
@@ -41,6 +41,7 @@ namespace TCS_business.CONTROLER
             this.board = Board.GetInstance();
         }
 
+
         /// <summary>
         ///  Surprisingly, this function starts the game
         /// </summary>
@@ -53,8 +54,10 @@ namespace TCS_business.CONTROLER
             this.timer = new System.Timers.Timer(miliseconds);
             this.timer.Elapsed += new ElapsedEventHandler(OnTimeoutEvent);
             this.isRunning = true;
-            Loop();
+            gameThread = new Thread(new ThreadStart(this.Loop));
+            gameThread.Start();
             this.isRunning = false;
+
         }
 
         /// <summary>
@@ -65,21 +68,30 @@ namespace TCS_business.CONTROLER
             while (!IsEnd())
             {
                 int meshes = dice.Throw();  // roll of the dice
-                Player p = gameStateData.PlayersList[gameStateData.activePlayer];
+                Player p = gameStateData.PlayersList.ElementAt(0);//[gameStateData.activePlayer];
                 board.MovePlayer(p, meshes);// move player on the board
                 timer.Start();              // begin to countdown
-                Monitor.PulseAll(nextTurn); // notify all that new round has just begun!
+                //MessageBox.Show("a");
+                lock (nextTurn)
+                {
+                    Monitor.PulseAll(nextTurn); // notify all that new round has just begun!
+                }
                 /*
                  * tu takie male zalozenie: watki graczy gdzies czekaja na waicie na nextTurn 
                  * i sprawdzaja czy activePlayer==ich id, jesli tak to moga grac, wpp.
                  * idzie spac dalej. Z tym, ze to trzeba jeszcze mocno przemyslec i dopracowac
                  * ja troche nie wiem jak to zrobic... :c
                  */
-                Monitor.Wait(endOfTurn);    /* wait for the end of the turn 
-                                             * (i.e. user ended his/her turn or run out of time) */
+                //MessageBox.Show("b");
+                lock (endOfTurn)
+                {
+                    Monitor.Wait(endOfTurn);    /* wait for the end of the turn */
+                }                           /* (i.e. user ended his/her turn or run out of time) */
+                //MessageBox.Show("c");
                 timer.Stop();               // end of the countdown
-                gameStateData.activePlayer += 1 % gameConfigData.playersNumber;
+                gameStateData.activePlayer = (gameStateData.activePlayer + 1)% gameConfigData.playersNumber;
                 // update active player id
+                MessageBox.Show(gameStateData.activePlayer.ToString());
                 //TCSBusinessApplication.getInstance().GuiManager.UpdatePlayerListPanel();
             }
         }
@@ -91,7 +103,10 @@ namespace TCS_business.CONTROLER
         /// <param name="e"></param>
         private static void OnTimeoutEvent(object source, ElapsedEventArgs e)
         {
-            Monitor.Pulse(endOfTurn); // notify that time is over...
+            lock (endOfTurn)
+            {
+                Monitor.Pulse(endOfTurn); // notify that time is over...
+            }
         }
 
         /// <summary>
@@ -109,6 +124,7 @@ namespace TCS_business.CONTROLER
             {
                 if (player.Cash > 0) positive++;
             }
+            return false;
             return positive < 2;
         }
 
@@ -128,7 +144,11 @@ namespace TCS_business.CONTROLER
         }
         internal void resetPlayerList()
         {
-            gameStateData.PlayersList.Clear();
+            Player someItem;
+            while (!gameStateData.PlayersList.IsEmpty)
+            {
+                gameStateData.PlayersList.TryTake(out someItem);
+            }
         }
         public void setGameConfigData(GameConfig gameConfigData)
         {
