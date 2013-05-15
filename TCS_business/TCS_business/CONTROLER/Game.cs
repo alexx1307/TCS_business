@@ -124,12 +124,11 @@ namespace TCS_business.CONTROLER
             {
                 if (player.Cash > 0) positive++;
             }
-<<<<<<< HEAD
+
             //this line below is only for tests
             return false;//todo: remove this line
-=======
             //return false;
->>>>>>> 182f4759ce32c06d307709570a083ebf6e8b4076
+
             return positive < 2;
         }
 
