@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TCS_business.CONTROLER;
 
 
 namespace TCS_business.MODEL
@@ -10,7 +11,7 @@ namespace TCS_business.MODEL
     /// <author> Anita Ciosek </author>
     /// Class representing player in a game.
     /// </summary>
-    enum ColoursList
+    public enum ColoursList
     {
         RED,
         GREEN,
@@ -21,21 +22,50 @@ namespace TCS_business.MODEL
     {
         List<Field> fields;
         //List<Card> cards;
-        public string Name;
-        public int Id;
-        public int Cash;
-        Boolean inJail = false;
-        ColoursList colour;
+        private string name;
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
 
+        private int id;
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private int cash;
+        public int Cash
+        {
+            get { return cash; }
+            set { cash = value; }
+        }
+
+        private bool inJail = false;
+        public bool InJail
+        {
+            get { return inJail; }
+            set { inJail = value; }
+        }
+
+        private ColoursList colour;
+        public ColoursList Colour
+        {
+            get { return colour; }
+            set { colour = value; }
+        }
+        
         /// <summary>
         /// Constructs new Player with the specified name.
         /// It sets default amount of Cash.
         /// </summary>
         /// <param name="s">Name of Player</param>
-        public Player(string s,int id)
+        public Player(string s, int id)
         {
             Name = s;
-            Cash = 1000;
+            Cash = GameConfig.defaultStartCash;
             Id = id;
         }
 

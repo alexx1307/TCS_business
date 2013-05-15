@@ -124,8 +124,12 @@ namespace TCS_business.CONTROLER
             {
                 if (player.Cash > 0) positive++;
             }
+<<<<<<< HEAD
+            //return false;
+=======
             //this line below is only for tests
             return false;//todo: remove this line
+>>>>>>> Button end turn added
             return positive < 2;
         }
 

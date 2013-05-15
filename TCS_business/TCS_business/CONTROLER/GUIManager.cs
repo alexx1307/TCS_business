@@ -28,7 +28,7 @@ namespace TCS_business.CONTROLER
             {
                 return gameConfigDialog.getGameConfigData();
             }
-            else return TCSBusinessApplication.getInstance().getLastConfigData();
+            else return TCSBusinessApplication.GetInstance().getLastConfigData();
         }
        
         public Player ShowAddPlayerDialog() {
@@ -84,23 +84,12 @@ namespace TCS_business.CONTROLER
         }
         public void UpdatePlayersList()
         {
-            int playersNumber = TCSBusinessApplication.getInstance().game.PlayersNumber;
-            String name = TCSBusinessApplication.getInstance().game.gameStateData.PlayersList.ElementAt(playersNumber-1).Name;
-            switch(playersNumber)
-            {
-                case 1:
-                    mainWindow.setPlayer1(name);
-                    break;
-                case 2:
-                    mainWindow.setPlayer2(name);
-                    break;
-                case 3:
-                    mainWindow.setPlayer3(name);
-                    break;
-                case 4:
-                    mainWindow.setPlayer4(name);
-                    break;
-            }
+            mainWindow.setPlayers();
+        }
+
+        public void UpdateCash()
+        {
+            mainWindow.UpdateCash();
         }
     }
 }
