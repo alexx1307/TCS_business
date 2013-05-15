@@ -25,7 +25,7 @@ namespace TCS_business.MODEL
         ///  Current positions of players on the board
         /// </summary>
         private Dictionary<Player, int> positions;
-
+        
         /// <summary>
         ///  Number of fields on the board
         /// </summary>
@@ -75,6 +75,7 @@ namespace TCS_business.MODEL
         /// <param name="meshes">number of meshes that player has thrown</param>
         public void MovePlayer(Player player, int meshes)
         {
+            if (player.InJail) return;
             positions[player] += meshes;
             if (positions[player] >= NOFIELDS)
             {
