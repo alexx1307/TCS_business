@@ -55,6 +55,7 @@ namespace TCS_business.CONTROLER
             this.timer.Elapsed += new ElapsedEventHandler(OnTimeoutEvent);
             this.isRunning = true;
             gameThread = new Thread(new ThreadStart(this.Loop));
+            gameThread.IsBackground = true;
             gameThread.Start();
             this.isRunning = false;
 
@@ -101,7 +102,7 @@ namespace TCS_business.CONTROLER
         /// </summary>
         /// <param name="source"></param>
         /// <param name="e"></param>
-        private static void OnTimeoutEvent(object source, ElapsedEventArgs e)
+        public static void OnTimeoutEvent(object source, ElapsedEventArgs e)
         {
             lock (endOfTurn)
             {
@@ -124,7 +125,8 @@ namespace TCS_business.CONTROLER
             {
                 if (player.Cash > 0) positive++;
             }
-            return false;
+            //this line below is only for tests
+            return false;//todo: remove this line
             return positive < 2;
         }
 
