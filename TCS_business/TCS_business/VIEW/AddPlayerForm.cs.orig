@@ -35,12 +35,11 @@ namespace TCS_business.VIEW
                 this.Close();
                 // tu powinien byc jakis limit graczy ustawiony, ze jesli wiecej niz limit to nie dodaje nowego
                 this.DialogResult = DialogResult.OK;
-<<<<<<< HEAD
                 resultPlayer = new TCS_business.MODEL.Player(s, TCSBusinessApplication.GetInstance().game.PlayersNumber);
-                MainWindow.NameList[MainWindow.nr++] = s;
+<<<<<<< HEAD
 =======
-                resultPlayer = new TCS_business.MODEL.Player(s, TCSBusinessApplication.getInstance().game.PlayersNumber);
->>>>>>> Button end turn added
+                MainWindow.NameList[MainWindow.nr++] = s;
+>>>>>>> 182f4759ce32c06d307709570a083ebf6e8b4076
             }
 
         }
