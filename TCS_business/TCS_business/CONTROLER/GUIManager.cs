@@ -28,7 +28,7 @@ namespace TCS_business.CONTROLER
             {
                 return gameConfigDialog.getGameConfigData();
             }
-            else return TCSBusinessApplication.getInstance().getLastConfigData();
+            else return TCSBusinessApplication.GetInstance().getLastConfigData();
         }
        
         public Player ShowAddPlayerDialog() {
@@ -85,6 +85,11 @@ namespace TCS_business.CONTROLER
         public void UpdatePlayersList()
         {
             mainWindow.setPlayers();
+        }
+
+        public void UpdateCash()
+        {
+            mainWindow.UpdateCash();
         }
     }
 }

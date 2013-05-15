@@ -30,7 +30,7 @@ namespace TCS_business.CONTROLER
 
         GameConfig gameConfigData;
         internal Game game;
-        public static TCSBusinessApplication getInstance()
+        public static TCSBusinessApplication GetInstance()
         {
             if (instance == null)
                 instance = new TCSBusinessApplication();

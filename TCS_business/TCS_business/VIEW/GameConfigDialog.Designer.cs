@@ -68,7 +68,7 @@
             0,
             0,
             0});
-            this.minutes.Value = CONTROLER.TCSBusinessApplication.getInstance().getLastConfigData().TurnTime.Minutes;
+            this.minutes.Value = CONTROLER.TCSBusinessApplication.GetInstance().getLastConfigData().TurnTime.Minutes;
             this.minutes.Name = "minutes";
             this.minutes.Size = new System.Drawing.Size(52, 20);
             this.minutes.TabIndex = 2;
@@ -99,7 +99,7 @@
             0,
             0,
             0});
-            this.seconds.Value = CONTROLER.TCSBusinessApplication.getInstance().getLastConfigData().TurnTime.Seconds;
+            this.seconds.Value = CONTROLER.TCSBusinessApplication.GetInstance().getLastConfigData().TurnTime.Seconds;
             this.seconds.Name = "seconds";
             this.seconds.Size = new System.Drawing.Size(52, 20);
             this.seconds.TabIndex = 5;
@@ -110,7 +110,7 @@
             this.playersNumber.Name = "playersNumber";
             this.playersNumber.Size = new System.Drawing.Size(120, 20);
             this.playersNumber.TabIndex = 6;
-            this.playersNumber.Value = CONTROLER.TCSBusinessApplication.getInstance().getLastConfigData().PlayersNumber;
+            this.playersNumber.Value = CONTROLER.TCSBusinessApplication.GetInstance().getLastConfigData().PlayersNumber;
             
             // 
             // button1

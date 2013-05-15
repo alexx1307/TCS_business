@@ -14,7 +14,7 @@ namespace TCS_business
         [STAThread]
         static void Main()
         {
-            TCSBusinessApplication app = TCSBusinessApplication.getInstance();
+            TCSBusinessApplication app = TCSBusinessApplication.GetInstance();
             app.Initialize();
             app.Run();           
         }

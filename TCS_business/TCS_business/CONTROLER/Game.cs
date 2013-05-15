@@ -55,9 +55,9 @@ namespace TCS_business.CONTROLER
             this.timer.Elapsed += new ElapsedEventHandler(OnTimeoutEvent);
             this.isRunning = true;
             gameThread = new Thread(new ThreadStart(this.Loop));
+            gameThread.IsBackground = true;
             gameThread.Start();
             this.isRunning = false;
-
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace TCS_business.CONTROLER
             while (!IsEnd())
             {
                 int meshes = dice.Throw();  // roll of the dice
-                Player p = gameStateData.PlayersList.ElementAt(0);//[gameStateData.activePlayer];
+                Player p = gameStateData.PlayersList.ElementAt(gameStateData.activePlayer);//[gameStateData.activePlayer];
                 board.MovePlayer(p, meshes);// move player on the board
                 timer.Start();              // begin to countdown
                 //MessageBox.Show("a");
@@ -89,7 +89,7 @@ namespace TCS_business.CONTROLER
                 }                           /* (i.e. user ended his/her turn or run out of time) */
                 //MessageBox.Show("c");
                 timer.Stop();               // end of the countdown
-                gameStateData.activePlayer = (gameStateData.activePlayer + 1)% gameConfigData.playersNumber;
+                gameStateData.activePlayer = (gameStateData.activePlayer + 1) % gameConfigData.playersNumber;
                 // update active player id
                 MessageBox.Show(gameStateData.activePlayer.ToString());
                 //TCSBusinessApplication.getInstance().GuiManager.UpdatePlayerListPanel();
@@ -124,7 +124,7 @@ namespace TCS_business.CONTROLER
             {
                 if (player.Cash > 0) positive++;
             }
-            return false;
+            //return false;
             return positive < 2;
         }
 
