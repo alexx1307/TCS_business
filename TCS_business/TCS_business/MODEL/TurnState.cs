@@ -5,7 +5,8 @@ using System.Text;
 
 namespace TCS_business.MODEL
 {
-    public abstract class Field
+    public enum TurnState
     {
+
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using TCS_business.CONTROLER;
+using TCS_business.MODEL;
 
 namespace TCS_business.VIEW
 {
@@ -15,54 +16,56 @@ namespace TCS_business.VIEW
         public MainWindow()
         {
             InitializeComponent();
+        
 
         }
 
         private void gameSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TCSBusinessApplication.GetInstance().ShowGameConfigDialog();
+            ApplicationController.Instance.ShowGameConfigDialog();
 
         }
 
         private void registerNewPlayerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TCSBusinessApplication.GetInstance().ShowAddPlayerDialog();
+            ApplicationController.Instance.ShowAddPlayerDialog();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CONTROLER.TCSBusinessApplication.Exit();
+            CONTROLER.ApplicationController.Exit();
         }
 
         private void runToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TCSBusinessApplication.GetInstance().RunGame();
+            ApplicationController.Instance.RunGame();
 
         }
-        internal void setPlayers()
+        internal void setPlayers(List<Player> list)
         {
             Label[] tab = new Label[2 * 4];
             tab[0] = label8; tab[1] = label12;
             tab[2] = label9; tab[3] = label13;
             tab[4] = label10; tab[5] = label14;
             tab[6] = label11; tab[7] = label15;
-            for (int i = 0; i < TCSBusinessApplication.GetInstance().game.gameStateData.PlayersList.Count(); i++)
+            for (int i = 0; i < list.Count(); i++)
             {
-                tab[2 * i].Text = TCSBusinessApplication.GetInstance().game.gameStateData.PlayersList.ElementAt(i).Name;
-                tab[2 * i + 1].Text = TCSBusinessApplication.GetInstance().game.gameStateData.PlayersList.ElementAt(i).Cash.ToString();
+                tab[2 * i].Text = list.ElementAt(i).Name;
+                //tab[2 * i + 1].Text = list.Cash.ToString();
             }
+            UpdateCash(list);
         }
 
-        internal void UpdateCash()
+        private void UpdateCash(List<Player> list)
         {
             this.Invoke((MethodInvoker)delegate
             {
                 Label[] tab = new Label[4];
                 tab[0] = label12; tab[1] = label13;
                 tab[2] = label14; tab[3] = label15;
-                for (int i = 0; i < TCSBusinessApplication.GetInstance().game.gameStateData.PlayersList.Count(); i++)
+                for (int i = 0; i < list.Count(); i++)
                 {
-                    tab[i].Text = TCSBusinessApplication.GetInstance().game.gameStateData.PlayersList.ElementAt(i).Cash.ToString();
+                    tab[i].Text = list.ElementAt(i).Cash.ToString();
                     tab[i].Invalidate();
                     tab[i].Update();
                     tab[i].Refresh();

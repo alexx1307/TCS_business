@@ -7,9 +7,17 @@ using System.Threading.Tasks;
 
 namespace TCS_business.MODEL
 {
-    class GameState
+    public class GameState
     {
-        public ConcurrentBag<Player> PlayersList = new ConcurrentBag<Player>();
-        public int activePlayer;
+        private List<Player> playersList = new List<Player>();
+        private int activePlayer;
+
+        public int ActivePlayer { get { return activePlayer; } set { activePlayer = value; } }
+        public int PlayersJoined()
+        {
+            return playersList.Count;
+        }
+
+        public List<Player> PlayersList { get { return playersList; }  }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace TCS_business.VIEW
 {
-    partial class AddPlayer
+    partial class AddPlayerDialog
     {
         /// <summary>
         /// Required designer variable.

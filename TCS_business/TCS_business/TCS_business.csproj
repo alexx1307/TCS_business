@@ -46,9 +46,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CONTROLER\Game.cs" />
-    <Compile Include="CONTROLER\GameConfig.cs" />
-    <Compile Include="CONTROLER\GuiManager.cs" />
-    <Compile Include="CONTROLER\TCSBusinessApplication.cs" />
+    <Compile Include="MODEL\ApplicationState.cs" />
+    <Compile Include="MODEL\GameConfig.cs" />
+    <Compile Include="MODEL\TurnState.cs" />
+    <Compile Include="VIEW\GuiManager.cs" />
+    <Compile Include="CONTROLER\ApplicationController.cs" />
     <Compile Include="MODEL\Board.cs" />
     <Compile Include="MODEL\Dice.cs" />
     <Compile Include="MODEL\Field.cs" />
@@ -56,11 +58,11 @@
     <Compile Include="MODEL\Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VIEW\AddPlayerForm.cs">
+    <Compile Include="VIEW\AddPlayerDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VIEW\AddPlayerForm.designer.cs">
-      <DependentUpon>AddPlayerForm.cs</DependentUpon>
+    <Compile Include="VIEW\AddPlayerDialog.designer.cs">
+      <DependentUpon>AddPlayerDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\GameConfigDialog.cs">
       <SubType>Form</SubType>
@@ -68,6 +70,7 @@
     <Compile Include="VIEW\GameConfigDialog.Designer.cs">
       <DependentUpon>GameConfigDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\IView.cs" />
     <Compile Include="VIEW\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,8 +87,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="VIEW\AddPlayerForm.resx">
-      <DependentUpon>AddPlayerForm.cs</DependentUpon>
+    <EmbeddedResource Include="VIEW\AddPlayerDialog.resx">
+      <DependentUpon>AddPlayerDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\GameConfigDialog.resx">
       <DependentUpon>GameConfigDialog.cs</DependentUpon>

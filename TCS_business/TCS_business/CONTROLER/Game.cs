@@ -11,15 +11,24 @@ namespace TCS_business.CONTROLER
 {
     public class Game
     {
-        private GameConfig gameConfigData;
-        internal GameState gameStateData;
+        private GameConfig gameConfig;
+        private GameState gameState;
         private Board board;
         private Dice dice;
         private bool isRunning;
         private Thread gameThread;
-        public int PlayersNumber
+        public GameState GameState
         {
-            get { return gameStateData.PlayersList.Count; }
+            get { return gameState; }
+        }
+        public GameConfig GameConfig
+        {
+            get { return gameConfig; }
+            set
+            {
+                if (isRunning) throw new InvalidOperationException("It's impossible to change game properties during game");
+                gameConfig = value;
+            }
         }
 
         /// <summary>
@@ -33,12 +42,12 @@ namespace TCS_business.CONTROLER
         private static Object endOfTurn = new Object();
         private static Object nextTurn = new Object();
 
-        public Game(GameConfig gameConfig)
+        public Game()
         {
-            this.gameConfigData = gameConfig;
-            this.gameStateData = new GameState();
+            this.gameConfig = new GameConfig();
+            this.gameState = new GameState();
             this.dice = new Dice();
-            this.board = Board.GetInstance();
+            this.board = new Board();
         }
 
 
@@ -47,9 +56,9 @@ namespace TCS_business.CONTROLER
         /// </summary>
         public void Start()
         {
-            board.Init(gameStateData);
-            int seconds = gameConfigData.TurnTime.Seconds;
-            int minutes = gameConfigData.TurnTime.Minutes;
+            board.Init(gameState);
+            int seconds = gameConfig.TurnTime.Seconds;
+            int minutes = gameConfig.TurnTime.Minutes;
             int miliseconds = seconds * 1000 + minutes * 60000;
             this.timer = new System.Timers.Timer(miliseconds);
             this.timer.Elapsed += new ElapsedEventHandler(OnTimeoutEvent);
@@ -68,7 +77,7 @@ namespace TCS_business.CONTROLER
             while (!IsEnd())
             {
                 int meshes = dice.Throw();  // roll of the dice
-                Player p = gameStateData.PlayersList.ElementAt(gameStateData.activePlayer);//[gameStateData.activePlayer];
+                Player p = gameState.PlayersList.ElementAt(gameState.ActivePlayer);
                 board.MovePlayer(p, meshes);// move player on the board
                 timer.Start();              // begin to countdown
                 //MessageBox.Show("a");
@@ -89,9 +98,9 @@ namespace TCS_business.CONTROLER
                 }                           /* (i.e. user ended his/her turn or run out of time) */
                 //MessageBox.Show("c");
                 timer.Stop();               // end of the countdown
-                gameStateData.activePlayer = (gameStateData.activePlayer + 1) % gameConfigData.playersNumber;
+                gameState.ActivePlayer = (gameState.ActivePlayer + 1) % gameConfig.PlayersNumber;
                 // update active player id
-                MessageBox.Show(gameStateData.activePlayer.ToString());
+                MessageBox.Show(gameState.ActivePlayer.ToString());
                 //TCSBusinessApplication.getInstance().GuiManager.UpdatePlayerListPanel();
             }
         }
@@ -120,14 +129,10 @@ namespace TCS_business.CONTROLER
         private bool IsEnd()
         {
             int positive = 0;
-            foreach (Player player in gameStateData.PlayersList)
+            foreach (Player player in gameState.PlayersList)
             {
                 if (player.Cash > 0) positive++;
             }
-
-            //this line below is only for tests
-            return false;//todo: remove this line
-            //return false;
 
             return positive < 2;
         }
@@ -135,34 +140,28 @@ namespace TCS_business.CONTROLER
 
         internal bool AllPlayersJoined() //tells whether the needed number of players joined the game 
         {
-            return gameStateData.PlayersList.Count() == gameConfigData.playersNumber;
+            return gameState.PlayersList.Count() == gameConfig.PlayersNumber;
         }
 
         /// <summary>
         /// <author> Anita Ciosek </author>
         /// Register player.
         /// </summary>
-        internal void registerNewPlayer(Player p)
+        public void RegisterNewPlayer(Player p)
         {
-            gameStateData.PlayersList.Add(p);
+            gameState.PlayersList.Add(p);
         }
-        internal void resetPlayerList()
+        public int NextPlayerId()
         {
-            Player someItem;
-            while (!gameStateData.PlayersList.IsEmpty)
-            {
-                gameStateData.PlayersList.TryTake(out someItem);
-            }
+            return gameState.PlayersList.Count;
         }
-        public void setGameConfigData(GameConfig gameConfigData)
+        internal void ResetPlayerList()
         {
-            if (isRunning)
-                throw new InvalidOperationException("Cannot change game config during execution");
-            this.gameConfigData = gameConfigData;
-
-
+            gameState.PlayersList.Clear();
         }
 
+
+        public int PlayersNumber { get; set; }
 
     }
 }

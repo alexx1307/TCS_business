@@ -14,14 +14,14 @@ namespace TCS_business.VIEW
     /// <author> Anita Ciosek </author>
     /// Shows the form where player can enter his name and adds him to list of players.
     /// </summary>
-    public partial class AddPlayer : Form
+    public partial class AddPlayerDialog : Form
     {
         Player resultPlayer;
         public Player ResultPlayer
         {
             get { return resultPlayer; }
         }
-        public AddPlayer()
+        public AddPlayerDialog()
         {
             InitializeComponent();
         }
@@ -35,7 +35,7 @@ namespace TCS_business.VIEW
                 this.Close();
                 // tu powinien byc jakis limit graczy ustawiony, ze jesli wiecej niz limit to nie dodaje nowego
                 this.DialogResult = DialogResult.OK;
-                resultPlayer = new TCS_business.MODEL.Player(s, TCSBusinessApplication.GetInstance().game.PlayersNumber);
+                ApplicationController.Instance.RegisterNewPlayer(s);
 
             }
 

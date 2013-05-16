@@ -14,7 +14,7 @@ namespace TCS_business.MODEL
     /// <author>Lukasz Kostrzewa</author>
     /// </summary>
     [Serializable]
-    class Board : ISerializable
+    public class Board : ISerializable
     {
         /// <summary>
         ///  List of fields on the board
@@ -24,7 +24,7 @@ namespace TCS_business.MODEL
         /// <summary>
         ///  Current positions of players on the board
         /// </summary>
-        private Dictionary<Player, int> positions;
+        private Dictionary<Player, int> positions;      // czy to nie powinno byc bezposrednio w klasie GameState?
         
         /// <summary>
         ///  Number of fields on the board
@@ -36,22 +36,10 @@ namespace TCS_business.MODEL
         /// </summary>
         public const int CASHFORSTART = 200;
 
-        #region Singleton
-        private static Board board;
-        /// <summary>
-        ///  Singleton design pattern
-        /// </summary>
-        /// <returns>An instance of the <code>Board</code> class</returns>
-        public static Board GetInstance()
-        {
-            if (board == null) board = new Board();
-            return board;
-        }
-        private Board() {
+        public Board() {
             positions = new Dictionary<Player, int>();
         
         }
-        #endregion
 
         /// <summary>
         ///  Initialize the board, sets players on the start field,
@@ -81,7 +69,8 @@ namespace TCS_business.MODEL
             {
                 positions[player] %= NOFIELDS;
                 player.Cash += CASHFORSTART;
-                TCSBusinessApplication.GetInstance().GuiManager.UpdateCash();
+                ApplicationController.Instance.UpdateBoardView(this);
+                ApplicationController.Instance.UpdatePlayerDataView(player);
             }
         }
 
@@ -90,7 +79,6 @@ namespace TCS_business.MODEL
         {
             info.AddValue("fields", fields);
             info.AddValue("positions", positions);
-            info.AddValue("board", board);
         }
 
         /// <summary>
@@ -102,7 +90,6 @@ namespace TCS_business.MODEL
         {
             fields = (List<Field>)info.GetValue("fields", typeof(List<Field>));
             positions = (Dictionary<Player, int>)info.GetValue("positions", typeof(Dictionary<Player, int>));
-            board = (Board)info.GetValue("board", typeof(Board));
         }
         #endregion
     }

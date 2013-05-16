@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using TCS_business.MODEL;
+using TCS_business.CONTROLER;
 namespace TCS_business.VIEW
 {
     public partial class GameConfigDialog : Form
@@ -15,15 +16,13 @@ namespace TCS_business.VIEW
         public GameConfigDialog()
         {
             InitializeComponent();
-
         }
-
-        internal CONTROLER.GameConfig getGameConfigData()
+        public void SetGameConfigProperties(GameConfig gameConfig)
         {
-            return new CONTROLER.GameConfigBuilder().setRemainingPlayersNumber((int)playersNumber.Value).setTurnTime(new TimeSpan(0, (int)minutes.Value, (int)seconds.Value)).build();
-           
+            minutes.Value = gameConfig.TurnTime.Minutes;
+            seconds.Value = gameConfig.TurnTime.Seconds;
+            playersNumber.Value = gameConfig.PlayersNumber;
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
@@ -32,9 +31,10 @@ namespace TCS_business.VIEW
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //todo: Zygmunt - walidacja z uzyciem statycznych pol z gameConfig - w wypadku niepomyslnej walidacji wiadomosc i do poprawy :)
             this.DialogResult = DialogResult.OK;
+            
             this.Close();
+            ApplicationController.Instance.SetNewGameConfig(new GameConfig((int)playersNumber.Value, new TimeSpan(0, (int)minutes.Value, (int)seconds.Value)));
         }
     }
 }
