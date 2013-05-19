@@ -43,33 +43,19 @@ namespace TCS_business.VIEW
         }
         internal void setPlayers(List<Player> list)
         {
-            Label[] tab = new Label[2 * 4];
-            tab[0] = label8; tab[1] = label12;
-            tab[2] = label9; tab[3] = label13;
-            tab[4] = label10; tab[5] = label14;
-            tab[6] = label11; tab[7] = label15;
-            for (int i = 0; i < list.Count(); i++)
+            this.Invoke((MethodInvoker)delegate
             {
-                tab[2 * i].Text = list.ElementAt(i).Name;
-                //tab[2 * i + 1].Text = list.Cash.ToString();
-            }
-            UpdateCash(list);
+                for (int i = 0; i < list.Count(); i++)
+                    PlayersListPanel.Controls.Add(list[i].PlayersPanel);
+            });
+            //UpdateCash(list);
         }
 
         private void UpdateCash(List<Player> list)
         {
             this.Invoke((MethodInvoker)delegate
             {
-                Label[] tab = new Label[4];
-                tab[0] = label12; tab[1] = label13;
-                tab[2] = label14; tab[3] = label15;
-                for (int i = 0; i < list.Count(); i++)
-                {
-                    tab[i].Text = list.ElementAt(i).Cash.ToString();
-                    tab[i].Invalidate();
-                    tab[i].Update();
-                    tab[i].Refresh();
-                }
+               
             });
         }
 
