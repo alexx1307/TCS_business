@@ -58,6 +58,7 @@
     <Compile Include="MODEL\IPayable.cs" />
     <Compile Include="MODEL\IPurchasable.cs" />
     <Compile Include="MODEL\Powerhouse.cs" />
+    <Compile Include="MODEL\Prompt.cs" />
     <Compile Include="MODEL\Railway.cs" />
     <Compile Include="MODEL\Tax.cs" />
     <Compile Include="MODEL\TurnState.cs" />

@@ -25,7 +25,7 @@ namespace TCS_business.MODEL
     public class Player
     {
         List<Field> fields;
-        //List<Card> cards;
+        List<Card> cards;
         private string name;
         public string Name
         {
@@ -54,12 +54,12 @@ namespace TCS_business.MODEL
             set { inJail = value; }
         }
 
-        private ColoursList colour;
+        /*private ColoursList colour;
         public ColoursList Colour
         {
             get { return colour; }
             set { colour = value; }
-        }
+        }*/
         
         /// <summary>
         /// Constructs new Player with the specified name.
@@ -101,5 +101,6 @@ namespace TCS_business.MODEL
         {
             inJail = false;
         }
+
     }
 }

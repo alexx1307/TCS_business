@@ -16,14 +16,20 @@ namespace TCS_business.VIEW
     /// </summary>
     public partial class AddPlayerDialog : Form
     {
-        Player resultPlayer;
-        public Player ResultPlayer
-        {
-            get { return resultPlayer; }
-        }
+        object[] AvailableColors = {Color.Blue, Color.Green, Color.Red, Color.Yellow};
+
         public AddPlayerDialog()
         {
             InitializeComponent();
+            comboBox1.Items.AddRange(AvailableColors);
+            for (int i = 0; i < MainWindow.OccupiedColors.Count(); ++i)
+            {
+                if (MainWindow.OccupiedColors[i] != null)
+                {
+                    comboBox1.Items.Remove((object)MainWindow.OccupiedColors[i]);
+                }
+            }
+            
         }
 
 
@@ -33,17 +39,19 @@ namespace TCS_business.VIEW
             {
                 String s = textBox1.Text;
                 this.Close();
-                // tu powinien byc jakis limit graczy ustawiony, ze jesli wiecej niz limit to nie dodaje nowego
                 this.DialogResult = DialogResult.OK;
+                MainWindow.SetColor((Color)comboBox1.SelectedItem);
                 ApplicationController.Instance.RegisterNewPlayer(s);
 
             }
 
         }
 
-        private void AddPlayer_Load(object sender, EventArgs e)
-        {
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
+
     }
 }

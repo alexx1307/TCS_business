@@ -16,8 +16,6 @@ namespace TCS_business.VIEW
         public MainWindow()
         {
             InitializeComponent();
-        
-
         }
 
         private void gameSettingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -53,8 +51,21 @@ namespace TCS_business.VIEW
                 tab[2 * i].Text = list.ElementAt(i).Name;
                 //tab[2 * i + 1].Text = list.Cash.ToString();
             }
+            if (0 < list.Count()) pictureBox1.BackColor = OccupiedColors[0];
+            if (1 < list.Count()) pictureBox2.BackColor = OccupiedColors[1];
+            if (2 < list.Count()) pictureBox3.BackColor = OccupiedColors[2];
+            if (3 < list.Count()) pictureBox4.BackColor = OccupiedColors[3];
             UpdateCash(list);
         }
+
+        public static Color[] OccupiedColors = new Color[4];
+        static int nr = 0;
+
+        public static void SetColor(Color c)
+        {
+            OccupiedColors[nr++] = c;
+        }
+
 
         private void UpdateCash(List<Player> list)
         {
@@ -96,6 +107,7 @@ namespace TCS_business.VIEW
         private void button1_Click(object sender, EventArgs e)
         {
             Game.OnTimeoutEvent(sender, null);
+            this.Close();
         }
 
     }
