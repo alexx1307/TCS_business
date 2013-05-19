@@ -13,10 +13,15 @@ namespace TCS_business.VIEW
 {
     public partial class MainWindow : Form
     {
+        private List<System.Drawing.Color> coloursList = new List<System.Drawing.Color>();
         public MainWindow()
         {
             InitializeComponent();
-        
+            coloursList.Add(System.Drawing.Color.Red);
+            coloursList.Add(System.Drawing.Color.Green);
+            coloursList.Add(System.Drawing.Color.Blue);
+            coloursList.Add(System.Drawing.Color.Yellow);
+            coloursList.Add(System.Drawing.Color.Purple);
 
         }
 
@@ -46,7 +51,7 @@ namespace TCS_business.VIEW
             this.Invoke((MethodInvoker)delegate
             {
                 for (int i = 0; i < list.Count(); i++)
-                    PlayersListPanel.Controls.Add(list[i].PlayersPanel);
+                    PlayersListPanel.Controls.Add(new PlayerInfo(list[i].Name,list[i].Cash,coloursList[list.Count()]));
             });
             //UpdateCash(list);
         }

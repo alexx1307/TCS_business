@@ -17,12 +17,6 @@ namespace TCS_business.MODEL
         List<Field> fields;
         //List<Card> cards;
         private string name;
-        private System.Windows.Forms.Panel playersPanel;
-        private System.Windows.Forms.Label nameLabel;
-        private System.Windows.Forms.Label cashLabel;
-        private System.Windows.Forms.Label timeLabel;
-        private System.Windows.Forms.PictureBox colourBox;
-
         public string Name
         {
             get { return name; }
@@ -49,34 +43,16 @@ namespace TCS_business.MODEL
             get { return inJail; }
             set { inJail = value; }
         }
-        public System.Windows.Forms.Panel PlayersPanel
-        {
-            get { return playersPanel; }
-            set { playersPanel = value; }
-        }
         /// <summary>
         /// Constructs new Player with the specified name.
         /// It sets default amount of Cash.
         /// </summary>
         /// <param name="s">Name of Player</param>
-        public Player(string s, int id,System.Drawing.Color playersColour)
+        public Player(string s, int id)
         {
             Name = s;
             Cash = GameConfig.defaultStartCash;
             Id = id;
-            nameLabel = new System.Windows.Forms.Label();
-            nameLabel.Text = Name;
-            cashLabel = new System.Windows.Forms.Label();
-            cashLabel.Text = Cash.ToString();
-            colourBox = new System.Windows.Forms.PictureBox();
-            colourBox.BackColor = playersColour;
-            timeLabel = new System.Windows.Forms.Label();
-            playersPanel = new System.Windows.Forms.Panel();
-            playersPanel.Size = new System.Drawing.Size(201, 74);
-            playersPanel.Controls.Add(colourBox);
-            playersPanel.Controls.Add(nameLabel);
-            playersPanel.Controls.Add(cashLabel);
-            playersPanel.Controls.Add(timeLabel);
         }
 
         /// <summary>

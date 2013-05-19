@@ -79,6 +79,12 @@
     <Compile Include="VIEW\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\PlayerInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\PlayerInfo.Designer.cs">
+      <DependentUpon>PlayerInfo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -97,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\PlayerInfo.resx">
+      <DependentUpon>PlayerInfo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
