@@ -23,7 +23,8 @@ namespace TCS_business.MODEL
         }
 
         public Field()
-        { }
+        {
+        }
 
         /// <summary>
         /// Method used to print the field.

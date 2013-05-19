@@ -15,8 +15,15 @@ namespace TCS_business.MODEL
         Player owner;
         int cost;
         int stake;
+        bool pledged;
+
+        public void ChangePledged()
+        {
+            pledged = !pledged;
+        }
 
         void BuildHouse(){
+            //sprawdz czy niezastawione
             //pobierz odpowiednia oplate od gracza
             ++Houses;
         }
@@ -25,7 +32,7 @@ namespace TCS_business.MODEL
         public override void Action(Player p)
         {
             if (p != owner){ //jak jest wlascicielem to nic nie robi
-                //pobieranie oplaty od gracza 
+                //pobieranie oplaty od gracza jesli nie zastawione
             }
         }
 

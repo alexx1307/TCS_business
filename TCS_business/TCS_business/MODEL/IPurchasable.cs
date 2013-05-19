@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TCS_business.MODEL
 {
-    public interface IPurchasable
+    interface IPurchasable
     {
         Player Owner
         {

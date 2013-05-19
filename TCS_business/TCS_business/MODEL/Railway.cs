@@ -22,7 +22,12 @@ namespace TCS_business.MODEL
         Player owner;
         int cost;
         int stake;
+        bool pledged;
 
+        public void ChangePledged()
+        {
+            pledged = !pledged;
+        }
 
         public override void Action(Player p)
         {
