@@ -47,6 +47,8 @@
   <ItemGroup>
     <Compile Include="CONTROLER\Game.cs" />
     <Compile Include="MODEL\ApplicationState.cs" />
+    <Compile Include="MODEL\Card.cs" />
+    <Compile Include="MODEL\Deck.cs" />
     <Compile Include="MODEL\GameConfig.cs" />
     <Compile Include="MODEL\TurnState.cs" />
     <Compile Include="VIEW\GuiManager.cs" />

@@ -6,10 +6,9 @@ using TCS_business.CONTROLER;
 
 
 namespace TCS_business.MODEL
-{
+{   
     /// <summary>
-    /// <author> Anita Ciosek </author>
-    /// Class representing player in a game.
+    /// Colors associated with the players.
     /// </summary>
     public enum ColoursList
     {
@@ -18,6 +17,11 @@ namespace TCS_business.MODEL
         YELLOW,
         BLUE
     }
+
+    /// <summary>
+    /// <author> Anita Ciosek </author>
+    /// Class representing player in a game.
+    /// </summary>
     public class Player
     {
         List<Field> fields;

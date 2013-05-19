@@ -7,34 +7,35 @@ namespace TCS_business.MODEL
 {
     /// <summary>
     /// <author> Anita Ciosek </author>
-    /// Abstract class representing field on the board.
+    /// Abstract class representing card the player pulls the stack. 
     /// </summary>
-    public abstract class Field
+    public abstract class Card
     {
         string description;
 
         /// <summary>
-        /// Construct new field.
+        /// Construct new card.
         /// </summary>
-        /// <param name="s">Description of the field.</param>
-        Field(string s)
+        /// <param name="s">Description of the card</param>
+        Card(string s)
         {
             description = s;
         }
 
+
         /// <summary>
-        /// Method used to print the field.
+        /// Method used to print the card.
         /// </summary>
-        /// <returns>Description of the field.</returns>
+        /// <returns>Description of the card</returns>
         public override String ToString()
         {
             return description;
         }
 
         /// <summary>
-        /// Action associated with the field. Must be overrided.
+        /// Action associated with the card. Must be overrided.
         /// </summary>
-        /// <param name="p">Player standing on the field.</param>
+        /// <param name="p">Player who pull the card</param>
         public abstract void Action(Player p); 
     }
 }
