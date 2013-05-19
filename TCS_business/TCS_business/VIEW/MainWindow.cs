@@ -50,8 +50,13 @@ namespace TCS_business.VIEW
         {
             this.Invoke((MethodInvoker)delegate
             {
+                PlayersListPanel.Controls.Clear();
                 for (int i = 0; i < list.Count(); i++)
-                    PlayersListPanel.Controls.Add(new PlayerInfo(list[i].Name,list[i].Cash,coloursList[list.Count()]));
+                {
+                    PlayerInfo PlayerInfoControl = new PlayerInfo(list[i].Name, list[i].Cash, coloursList[i]);
+                    PlayerInfoControl.Location = new Point(0, i*74);
+                    PlayersListPanel.Controls.Add(PlayerInfoControl);
+                }
             });
             //UpdateCash(list);
         }
