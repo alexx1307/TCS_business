@@ -11,15 +11,19 @@ namespace TCS_business.MODEL
     /// </summary>
     public abstract class Field
     {
-        string description;
+        string Description;
 
         /// <summary>
         /// Construct new field.
         /// </summary>
         /// <param name="s">Description of the field.</param>
-        Field(string s)
+        public Field(string s)
         {
-            description = s;
+            Description = s;
+        }
+
+        public Field()
+        {
         }
 
         /// <summary>
@@ -28,7 +32,7 @@ namespace TCS_business.MODEL
         /// <returns>Description of the field.</returns>
         public override String ToString()
         {
-            return description;
+            return Description;
         }
 
         /// <summary>

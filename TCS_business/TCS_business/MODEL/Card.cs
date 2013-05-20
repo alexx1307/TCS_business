@@ -11,7 +11,7 @@ namespace TCS_business.MODEL
     /// </summary>
     public abstract class Card
     {
-        string description;
+        string Description;
 
         /// <summary>
         /// Construct new card.
@@ -19,7 +19,7 @@ namespace TCS_business.MODEL
         /// <param name="s">Description of the card</param>
         Card(string s)
         {
-            description = s;
+            Description = s;
         }
 
 
@@ -29,7 +29,7 @@ namespace TCS_business.MODEL
         /// <returns>Description of the card</returns>
         public override String ToString()
         {
-            return description;
+            return Description;
         }
 
         /// <summary>
