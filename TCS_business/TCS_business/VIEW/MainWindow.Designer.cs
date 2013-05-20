@@ -44,7 +44,10 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.PlayersListPanel = new System.Windows.Forms.Panel();
+=======
+>>>>>>> 7ad7c9a4f1020bf980ee7d463e72f792ef81d688
 =======
 >>>>>>> 7ad7c9a4f1020bf980ee7d463e72f792ef81d688
             this.menuStrip1.SuspendLayout();
@@ -425,6 +428,7 @@
             this.label2.Text = "komunikaty";
             // 
 <<<<<<< HEAD
+<<<<<<< HEAD
             // PlayersListPanel
             // 
             this.PlayersListPanel.Location = new System.Drawing.Point(480, 102);
@@ -432,6 +436,8 @@
             this.PlayersListPanel.Size = new System.Drawing.Size(201, 329);
             this.PlayersListPanel.TabIndex = 11;
             // 
+=======
+>>>>>>> 7ad7c9a4f1020bf980ee7d463e72f792ef81d688
 =======
 >>>>>>> 7ad7c9a4f1020bf980ee7d463e72f792ef81d688
             // MainWindow
