@@ -19,12 +19,15 @@ namespace TCS_business.VIEW
             InitializeComponent();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             coloursList.Add(System.Drawing.Color.Red);
             coloursList.Add(System.Drawing.Color.Green);
             coloursList.Add(System.Drawing.Color.Blue);
             coloursList.Add(System.Drawing.Color.Yellow);
             coloursList.Add(System.Drawing.Color.Purple);
 
+=======
+>>>>>>> 7ad7c9a4f1020bf980ee7d463e72f792ef81d688
 =======
 >>>>>>> 7ad7c9a4f1020bf980ee7d463e72f792ef81d688
 =======
