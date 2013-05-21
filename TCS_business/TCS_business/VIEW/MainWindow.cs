@@ -13,25 +13,9 @@ namespace TCS_business.VIEW
 {
     public partial class MainWindow : Form
     {
-        private List<System.Drawing.Color> coloursList = new List<System.Drawing.Color>();
         public MainWindow()
         {
             InitializeComponent();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-            coloursList.Add(System.Drawing.Color.Red);
-            coloursList.Add(System.Drawing.Color.Green);
-            coloursList.Add(System.Drawing.Color.Blue);
-            coloursList.Add(System.Drawing.Color.Yellow);
-            coloursList.Add(System.Drawing.Color.Purple);
-
-=======
->>>>>>> 7ad7c9a4f1020bf980ee7d463e72f792ef81d688
-=======
->>>>>>> 7ad7c9a4f1020bf980ee7d463e72f792ef81d688
-=======
->>>>>>> 7ad7c9a4f1020bf980ee7d463e72f792ef81d688
         }
 
         private void gameSettingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -57,28 +41,20 @@ namespace TCS_business.VIEW
         }
         internal void setPlayers(List<Player> list)
         {
-            this.Invoke((MethodInvoker)delegate
+            Label[] tab = new Label[2 * 4];
+            tab[0] = label8; tab[1] = label12;
+            tab[2] = label9; tab[3] = label13;
+            tab[4] = label10; tab[5] = label14;
+            tab[6] = label11; tab[7] = label15;
+            for (int i = 0; i < list.Count(); i++)
             {
-<<<<<<< HEAD
-                PlayersListPanel.Controls.Clear();
-                for (int i = 0; i < list.Count(); i++)
-                {
-                    PlayerInfo PlayerInfoControl = new PlayerInfo(list[i].Name, list[i].Cash, coloursList[i]);
-                    PlayerInfoControl.Location = new Point(0, i*74);
-                    PlayersListPanel.Controls.Add(PlayerInfoControl);
-                }
-            });
-            //UpdateCash(list);
-=======
                 tab[2 * i].Text = list.ElementAt(i).Name;
-                //tab[2 * i + 1].Text = list.Cash.ToString();
             }
             if (0 < list.Count()) pictureBox1.BackColor = OccupiedColors[0];
             if (1 < list.Count()) pictureBox2.BackColor = OccupiedColors[1];
             if (2 < list.Count()) pictureBox3.BackColor = OccupiedColors[2];
             if (3 < list.Count()) pictureBox4.BackColor = OccupiedColors[3];
             UpdateCash(list);
->>>>>>> 7ad7c9a4f1020bf980ee7d463e72f792ef81d688
         }
 
         public static Color[] OccupiedColors = new Color[4];
@@ -94,7 +70,16 @@ namespace TCS_business.VIEW
         {
             this.Invoke((MethodInvoker)delegate
             {
-               
+                Label[] tab = new Label[4];
+                tab[0] = label12; tab[1] = label13;
+                tab[2] = label14; tab[3] = label15;
+                for (int i = 0; i < list.Count(); i++)
+                {
+                    tab[i].Text = list.ElementAt(i).Cash.ToString();
+                    tab[i].Invalidate();
+                    tab[i].Update();
+                    tab[i].Refresh();
+                }
             });
         }
 
@@ -121,7 +106,6 @@ namespace TCS_business.VIEW
         private void button1_Click(object sender, EventArgs e)
         {
             Game.OnTimeoutEvent(sender, null);
-            this.Close();
         }
 
     }
