@@ -41,7 +41,7 @@ namespace TCS_business.VIEW
                 this.Close();
                 this.DialogResult = DialogResult.OK;
                 MainWindow.SetColor((Color)comboBox1.SelectedItem);
-                ApplicationController.Instance.RegisterNewPlayer(s);
+                ApplicationController.Instance.RegisterNewPlayer(s, (Color)comboBox1.SelectedItem);
 
             }
 

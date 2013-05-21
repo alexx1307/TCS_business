@@ -10,7 +10,7 @@ namespace TCS_business.VIEW
     {
         void InitializeMainWindow();
         void InitializeGamePanel();
-        void UpdatePlayersList(List<Player> list);
+        void UpdatePlayersList(List<Player> list,Dictionary<Player, VIEW.PlayerInfo> playersPanelsMap, System.Drawing.Color colour);
         void UpdateFieldState(Field field);
         void UpdateTurnStatePanel(TurnState turnState, GameState gameState);
         void ShowLoginDialog();

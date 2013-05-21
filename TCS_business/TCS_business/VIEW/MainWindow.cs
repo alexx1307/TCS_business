@@ -39,9 +39,10 @@ namespace TCS_business.VIEW
             ApplicationController.Instance.RunGame();
 
         }
-        internal void setPlayers(List<Player> list)
+        internal void setPlayers(List<Player> list, Dictionary<Player, VIEW.PlayerInfo> playersPanelsMap,System.Drawing.Color colour)
         {
-            Label[] tab = new Label[2 * 4];
+
+            /*Label[] tab = new Label[2 * 4];
             tab[0] = label8; tab[1] = label12;
             tab[2] = label9; tab[3] = label13;
             tab[4] = label10; tab[5] = label14;
@@ -54,8 +55,18 @@ namespace TCS_business.VIEW
             if (0 < list.Count()) pictureBox1.BackColor = OccupiedColors[0];
             if (1 < list.Count()) pictureBox2.BackColor = OccupiedColors[1];
             if (2 < list.Count()) pictureBox3.BackColor = OccupiedColors[2];
-            if (3 < list.Count()) pictureBox4.BackColor = OccupiedColors[3];
-            UpdateCash(list);
+            if (3 < list.Count()) pictureBox4.BackColor = OccupiedColors[3];*/
+
+            for (int i = 0; i < list.Count() - 1; i++)
+            {
+                playersPanelsMap[list[i]].Location = new Point(0, i * 74);
+                playersListPanel.Controls.Add(playersPanelsMap[list[i]]);
+            }
+            PlayerInfo PlayerPanel = new PlayerInfo(list[list.Count() - 1].Name, list[list.Count() - 1].Cash,colour);
+            playersPanelsMap.Add(list[list.Count() - 1], PlayerPanel);
+            PlayerPanel.Location = new Point(0, (list.Count() - 1) * 74);
+            playersListPanel.Controls.Add(PlayerPanel);
+            //UpdateCash(list, playersPanelsMap);
         }
 
         public static Color[] OccupiedColors = new Color[4];
@@ -67,7 +78,7 @@ namespace TCS_business.VIEW
         }
 
 
-        private void UpdateCash(List<Player> list)
+       /* private void UpdateCash(List<Player> list, Dictionary<Player, VIEW.PlayerInfo> playersPanelsMap)
         {
             this.Invoke((MethodInvoker)delegate
             {
@@ -82,7 +93,7 @@ namespace TCS_business.VIEW
                     tab[i].Refresh();
                 }
             });
-        }
+        }*/
 
         internal void EnableAddingPlayers()
         {

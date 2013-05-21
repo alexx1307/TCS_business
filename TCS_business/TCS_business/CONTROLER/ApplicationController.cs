@@ -92,7 +92,7 @@ namespace TCS_business.CONTROLER
             Environment.Exit(0);
         }
 
-        public void RegisterNewPlayer(string s)
+        public void RegisterNewPlayer(string s, System.Drawing.Color colour)
         {
             game.RegisterNewPlayer(new Player(s, game.NextPlayerId()));
             if (game.AllPlayersJoined())
@@ -100,8 +100,7 @@ namespace TCS_business.CONTROLER
                 appState = ApplicationState.READY_FOR_GAME;
                 guiManager.AdjustButtonsAvailability(appState);
             }
-            guiManager.UpdatePlayersList(game.GameState.PlayersList);
-
+            guiManager.UpdatePlayersList(game.GameState.PlayersList, game.GameState.PlayersPanelsMap,colour);
         }
 
         internal void UpdateBoardView(Board board)

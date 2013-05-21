@@ -35,9 +35,9 @@ namespace TCS_business.VIEW
             throw new NotImplementedException();
         }
 
-        public void UpdatePlayersList(List<Player> list)
+        public void UpdatePlayersList(List<Player> list, Dictionary<Player, VIEW.PlayerInfo> playersPanelsMap, System.Drawing.Color colour)
         {
-            mainWindow.Invoke((MethodInvoker)delegate { mainWindow.setPlayers(list); });
+            mainWindow.Invoke((MethodInvoker)delegate { mainWindow.setPlayers(list, playersPanelsMap,colour); });
             //todo: Zygmunt: to ma nie byc wywolywane z main window 
             //tylko main window ma posiadac panel odpowiedzialny za listowanie graczy i jego metode masz wywolac.
             //poza tym zmien nazwe tej metody (jakis update)
