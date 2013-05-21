@@ -7,7 +7,7 @@ namespace TCS_business.MODEL
 {
     class FreeParking:Field
     {
-        FreeParking(string description,int position) :base(description,position)
+        public FreeParking(string description) :base(description)
         {}
         public override void Action(Player p)
         {

@@ -7,11 +7,11 @@ namespace TCS_business.MODEL
 {
     class JailField:Field
     {
-        JailField(string description,int position) :base(description,position)
+        public JailField(string description) 
+            : base(description)
         {}
         public override void Action(Player p)
         {
-            throw new NotImplementedException();
         }
     }
 }
