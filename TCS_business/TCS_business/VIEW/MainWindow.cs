@@ -118,7 +118,6 @@ namespace TCS_business.VIEW
         private void button1_Click(object sender, EventArgs e)
         {
             Game.OnTimeoutEvent(sender, null);
-            this.Close();
         }
 
     }

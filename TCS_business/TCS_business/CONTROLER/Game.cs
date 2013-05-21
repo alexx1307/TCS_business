@@ -48,6 +48,7 @@ namespace TCS_business.CONTROLER
             this.gameState = new GameState();
             this.dice = new Dice();
             this.board = new Board();
+            this.isRunning = false;
         }
 
 
@@ -66,7 +67,7 @@ namespace TCS_business.CONTROLER
             gameThread = new Thread(new ThreadStart(this.Loop));
             gameThread.IsBackground = true;
             gameThread.Start();
-            this.isRunning = false;
+            
         }
 
         /// <summary>
@@ -103,6 +104,7 @@ namespace TCS_business.CONTROLER
                 MessageBox.Show(gameState.ActivePlayer.ToString());
                 //TCSBusinessApplication.getInstance().GuiManager.UpdatePlayerListPanel();
             }
+            this.isRunning = false;
         }
 
         /// <summary>
