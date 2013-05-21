@@ -20,7 +20,7 @@ namespace TCS_business.MODEL
         ///  List of fields on the board
         /// </summary>
         private List<Field> fields;
-
+        public List<Field> Fields{ get{return fields;} }
         /// <summary>
         ///  Current positions of players on the board
         /// </summary>

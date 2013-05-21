@@ -85,7 +85,6 @@ namespace TCS_business.VIEW
         public void ShowMessage(string msg)
         {
             mainWindow.BeginInvoke((MethodInvoker)delegate { MessageBox.Show(msg); });
-
         }
 
         public void AdjustButtonsAvailability(ApplicationState appState)

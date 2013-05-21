@@ -16,7 +16,11 @@ namespace TCS_business.MODEL
         int cost;
         int stake;
         bool pledged;
-
+        String name;
+        public City(String n)
+        {
+            name = n;
+        }
         public void ChangePledged()
         {
             pledged = !pledged;
