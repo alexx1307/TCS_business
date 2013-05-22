@@ -9,7 +9,7 @@ namespace TCS_business.MODEL
     /// <author> Anita Ciosek </author>
     /// Class representing dice and symulate dice throwing
     /// </summary>
-    class Dice
+    public class Dice
     {
         public Dice(){}
 

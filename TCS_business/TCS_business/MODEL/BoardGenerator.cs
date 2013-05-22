@@ -33,7 +33,7 @@ namespace TCS_business.MODEL
             board.Fields[30] = new FreeField(); //w eurobiznesie tutaj idzie się do więzienia
 
 
-            for (int i = 0; i < 40; i++)
+            for (int i = 0; i < Board.NOFIELDS; i++)
                 if(board.Fields[i] != null)
                     board.Fields[i] = new City("field no." + i.ToString());
             return board;

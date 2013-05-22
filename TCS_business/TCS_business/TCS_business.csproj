@@ -66,6 +66,18 @@
     <Compile Include="MODEL\StartField.cs" />
     <Compile Include="MODEL\Tax.cs" />
     <Compile Include="MODEL\TurnState.cs" />
+    <Compile Include="VIEW\BoardPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\BoardPanel.Designer.cs">
+      <DependentUpon>BoardPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\FieldPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEW\FieldPanel.Designer.cs">
+      <DependentUpon>FieldPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\GuiManager.cs" />
     <Compile Include="CONTROLER\ApplicationController.cs" />
     <Compile Include="MODEL\Board.cs" />

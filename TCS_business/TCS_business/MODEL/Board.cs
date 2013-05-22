@@ -29,7 +29,7 @@ namespace TCS_business.MODEL
         /// <summary>
         ///  Number of fields on the board
         /// </summary>
-        public const int NOFIELDS = 10;
+        public const int NOFIELDS = 40;
 
         /// <summary>
         ///  Money which player gets when passes through the start
