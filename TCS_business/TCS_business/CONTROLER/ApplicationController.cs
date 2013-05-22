@@ -94,13 +94,13 @@ namespace TCS_business.CONTROLER
 
         public void RegisterNewPlayer(string s, System.Drawing.Color colour)
         {
-            game.RegisterNewPlayer(new Player(s, game.NextPlayerId()));
+            game.RegisterNewPlayer(new Player(s, game.NextPlayerId(), colour));
             if (game.AllPlayersJoined())
             {
                 appState = ApplicationState.READY_FOR_GAME;
                 guiManager.AdjustButtonsAvailability(appState);
             }
-            guiManager.UpdatePlayersList(game.GameState.PlayersList, game.GameState.PlayersPanelsMap,colour);
+            guiManager.UpdatePlayersList(game.GameState.PlayersList);
         }
 
         internal void UpdateBoardView(Board board)

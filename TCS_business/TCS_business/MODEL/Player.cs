@@ -27,6 +27,7 @@ namespace TCS_business.MODEL
         List<Field> fields;
         List<Card> cards;
         private string name;
+        private System.Drawing.Color color;
         public string Name
         {
             get { return name; }
@@ -66,8 +67,9 @@ namespace TCS_business.MODEL
         /// It sets default amount of Cash.
         /// </summary>
         /// <param name="s">Name of Player</param>
-        public Player(string s, int id)
+        public Player(string s, int id, System.Drawing.Color color )
         {
+            this.color = color;
             Name = s;
             Cash = GameConfig.defaultStartCash;
             Id = id;
@@ -102,5 +104,7 @@ namespace TCS_business.MODEL
             inJail = false;
         }
 
+
+        public System.Drawing.Color Color { get { return color; } set { color = value; } }
     }
 }

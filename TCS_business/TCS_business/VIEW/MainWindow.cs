@@ -13,6 +13,8 @@ namespace TCS_business.VIEW
 {
     public partial class MainWindow : Form
     {
+        private Dictionary<Player, VIEW.PlayerInfo> playersPanelsMap = new Dictionary<Player, VIEW.PlayerInfo>();
+        public Dictionary<Player, VIEW.PlayerInfo> PlayersPanelsMap { get { return playersPanelsMap; } }
         public MainWindow()
         {
             InitializeComponent();
@@ -39,30 +41,15 @@ namespace TCS_business.VIEW
             ApplicationController.Instance.RunGame();
 
         }
-        internal void setPlayers(List<Player> list, Dictionary<Player, VIEW.PlayerInfo> playersPanelsMap,System.Drawing.Color colour)
+        internal void setPlayers(List<Player> list)
         {
-
-            /*Label[] tab = new Label[2 * 4];
-            tab[0] = label8; tab[1] = label12;
-            tab[2] = label9; tab[3] = label13;
-            tab[4] = label10; tab[5] = label14;
-            tab[6] = label11; tab[7] = label15;
-            for (int i = 0; i < list.Count(); i++)
-            {
-                tab[2 * i].Text = list.ElementAt(i).Name;
-                //tab[2 * i + 1].Text = list.Cash.ToString();
-            }
-            if (0 < list.Count()) pictureBox1.BackColor = OccupiedColors[0];
-            if (1 < list.Count()) pictureBox2.BackColor = OccupiedColors[1];
-            if (2 < list.Count()) pictureBox3.BackColor = OccupiedColors[2];
-            if (3 < list.Count()) pictureBox4.BackColor = OccupiedColors[3];*/
 
             for (int i = 0; i < list.Count() - 1; i++)
             {
                 playersPanelsMap[list[i]].Location = new Point(0, i * 74);
                 playersListPanel.Controls.Add(playersPanelsMap[list[i]]);
             }
-            PlayerInfo PlayerPanel = new PlayerInfo(list[list.Count() - 1].Name, list[list.Count() - 1].Cash,colour);
+            PlayerInfo PlayerPanel = new PlayerInfo(list[list.Count() - 1].Name, list[list.Count() - 1].Cash, list[list.Count() - 1].Color);
             playersPanelsMap.Add(list[list.Count() - 1], PlayerPanel);
             PlayerPanel.Location = new Point(0, (list.Count() - 1) * 74);
             playersListPanel.Controls.Add(PlayerPanel);
@@ -78,22 +65,22 @@ namespace TCS_business.VIEW
         }
 
 
-       /* private void UpdateCash(List<Player> list, Dictionary<Player, VIEW.PlayerInfo> playersPanelsMap)
-        {
-            this.Invoke((MethodInvoker)delegate
-            {
-                Label[] tab = new Label[4];
-                tab[0] = label12; tab[1] = label13;
-                tab[2] = label14; tab[3] = label15;
-                for (int i = 0; i < list.Count(); i++)
-                {
-                    tab[i].Text = list.ElementAt(i).Cash.ToString();
-                    tab[i].Invalidate();
-                    tab[i].Update();
-                    tab[i].Refresh();
-                }
-            });
-        }*/
+        /* private void UpdateCash(List<Player> list, Dictionary<Player, VIEW.PlayerInfo> playersPanelsMap)
+         {
+             this.Invoke((MethodInvoker)delegate
+             {
+                 Label[] tab = new Label[4];
+                 tab[0] = label12; tab[1] = label13;
+                 tab[2] = label14; tab[3] = label15;
+                 for (int i = 0; i < list.Count(); i++)
+                 {
+                     tab[i].Text = list.ElementAt(i).Cash.ToString();
+                     tab[i].Invalidate();
+                     tab[i].Update();
+                     tab[i].Refresh();
+                 }
+             });
+         }*/
 
         internal void EnableAddingPlayers()
         {

@@ -69,8 +69,6 @@ namespace TCS_business.MODEL
             {
                 positions[player] %= NOFIELDS;
                 player.Cash += CASHFORSTART;
-                ApplicationController.Instance.UpdateBoardView(this);
-                ApplicationController.Instance.UpdatePlayerDataView(player);
             }
         }
 

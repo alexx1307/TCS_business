@@ -80,6 +80,8 @@ namespace TCS_business.CONTROLER
                 int meshes = dice.Throw();  // roll of the dice
                 Player p = gameState.PlayersList.ElementAt(gameState.ActivePlayer);
                 board.MovePlayer(p, meshes);// move player on the board
+                ApplicationController.Instance.UpdateBoardView(board);
+                ApplicationController.Instance.UpdatePlayerDataView(p);
                 timer.Start();              // begin to countdown
                 //MessageBox.Show("a");
                 lock (nextTurn)
