@@ -37,7 +37,7 @@ namespace TCS_business.VIEW
 
         public void UpdatePlayersList(List<Player> list, Dictionary<Player, VIEW.PlayerInfo> playersPanelsMap, System.Drawing.Color colour)
         {
-            mainWindow.Invoke((MethodInvoker)delegate { mainWindow.setPlayers(list, playersPanelsMap,colour); });
+            mainWindow.Invoke((MethodInvoker)delegate { mainWindow.setPlayers(list, playersPanelsMap, colour); });
             //todo: Zygmunt: to ma nie byc wywolywane z main window 
             //tylko main window ma posiadac panel odpowiedzialny za listowanie graczy i jego metode masz wywolac.
             //poza tym zmien nazwe tej metody (jakis update)
@@ -57,7 +57,7 @@ namespace TCS_business.VIEW
         {
             AddPlayerDialog addPlayerDialog = new AddPlayerDialog();
 
-                addPlayerDialog.Show();
+            addPlayerDialog.Show();
         }
 
         public void ShowConfigDialog(GameConfig gameConfig)
@@ -74,7 +74,7 @@ namespace TCS_business.VIEW
         /// <param name="player"></param>
         public void UpdatePlayerPanel(Player player)
         {
-            throw new NotImplementedException();
+           //todo: Zygmunt
         }
 
         public void UpdateTimeLeftPanel(TimeSpan timeLeft)
@@ -90,33 +90,31 @@ namespace TCS_business.VIEW
 
         public void AdjustButtonsAvailability(ApplicationState appState)
         {
-            mainWindow.Invoke((MethodInvoker)delegate
+            switch (appState)
             {
-                switch (appState)
-                {
-                    case ApplicationState.WAITING_FOR_PLAYERS:
-                        mainWindow.EnableAddingPlayers();
-                        mainWindow.DisableGameRun();
-                        break;
-                    case ApplicationState.READY_FOR_GAME:
-                        mainWindow.DisableAddingPlayers();
-                        mainWindow.EnsableGameRun();
-                        break;
-                    case ApplicationState.GAME_IN_PROGRESS:
-                        mainWindow.DisableAddingPlayers();
-                        mainWindow.DisableGameRun();
-                        break;
-                    default:
-                        System.Diagnostics.Debug.Assert(false, "Unknown enum type");
-                        break;
-                }
-            });
+                case ApplicationState.WAITING_FOR_PLAYERS:
+                    mainWindow.EnableAddingPlayers();
+                    mainWindow.DisableGameRun();
+                    break;
+                case ApplicationState.READY_FOR_GAME:
+                    mainWindow.DisableAddingPlayers();
+                    mainWindow.EnsableGameRun();
+                    break;
+                case ApplicationState.GAME_IN_PROGRESS:
+                    mainWindow.DisableAddingPlayers();
+                    mainWindow.DisableGameRun();
+                    break;
+                default:
+                    System.Diagnostics.Debug.Assert(false, "Unknown enum type");
+                    break;
+            }
+
         }
 
 
         public void UpdateBoard(Board board)
         {
-            throw new NotImplementedException();
+
         }
     }
 }
