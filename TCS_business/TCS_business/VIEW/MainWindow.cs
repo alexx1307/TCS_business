@@ -141,7 +141,7 @@ public BoardPanel BoardPanel
 
         private void buyButton_Click(object sender, EventArgs e)
         {
-
+            ChangeCommunicate("Kupowanie..."); //nie powinno sie wyswietlac gdy obiektu nie mozna kupic
         }
 
         public void ChangeCommunicate(string s)

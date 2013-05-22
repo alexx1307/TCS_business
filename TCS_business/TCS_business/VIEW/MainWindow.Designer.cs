@@ -45,8 +45,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.playersListPanel = new System.Windows.Forms.Panel();
-            this.boardPanel1 = new TCS_business.VIEW.BoardPanel();
             this.dice1 = new System.Windows.Forms.PictureBox();
+            this.boardPanel1 = new TCS_business.VIEW.BoardPanel();
             this.menuStrip1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dice2)).BeginInit();
@@ -187,6 +187,7 @@
             this.textBox1.Location = new System.Drawing.Point(728, 65);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(94, 47);
             this.textBox1.TabIndex = 9;
             // 
@@ -206,14 +207,6 @@
             this.playersListPanel.Size = new System.Drawing.Size(201, 325);
             this.playersListPanel.TabIndex = 11;
             // 
-            // boardPanel1
-            // 
-            this.boardPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.boardPanel1.Location = new System.Drawing.Point(12, 27);
-            this.boardPanel1.Name = "boardPanel1";
-            this.boardPanel1.Size = new System.Drawing.Size(688, 583);
-            this.boardPanel1.TabIndex = 0;
-            // 
             // dice1
             // 
             this.dice1.Location = new System.Drawing.Point(829, 67);
@@ -221,6 +214,14 @@
             this.dice1.Size = new System.Drawing.Size(45, 45);
             this.dice1.TabIndex = 12;
             this.dice1.TabStop = false;
+            // 
+            // boardPanel1
+            // 
+            this.boardPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.boardPanel1.Location = new System.Drawing.Point(12, 27);
+            this.boardPanel1.Name = "boardPanel1";
+            this.boardPanel1.Size = new System.Drawing.Size(688, 583);
+            this.boardPanel1.TabIndex = 0;
             // 
             // MainWindow
             // 
