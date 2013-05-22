@@ -86,6 +86,8 @@ namespace TCS_business.VIEW
         public void ShowMessage(string msg)
         {
             mainWindow.BeginInvoke((MethodInvoker)delegate { MessageBox.Show(msg); });
+            
+            //mainWindow.ChangeCommunicate(msg);
         }
 
         public void AdjustButtonsAvailability(ApplicationState appState)
@@ -113,9 +115,15 @@ namespace TCS_business.VIEW
         {
             mainWindow.BoardPanel.Update(board);
         }
+
         public void UpdateDice(int i, int j)
         {
             mainWindow.ChangeDice(i, j);
+        }
+
+        public void UpdateCommunicate(string s)
+        {
+            mainWindow.BeginInvoke((MethodInvoker)delegate { mainWindow.ChangeCommunicate(s); });
         }
     }
 }

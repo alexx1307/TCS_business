@@ -119,5 +119,10 @@ namespace TCS_business.CONTROLER
         {
             guiManager.UpdateDice(i, j);
         }
+        internal void SendMessage(string msg)
+        {
+            guiManager.UpdateCommunicate(msg);
+            //guiManager.ShowMessage(msg);
+        }
     }
 }

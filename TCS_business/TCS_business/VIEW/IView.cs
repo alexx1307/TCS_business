@@ -22,5 +22,6 @@ namespace TCS_business.VIEW
         void UpdateBoard(Board board);
         void ShowMainWindow();
         void UpdateDice(int i, int j);
+        void UpdateCommunicate(string s);
     }
 }

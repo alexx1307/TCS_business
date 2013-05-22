@@ -146,7 +146,8 @@ public BoardPanel BoardPanel
 
         public void ChangeCommunicate(string s)
         {
-            textBox1.Text = s;
+                Action<int> updateAction = new Action<int>((value) => textBox1.Text = s);
+                textBox1.Invoke(updateAction,32);
         }
 
         public void ChangeDice(int i, int j)
