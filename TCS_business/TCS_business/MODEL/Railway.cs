@@ -24,6 +24,10 @@ namespace TCS_business.MODEL
         int stake;
         bool pledged;
 
+        public Railway(string p):base(p)
+        {
+        }
+
         public void ChangePledged()
         {
             pledged = !pledged;

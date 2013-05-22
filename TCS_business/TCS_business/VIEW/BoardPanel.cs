@@ -38,17 +38,24 @@ namespace TCS_business.VIEW
                 {
                     fieldPanels[i].Location = new Point(origin.X + i * fieldPanels[i].Width, origin.Y);
                 }
-                /*for (int i = 0; i < fieldsPerSide; i++)    //in work
+                for (int i = 0; i < fieldsPerSide; i++)    //in work
                 {
-                    fieldPanels[i+fieldsPerSide].Location = new Point(origin.X*fieldsPerSide * fieldPanels[i].Width, origin.Y);
-                }*/
+                    fieldPanels[i + fieldsPerSide].Location = new Point(origin.X + fieldsPerSide * fieldPanels[i].Width, origin.Y + i * fieldPanels[i].Height);
+                }
+                for (int i = 0; i < fieldsPerSide; i++)    //in work
+                {
+                    fieldPanels[i + 2*fieldsPerSide].Location = new Point(origin.X + (fieldsPerSide -i)* fieldPanels[i].Width , origin.Y + fieldsPerSide * fieldPanels[i].Height);
+                }
+                for (int i = 0; i < fieldsPerSide; i++)    //in work
+                {
+                    fieldPanels[i + 3 * fieldsPerSide].Location = new Point(origin.X, origin.Y + (fieldsPerSide-i) * fieldPanels[i].Height);
+                }
             }
 
         }
 
         internal void Update(Board board)
         {
-            MessageBox.Show("boardUpdate");
         }
     }
 }

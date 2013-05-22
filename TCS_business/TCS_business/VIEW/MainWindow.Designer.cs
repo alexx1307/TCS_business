@@ -35,8 +35,6 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.boardPanel1 = new TCS_business.VIEW.BoardPanel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,8 +43,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.playersListPanel = new System.Windows.Forms.Panel();
+            this.boardPanel1 = new TCS_business.VIEW.BoardPanel();
             this.menuStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +57,7 @@
             this.infoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(693, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1008, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -114,27 +112,11 @@
             this.infoToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.infoToolStripMenuItem.Text = "Info";
             // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.boardPanel1);
-            this.panel1.Location = new System.Drawing.Point(18, 49);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(456, 439);
-            this.panel1.TabIndex = 2;
-            // 
-            // boardPanel1
-            // 
-            this.boardPanel1.Location = new System.Drawing.Point(4, 4);
-            this.boardPanel1.Name = "boardPanel1";
-            this.boardPanel1.Size = new System.Drawing.Size(445, 428);
-            this.boardPanel1.TabIndex = 0;
-            // 
             // panel7
             // 
             this.panel7.Controls.Add(this.button1);
             this.panel7.Controls.Add(this.label1);
-            this.panel7.Location = new System.Drawing.Point(480, 437);
+            this.panel7.Location = new System.Drawing.Point(728, 453);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(197, 51);
             this.panel7.TabIndex = 6;
@@ -160,7 +142,7 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(632, 51);
+            this.pictureBox5.Location = new System.Drawing.Point(880, 67);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(45, 45);
             this.pictureBox5.TabIndex = 7;
@@ -169,7 +151,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(610, 35);
+            this.label3.Location = new System.Drawing.Point(858, 51);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 13);
             this.label3.TabIndex = 8;
@@ -177,7 +159,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(480, 49);
+            this.textBox1.Location = new System.Drawing.Point(728, 65);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(146, 47);
@@ -186,7 +168,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(502, 33);
+            this.label2.Location = new System.Drawing.Point(750, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 10;
@@ -194,27 +176,34 @@
             // 
             // playersListPanel
             // 
-            this.playersListPanel.Location = new System.Drawing.Point(480, 102);
+            this.playersListPanel.Location = new System.Drawing.Point(728, 118);
             this.playersListPanel.Name = "playersListPanel";
             this.playersListPanel.Size = new System.Drawing.Size(201, 325);
             this.playersListPanel.TabIndex = 11;
             // 
+            // boardPanel1
+            // 
+            this.boardPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.boardPanel1.Location = new System.Drawing.Point(12, 27);
+            this.boardPanel1.Name = "boardPanel1";
+            this.boardPanel1.Size = new System.Drawing.Size(688, 583);
+            this.boardPanel1.TabIndex = 0;
+            // 
             // MainWindow
             // 
-            this.ClientSize = new System.Drawing.Size(693, 506);
+            this.ClientSize = new System.Drawing.Size(1008, 662);
+            this.Controls.Add(this.boardPanel1);
             this.Controls.Add(this.playersListPanel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainWindow";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -233,7 +222,6 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox5;

@@ -14,20 +14,20 @@ namespace TCS_business.MODEL
 
             board.Fields[0]= new StartField("Start");
             
-            board.Fields[2] = new Chance();
-            board.Fields[7] = new Chance();
-            board.Fields[22] = new Chance();
-            board.Fields[33] = new Chance();
+            board.Fields[2] = new Chance("Chance1");
+            board.Fields[7] = new Chance("Chance2");
+            board.Fields[22] = new Chance("Chance3");
+            board.Fields[33] = new Chance("Chance4");
 
-            board.Fields[5] = new Railway();
-            board.Fields[15] = new Railway();
-            board.Fields[25] = new Railway();
-            board.Fields[35] = new Railway();
+            board.Fields[5] = new Railway("North");
+            board.Fields[15] = new Railway("East");
+            board.Fields[25] = new Railway("South");
+            board.Fields[35] = new Railway("West");
 
-            board.Fields[4] = new Tax();
-            board.Fields[38] = new Tax();
+            board.Fields[4] = new Tax("tax1");
+            board.Fields[38] = new Tax("tax2");
 
-            board.Fields[10] = new JailField("Więzienie");
+            board.Fields[10] = new JailField("JAIL");
 
             board.Fields[20] = new FreeParking("Parking"); //w eurobiznesie tutaj jest parking
             board.Fields[30] = new FreeField(); //w eurobiznesie tutaj idzie się do więzienia

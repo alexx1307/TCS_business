@@ -11,6 +11,9 @@ namespace TCS_business.MODEL
     /// </summary>
     class Chance : Field
     {
+        public Chance(string p):base(p)
+        {
+        }
         public override void Action(Player p) {
             //pociagnij karte i wykonaj dla niej akcje
         } 
