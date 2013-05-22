@@ -8,17 +8,6 @@ using TCS_business.CONTROLER;
 namespace TCS_business.MODEL
 {   
     /// <summary>
-    /// Colors associated with the players.
-    /// </summary>
-    public enum ColoursList
-    {
-        RED,
-        GREEN,
-        YELLOW,
-        BLUE
-    }
-
-    /// <summary>
     /// <author> Anita Ciosek </author>
     /// Class representing player in a game.
     /// </summary>
@@ -54,13 +43,6 @@ namespace TCS_business.MODEL
             get { return inJail; }
             set { inJail = value; }
         }
-
-        /*private ColoursList colour;
-        public ColoursList Colour
-        {
-            get { return colour; }
-            set { colour = value; }
-        }*/
         
         /// <summary>
         /// Constructs new Player with the specified name.

@@ -37,9 +37,12 @@
             this.playersNumber = new System.Windows.Forms.NumericUpDown();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cash = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.minutes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seconds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playersNumber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cash)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -64,7 +67,7 @@
             // 
             this.minutes.Location = new System.Drawing.Point(12, 48);
             this.minutes.Maximum = new decimal(new int[] {
-            59,
+            30,
             0,
             0,
             0});
@@ -105,10 +108,24 @@
             // playersNumber
             // 
             this.playersNumber.Location = new System.Drawing.Point(12, 104);
+            this.playersNumber.Maximum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.playersNumber.Minimum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
             this.playersNumber.Name = "playersNumber";
             this.playersNumber.Size = new System.Drawing.Size(120, 20);
             this.playersNumber.TabIndex = 6;
-            
+            this.playersNumber.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
             // 
             // button1
             // 
@@ -130,11 +147,34 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 144);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "start cash";
+            // 
+            // cash
+            // 
+            this.cash.Increment = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.cash.Location = new System.Drawing.Point(12, 160);
+            this.cash.Name = "cash";
+            this.cash.Size = new System.Drawing.Size(120, 20);
+            this.cash.TabIndex = 10;
+            // 
             // GameConfigDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.cash);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.playersNumber);
@@ -149,6 +189,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.minutes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.seconds)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playersNumber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cash)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,5 +206,7 @@
         private System.Windows.Forms.NumericUpDown playersNumber;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown cash;
     }
 }

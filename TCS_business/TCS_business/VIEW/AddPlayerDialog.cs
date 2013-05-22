@@ -16,7 +16,7 @@ namespace TCS_business.VIEW
     /// </summary>
     public partial class AddPlayerDialog : Form
     {
-        object[] AvailableColors = {Color.Blue, Color.Green, Color.Red, Color.Yellow};
+        object[] AvailableColors = {Color.Blue, Color.Green, Color.Red, Color.Yellow, Color.Pink, Color.Black, Color.White, Color.Plum, Color.Orange};
 
         public AddPlayerDialog()
         {

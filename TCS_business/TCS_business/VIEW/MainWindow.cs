@@ -66,7 +66,7 @@ public BoardPanel BoardPanel
             //UpdateCash(list, playersPanelsMap);
         }
 
-        public static Color[] OccupiedColors = new Color[4];
+        public static Color[] OccupiedColors = new Color[9];
         static int nr = 0;
 
         public static void SetColor(Color c)
