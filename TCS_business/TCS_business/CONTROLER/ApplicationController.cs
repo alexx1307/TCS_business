@@ -94,7 +94,7 @@ namespace TCS_business.CONTROLER
 
         public void RegisterNewPlayer(string s, System.Drawing.Color colour)
         {
-            game.RegisterNewPlayer(new Player(s, game.NextPlayerId(), colour));
+            game.RegisterNewPlayer(new Player(s, game.NextPlayerId(), colour, game.GameConfig.StartCash));
             if (game.AllPlayersJoined())
             {
                 appState = ApplicationState.READY_FOR_GAME;

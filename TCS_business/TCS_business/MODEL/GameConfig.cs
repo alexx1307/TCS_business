@@ -9,7 +9,7 @@ namespace TCS_business.MODEL
     public class GameConfig
     {
         public static readonly int maxPlayersNumber = 8;
-        public static readonly TimeSpan maxTurnTime = new TimeSpan(0, 9, 59); //tutaj zeby nie lecial wyjatek ilosc sekund w max musi byc wieksza niz w min
+        public static readonly TimeSpan maxTurnTime = new TimeSpan(0, 9, 59);        
         public static readonly int defaultStartCash = 1000;
         public static readonly int maxStartCash = 3000;
         public static readonly TimeSpan defaultTurnTime = new TimeSpan(0, 0, 8);

@@ -20,8 +20,6 @@ namespace TCS_business.VIEW
             playersNumber.Minimum = MODEL.GameConfig.defaultPlayersNumber;
             minutes.Minimum = MODEL.GameConfig.defaultTurnTime.Minutes;
             minutes.Maximum = MODEL.GameConfig.maxTurnTime.Minutes;
-            seconds.Minimum = MODEL.GameConfig.defaultTurnTime.Seconds;
-            seconds.Maximum = MODEL.GameConfig.maxTurnTime.Seconds;
             cash.Minimum = MODEL.GameConfig.defaultStartCash;
             cash.Maximum = MODEL.GameConfig.maxStartCash;
         }

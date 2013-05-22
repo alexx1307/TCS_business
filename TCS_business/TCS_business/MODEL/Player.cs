@@ -49,11 +49,11 @@ namespace TCS_business.MODEL
         /// It sets default amount of Cash.
         /// </summary>
         /// <param name="s">Name of Player</param>
-        public Player(string s, int id, System.Drawing.Color color )
+        public Player(string s, int id, System.Drawing.Color color, int cash)
         {
             this.color = color;
             Name = s;
-            Cash = GameConfig.defaultStartCash;
+            Cash = cash;
             Id = id;
         }
 
