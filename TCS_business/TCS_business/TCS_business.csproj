@@ -125,6 +125,12 @@
     <EmbeddedResource Include="VIEW\AddPlayerDialog.resx">
       <DependentUpon>AddPlayerDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\BoardPanel.resx">
+      <DependentUpon>BoardPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\FieldPanel.resx">
+      <DependentUpon>FieldPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VIEW\GameConfigDialog.resx">
       <DependentUpon>GameConfigDialog.cs</DependentUpon>
     </EmbeddedResource>

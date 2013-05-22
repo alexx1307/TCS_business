@@ -12,7 +12,7 @@ namespace TCS_business.MODEL
         public static readonly TimeSpan maxTurnTime = new TimeSpan(0, 10, 0);
         public static readonly int defaultStartCash = 1000;
         public static readonly TimeSpan defaultTurnTime = new TimeSpan(0, 0, 8);
-        public static readonly int defaultPlayersNumber = 3;
+        public static readonly int defaultPlayersNumber = 2;
         private TimeSpan turnTime;
         private int playersNumber;
         public TimeSpan TurnTime

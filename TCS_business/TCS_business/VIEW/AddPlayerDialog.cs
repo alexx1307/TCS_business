@@ -22,6 +22,7 @@ namespace TCS_business.VIEW
         {
             InitializeComponent();
             comboBox1.Items.AddRange(AvailableColors);
+            comboBox1.SelectedIndex = 0;
             for (int i = 0; i < MainWindow.OccupiedColors.Count(); ++i)
             {
                 if (MainWindow.OccupiedColors[i] != null)

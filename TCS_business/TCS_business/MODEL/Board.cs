@@ -19,8 +19,8 @@ namespace TCS_business.MODEL
         /// <summary>
         ///  List of fields on the board
         /// </summary>
-        private List<Field> fields;
-        public List<Field> Fields{ get{return fields;} }
+        private Field[] fields;
+        public Field[] Fields{ get{return fields;} }
         /// <summary>
         ///  Current positions of players on the board
         /// </summary>
@@ -38,7 +38,7 @@ namespace TCS_business.MODEL
 
         public Board() {
             positions = new Dictionary<Player, int>();
-        
+            fields = new Field[NOFIELDS];
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace TCS_business.MODEL
         /// <param name="ctxt"></param>
         public Board(SerializationInfo info, StreamingContext ctxt)
         {
-            fields = (List<Field>)info.GetValue("fields", typeof(List<Field>));
+            fields = (Field[])info.GetValue("fields", typeof(Field[]));
             positions = (Dictionary<Player, int>)info.GetValue("positions", typeof(Dictionary<Player, int>));
         }
         #endregion

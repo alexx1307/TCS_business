@@ -11,14 +11,16 @@ namespace TCS_business.MODEL
     /// </summary>
     public abstract class Field
     {
-        string Description;
+        string description;
+        public string Description { get { return description; } set { description = value; } }
         /// <summary>
         /// Construct new field.
         /// </summary>
         /// <param name="s">Description of the field.</param>
         public Field(string s)
         {
-            Description = s;
+            description = s;
+            
         }
 
         public Field()

@@ -9,7 +9,7 @@ namespace TCS_business.VIEW
     interface IView
     {
         void InitializeMainWindow();
-        void InitializeGamePanel();
+        void InitializeGamePanel(Board board);
         void UpdatePlayersList(List<Player> list);
         void UpdateFieldState(Field field);
         void UpdateTurnStatePanel(TurnState turnState, GameState gameState);

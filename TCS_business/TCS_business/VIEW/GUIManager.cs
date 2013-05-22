@@ -31,9 +31,9 @@ namespace TCS_business.VIEW
         }
 
 
-        public void InitializeGamePanel()
+        public void InitializeGamePanel(Board board)
         {
-            throw new NotImplementedException();
+            mainWindow.BoardPanel.Initialize(board);
         }
 
         public void UpdatePlayersList(List<Player> list)
@@ -110,10 +110,9 @@ namespace TCS_business.VIEW
             }
         }
 
-
         public void UpdateBoard(Board board)
         {
-
+            mainWindow.BoardPanel.Update(board);
         }
     }
 }

@@ -47,7 +47,7 @@ namespace TCS_business.CONTROLER
             this.gameConfig = new GameConfig();
             this.gameState = new GameState();
             this.dice = new Dice();
-            this.board = new Board();
+
             this.isRunning = false;
         }
 
@@ -57,17 +57,20 @@ namespace TCS_business.CONTROLER
         /// </summary>
         public void Start()
         {
+            this.board = BoardGenerator.Generate();
             board.Init(gameState);
+            ApplicationController.Instance.InitializeGamePanel(board);
             int seconds = gameConfig.TurnTime.Seconds;
             int minutes = gameConfig.TurnTime.Minutes;
             int miliseconds = seconds * 1000 + minutes * 60000;
             this.timer = new System.Timers.Timer(miliseconds);
             this.timer.Elapsed += new ElapsedEventHandler(OnTimeoutEvent);
             this.isRunning = true;
+            
             gameThread = new Thread(new ThreadStart(this.Loop));
             gameThread.IsBackground = true;
             gameThread.Start();
-            
+
         }
 
         /// <summary>

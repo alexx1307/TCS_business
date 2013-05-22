@@ -15,11 +15,21 @@ namespace TCS_business.VIEW
     {
         private Dictionary<Player, VIEW.PlayerInfo> playersPanelsMap = new Dictionary<Player, VIEW.PlayerInfo>();
         public Dictionary<Player, VIEW.PlayerInfo> PlayersPanelsMap { get { return playersPanelsMap; } }
+        
+public BoardPanel BoardPanel
+        {
+            get { return boardPanel1; }
+        }
+        
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        public void InitializeBoardPanel(Board board)
+        {
+            boardPanel1.Initialize(board);
+        }
         private void gameSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ApplicationController.Instance.ShowGameConfigDialog();

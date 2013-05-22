@@ -107,7 +107,10 @@ namespace TCS_business.CONTROLER
         {
             guiManager.UpdateBoard(board);
         }
-
+        internal void InitializeGamePanel(Board board)
+        {
+            guiManager.InitializeGamePanel(board);
+        }
         internal void UpdatePlayerDataView(Player player)
         {
             guiManager.UpdatePlayerPanel(player);

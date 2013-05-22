@@ -36,6 +36,7 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.boardPanel1 = new TCS_business.VIEW.BoardPanel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,6 +46,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.playersListPanel = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
@@ -69,56 +71,64 @@
             this.registerNewPlayerToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
-            this.gameToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.gameToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.gameToolStripMenuItem.Text = "Game";
             // 
             // runToolStripMenuItem
             // 
             this.runToolStripMenuItem.Name = "runToolStripMenuItem";
-            this.runToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.runToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.runToolStripMenuItem.Text = "Run";
             this.runToolStripMenuItem.Click += new System.EventHandler(this.runToolStripMenuItem_Click);
             // 
             // gameSettingsToolStripMenuItem
             // 
             this.gameSettingsToolStripMenuItem.Name = "gameSettingsToolStripMenuItem";
-            this.gameSettingsToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.gameSettingsToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.gameSettingsToolStripMenuItem.Text = "Game settings";
             this.gameSettingsToolStripMenuItem.Click += new System.EventHandler(this.gameSettingsToolStripMenuItem_Click);
             // 
             // registerNewPlayerToolStripMenuItem
             // 
             this.registerNewPlayerToolStripMenuItem.Name = "registerNewPlayerToolStripMenuItem";
-            this.registerNewPlayerToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.registerNewPlayerToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.registerNewPlayerToolStripMenuItem.Text = "Register new player";
             this.registerNewPlayerToolStripMenuItem.Click += new System.EventHandler(this.registerNewPlayerToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // infoToolStripMenuItem
             // 
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.infoToolStripMenuItem.Text = "Info";
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.boardPanel1);
             this.panel1.Location = new System.Drawing.Point(18, 49);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(440, 440);
+            this.panel1.Size = new System.Drawing.Size(456, 439);
             this.panel1.TabIndex = 2;
+            // 
+            // boardPanel1
+            // 
+            this.boardPanel1.Location = new System.Drawing.Point(4, 4);
+            this.boardPanel1.Name = "boardPanel1";
+            this.boardPanel1.Size = new System.Drawing.Size(445, 428);
+            this.boardPanel1.TabIndex = 0;
             // 
             // panel7
             // 
@@ -204,6 +214,7 @@
             this.Name = "MainWindow";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -231,6 +242,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel playersListPanel;
+        private BoardPanel boardPanel1;
 
     }
 }
