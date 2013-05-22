@@ -36,19 +36,21 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.powerHouseButton = new System.Windows.Forms.Button();
+            this.pledgeButton = new System.Windows.Forms.Button();
+            this.buyButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.dice2 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.playersListPanel = new System.Windows.Forms.Panel();
             this.boardPanel1 = new TCS_business.VIEW.BoardPanel();
-            this.buyButton = new System.Windows.Forms.Button();
-            this.pledgeButton = new System.Windows.Forms.Button();
-            this.powerHouseButton = new System.Windows.Forms.Button();
+            this.dice1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dice2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dice1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -71,47 +73,47 @@
             this.registerNewPlayerToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
-            this.gameToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.gameToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.gameToolStripMenuItem.Text = "Game";
             // 
             // runToolStripMenuItem
             // 
             this.runToolStripMenuItem.Name = "runToolStripMenuItem";
-            this.runToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.runToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.runToolStripMenuItem.Text = "Run";
             this.runToolStripMenuItem.Click += new System.EventHandler(this.runToolStripMenuItem_Click);
             // 
             // gameSettingsToolStripMenuItem
             // 
             this.gameSettingsToolStripMenuItem.Name = "gameSettingsToolStripMenuItem";
-            this.gameSettingsToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.gameSettingsToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.gameSettingsToolStripMenuItem.Text = "Game settings";
             this.gameSettingsToolStripMenuItem.Click += new System.EventHandler(this.gameSettingsToolStripMenuItem_Click);
             // 
             // registerNewPlayerToolStripMenuItem
             // 
             this.registerNewPlayerToolStripMenuItem.Name = "registerNewPlayerToolStripMenuItem";
-            this.registerNewPlayerToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.registerNewPlayerToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.registerNewPlayerToolStripMenuItem.Text = "Register new player";
             this.registerNewPlayerToolStripMenuItem.Click += new System.EventHandler(this.registerNewPlayerToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // infoToolStripMenuItem
             // 
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.infoToolStripMenuItem.Text = "Info";
             // 
             // panel7
@@ -125,6 +127,34 @@
             this.panel7.Size = new System.Drawing.Size(197, 84);
             this.panel7.TabIndex = 6;
             // 
+            // powerHouseButton
+            // 
+            this.powerHouseButton.Location = new System.Drawing.Point(133, 3);
+            this.powerHouseButton.Name = "powerHouseButton";
+            this.powerHouseButton.Size = new System.Drawing.Size(59, 39);
+            this.powerHouseButton.TabIndex = 3;
+            this.powerHouseButton.Text = "Postaw domek";
+            this.powerHouseButton.UseVisualStyleBackColor = true;
+            // 
+            // pledgeButton
+            // 
+            this.pledgeButton.Location = new System.Drawing.Point(68, 3);
+            this.pledgeButton.Name = "pledgeButton";
+            this.pledgeButton.Size = new System.Drawing.Size(59, 39);
+            this.pledgeButton.TabIndex = 2;
+            this.pledgeButton.Text = "Zastaw";
+            this.pledgeButton.UseVisualStyleBackColor = true;
+            // 
+            // buyButton
+            // 
+            this.buyButton.Location = new System.Drawing.Point(3, 3);
+            this.buyButton.Name = "buyButton";
+            this.buyButton.Size = new System.Drawing.Size(59, 39);
+            this.buyButton.TabIndex = 1;
+            this.buyButton.Text = "Kupuj";
+            this.buyButton.UseVisualStyleBackColor = true;
+            this.buyButton.Click += new System.EventHandler(this.buyButton_Click);
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(56, 48);
@@ -135,13 +165,13 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pictureBox5
+            // dice2
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(880, 67);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(45, 45);
-            this.pictureBox5.TabIndex = 7;
-            this.pictureBox5.TabStop = false;
+            this.dice2.Location = new System.Drawing.Point(880, 67);
+            this.dice2.Name = "dice2";
+            this.dice2.Size = new System.Drawing.Size(45, 45);
+            this.dice2.TabIndex = 7;
+            this.dice2.TabStop = false;
             // 
             // label3
             // 
@@ -157,7 +187,7 @@
             this.textBox1.Location = new System.Drawing.Point(728, 65);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(146, 47);
+            this.textBox1.Size = new System.Drawing.Size(94, 47);
             this.textBox1.TabIndex = 9;
             // 
             // label2
@@ -184,43 +214,24 @@
             this.boardPanel1.Size = new System.Drawing.Size(688, 583);
             this.boardPanel1.TabIndex = 0;
             // 
-            // buyButton
+            // dice1
             // 
-            this.buyButton.Location = new System.Drawing.Point(3, 3);
-            this.buyButton.Name = "buyButton";
-            this.buyButton.Size = new System.Drawing.Size(59, 39);
-            this.buyButton.TabIndex = 1;
-            this.buyButton.Text = "Kupuj";
-            this.buyButton.UseVisualStyleBackColor = true;
-            this.buyButton.Click += new System.EventHandler(this.buyButton_Click);
-            // 
-            // pledgeButton
-            // 
-            this.pledgeButton.Location = new System.Drawing.Point(68, 3);
-            this.pledgeButton.Name = "pledgeButton";
-            this.pledgeButton.Size = new System.Drawing.Size(59, 39);
-            this.pledgeButton.TabIndex = 2;
-            this.pledgeButton.Text = "Zastaw";
-            this.pledgeButton.UseVisualStyleBackColor = true;
-            // 
-            // powerHouseButton
-            // 
-            this.powerHouseButton.Location = new System.Drawing.Point(133, 3);
-            this.powerHouseButton.Name = "powerHouseButton";
-            this.powerHouseButton.Size = new System.Drawing.Size(59, 39);
-            this.powerHouseButton.TabIndex = 3;
-            this.powerHouseButton.Text = "Postaw domek";
-            this.powerHouseButton.UseVisualStyleBackColor = true;
+            this.dice1.Location = new System.Drawing.Point(829, 67);
+            this.dice1.Name = "dice1";
+            this.dice1.Size = new System.Drawing.Size(45, 45);
+            this.dice1.TabIndex = 12;
+            this.dice1.TabStop = false;
             // 
             // MainWindow
             // 
             this.ClientSize = new System.Drawing.Size(1008, 662);
+            this.Controls.Add(this.dice1);
             this.Controls.Add(this.boardPanel1);
             this.Controls.Add(this.playersListPanel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.dice2);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -228,7 +239,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dice2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dice1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,7 +257,7 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox dice2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
@@ -255,6 +267,7 @@
         private System.Windows.Forms.Button powerHouseButton;
         private System.Windows.Forms.Button pledgeButton;
         private System.Windows.Forms.Button buyButton;
+        private System.Windows.Forms.PictureBox dice1;
 
     }
 }

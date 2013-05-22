@@ -113,5 +113,9 @@ namespace TCS_business.VIEW
         {
             mainWindow.BoardPanel.Update(board);
         }
+        public void UpdateDice(int i, int j)
+        {
+            mainWindow.ChangeDice(i, j);
+        }
     }
 }

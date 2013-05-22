@@ -21,5 +21,14 @@ namespace TCS_business.MODEL
         {
             return new Random().Next(1, 6);
         }
+
+        /// <summary>
+        /// Simulates a roll of the dice
+        /// </summary>
+        /// <returns>Number stranded mesh</returns>
+        public int Throw2()
+        {
+            return new Random().Next(0, 120) % 6 + 1;
+        }
     }
 }

@@ -115,5 +115,9 @@ namespace TCS_business.CONTROLER
         {
             guiManager.UpdatePlayerPanel(player);
         }
+        internal void RollDice(int i, int j)
+        {
+            guiManager.UpdateDice(i, j);
+        }
     }
 }

@@ -81,6 +81,9 @@ namespace TCS_business.CONTROLER
             while (!IsEnd())
             {
                 int meshes = dice.Throw();  // roll of the dice
+                int second = dice.Throw2();
+                ApplicationController.Instance.RollDice(meshes, second);
+                meshes += second;
                 Player p = gameState.PlayersList.ElementAt(gameState.ActivePlayer);
                 board.MovePlayer(p, meshes);// move player on the board
                 ApplicationController.Instance.UpdateBoardView(board);

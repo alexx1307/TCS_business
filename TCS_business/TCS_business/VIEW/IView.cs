@@ -21,5 +21,6 @@ namespace TCS_business.VIEW
         void AdjustButtonsAvailability(ApplicationState appState);
         void UpdateBoard(Board board);
         void ShowMainWindow();
+        void UpdateDice(int i, int j);
     }
 }
