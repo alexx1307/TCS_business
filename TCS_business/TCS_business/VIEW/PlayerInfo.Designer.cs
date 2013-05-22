@@ -32,7 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.cashLabel = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -71,20 +71,20 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.cashLabel);
             this.panel2.Location = new System.Drawing.Point(3, 42);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(81, 29);
             this.panel2.TabIndex = 2;
             // 
-            // label2
+            // cashLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 8);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.cashLabel.AutoSize = true;
+            this.cashLabel.Location = new System.Drawing.Point(23, 8);
+            this.cashLabel.Name = "cashLabel";
+            this.cashLabel.Size = new System.Drawing.Size(35, 13);
+            this.cashLabel.TabIndex = 1;
+            this.cashLabel.Text = "label2";
             // 
             // panel3
             // 
@@ -133,7 +133,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label cashLabel;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
     }

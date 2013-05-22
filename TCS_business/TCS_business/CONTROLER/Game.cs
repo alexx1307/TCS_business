@@ -84,7 +84,7 @@ namespace TCS_business.CONTROLER
                 Player p = gameState.PlayersList.ElementAt(gameState.ActivePlayer);
                 board.MovePlayer(p, meshes);// move player on the board
                 ApplicationController.Instance.UpdateBoardView(board);
-                ApplicationController.Instance.UpdatePlayerDataView(p);
+                
                 timer.Start();              // begin to countdown
                 //MessageBox.Show("a");
                 lock (nextTurn)
@@ -103,11 +103,10 @@ namespace TCS_business.CONTROLER
                     Monitor.Wait(endOfTurn);    /* wait for the end of the turn */
                 }                           /* (i.e. user ended his/her turn or run out of time) */
                 //MessageBox.Show("c");
+                ApplicationController.Instance.UpdatePlayerDataView(p);
                 timer.Stop();               // end of the countdown
                 gameState.ActivePlayer = (gameState.ActivePlayer + 1) % gameConfig.PlayersNumber;
                 // update active player id
-                MessageBox.Show(gameState.ActivePlayer.ToString());
-                //TCSBusinessApplication.getInstance().GuiManager.UpdatePlayerListPanel();
             }
             this.isRunning = false;
         }

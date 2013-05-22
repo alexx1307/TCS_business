@@ -15,7 +15,7 @@ namespace TCS_business.VIEW
         {
             InitializeComponent();
             this.label1.Text = name;
-            this.label2.Text = Cash.ToString();
+            this.cashLabel.Text = Cash.ToString();
             this.pictureBox1.BackColor = colour;
         }
 
@@ -26,7 +26,8 @@ namespace TCS_business.VIEW
 
         internal void Update(MODEL.Player player)
         {
-
+            this.Invoke((MethodInvoker)delegate { cashLabel.Text = player.Cash.ToString(); });
+          
         }
     }
 }
