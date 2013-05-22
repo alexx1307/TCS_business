@@ -75,7 +75,7 @@ namespace TCS_business.VIEW
         /// <param name="player"></param>
         public void UpdatePlayerPanel(Player player)
         {
-            mainWindow.PlayersPanelsMap[player].Update();
+            mainWindow.PlayersPanelsMap[player].Update(player);
         }
 
         public void UpdateTimeLeftPanel(TimeSpan timeLeft)

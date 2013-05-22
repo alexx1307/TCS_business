@@ -23,5 +23,10 @@ namespace TCS_business.VIEW
         {
 
         }
+
+        internal void Update(MODEL.Player player)
+        {
+
+        }
     }
 }
