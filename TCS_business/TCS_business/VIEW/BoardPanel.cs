@@ -56,6 +56,13 @@ namespace TCS_business.VIEW
 
         internal void Update(Board board)
         {
+            foreach(FieldPanel fp in fieldPanels)
+                fp.setPawn(System.Drawing.Color.Transparent);
+            foreach (Player p in board.Positions.Keys)
+            {
+                int position = board.Positions[p];
+                fieldPanels[position].setPawn(p.Color);
+            }
         }
     }
 }

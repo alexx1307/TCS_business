@@ -20,8 +20,13 @@ namespace TCS_business.VIEW
 
         public void Update(Field field)
         {
-            
+
         }
 
+
+        internal void setPawn(Color color)
+        {
+            placeForPawnPB.BackColor = color;
+        }
     }
 }
