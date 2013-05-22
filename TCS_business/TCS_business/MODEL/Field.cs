@@ -12,7 +12,6 @@ namespace TCS_business.MODEL
     public abstract class Field
     {
         string Description;
-
         /// <summary>
         /// Construct new field.
         /// </summary>

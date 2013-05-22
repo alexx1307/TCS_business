@@ -11,9 +11,12 @@ namespace TCS_business.MODEL
     {
         private List<Player> playersList = new List<Player>();
         private Dictionary<Player, VIEW.PlayerInfo> playersPanelsMap = new Dictionary<Player, VIEW.PlayerInfo>();
+        
         private int activePlayer;
-
         public int ActivePlayer { get { return activePlayer; } set { activePlayer = value; } }
+
+        private Dice dice = new Dice();
+        public Dice Dice { get { return dice; } }
         public int PlayersJoined()
         {
             return playersList.Count;

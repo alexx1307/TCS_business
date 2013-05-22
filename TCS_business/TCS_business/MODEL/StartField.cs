@@ -7,8 +7,8 @@ namespace TCS_business.MODEL
 {
     class StartField : Field
     {
-        public StartField(string description, int position)
-            : base(description, position)
+        public StartField(string description)
+            : base(description)
         { }
         public override void Action(Player p)
         {
