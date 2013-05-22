@@ -110,10 +110,38 @@ public BoardPanel BoardPanel
         {
             registerNewPlayerToolStripMenuItem.Enabled = false;
         }
-
+        internal void EnableBuyField()
+        {
+            buyButton.Enabled = true;
+        }
+        internal void DisableBuyField()
+        {
+            buyButton.Enabled = false;
+        }
+        internal void EnablePledgeField()
+        {
+            pledgeButton.Enabled = true;
+        }
+        internal void DisablePledgeField()
+        {
+            pledgeButton.Enabled = false;
+        }
+        internal void EnableBuyPowerHouse()
+        {
+            powerHouseButton.Enabled = true;
+        }
+        internal void DisableBuyPowerHouse()
+        {
+            powerHouseButton.Enabled = false;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             Game.OnTimeoutEvent(sender, null);
+        }
+
+        private void buyButton_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

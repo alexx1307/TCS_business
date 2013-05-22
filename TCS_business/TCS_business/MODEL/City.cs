@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Windows.Forms;
 namespace TCS_business.MODEL
 {
     /// <summary>
@@ -33,8 +33,17 @@ namespace TCS_business.MODEL
 
         public override void Action(Player p)
         {
-            if (p != owner){ //jak jest wlascicielem to nic nie robi
-                //pobieranie oplaty od gracza jesli nie zastawione
+            if (p != owner)
+            {
+                if (!pledged)
+                {
+                    p.GiveCash(owner, stake);
+                    MessageBox.Show("Pobrana opłata w wysokości" + stake.ToString());
+                }
+            }
+            else
+            {
+
             }
         }
 
@@ -83,6 +92,7 @@ namespace TCS_business.MODEL
         void IPurchasable.Buy(Player p)
         {
             owner = p;
+            p.Cash -= cost;
         }
     }
 }

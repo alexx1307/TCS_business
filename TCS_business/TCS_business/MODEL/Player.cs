@@ -36,6 +36,12 @@ namespace TCS_business.MODEL
             get { return cash; }
             set { cash = value; }
         }
+        private int waited = 0;
+        public int Waited
+        {
+            get { return waited; }
+            set { waited = value; }
+        }
 
         private bool inJail = false;
         public bool InJail
@@ -62,7 +68,7 @@ namespace TCS_business.MODEL
         /// </summary>
         /// <param name="other">Who should receive the money</param>
         /// <param name="amount">How much to transfer</param>
-        void GiveCash(Player other, int amount)
+        public void GiveCash(Player other, int amount)
         {
             Cash -= amount;
             other.Cash += amount;

@@ -109,7 +109,6 @@ namespace TCS_business.VIEW
                     break;
             }
         }
-
         public void UpdateBoard(Board board)
         {
             mainWindow.BoardPanel.Update(board);

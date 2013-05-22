@@ -11,6 +11,7 @@ namespace TCS_business.MODEL
         {}
         public override void Action(Player p)
         {
+            
         }
     }
 }

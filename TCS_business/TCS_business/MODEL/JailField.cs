@@ -12,6 +12,24 @@ namespace TCS_business.MODEL
         {}
         public override void Action(Player p)
         {
+            if (p.InJail)
+            {
+                
+                if (p.Waited == 1) //czekał już jedną kolejkę, teraz czeka drugą i w następnym ruchu może iść
+                {
+                    p.InJail = false;
+                    p.Waited = 0;
+                    return;
+                }
+                else
+                {
+                    p.Waited++;
+                }
+            }
+            else //gracz jest tylko odwiedzającym
+            {
+                return;
+            }
         }
     }
 }
