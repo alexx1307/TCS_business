@@ -53,16 +53,15 @@ public BoardPanel BoardPanel
         }
         internal void setPlayers(List<Player> list)
         {
-
-            for (int i = 0; i < list.Count() - 1; i++)
+            playersPanelsMap.Clear();
+            playersListPanel.Controls.Clear();
+            for (int i = 0; i < list.Count(); i++)
             {
-                playersPanelsMap[list[i]].Location = new Point(0, i * 74);
-                playersListPanel.Controls.Add(playersPanelsMap[list[i]]);
+                PlayerInfo PlayerPanel = new PlayerInfo(list[i].Name, list[i].Cash, list[i].Color);
+                PlayerPanel.Location = new Point(0, i * 74);
+                playersListPanel.Controls.Add(PlayerPanel);
+                playersPanelsMap.Add(list[i], PlayerPanel);
             }
-            PlayerInfo PlayerPanel = new PlayerInfo(list[list.Count() - 1].Name, list[list.Count() - 1].Cash, list[list.Count() - 1].Color);
-            playersPanelsMap.Add(list[list.Count() - 1], PlayerPanel);
-            PlayerPanel.Location = new Point(0, (list.Count() - 1) * 74);
-            playersListPanel.Controls.Add(PlayerPanel);
             //UpdateCash(list, playersPanelsMap);
         }
 
