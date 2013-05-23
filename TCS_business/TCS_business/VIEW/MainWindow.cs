@@ -153,17 +153,17 @@ public BoardPanel BoardPanel
         public void ChangeDice(int i, int j)
         {
             if (i == 1) dice1.Image = global::TCS_business.Properties.Resources._1;
-            if (i == 2) dice1.Image = global::TCS_business.Properties.Resources._2;
-            if (i == 3) dice1.Image = global::TCS_business.Properties.Resources._3;
-            if (i == 4) dice1.Image = global::TCS_business.Properties.Resources._4;
-            if (i == 5) dice1.Image = global::TCS_business.Properties.Resources._5;
-            if (i == 6) dice1.Image = global::TCS_business.Properties.Resources._6;
+            else if (i == 2) dice1.Image = global::TCS_business.Properties.Resources._2;
+            else if (i == 3) dice1.Image = global::TCS_business.Properties.Resources._3;
+            else if (i == 4) dice1.Image = global::TCS_business.Properties.Resources._4;
+            else if (i == 5) dice1.Image = global::TCS_business.Properties.Resources._5;
+            else if (i == 6) dice1.Image = global::TCS_business.Properties.Resources._6;
             if (j == 1) dice2.Image = global::TCS_business.Properties.Resources._1;
-            if (j == 2) dice2.Image = global::TCS_business.Properties.Resources._2;
-            if (j == 3) dice2.Image = global::TCS_business.Properties.Resources._3;
-            if (j == 4) dice2.Image = global::TCS_business.Properties.Resources._4;
-            if (j == 5) dice2.Image = global::TCS_business.Properties.Resources._5;
-            if (j == 6) dice2.Image = global::TCS_business.Properties.Resources._6;
+            else if (j == 2) dice2.Image = global::TCS_business.Properties.Resources._2;
+            else if (j == 3) dice2.Image = global::TCS_business.Properties.Resources._3;
+            else if (j == 4) dice2.Image = global::TCS_business.Properties.Resources._4;
+            else if (j == 5) dice2.Image = global::TCS_business.Properties.Resources._5;
+            else if (j == 6) dice2.Image = global::TCS_business.Properties.Resources._6;
         }
 
     }

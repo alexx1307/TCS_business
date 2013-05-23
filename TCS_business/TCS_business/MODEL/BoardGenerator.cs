@@ -29,18 +29,13 @@ namespace TCS_business.MODEL
 
             board.Fields[10] = new JailField("JAIL");
 
-            board.Fields[20] = new FreeParking("Parking"); //w eurobiznesie tutaj jest parking
-            board.Fields[30] = new FreeField(); //w eurobiznesie tutaj idzie się do więzienia
+            board.Fields[20] = new FreeParking("Parking");
+            board.Fields[30] = new FreeField();
             for (int i = 0; i < Board.NOFIELDS; i++)
                 if (board.Fields[i] == null)
                 {
                     board.Fields[i] = new City("field no." + i.ToString());
                 }
-
-            for (int i = 0; i < Board.NOFIELDS; i++)
-            {
-                Console.WriteLine(board.Fields[i].Description);
-            }
             return board;
         }
 

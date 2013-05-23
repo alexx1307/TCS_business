@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TCS_business.CONTROLER;
 using TCS_business.MODEL;
 using TCS_business.VIEW;
 namespace TCS_business.VIEW
@@ -124,6 +125,21 @@ namespace TCS_business.VIEW
         public void UpdateCommunicate(string s)
         {
             mainWindow.BeginInvoke((MethodInvoker)delegate { mainWindow.ChangeCommunicate(s); });
+        }
+
+
+        public void ShowBuyPrompt()
+        {
+            BuyDialog buyDialog = new BuyDialog();
+            buyDialog.ShowDialog();
+            if (buyDialog.DialogResult == DialogResult.Yes)
+            {
+                ApplicationController.Instance.Game.BuyField(); 
+            }
+            else
+            {
+                ApplicationController.Instance.Game.Auction(); 
+            }
         }
     }
 }

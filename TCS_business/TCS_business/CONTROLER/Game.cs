@@ -85,8 +85,10 @@ namespace TCS_business.CONTROLER
                 int second = dice.Throw2();
                 ApplicationController.Instance.RollDice(meshes, second);
                 meshes += second;
-                Player p = gameState.PlayersList.ElementAt(gameState.ActivePlayer);
+                Player p = gameState.PlayersList.ElementAt(gameState.ActivePlayerIndex);
                 board.MovePlayer(p, meshes);// move player on the board
+                ApplicationController.Instance.UpdateBoardView(board);
+                board.Fields[board.Positions[p]].Action(p);
                 ApplicationController.Instance.UpdateBoardView(board);
                 
                 timer.Start();              // begin to countdown
@@ -109,7 +111,7 @@ namespace TCS_business.CONTROLER
                 //MessageBox.Show("c");
                 ApplicationController.Instance.UpdatePlayerDataView(p);
                 timer.Stop();               // end of the countdown
-                gameState.ActivePlayer = (gameState.ActivePlayer + 1) % gameConfig.PlayersNumber;
+                gameState.ActivePlayerIndex = (gameState.ActivePlayerIndex + 1) % gameConfig.PlayersNumber;
                 // update active player id
             }
             this.isRunning = false;
@@ -173,5 +175,18 @@ namespace TCS_business.CONTROLER
 
         public int PlayersNumber { get; set; }
 
+
+        internal void BuyField()
+        {
+            Player p = GameState.ActivePlayer;
+            if (!(board.Fields[board.Positions[p]] is IPurchasable))
+                throw new Exception("Cannot buy this field");
+            (board.Fields[board.Positions[p]]as IPurchasable).Buy(p);
+        }
+
+        internal void Auction()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -3,26 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using TCS_business.CONTROLER;
 namespace TCS_business.MODEL
 {
     /// <summary>
     /// <author> Anita Ciosek</author>
     /// Class representing city on the board.
     /// </summary>
-    public class City : Field, IPayable, IPurchasable
+    public class City : IPurchasable,IPayable 
     {
         byte Houses = 0;
-        Player owner;
-        int cost;
-        int stake;
-        bool pledged;
+        
         public City(String desc):base(desc)
         {
         }
-        public void ChangePledged()
-        {
-            pledged = !pledged;
-        }
+        
 
         void BuildHouse(){
             //sprawdz czy niezastawione
@@ -31,68 +26,16 @@ namespace TCS_business.MODEL
         }
 
 
-        public override void Action(Player p)
-        {
-            if (p != owner)
-            {
-                if (!pledged)
-                {
-                    p.GiveCash(owner, stake);
-                    MessageBox.Show("Pobrana opłata w wysokości" + stake.ToString());
-                }
-            }
-            else
-            {
-
-            }
-        }
-
-
-
-        public int Stake //tu trzeba dorobic dokladniejsze obliczanie stawki
+        public int Stake
         {
             get
             {
-                return stake;
+                throw new NotImplementedException();
             }
             set
             {
-                stake = value;
+                throw new NotImplementedException();
             }
-        }
-
-        Player IPurchasable.Owner
-        {
-            get
-            {
-                return owner;
-            }
-            set
-            {
-                owner = value;
-            }
-        }
-
-        int IPurchasable.Cost
-        {
-            get
-            {
-                return cost;
-            }
-            set
-            {
-                cost = value;
-            }
-        }
-
-        /// <summary>
-        /// Buy this field.
-        /// </summary>
-        /// <param name="p">Player who is new owner</param>
-        void IPurchasable.Buy(Player p)
-        {
-            owner = p;
-            p.Cash -= cost;
         }
     }
 }

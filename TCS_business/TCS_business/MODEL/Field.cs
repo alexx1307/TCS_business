@@ -23,6 +23,15 @@ namespace TCS_business.MODEL
             
         }
 
+        public Player Owner
+        {
+            get
+            {
+                if (!(this is IPurchasable))
+                    return null;
+                else return (this as IPurchasable).Owner;
+            }
+        }
         public Field()
         {
         }
@@ -40,6 +49,7 @@ namespace TCS_business.MODEL
         /// Action associated with the field. Must be overrided.
         /// </summary>
         /// <param name="p">Player standing on the field.</param>
-        public abstract void Action(Player p); 
+        public abstract void Action(Player p);
+
     }
 }

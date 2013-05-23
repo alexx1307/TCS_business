@@ -20,7 +20,10 @@ namespace TCS_business.VIEW
 
         public void Update(Field field)
         {
-
+            if (field.Owner != null)
+            {
+                this.ownershipPB.BackColor = field.Owner.Color;
+            }
         }
 
 

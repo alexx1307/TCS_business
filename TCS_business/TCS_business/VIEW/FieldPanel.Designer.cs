@@ -30,7 +30,9 @@
         {
             this.descriptionLabel = new System.Windows.Forms.Label();
             this.placeForPawnPB = new System.Windows.Forms.PictureBox();
+            this.ownershipPB = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.placeForPawnPB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ownershipPB)).BeginInit();
             this.SuspendLayout();
             // 
             // descriptionLabel
@@ -50,17 +52,27 @@
             this.placeForPawnPB.TabIndex = 1;
             this.placeForPawnPB.TabStop = false;
             // 
+            // ownershipPB
+            // 
+            this.ownershipPB.Location = new System.Drawing.Point(7, 24);
+            this.ownershipPB.Name = "ownershipPB";
+            this.ownershipPB.Size = new System.Drawing.Size(28, 23);
+            this.ownershipPB.TabIndex = 2;
+            this.ownershipPB.TabStop = false;
+            // 
             // FieldPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.ownershipPB);
             this.Controls.Add(this.placeForPawnPB);
             this.Controls.Add(this.descriptionLabel);
             this.Name = "FieldPanel";
             this.Size = new System.Drawing.Size(60, 50);
             ((System.ComponentModel.ISupportInitialize)(this.placeForPawnPB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ownershipPB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -70,6 +82,7 @@
 
         private System.Windows.Forms.Label descriptionLabel;
         private System.Windows.Forms.PictureBox placeForPawnPB;
+        private System.Windows.Forms.PictureBox ownershipPB;
 
 
     }

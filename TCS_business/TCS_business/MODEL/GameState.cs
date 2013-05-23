@@ -11,9 +11,12 @@ namespace TCS_business.MODEL
     {
         private List<Player> playersList = new List<Player>();
         
-        private int activePlayer;
-        public int ActivePlayer { get { return activePlayer; } set { activePlayer = value; } }
-
+        private int activePlayerIndex;
+        public int ActivePlayerIndex { get { return activePlayerIndex; } set { activePlayerIndex = value; } }
+        public Player ActivePlayer
+        {
+            get { return playersList[ActivePlayerIndex]; }
+        }
         private Dice dice = new Dice();
         public Dice Dice { get { return dice; } }
         public int PlayersJoined()

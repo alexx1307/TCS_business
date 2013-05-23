@@ -92,7 +92,10 @@ namespace TCS_business.MODEL
             inJail = false;
         }
 
-
+        public override String ToString()
+        {
+            return name;
+        }
         public System.Drawing.Color Color { get { return color; } set { color = value; } }
     }
 }

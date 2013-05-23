@@ -15,7 +15,12 @@ namespace TCS_business.CONTROLER
         private static ApplicationController instance;
 
         ApplicationState appState;
-        Game game; //todo: 
+        Game game;
+        public Game Game
+        {
+            get { return game; }
+   
+        }
         IView guiManager;
         public static ApplicationController Instance
         {
@@ -124,5 +129,11 @@ namespace TCS_business.CONTROLER
             guiManager.UpdateCommunicate(msg);
             //guiManager.ShowMessage(msg);
         }
+
+        internal void ShowBuyPrompt()
+        {
+            guiManager.ShowBuyPrompt();
+        }
+
     }
 }
