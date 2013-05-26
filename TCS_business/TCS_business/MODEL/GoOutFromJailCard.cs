@@ -19,7 +19,8 @@ namespace TCS_business.MODEL
 
         public override void Action(Player p)
         {
-            throw new NotImplementedException();
+            if (p.InJail) p.exitJail();
+            else p.Cards.Add(this);
         }
 
         /// <summary>

@@ -21,7 +21,7 @@ namespace TCS_business.MODEL
 
         public override void Action(Player p)
         {
-            throw new NotImplementedException();
+            CONTROLER.ApplicationController.Instance.Game.Board.MovePlayer(field, p);
         }
 
         /// <summary>

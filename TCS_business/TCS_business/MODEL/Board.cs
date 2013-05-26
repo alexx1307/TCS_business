@@ -75,6 +75,16 @@ namespace TCS_business.MODEL
             }
         }
 
+        ///  Move player to specific field.
+        /// </summary>
+        /// <param name="player">player to move</param>
+        /// <param name="fieldNr">destination</param>
+        public void MovePlayer(int fieldNr, Player player)
+        {
+            if (player.InJail) return;
+            positions[player] = fieldNr;
+        }
+
         #region Serialization
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {

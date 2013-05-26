@@ -9,7 +9,7 @@ namespace TCS_business.MODEL
     /// <author> Anita Ciosek</author>
     /// Class representing bank in a game.
     /// </summary>
-    class Bank
+    public class Bank
     {
         /// <summary>
         /// Get loan pledging a field.
@@ -33,7 +33,7 @@ namespace TCS_business.MODEL
         /// </summary>
         /// <param name="p">Player who pays.</param>
         /// <param name="amount">Amount of money to pay.</param>
-        void Pay(Player p, int amount)
+        public void Pay(Player p, int amount)
         {
             p.Cash -= amount;
         }

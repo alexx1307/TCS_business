@@ -23,6 +23,11 @@ namespace TCS_business.MODEL
             set { name = value; }
         }
 
+        public List<Card> Cards
+        {
+            get { return cards; }
+        }
+
         private int id;
         public int Id
         {
@@ -78,16 +83,16 @@ namespace TCS_business.MODEL
         /// <summary>
         /// Takes the player to the jail.
         /// </summary>
-        void goToJail()
+        public void GoToJail()
         {
-            // jesli posiada karte ze nie idzie do wiezienia to nie idzie i usuwa karte
-            inJail = true;
+            if (cards.Count > 0) cards.RemoveAt(0);
+            else inJail = true; //pasowaloby przypilnowac zeby tez kiedys z niego wychodzil
         }
 
         /// <summary>
         /// Takes the player out of jail.
         /// </summary>
-        void exitJail()
+        public void exitJail()
         {
             inJail = false;
         }

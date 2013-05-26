@@ -21,6 +21,11 @@ namespace TCS_business.CONTROLER
         {
             get { return gameState; }
         }
+        public Board Board
+        {
+            get { return board; }
+        }
+
         public GameConfig GameConfig
         {
             get { return gameConfig; }
