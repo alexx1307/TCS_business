@@ -50,6 +50,7 @@
     <Compile Include="MODEL\Bank.cs" />
     <Compile Include="MODEL\BoardGenerator.cs" />
     <Compile Include="MODEL\Card.cs" />
+    <Compile Include="MODEL\CardGenerator.cs" />
     <Compile Include="MODEL\Chance.cs" />
     <Compile Include="MODEL\City.cs" />
     <Compile Include="MODEL\Country.cs" />
@@ -57,9 +58,14 @@
     <Compile Include="MODEL\FreeField.cs" />
     <Compile Include="MODEL\FreeParking.cs" />
     <Compile Include="MODEL\GameConfig.cs" />
+    <Compile Include="MODEL\GetCard.cs" />
+    <Compile Include="MODEL\GoOutFromJailCard.cs" />
+    <Compile Include="MODEL\GoToJailCard.cs" />
     <Compile Include="MODEL\IPayable.cs" />
     <Compile Include="MODEL\IPurchasable.cs" />
     <Compile Include="MODEL\JailField.cs" />
+    <Compile Include="MODEL\MoveCard.cs" />
+    <Compile Include="MODEL\PayCard.cs" />
     <Compile Include="MODEL\Powerhouse.cs" />
     <Compile Include="MODEL\Prompt.cs" />
     <Compile Include="MODEL\Railway.cs" />

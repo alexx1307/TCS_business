@@ -11,25 +11,11 @@ namespace TCS_business.MODEL
     /// </summary>
     public abstract class Card
     {
-        string Description;
-
         /// <summary>
         /// Construct new card.
         /// </summary>
-        /// <param name="s">Description of the card</param>
-        Card(string s)
+        public Card()
         {
-            Description = s;
-        }
-
-
-        /// <summary>
-        /// Method used to print the card.
-        /// </summary>
-        /// <returns>Description of the card</returns>
-        public override String ToString()
-        {
-            return Description;
         }
 
         /// <summary>
