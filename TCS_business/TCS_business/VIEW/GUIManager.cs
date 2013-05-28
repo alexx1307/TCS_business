@@ -144,7 +144,8 @@ namespace TCS_business.VIEW
 
         public void ShowCardPrompt(string s)
         {
-            new CardDialog(s);
+            CardDialog cardDialog = new CardDialog(s);
+            cardDialog.ShowDialog();
         }
     }
 }
