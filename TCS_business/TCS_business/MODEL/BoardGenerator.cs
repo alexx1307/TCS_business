@@ -32,7 +32,9 @@ namespace TCS_business.MODEL
             board.Fields[20] = new FreeParking("Parking");
             board.Fields[30] = new FreeField();
 
-            board.Fields[1] = new City("Thessaloniki");
+            board.Fields[28] = new Powerhouse("Power");
+
+            board.Fields[1] = new City("Saloniki");
             board.Fields[3] = new City("Athens");
 
             board.Fields[6] = new City("Naples");
@@ -53,7 +55,7 @@ namespace TCS_business.MODEL
 
             board.Fields[26] = new City("Malmo");
             board.Fields[27] = new City("Goteborg");
-            board.Fields[26] = new City("Stockholm");
+            board.Fields[29] = new City("Stockholm");
 
             board.Fields[31] = new City("Frankfurt");
             board.Fields[32] = new City("Cologne");

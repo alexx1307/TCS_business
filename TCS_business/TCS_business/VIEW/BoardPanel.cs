@@ -28,10 +28,10 @@ namespace TCS_business.VIEW
                 fieldPanels = new FieldPanel[Board.NOFIELDS];
                 for (int i = 0; i < Board.NOFIELDS; i++)
                 {
-                    fieldPanels[i] = new FieldPanel(board.Fields[i]);
+                    fieldPanels[i] = new FieldPanel(board.Fields[i], i);
                     if ((i > 0 && i < 10) || (i > 20 && i < 30))
                     {
-                        fieldPanels[i].Width = 50;
+                        fieldPanels[i].Width = 55;
                         fieldPanels[i].Height = 80;
                     }
                     if (i % 10 == 0) fieldPanels[i].Height = 80;

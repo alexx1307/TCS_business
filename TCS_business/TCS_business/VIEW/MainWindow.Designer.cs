@@ -38,9 +38,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.dice2 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.playersListPanel = new System.Windows.Forms.Panel();
             this.dice1 = new System.Windows.Forms.PictureBox();
             this.boardPanel1 = new TCS_business.VIEW.BoardPanel();
@@ -58,7 +56,7 @@
             this.infoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(898, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(932, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -116,7 +114,7 @@
             // panel7
             // 
             this.panel7.Controls.Add(this.button1);
-            this.panel7.Location = new System.Drawing.Point(670, 445);
+            this.panel7.Location = new System.Drawing.Point(710, 447);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(197, 84);
             this.panel7.TabIndex = 6;
@@ -133,49 +131,31 @@
             // 
             // dice2
             // 
-            this.dice2.Location = new System.Drawing.Point(822, 59);
+            this.dice2.Location = new System.Drawing.Point(862, 44);
             this.dice2.Name = "dice2";
             this.dice2.Size = new System.Drawing.Size(45, 45);
             this.dice2.TabIndex = 7;
             this.dice2.TabStop = false;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(800, 43);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "animacja kostki ";
-            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(670, 57);
+            this.textBox1.Location = new System.Drawing.Point(710, 42);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(94, 47);
             this.textBox1.TabIndex = 9;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(692, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "komunikaty";
-            // 
             // playersListPanel
             // 
-            this.playersListPanel.Location = new System.Drawing.Point(670, 110);
+            this.playersListPanel.Location = new System.Drawing.Point(710, 112);
             this.playersListPanel.Name = "playersListPanel";
             this.playersListPanel.Size = new System.Drawing.Size(201, 325);
             this.playersListPanel.TabIndex = 11;
             // 
             // dice1
             // 
-            this.dice1.Location = new System.Drawing.Point(771, 59);
+            this.dice1.Location = new System.Drawing.Point(811, 44);
             this.dice1.Name = "dice1";
             this.dice1.Size = new System.Drawing.Size(45, 45);
             this.dice1.TabIndex = 12;
@@ -186,18 +166,16 @@
             this.boardPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.boardPanel1.Location = new System.Drawing.Point(12, 27);
             this.boardPanel1.Name = "boardPanel1";
-            this.boardPanel1.Size = new System.Drawing.Size(628, 637);
+            this.boardPanel1.Size = new System.Drawing.Size(673, 701);
             this.boardPanel1.TabIndex = 0;
             // 
             // MainWindow
             // 
-            this.ClientSize = new System.Drawing.Size(898, 689);
+            this.ClientSize = new System.Drawing.Size(932, 750);
             this.Controls.Add(this.dice1);
             this.Controls.Add(this.boardPanel1);
             this.Controls.Add(this.playersListPanel);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.dice2);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.menuStrip1);
@@ -226,9 +204,7 @@
         private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox dice2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel playersListPanel;
         private BoardPanel boardPanel1;

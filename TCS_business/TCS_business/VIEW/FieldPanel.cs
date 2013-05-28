@@ -12,10 +12,11 @@ namespace TCS_business.VIEW
 {
     public partial class FieldPanel : UserControl
     {
-        public FieldPanel(Field field)
+        public FieldPanel(Field field, int i)
         {
             InitializeComponent();
             descriptionLabel.Text = field.Description;
+            BackColor = Color.White;
         }
 
         public void Update(Field field)

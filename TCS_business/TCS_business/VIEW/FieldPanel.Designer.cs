@@ -38,9 +38,10 @@
             // descriptionLabel
             // 
             this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Location = new System.Drawing.Point(4, 4);
+            this.descriptionLabel.Font = new System.Drawing.Font("Gill Sans MT", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.descriptionLabel.Location = new System.Drawing.Point(0, 3);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(35, 13);
+            this.descriptionLabel.Size = new System.Drawing.Size(34, 16);
             this.descriptionLabel.TabIndex = 0;
             this.descriptionLabel.Text = "label1";
             // 
@@ -70,7 +71,7 @@
             this.Controls.Add(this.placeForPawnPB);
             this.Controls.Add(this.descriptionLabel);
             this.Name = "FieldPanel";
-            this.Size = new System.Drawing.Size(80, 50);
+            this.Size = new System.Drawing.Size(80, 55);
             ((System.ComponentModel.ISupportInitialize)(this.placeForPawnPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownershipPB)).EndInit();
             this.ResumeLayout(false);
