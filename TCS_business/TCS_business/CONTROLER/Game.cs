@@ -191,7 +191,7 @@ namespace TCS_business.CONTROLER
 
         internal void Auction()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }

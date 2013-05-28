@@ -29,26 +29,37 @@ namespace TCS_business.VIEW
                 for (int i = 0; i < Board.NOFIELDS; i++)
                 {
                     fieldPanels[i] = new FieldPanel(board.Fields[i]);
+                    if ((i > 0 && i < 10) || (i > 20 && i < 30))
+                    {
+                        fieldPanels[i].Width = 50;
+                        fieldPanels[i].Height = 80;
+                    }
+                    if (i % 10 == 0) fieldPanels[i].Height = 80;
                     this.Controls.Add(fieldPanels[i]);
                 }
                 Point origin = new Point(5, 5);
                 byte fieldsPerSide = Board.NOFIELDS / 4;
-
+                int sum = 0;
                 for (int i = 0; i <fieldsPerSide; i++)
                 {
-                    fieldPanels[i].Location = new Point(origin.X + i * fieldPanels[i].Width, origin.Y);
+                    fieldPanels[i].Location = new Point(origin.X + sum, origin.Y);
+                    sum += fieldPanels[i].Width;
+                }
+                int move = 0;
+                for (int i = 0; i < fieldsPerSide; i++)    //in work
+                {
+                    fieldPanels[i + fieldsPerSide].Location = new Point(origin.X + sum, origin.Y + move);
+                    move += fieldPanels[i+fieldsPerSide].Height;
                 }
                 for (int i = 0; i < fieldsPerSide; i++)    //in work
                 {
-                    fieldPanels[i + fieldsPerSide].Location = new Point(origin.X + fieldsPerSide * fieldPanels[i].Width, origin.Y + i * fieldPanels[i].Height);
+                    fieldPanels[i + 2*fieldsPerSide].Location = new Point(origin.X + sum, origin.Y + move);
+                    sum -= fieldPanels[fieldsPerSide-i-1].Width;
                 }
                 for (int i = 0; i < fieldsPerSide; i++)    //in work
                 {
-                    fieldPanels[i + 2*fieldsPerSide].Location = new Point(origin.X + (fieldsPerSide -i)* fieldPanels[i].Width , origin.Y + fieldsPerSide * fieldPanels[i].Height);
-                }
-                for (int i = 0; i < fieldsPerSide; i++)    //in work
-                {
-                    fieldPanels[i + 3 * fieldsPerSide].Location = new Point(origin.X, origin.Y + (fieldsPerSide-i) * fieldPanels[i].Height);
+                    fieldPanels[i + 3 * fieldsPerSide].Location = new Point(origin.X, origin.Y + move);
+                    move -= fieldPanels[2*fieldsPerSide-i-1].Height;
                 }
             }
 

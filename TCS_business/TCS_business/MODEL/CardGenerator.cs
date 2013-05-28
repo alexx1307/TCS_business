@@ -21,11 +21,11 @@ namespace TCS_business.MODEL
             cards[8] = new GetCard("You get a tax refund income 40$.", 40);
             cards[9] = new GoOutFromJailCard();
             cards[10] = new PayCard("The term of office for a fast ride. You pay 30$.", 30);
-            cards[11] = new MoveCard("You go to field 33", 33); //wstawic jakas nazwe
+            cards[11] = new MoveCard("You go back to Madrid", 14); 
             cards[12] = new GetCard("Bank pays you a percentage of 100$", 100);
             cards[13] = new PayCard("You pay a fee for damage 300$.", 300);
             cards[14] = new GetCard("You get to drop 200$", 200);
-            cards[15] = new MoveCard("You go to field 26", 26); // wstawic nazwe
+            cards[15] = new MoveCard("You go to Wien", 39);
             cards[16] = new GoToJailCard();
             cards[17] = new GetCard("Well solved crossword puzzle. As I get a 200$ reward.", 200);
             cards[18] = new PayCard("You pay the insurance premium in the amount of $ 20.", 20);

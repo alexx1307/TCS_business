@@ -166,5 +166,10 @@ public BoardPanel BoardPanel
             else if (j == 6) dice2.Image = global::TCS_business.Properties.Resources._6;
         }
 
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

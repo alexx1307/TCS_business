@@ -58,7 +58,7 @@
             this.infoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1008, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(898, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -70,53 +70,53 @@
             this.registerNewPlayerToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
-            this.gameToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.gameToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.gameToolStripMenuItem.Text = "Game";
             // 
             // runToolStripMenuItem
             // 
             this.runToolStripMenuItem.Name = "runToolStripMenuItem";
-            this.runToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.runToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.runToolStripMenuItem.Text = "Run";
             this.runToolStripMenuItem.Click += new System.EventHandler(this.runToolStripMenuItem_Click);
             // 
             // gameSettingsToolStripMenuItem
             // 
             this.gameSettingsToolStripMenuItem.Name = "gameSettingsToolStripMenuItem";
-            this.gameSettingsToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.gameSettingsToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.gameSettingsToolStripMenuItem.Text = "Game settings";
             this.gameSettingsToolStripMenuItem.Click += new System.EventHandler(this.gameSettingsToolStripMenuItem_Click);
             // 
             // registerNewPlayerToolStripMenuItem
             // 
             this.registerNewPlayerToolStripMenuItem.Name = "registerNewPlayerToolStripMenuItem";
-            this.registerNewPlayerToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.registerNewPlayerToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.registerNewPlayerToolStripMenuItem.Text = "Register new player";
             this.registerNewPlayerToolStripMenuItem.Click += new System.EventHandler(this.registerNewPlayerToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // infoToolStripMenuItem
             // 
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.infoToolStripMenuItem.Text = "Info";
             // 
             // panel7
             // 
             this.panel7.Controls.Add(this.button1);
-            this.panel7.Location = new System.Drawing.Point(728, 453);
+            this.panel7.Location = new System.Drawing.Point(670, 445);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(197, 84);
             this.panel7.TabIndex = 6;
@@ -133,7 +133,7 @@
             // 
             // dice2
             // 
-            this.dice2.Location = new System.Drawing.Point(880, 67);
+            this.dice2.Location = new System.Drawing.Point(822, 59);
             this.dice2.Name = "dice2";
             this.dice2.Size = new System.Drawing.Size(45, 45);
             this.dice2.TabIndex = 7;
@@ -142,7 +142,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(858, 51);
+            this.label3.Location = new System.Drawing.Point(800, 43);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 13);
             this.label3.TabIndex = 8;
@@ -150,7 +150,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(728, 65);
+            this.textBox1.Location = new System.Drawing.Point(670, 57);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -160,7 +160,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(750, 49);
+            this.label2.Location = new System.Drawing.Point(692, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 10;
@@ -168,14 +168,14 @@
             // 
             // playersListPanel
             // 
-            this.playersListPanel.Location = new System.Drawing.Point(728, 118);
+            this.playersListPanel.Location = new System.Drawing.Point(670, 110);
             this.playersListPanel.Name = "playersListPanel";
             this.playersListPanel.Size = new System.Drawing.Size(201, 325);
             this.playersListPanel.TabIndex = 11;
             // 
             // dice1
             // 
-            this.dice1.Location = new System.Drawing.Point(829, 67);
+            this.dice1.Location = new System.Drawing.Point(771, 59);
             this.dice1.Name = "dice1";
             this.dice1.Size = new System.Drawing.Size(45, 45);
             this.dice1.TabIndex = 12;
@@ -186,12 +186,12 @@
             this.boardPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.boardPanel1.Location = new System.Drawing.Point(12, 27);
             this.boardPanel1.Name = "boardPanel1";
-            this.boardPanel1.Size = new System.Drawing.Size(688, 583);
+            this.boardPanel1.Size = new System.Drawing.Size(628, 637);
             this.boardPanel1.TabIndex = 0;
             // 
             // MainWindow
             // 
-            this.ClientSize = new System.Drawing.Size(1008, 662);
+            this.ClientSize = new System.Drawing.Size(898, 689);
             this.Controls.Add(this.dice1);
             this.Controls.Add(this.boardPanel1);
             this.Controls.Add(this.playersListPanel);
@@ -203,6 +203,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainWindow";
+            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel7.ResumeLayout(false);

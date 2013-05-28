@@ -70,7 +70,7 @@
             this.Controls.Add(this.placeForPawnPB);
             this.Controls.Add(this.descriptionLabel);
             this.Name = "FieldPanel";
-            this.Size = new System.Drawing.Size(60, 50);
+            this.Size = new System.Drawing.Size(80, 50);
             ((System.ComponentModel.ISupportInitialize)(this.placeForPawnPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownershipPB)).EndInit();
             this.ResumeLayout(false);
