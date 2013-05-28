@@ -84,6 +84,12 @@
     <Compile Include="VIEW\BuyDialog.Designer.cs">
       <DependentUpon>BuyDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\CardDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\CardDialog.Designer.cs">
+      <DependentUpon>CardDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\FieldPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\BuyDialog.resx">
       <DependentUpon>BuyDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\CardDialog.resx">
+      <DependentUpon>CardDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FieldPanel.resx">
       <DependentUpon>FieldPanel.cs</DependentUpon>

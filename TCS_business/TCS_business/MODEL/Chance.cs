@@ -26,6 +26,7 @@ namespace TCS_business.MODEL
         public override void Action(Player p) {
             Card c = cards[i % cards.Length];
             ++i;
+            CONTROLER.ApplicationController.Instance.ShowCardPrompt(c.ToString());
             c.Action(p);
         } 
 

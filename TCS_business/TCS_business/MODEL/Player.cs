@@ -66,6 +66,7 @@ namespace TCS_business.MODEL
             Name = s;
             Cash = cash;
             Id = id;
+            cards = new List<Card>();
         }
 
         /// <summary>

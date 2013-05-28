@@ -24,5 +24,6 @@ namespace TCS_business.VIEW
         void UpdateDice(int i, int j);
         void UpdateCommunicate(string s);
         void ShowBuyPrompt();
+        void ShowCardPrompt(string s);
     }
 }

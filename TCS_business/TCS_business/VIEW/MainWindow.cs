@@ -110,7 +110,7 @@ public BoardPanel BoardPanel
         {
             registerNewPlayerToolStripMenuItem.Enabled = false;
         }
-        internal void EnableBuyField()
+        /*internal void EnableBuyField()
         {
             buyButton.Enabled = true;
         }
@@ -133,7 +133,7 @@ public BoardPanel BoardPanel
         internal void DisableBuyPowerHouse()
         {
             powerHouseButton.Enabled = false;
-        }
+        }*/
         private void button1_Click(object sender, EventArgs e)
         {
             Game.OnTimeoutEvent(sender, null);

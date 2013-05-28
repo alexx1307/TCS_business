@@ -135,5 +135,9 @@ namespace TCS_business.CONTROLER
             guiManager.ShowBuyPrompt();
         }
 
+        internal void ShowCardPrompt(string s)
+        {
+            guiManager.ShowCardPrompt(s);
+        }
     }
 }

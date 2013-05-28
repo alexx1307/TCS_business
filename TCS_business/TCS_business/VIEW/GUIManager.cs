@@ -141,5 +141,10 @@ namespace TCS_business.VIEW
                 ApplicationController.Instance.Game.Auction(); 
             }
         }
+
+        public void ShowCardPrompt(string s)
+        {
+            new CardDialog(s);
+        }
     }
 }
