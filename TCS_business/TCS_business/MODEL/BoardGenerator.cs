@@ -31,6 +31,37 @@ namespace TCS_business.MODEL
 
             board.Fields[20] = new FreeParking("Parking");
             board.Fields[30] = new FreeField();
+
+            board.Fields[1] = new City("Thessaloniki");
+            board.Fields[3] = new City("Athens");
+
+            board.Fields[6] = new City("Naples");
+            board.Fields[8] = new City("Milan");
+            board.Fields[9] = new City("Rome");
+
+            board.Fields[11] = new City("Barcelona");
+            board.Fields[13] = new City("Seville");
+            board.Fields[14] = new City("Madrid");
+
+            board.Fields[16] = new City("Liverpool");
+            board.Fields[18] = new City("Glasgow");
+            board.Fields[19] = new City("London");
+
+            board.Fields[21] = new City("Rotterdam");
+            board.Fields[23] = new City("Brussels");
+            board.Fields[24] = new City("Amsterdam");
+
+            board.Fields[26] = new City("Malmo");
+            board.Fields[27] = new City("Goteborg");
+            board.Fields[26] = new City("Stockholm");
+
+            board.Fields[31] = new City("Frankfurt");
+            board.Fields[32] = new City("Cologne");
+            board.Fields[34] = new City("Bonn");
+
+            board.Fields[37] = new City("Innsbruck");
+            board.Fields[39] = new City("Wien");
+
             for (int i = 0; i < Board.NOFIELDS; i++)
                 if (board.Fields[i] == null)
                 {
