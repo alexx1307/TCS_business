@@ -85,6 +85,11 @@ namespace TCS_business.CONTROLER
         {
             while (!IsEnd())
             {
+                while (gameState.ActivePlayer.InJail)
+                {
+                    gameState.ActivePlayer.exitJail();
+                    gameState.ActivePlayerIndex = (gameState.ActivePlayerIndex + 1) % gameConfig.PlayersNumber;
+                }
                 ApplicationController.Instance.SendMessage("Tura gracza: " + gameState.ActivePlayer.ToString());
                 int meshes = dice.Throw();  // roll of the dice
                 int second = dice.Throw2();
@@ -95,7 +100,8 @@ namespace TCS_business.CONTROLER
                 ApplicationController.Instance.UpdateBoardView(board);
                 board.Fields[board.Positions[p]].Action(p);
                 ApplicationController.Instance.UpdateBoardView(board);
-                
+
+
                 timer.Start();              // begin to countdown
                 //MessageBox.Show("a");
                 lock (nextTurn)
@@ -103,11 +109,11 @@ namespace TCS_business.CONTROLER
                     Monitor.PulseAll(nextTurn); // notify all that new round has just begun!
                 }
                 /*
-                 * tu takie male zalozenie: watki graczy gdzies czekaja na waicie na nextTurn 
-                 * i sprawdzaja czy activePlayer==ich id, jesli tak to moga grac, wpp.
-                 * idzie spac dalej. Z tym, ze to trzeba jeszcze mocno przemyslec i dopracowac
-                 * ja troche nie wiem jak to zrobic... :c
-                 */
+                    * tu takie male zalozenie: watki graczy gdzies czekaja na waicie na nextTurn 
+                    * i sprawdzaja czy activePlayer==ich id, jesli tak to moga grac, wpp.
+                    * idzie spac dalej. Z tym, ze to trzeba jeszcze mocno przemyslec i dopracowac
+                    * ja troche nie wiem jak to zrobic... :c
+                    */
                 //MessageBox.Show("b");
                 lock (endOfTurn)
                 {

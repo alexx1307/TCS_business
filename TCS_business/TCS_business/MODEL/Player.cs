@@ -87,7 +87,7 @@ namespace TCS_business.MODEL
         public void GoToJail()
         {
             if (cards.Count > 0) cards.RemoveAt(0);
-            else inJail = true; //pasowaloby przypilnowac zeby tez kiedys z niego wychodzil
+            else inJail = true; 
         }
 
         /// <summary>
