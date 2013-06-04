@@ -121,6 +121,7 @@ namespace TCS_business.CONTROLER
                 }                           /* (i.e. user ended his/her turn or run out of time) */
                 //MessageBox.Show("c");
                 ApplicationController.Instance.UpdatePlayerDataView(p);
+              
                 timer.Stop();               // end of the countdown
                 gameState.ActivePlayerIndex = (gameState.ActivePlayerIndex + 1) % gameConfig.PlayersNumber;
                 // update active player id

@@ -61,6 +61,7 @@
             this.Controls.Add(this.descriptionLabel);
             this.Name = "FieldPanel";
             this.Size = new System.Drawing.Size(80, 55);
+            this.Click += new System.EventHandler(this.FieldPanel_Click);
             ((System.ComponentModel.ISupportInitialize)(this.placeForPawnPB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

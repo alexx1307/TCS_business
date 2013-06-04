@@ -147,5 +147,11 @@ namespace TCS_business.VIEW
             CardDialog cardDialog = new CardDialog(s);
             cardDialog.ShowDialog();
         }
+
+
+        public void UpdateFieldInfoPanel(Field field)
+        {
+            mainWindow.UpdateFieldInfoPanel(field);
+        }
     }
 }

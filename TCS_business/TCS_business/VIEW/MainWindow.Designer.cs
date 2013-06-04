@@ -42,6 +42,7 @@
             this.playersListPanel = new System.Windows.Forms.Panel();
             this.dice1 = new System.Windows.Forms.PictureBox();
             this.boardPanel1 = new TCS_business.VIEW.BoardPanel();
+            this.fieldInfoPanel1 = new TCS_business.VIEW.FieldInfoPanel();
             this.menuStrip1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dice2)).BeginInit();
@@ -169,9 +170,18 @@
             this.boardPanel1.Size = new System.Drawing.Size(673, 701);
             this.boardPanel1.TabIndex = 0;
             // 
+            // fieldInfoPanel1
+            // 
+            this.fieldInfoPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.fieldInfoPanel1.Location = new System.Drawing.Point(710, 538);
+            this.fieldInfoPanel1.Name = "fieldInfoPanel1";
+            this.fieldInfoPanel1.Size = new System.Drawing.Size(146, 146);
+            this.fieldInfoPanel1.TabIndex = 13;
+            // 
             // MainWindow
             // 
             this.ClientSize = new System.Drawing.Size(932, 750);
+            this.Controls.Add(this.fieldInfoPanel1);
             this.Controls.Add(this.dice1);
             this.Controls.Add(this.boardPanel1);
             this.Controls.Add(this.playersListPanel);
@@ -209,6 +219,7 @@
         private System.Windows.Forms.Panel playersListPanel;
         private BoardPanel boardPanel1;
         private System.Windows.Forms.PictureBox dice1;
+        private FieldInfoPanel fieldInfoPanel1;
 
     }
 }

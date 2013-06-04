@@ -139,5 +139,10 @@ namespace TCS_business.CONTROLER
         {
             guiManager.ShowCardPrompt(s);
         }
+
+        internal void UpdateFieldInfoPanel(Field field)
+        {
+            guiManager.UpdateFieldInfoPanel(field);
+        }
     }
 }

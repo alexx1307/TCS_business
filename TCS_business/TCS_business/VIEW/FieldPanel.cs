@@ -12,8 +12,10 @@ namespace TCS_business.VIEW
 {
     public partial class FieldPanel : UserControl
     {
-        public FieldPanel(Field field, int i)
+        Field field;
+        public FieldPanel(Field field)
         {
+            this.field = field;
             InitializeComponent();
             descriptionLabel.Text = field.Description;
             if (field is City)
@@ -35,6 +37,12 @@ namespace TCS_business.VIEW
         {
             placeForPawnPB.BackColor = color;
 
+        }
+
+
+        private void FieldPanel_Click(object sender, EventArgs e)
+        {
+            CONTROLER.ApplicationController.Instance.UpdateFieldInfoPanel(field);
         }
 
     }
