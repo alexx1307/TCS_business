@@ -16,65 +16,26 @@ namespace TCS_business.VIEW
         {
             InitializeComponent();
             descriptionLabel.Text = field.Description;
-            switch (i)
+            if (field is City)
             {
-                case 1:
-                case 3:
-                    BackColor = Color.LavenderBlush;
-                    break;
-                case 6:
-                case 7:
-                case 9:
-                    BackColor = Color.LightSkyBlue;
-                    break;
-                case 11:
-                case 13:
-                case 14:
-                    BackColor = Color.LightGreen;
-                    break;
-                case 16:
-                case 18:
-                case 19:
-                    BackColor = Color.LightPink;
-                    break;
-                case 21:
-                case 23:
-                case 24:
-                    BackColor = Color.PaleGoldenrod;
-                    break;
-                case 26:
-                case 27:
-                case 29:
-                    BackColor = Color.PaleTurquoise;
-                    break;
-                case 31:
-                case 32:
-                case 34:
-                    BackColor = Color.SandyBrown;
-                    break;
-                case 37:
-                case 39:
-                    BackColor = Color.Gray;
-                    break;
-                default:
-                    BackColor = Color.White;
-                    break;
-            }
+                BackColor = (field as City).Country.Color;
 
+            }
         }
 
         public void Update(Field field)
         {
             if (field.Owner != null)
             {
-                this.ownershipPB.BackColor = field.Owner.Color;
+                this.CreateGraphics().DrawRectangle(new Pen(field.Owner.Color,7.0f), this.ClientRectangle);
             }
         }
-
 
         internal void setPawn(Color color)
         {
             placeForPawnPB.BackColor = color;
+
         }
+
     }
 }

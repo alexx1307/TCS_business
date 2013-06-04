@@ -9,21 +9,25 @@ namespace TCS_business.MODEL
     /// <author>Anita Ciosek</author>
     /// Class representing country consisting of cities.
     /// </summary>
-    class Country
+    public class Country
     {
         string name;
         Player owner;
-        byte color;
+        System.Drawing.Color color;
         List<Field> fields;
-
+        public System.Drawing.Color Color
+        {
+            get { return color; }
+        }
+        
         /// <summary>
         /// Constructs country with a given name.
         /// </summary>
         /// <param name="s">Name of country</param>
         /// <param name="c">Color of country</param>
-        Country(string s, byte c){
+        public Country(string s, System.Drawing.Color color){
             name = s;
-            color = c;
+            this.color = color;
         }
 
         /// <summary>

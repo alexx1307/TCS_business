@@ -12,10 +12,15 @@ namespace TCS_business.MODEL
     /// </summary>
     public class City : IPurchasable,IPayable 
     {
+        Country country;
         byte Houses = 0;
         
-        public City(String desc):base(desc)
+        public Country Country{
+            get { return country; }
+        }
+        public City(String desc,Country country):base(desc)
         {
+            this.country = country;
         }
         
 
