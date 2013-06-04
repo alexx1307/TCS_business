@@ -15,7 +15,7 @@ namespace TCS_business.CONTROLER
         private static ApplicationController instance;
 
         ApplicationState appState;
-        Game game;
+        public Game game;
         public Game Game
         {
             get { return game; }
@@ -140,9 +140,9 @@ namespace TCS_business.CONTROLER
             guiManager.ShowCardPrompt(s);
         }
 
-        internal void UpdateFieldInfoPanel(Field field)
+        internal void UpdateFieldInfoPanel(Field field, bool shouldBuyButtonBeSeen)
         {
-            guiManager.UpdateFieldInfoPanel(field);
+            guiManager.UpdateFieldInfoPanel(field,shouldBuyButtonBeSeen);
         }
     }
 }

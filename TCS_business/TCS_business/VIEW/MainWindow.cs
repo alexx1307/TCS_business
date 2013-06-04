@@ -62,7 +62,6 @@ public BoardPanel BoardPanel
                 playersListPanel.Controls.Add(PlayerPanel);
                 playersPanelsMap.Add(list[i], PlayerPanel);
             }
-            //UpdateCash(list, playersPanelsMap);
         }
 
         public static Color[] OccupiedColors = new Color[9];
@@ -72,24 +71,6 @@ public BoardPanel BoardPanel
         {
             OccupiedColors[nr++] = c;
         }
-
-
-        /* private void UpdateCash(List<Player> list, Dictionary<Player, VIEW.PlayerInfo> playersPanelsMap)
-         {
-             this.Invoke((MethodInvoker)delegate
-             {
-                 Label[] tab = new Label[4];
-                 tab[0] = label12; tab[1] = label13;
-                 tab[2] = label14; tab[3] = label15;
-                 for (int i = 0; i < list.Count(); i++)
-                 {
-                     tab[i].Text = list.ElementAt(i).Cash.ToString();
-                     tab[i].Invalidate();
-                     tab[i].Update();
-                     tab[i].Refresh();
-                 }
-             });
-         }*/
 
         internal void EnableAddingPlayers()
         {
@@ -145,9 +126,9 @@ public BoardPanel BoardPanel
         }
 
 
-        internal void UpdateFieldInfoPanel(Field field)
+        internal void UpdateFieldInfoPanel(Field field,bool shouldBuyButtonBeSeen)
         {
-            this.fieldInfoPanel1.UpdateContent(field);
+            this.fieldInfoPanel1.UpdateContent(field, shouldBuyButtonBeSeen);
         }
     }
 }

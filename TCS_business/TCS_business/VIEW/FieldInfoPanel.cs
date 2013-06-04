@@ -16,10 +16,13 @@ namespace TCS_business.VIEW
             InitializeComponent();
         }
 
-        internal void UpdateContent(MODEL.Field field)
+        internal void UpdateContent(MODEL.Field field,bool shouldBuyButtonBeSeen)
         {
             label1.Text = field.Description;
-
+            if (shouldBuyButtonBeSeen)
+                this.button1.Show();
+            else
+                this.button1.Hide();
             this.Visible = true;
         }
     }

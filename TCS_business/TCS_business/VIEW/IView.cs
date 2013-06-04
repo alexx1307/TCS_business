@@ -26,6 +26,6 @@ namespace TCS_business.VIEW
         void ShowBuyPrompt();
         void ShowCardPrompt(string s);
 
-        void UpdateFieldInfoPanel(Field field);
+        void UpdateFieldInfoPanel(Field field, bool shouldBuyButtonBeSeen);
     }
 }

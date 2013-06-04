@@ -42,7 +42,14 @@ namespace TCS_business.VIEW
 
         private void FieldPanel_Click(object sender, EventArgs e)
         {
-            CONTROLER.ApplicationController.Instance.UpdateFieldInfoPanel(field);
+            CONTROLER.Game game = CONTROLER.ApplicationController.Instance.game;
+            if (game.GameState.ActivePlayer == field.Owner)
+            {
+                bool ownerOfWholeCountry = true;
+                //for(City
+            }
+            // Dokończyć! Czy Field nie jest w ogóle powiązany z City?
+            CONTROLER.ApplicationController.Instance.UpdateFieldInfoPanel(field,false);
         }
 
     }
