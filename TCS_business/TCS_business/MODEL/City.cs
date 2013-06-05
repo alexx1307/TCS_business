@@ -21,13 +21,18 @@ namespace TCS_business.MODEL
         public City(String desc,Country country):base(desc)
         {
             this.country = country;
+            country.Add(this);
         }
-        
 
-        void BuildHouse(){
+        int houseCost()
+        {
+            return this.Cost / 2;
+        }
+        public void BuildHouse(){
             //sprawdz czy niezastawione
             //pobierz odpowiednia oplate od gracza
             ++Houses;
+            Owner.Cash -= houseCost();
         }
 
 

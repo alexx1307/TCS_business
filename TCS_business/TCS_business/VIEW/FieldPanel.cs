@@ -15,8 +15,8 @@ namespace TCS_business.VIEW
         Field field;
         public FieldPanel(Field field)
         {
-            this.field = field;
             InitializeComponent();
+            this.field = field;
             descriptionLabel.Text = field.Description;
             if (field is City)
             {
@@ -43,13 +43,22 @@ namespace TCS_business.VIEW
         private void FieldPanel_Click(object sender, EventArgs e)
         {
             CONTROLER.Game game = CONTROLER.ApplicationController.Instance.game;
-            if (game.GameState.ActivePlayer == field.Owner)
+            bool ownerOfWholeCountry = false;
+
+            if (field is City)
             {
-                bool ownerOfWholeCountry = true;
-                //for(City
+                ownerOfWholeCountry = true;
+                foreach(Field f in (field as City).Country.Fields)
+                {
+                    if(f.Owner != game.GameState.ActivePlayer)
+                    {
+                        ownerOfWholeCountry = false;
+                        break;
+                    }
+                }
             }
-            // Dokończyć! Czy Field nie jest w ogóle powiązany z City?
-            CONTROLER.ApplicationController.Instance.UpdateFieldInfoPanel(field,false);
+            
+            CONTROLER.ApplicationController.Instance.UpdateFieldInfoPanel(field,ownerOfWholeCountry);
         }
 
     }

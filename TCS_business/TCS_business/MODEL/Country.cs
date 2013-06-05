@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Windows.Forms;
 namespace TCS_business.MODEL
 {
     /// <summary>
@@ -19,7 +19,12 @@ namespace TCS_business.MODEL
         {
             get { return color; }
         }
-        
+
+        public List<Field> Fields
+        {
+            get { return fields; } 
+        }
+
         /// <summary>
         /// Constructs country with a given name.
         /// </summary>
@@ -28,13 +33,14 @@ namespace TCS_business.MODEL
         public Country(string s, System.Drawing.Color color){
             name = s;
             this.color = color;
+            fields = new List<Field>();
         }
 
         /// <summary>
         /// Adds field to list of fields of this country
         /// </summary>
         /// <param name="f">Field to add</param>
-        void Add(Field f)
+        public void Add(Field f)
         {
             fields.Add(f);
         }
