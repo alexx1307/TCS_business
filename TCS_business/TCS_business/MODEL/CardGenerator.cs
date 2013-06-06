@@ -9,9 +9,9 @@ namespace TCS_business.MODEL
     {
         public static Card[] Generate()
         {
-            Card[] cards = new Card[2];
+            Card[] cards = new Card[20];
             cards[0] = new GoToJailCard();
-            /*cards[1] = new GetCard("You won a beauty contest. You get 200$", 200);
+            cards[1] = new GetCard("You won a beauty contest. You get 200$", 200);
             cards[2] = new GoOutFromJailCard();
             cards[3] = new PayCard("You pay a contribution to the hospital in the amount of 400$", 400);
             cards[4] = new MoveCard("You go back to START", 0);
@@ -25,11 +25,11 @@ namespace TCS_business.MODEL
             cards[12] = new GetCard("Bank pays you a percentage of 100$", 100);
             cards[13] = new PayCard("You pay a fee for damage 300$.", 300);
             cards[14] = new GetCard("You get to drop 200$", 200);
-            cards[15] = new MoveCard("You go to Wien", 39);*/
-            cards[1] = new GoToJailCard();
-            /*cards[17] = new GetCard("Well solved crossword puzzle. As I get a 200$ reward.", 200);
+            cards[15] = new MoveCard("You go to Wien", 39);
+            cards[16] = new GoToJailCard();
+            cards[17] = new GetCard("Well solved crossword puzzle. As I get a 200$ reward.", 200);
             cards[18] = new PayCard("You pay the insurance premium in the amount of $ 20.", 20);
-            cards[19] = new PayCard("You pay medical expenses in the amount of $ 20.", 20);*/
+            cards[19] = new PayCard("You pay medical expenses in the amount of $ 20.", 20);
             return cards;
         }
     }
