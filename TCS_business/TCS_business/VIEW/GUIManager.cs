@@ -44,7 +44,7 @@ namespace TCS_business.VIEW
             //tylko main window ma posiadac panel odpowiedzialny za listowanie graczy i jego metode masz wywolac.
             //poza tym zmien nazwe tej metody (jakis update)
         }
-
+        
         public void UpdateFieldState(Field field)
         {
             throw new NotImplementedException();
@@ -65,7 +65,7 @@ namespace TCS_business.VIEW
         public void ShowConfigDialog(GameConfig gameConfig)
         {
             GameConfigDialog configDialog = new GameConfigDialog();
-            //configDialog.SetGameConfigProperties(gameConfig); to chyba nie jest juz potrzebne - Anita.
+            configDialog.SetGameConfigProperties(gameConfig); //to chyba nie jest juz potrzebne - Anita.
             configDialog.Show();
 
         }

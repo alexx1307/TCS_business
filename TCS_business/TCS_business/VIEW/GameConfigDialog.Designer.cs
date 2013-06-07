@@ -37,6 +37,8 @@
             this.playersNumber = new System.Windows.Forms.NumericUpDown();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.AcceptButton = button1;
+            this.CancelButton = button2;
             this.label5 = new System.Windows.Forms.Label();
             this.cash = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.minutes)).BeginInit();

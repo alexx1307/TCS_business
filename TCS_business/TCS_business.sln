@@ -1,18 +1,40 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCS_business", "TCS_business\TCS_business.csproj", "{CEBB9901-8512-421B-8ABE-A981C2FD7DDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{F5A9A529-30C2-4069-A761-33EC4DFED056}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Win32 = Debug|Win32
 		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{CEBB9901-8512-421B-8ABE-A981C2FD7DDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CEBB9901-8512-421B-8ABE-A981C2FD7DDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEBB9901-8512-421B-8ABE-A981C2FD7DDA}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{CEBB9901-8512-421B-8ABE-A981C2FD7DDA}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{CEBB9901-8512-421B-8ABE-A981C2FD7DDA}.Debug|Win32.ActiveCfg = Debug|Any CPU
 		{CEBB9901-8512-421B-8ABE-A981C2FD7DDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEBB9901-8512-421B-8ABE-A981C2FD7DDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEBB9901-8512-421B-8ABE-A981C2FD7DDA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{CEBB9901-8512-421B-8ABE-A981C2FD7DDA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{CEBB9901-8512-421B-8ABE-A981C2FD7DDA}.Release|Win32.ActiveCfg = Release|Any CPU
+		{F5A9A529-30C2-4069-A761-33EC4DFED056}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5A9A529-30C2-4069-A761-33EC4DFED056}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5A9A529-30C2-4069-A761-33EC4DFED056}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F5A9A529-30C2-4069-A761-33EC4DFED056}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F5A9A529-30C2-4069-A761-33EC4DFED056}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{F5A9A529-30C2-4069-A761-33EC4DFED056}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5A9A529-30C2-4069-A761-33EC4DFED056}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5A9A529-30C2-4069-A761-33EC4DFED056}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F5A9A529-30C2-4069-A761-33EC4DFED056}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F5A9A529-30C2-4069-A761-33EC4DFED056}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

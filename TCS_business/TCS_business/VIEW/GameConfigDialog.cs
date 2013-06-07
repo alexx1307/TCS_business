@@ -23,12 +23,12 @@ namespace TCS_business.VIEW
             cash.Minimum = MODEL.GameConfig.defaultStartCash;
             cash.Maximum = MODEL.GameConfig.maxStartCash;
         }
-       /* public void SetGameConfigProperties(GameConfig gameConfig)
+       public void SetGameConfigProperties(GameConfig gameConfig)
         {
             minutes.Value = gameConfig.TurnTime.Minutes;
             seconds.Value = gameConfig.TurnTime.Seconds;
             playersNumber.Value = gameConfig.PlayersNumber;
-        } to chyba nie jest juz potrzebne, ale w razie czego zostawiam do pozniejszego usuniecia - Anita.*/
+        }  /*to chyba nie jest juz potrzebne, ale w razie czego zostawiam do pozniejszego usuniecia - Anita.*/
         private void button2_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;

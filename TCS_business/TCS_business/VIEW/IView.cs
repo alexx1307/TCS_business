@@ -6,7 +6,7 @@ using TCS_business.MODEL;
 using System.Windows.Forms;
 namespace TCS_business.VIEW
 {
-    interface IView
+    public interface IView
     {
         void InitializeMainWindow();
         void InitializeGamePanel(Board board);

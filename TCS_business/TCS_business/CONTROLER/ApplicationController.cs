@@ -21,7 +21,7 @@ namespace TCS_business.CONTROLER
             get { return game; }
    
         }
-        IView guiManager;
+        public IView guiManager;
         public static ApplicationController Instance
         {
             get
