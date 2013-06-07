@@ -11,12 +11,13 @@ namespace TCS_business.VIEW
 {
     public partial class PlayerInfo : UserControl
     {
-        public PlayerInfo(String name, int Cash, System.Drawing.Color colour)
+        public PlayerInfo(String name, int Cash, System.Drawing.Color colour, TimeSpan time)
         {
             InitializeComponent();
             this.label1.Text = name;
             this.cashLabel.Text = Cash.ToString();
             this.pictureBox1.BackColor = colour;
+            this.time.Text = time.ToString(@"mm\:ss");
         }
 
         private void PlayerInfo_Load(object sender, EventArgs e)
@@ -26,8 +27,10 @@ namespace TCS_business.VIEW
 
         internal void Update(MODEL.Player player)
         {
-            this.Invoke((MethodInvoker)delegate { cashLabel.Text = player.Cash.ToString(); });
-          
+            this.Invoke((MethodInvoker)delegate { 
+                cashLabel.Text = player.Cash.ToString();
+                time.Text = player.Time.ToString(@"mm\:ss");
+            });
         }
     }
 }

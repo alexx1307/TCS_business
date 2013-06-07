@@ -24,6 +24,7 @@ namespace TCS_business.VIEW
         void UpdateDice(int i, int j);
         void UpdateCommunicate(string s);
         void ShowBuyPrompt();
+        void ShowTurnPrompt(string playerName);
         void ShowCardPrompt(string s);
 
         void UpdateFieldInfoPanel(Field field, bool shouldBuyButtonBeSeen, bool shouldPledgeButtonBeSeen);

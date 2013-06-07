@@ -152,6 +152,11 @@ namespace TCS_business.VIEW
             }
         }
 
+        public void ShowTurnPrompt(string playerName)
+        {
+            MessageBox.Show("Tura gracza " + playerName);
+        }
+
         public void ShowCardPrompt(string s)
         {
             CardDialog cardDialog = new CardDialog(s);

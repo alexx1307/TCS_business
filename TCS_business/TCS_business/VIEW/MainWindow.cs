@@ -57,7 +57,7 @@ public BoardPanel BoardPanel
             playersListPanel.Controls.Clear();
             for (int i = 0; i < list.Count(); i++)
             {
-                PlayerInfo PlayerPanel = new PlayerInfo(list[i].Name, list[i].Cash, list[i].Color);
+                PlayerInfo PlayerPanel = new PlayerInfo(list[i].Name, list[i].Cash, list[i].Color, list[i].Time);
                 PlayerPanel.Location = new Point(0, i * 74);
                 playersListPanel.Controls.Add(PlayerPanel);
                 playersPanelsMap.Add(list[i], PlayerPanel);

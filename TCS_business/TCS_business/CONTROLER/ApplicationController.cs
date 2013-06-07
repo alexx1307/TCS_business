@@ -77,6 +77,12 @@ namespace TCS_business.CONTROLER
             }
             else guiManager.DisableAddingPlayers();
             game.GameConfig = gameConfig;
+            foreach(Player p in game.GameState.PlayersList) 
+            {
+                p.Cash = gameConfig.StartCash;
+                p.Time = new TimeSpan(0,gameConfig.PlayerTime,0);
+                guiManager.UpdatePlayerPanel(p);
+            }
         }
         public void ShowAddPlayerDialog()
         {
@@ -99,7 +105,7 @@ namespace TCS_business.CONTROLER
 
         public void RegisterNewPlayer(string s, System.Drawing.Color colour)
         {
-            game.RegisterNewPlayer(new Player(s, game.NextPlayerId(), colour, game.GameConfig.StartCash));
+            game.RegisterNewPlayer(new Player(s, game.NextPlayerId(), colour, game.GameConfig.StartCash, game.GameConfig.PlayerTime));
             if (game.AllPlayersJoined())
             {
                 appState = ApplicationState.READY_FOR_GAME;

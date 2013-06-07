@@ -54,19 +54,28 @@ namespace TCS_business.MODEL
             get { return inJail; }
             set { inJail = value; }
         }
+
+        private int time; // seconds
+        public TimeSpan Time
+        {
+            set { time = value.Seconds + value.Minutes * 60; }
+            get { return new TimeSpan(0, time / 60, time % 60); }
+        }
         
         /// <summary>
         /// Constructs new Player with the specified name.
         /// It sets default amount of Cash.
         /// </summary>
         /// <param name="s">Name of Player</param>
-        public Player(string s, int id, System.Drawing.Color color, int cash)
+        /// <param name="time">Time for player in minutes</param>
+        public Player(string s, int id, System.Drawing.Color color, int cash, int time)
         {
             this.color = color;
             Name = s;
             Cash = cash;
             Id = id;
             cards = new List<Card>();
+            this.time = time * 60;
         }
 
         /// <summary>

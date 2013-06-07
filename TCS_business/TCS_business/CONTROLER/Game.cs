@@ -67,7 +67,7 @@ namespace TCS_business.CONTROLER
             ApplicationController.Instance.InitializeGamePanel(board);
             int minutes = gameConfig.PlayerTime;
             int miliseconds = minutes * 60000;
-            this.timer = new System.Timers.Timer(1000);
+            this.timer = new System.Timers.Timer(3000);
             this.timer.Elapsed += new ElapsedEventHandler(OnTimeoutEvent);
             this.isRunning = true;
             
@@ -89,7 +89,7 @@ namespace TCS_business.CONTROLER
                     gameState.ActivePlayer.exitJail();
                     gameState.ActivePlayerIndex = (gameState.ActivePlayerIndex + 1) % gameConfig.PlayersNumber;
                 }
-                ApplicationController.Instance.SendMessage("Tura gracza: " + gameState.ActivePlayer.ToString());
+                ApplicationController.Instance.guiManager.ShowTurnPrompt(gameState.ActivePlayer.ToString());
                 int meshes = dice.Throw();  // roll of the dice
                 int second = dice.Throw2();
                 ApplicationController.Instance.RollDice(meshes, second);

@@ -34,7 +34,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.cashLabel = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.time = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -89,20 +89,20 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.time);
             this.panel3.Location = new System.Drawing.Point(94, 42);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(94, 29);
             this.panel3.TabIndex = 3;
             // 
-            // label3
+            // time
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "label3";
+            this.time.AutoSize = true;
+            this.time.Location = new System.Drawing.Point(30, 8);
+            this.time.Name = "time";
+            this.time.Size = new System.Drawing.Size(26, 13);
+            this.time.TabIndex = 1;
+            this.time.Text = "time";
             // 
             // PlayerInfo
             // 
@@ -135,6 +135,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label cashLabel;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label time;
     }
 }
