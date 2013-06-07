@@ -30,11 +30,20 @@ namespace TCS_business.VIEW
             cash.Value = MODEL.GameConfig.defaultStartCash;
         }
 
+        /// <summary>
+        /// Sets configuration of the game. 
+        /// This method also updates the minimum value of the players 
+        ///     - it cannot be less than actual number of registered players
+        /// </summary>
+        /// <param name="gameConfig">The current configuration of the game</param>
         public void SetGameConfig(GameConfig gameConfig)
         {
             playerTime.Value = gameConfig.PlayerTime;
             playersNumber.Value = gameConfig.PlayersNumber;
             cash.Value = gameConfig.StartCash;
+            playersNumber.Minimum = Math.Max(
+                MODEL.GameConfig.minPlayersNumber, 
+                ApplicationController.Instance.Game.GameState.PlayersList.Count);
         }
 
         private void cancelButton_Click(object sender, EventArgs e)

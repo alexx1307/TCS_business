@@ -156,7 +156,6 @@ namespace TCS_business.CONTROLER
             {
                 if (player.Cash > 0) positive++;
             }
-
             return positive < 2;
         }
 
@@ -184,7 +183,7 @@ namespace TCS_business.CONTROLER
         }
 
 
-        public int PlayersNumber { get; set; }
+        public int PlayersNumber { get; set; } // ?
 
 
         internal void BuyField()

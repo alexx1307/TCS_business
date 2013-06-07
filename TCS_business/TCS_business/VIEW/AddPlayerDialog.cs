@@ -36,16 +36,14 @@ namespace TCS_business.VIEW
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.TextLength > 0)
+            if (textBox1.Text.Trim().Length > 0)
             {
                 String s = textBox1.Text;
                 this.Close();
                 this.DialogResult = DialogResult.OK;
                 MainWindow.SetColor((Color)comboBox1.SelectedItem);
                 ApplicationController.Instance.RegisterNewPlayer(s, (Color)comboBox1.SelectedItem);
-
             }
-
         }
 
 

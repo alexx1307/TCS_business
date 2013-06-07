@@ -99,7 +99,7 @@ namespace TCS_business.VIEW
                     mainWindow.DisableGameRun();
                     break;
                 case ApplicationState.READY_FOR_GAME:
-                    mainWindow.DisableAddingPlayers();
+                    //mainWindow.DisableAddingPlayers();
                     mainWindow.EnsableGameRun();
                     break;
                 case ApplicationState.GAME_IN_PROGRESS:
