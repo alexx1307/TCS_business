@@ -23,6 +23,21 @@ namespace TCS_business.VIEW
                 BackColor = (field as City).Country.Color;
 
             }
+            if (field is IPurchasable)
+            {
+                if ((field as IPurchasable).Pledged == true)
+                {
+                    this.pictureBox1.Show();
+                }
+                else
+                {
+                    this.pictureBox1.Hide();
+                }
+            }
+            else
+            {
+                this.pictureBox1.Hide();
+            }
         }
 
         public void Update(Field field)
@@ -44,7 +59,7 @@ namespace TCS_business.VIEW
         {
             CONTROLER.Game game = CONTROLER.ApplicationController.Instance.game;
             bool ownerOfWholeCountry = false;
-
+            bool ownerofTheField = (field.Owner == game.GameState.ActivePlayer);
             if (field is City)
             {
                 ownerOfWholeCountry = true;
@@ -57,8 +72,8 @@ namespace TCS_business.VIEW
                     }
                 }
             }
-            
-            CONTROLER.ApplicationController.Instance.UpdateFieldInfoPanel(field,ownerOfWholeCountry);
+
+            CONTROLER.ApplicationController.Instance.UpdateFieldInfoPanel(field, ownerOfWholeCountry, ownerofTheField);
         }
 
     }

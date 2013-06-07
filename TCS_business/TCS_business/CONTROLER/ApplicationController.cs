@@ -142,9 +142,9 @@ namespace TCS_business.CONTROLER
             guiManager.ShowCardPrompt(s);
         }
 
-        internal void UpdateFieldInfoPanel(Field field, bool shouldBuyButtonBeSeen)
+        internal void UpdateFieldInfoPanel(Field field, bool shouldBuyButtonBeSeen, bool shouldPledgeButtonBeSeen)
         {
-            guiManager.UpdateFieldInfoPanel(field, shouldBuyButtonBeSeen);
+            guiManager.UpdateFieldInfoPanel(field, shouldBuyButtonBeSeen,shouldPledgeButtonBeSeen);
         }
     }
 }

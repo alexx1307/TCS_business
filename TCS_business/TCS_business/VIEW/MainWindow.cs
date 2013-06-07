@@ -126,9 +126,9 @@ public BoardPanel BoardPanel
         }
 
 
-        internal void UpdateFieldInfoPanel(Field field,bool shouldBuyButtonBeSeen)
+        internal void UpdateFieldInfoPanel(Field field, bool shouldBuyButtonBeSeen, bool shouldPledgeButtonBeSeen)
         {
-            this.fieldInfoPanel1.UpdateContent(field, shouldBuyButtonBeSeen);
+            this.fieldInfoPanel1.UpdateContent(field, shouldBuyButtonBeSeen, shouldPledgeButtonBeSeen);
         }
     }
 }

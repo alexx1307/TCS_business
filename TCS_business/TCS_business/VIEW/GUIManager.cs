@@ -159,9 +159,9 @@ namespace TCS_business.VIEW
         }
 
 
-        public void UpdateFieldInfoPanel(Field field, bool shouldBuyButtonBeSeen)
+        public void UpdateFieldInfoPanel(Field field, bool shouldBuyButtonBeSeen, bool shouldPledgeButtonBeSeen)
         {
-            mainWindow.UpdateFieldInfoPanel(field, shouldBuyButtonBeSeen);
+            mainWindow.UpdateFieldInfoPanel(field, shouldBuyButtonBeSeen, shouldPledgeButtonBeSeen);
         }
     }
 }

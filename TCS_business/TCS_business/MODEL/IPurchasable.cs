@@ -22,11 +22,24 @@ namespace TCS_business.MODEL
             get;
             set;
         }
+        private int PledgeValue()
+        {
+            return 200;
+        }
+        public bool Pledged
+        {
+            get { return pledged; }
+        }
         public IPurchasable(string s)
             : base(s)
         { }
         public void ChangePledged()
         {
+            if (pledged == false)
+                Owner.Cash += PledgeValue();
+            else
+                Owner.Cash -= PledgeValue();
+
             pledged = !pledged;
         }
         public void Buy(Player p)
