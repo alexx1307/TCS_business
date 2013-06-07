@@ -65,9 +65,8 @@ namespace TCS_business.CONTROLER
             this.board = BoardGenerator.Generate();
             board.Init(gameState);
             ApplicationController.Instance.InitializeGamePanel(board);
-            int seconds = gameConfig.TurnTime.Seconds;
-            int minutes = gameConfig.TurnTime.Minutes;
-            int miliseconds = seconds * 1000 + minutes * 60000;
+            int minutes = gameConfig.PlayerTime;
+            int miliseconds = minutes * 60000;
             this.timer = new System.Timers.Timer(miliseconds);
             this.timer.Elapsed += new ElapsedEventHandler(OnTimeoutEvent);
             this.isRunning = true;

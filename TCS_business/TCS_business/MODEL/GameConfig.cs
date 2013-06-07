@@ -6,44 +6,64 @@ using System.Threading.Tasks;
 
 namespace TCS_business.MODEL
 {
+    /// <summary>
+    /// This class holds information about configuration of a game
+    /// </summary>
     public class GameConfig
     {
-        public static readonly int maxPlayersNumber = 8;
-        public static readonly TimeSpan maxTurnTime = new TimeSpan(0, 9, 59);        
-        public static readonly int defaultStartCash = 1000;
-        public static readonly int maxStartCash = 3000;
-        public static readonly TimeSpan defaultTurnTime = new TimeSpan(0, 0, 8);
-        public static readonly int defaultPlayersNumber = 2;
-        private TimeSpan turnTime;
+        #region default values
+        public const int defaultStartCash = 1000;
+
+        /// <summary>
+        /// default time for a player for a game (in minutes)
+        /// </summary>
+        public const int defaultPlayerTime = 10;
+        public const int defaultPlayersNumber = 2;
+        #endregion
+
+        #region constraints
+        public const int maxPlayersNumber = 8;
+        public const int minPlayersNumber = 2;
+        public const int maxPlayerTime = 20;
+        public const int minPlayerTime = 2;
+        public const int maxStartCash = 3000;
+        public const int minStartCash = 500;
+        #endregion
+
+        /// <summary>
+        /// time for a player for a game (in minutes)
+        /// </summary>
+        private int playerTime;
         private int playersNumber;
         private int startCash;
-        public TimeSpan TurnTime
-        {
-            get { return turnTime; }
-            private set { if (value == null) { turnTime = defaultTurnTime; } else { turnTime = value; } }
-        }
-        public int PlayersNumber
-        {
-            get { return playersNumber; }
-            private set { if (value == null) { playersNumber = defaultPlayersNumber; } else { playersNumber = value; } }
-        }
-        public int StartCash
-        {
-            get { return startCash; }
-            private set { if (value == null) { startCash = defaultStartCash; } else { startCash = value; } }
-        }
 
-        public GameConfig(int playersNumber, TimeSpan turnTime, int startCash)
+        #region getters, setters
+        public int PlayerTime { get { return playerTime; } }
+        public int PlayersNumber { get { return playersNumber; } }
+        public int StartCash { get { return startCash; } }
+        #endregion
+
+        /// <summary>
+        /// Constructs a new GameConfig instance from given values
+        /// </summary>
+        /// <param name="playersNumber">Number of players</param>
+        /// <param name="playerTime">Time for a player for a game in minutes</param>
+        /// <param name="startCash">The initial capital</param>
+        public GameConfig(int playersNumber, int playerTime, int startCash)
         {
-            this.TurnTime = turnTime;
-            this.PlayersNumber = playersNumber;
+            this.playerTime = playerTime;
+            this.playersNumber = playersNumber;
             this.startCash = startCash;
         }
+
+        /// <summary>
+        /// Constructs a new GameConfig instance from defaults values
+        /// </summary>
         public GameConfig()
         {
-            this.TurnTime = defaultTurnTime;
-            this.PlayersNumber = defaultPlayersNumber;
-            this.StartCash = defaultStartCash;
+            playerTime = defaultPlayerTime;
+            playersNumber = defaultPlayersNumber;
+            startCash = defaultStartCash;
         }
     }
 }

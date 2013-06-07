@@ -181,7 +181,6 @@
             // MainWindow
             // 
             this.ClientSize = new System.Drawing.Size(932, 750);
-            this.Controls.Add(this.fieldInfoPanel1);
             this.Controls.Add(this.dice1);
             this.Controls.Add(this.boardPanel1);
             this.Controls.Add(this.playersListPanel);

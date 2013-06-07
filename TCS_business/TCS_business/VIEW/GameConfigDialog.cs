@@ -16,31 +16,39 @@ namespace TCS_business.VIEW
         public GameConfigDialog()
         {
             InitializeComponent();
+
             playersNumber.Maximum = MODEL.GameConfig.maxPlayersNumber;
-            playersNumber.Minimum = MODEL.GameConfig.defaultPlayersNumber;
-            minutes.Minimum = MODEL.GameConfig.defaultTurnTime.Minutes;
-            minutes.Maximum = MODEL.GameConfig.maxTurnTime.Minutes;
-            cash.Minimum = MODEL.GameConfig.defaultStartCash;
+            playersNumber.Minimum = MODEL.GameConfig.minPlayersNumber;
+            playersNumber.Value = MODEL.GameConfig.defaultPlayersNumber;
+
+            playerTime.Minimum = MODEL.GameConfig.minPlayerTime;
+            playerTime.Maximum = MODEL.GameConfig.maxPlayerTime;
+            playerTime.Value = MODEL.GameConfig.defaultPlayerTime;
+
+            cash.Minimum = MODEL.GameConfig.minStartCash;
             cash.Maximum = MODEL.GameConfig.maxStartCash;
+            cash.Value = MODEL.GameConfig.defaultStartCash;
         }
-       public void SetGameConfigProperties(GameConfig gameConfig)
+
+        public void SetGameConfig(GameConfig gameConfig)
         {
-            minutes.Value = gameConfig.TurnTime.Minutes;
-            seconds.Value = gameConfig.TurnTime.Seconds;
+            playerTime.Value = gameConfig.PlayerTime;
             playersNumber.Value = gameConfig.PlayersNumber;
-        }  /*to chyba nie jest juz potrzebne, ale w razie czego zostawiam do pozniejszego usuniecia - Anita.*/
-        private void button2_Click(object sender, EventArgs e)
+            cash.Value = gameConfig.StartCash;
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void saveButton_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
-            
             this.Close();
-            ApplicationController.Instance.SetNewGameConfig(new GameConfig((int)playersNumber.Value, new TimeSpan(0, (int)minutes.Value, (int)seconds.Value), (int)cash.Value));
+            ApplicationController.Instance.SetNewGameConfig(
+                new GameConfig((int)playersNumber.Value, (int)playerTime.Value, (int)cash.Value));
         }
     }
 }

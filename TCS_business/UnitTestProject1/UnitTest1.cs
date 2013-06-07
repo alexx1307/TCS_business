@@ -30,7 +30,7 @@ namespace UnitTestProject1
             {            
                 num.Value = 11;            
                 //gcd.button1_Click(null, null);
-                Assert.AreEqual(11, app.game.GameConfig.TurnTime.Minutes);
+                Assert.AreEqual(11, app.game.GameConfig.PlayerTime.Minutes);
                 Assert.Fail("poza zakresem", null);
             }
             catch (Exception e)
