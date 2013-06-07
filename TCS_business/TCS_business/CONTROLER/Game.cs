@@ -31,7 +31,6 @@ namespace TCS_business.CONTROLER
             get { return gameConfig; }
             set
             {
-                //todo: GameSettings powinno być wyszarzone po uruchomieniu gry
                 if (isRunning) throw new InvalidOperationException("It's impossible to change game properties during game");
                 gameConfig = value;
             }
@@ -41,7 +40,6 @@ namespace TCS_business.CONTROLER
         ///  Objects needed for synchronization
         /// </summary>
         private static Object endOfTurn = new Object();
-        private static Object nextTurn = new Object();
 
         public Game()
         {
@@ -61,6 +59,7 @@ namespace TCS_business.CONTROLER
             board.Init(gameState);
             ApplicationController.Instance.InitializeGamePanel(board);
             this.isRunning = true;
+            ApplicationController.Instance.DisableGameSettings();
             gameThread = new Thread(new ThreadStart(this.Loop));
             gameThread.IsBackground = true;
             gameThread.Start();

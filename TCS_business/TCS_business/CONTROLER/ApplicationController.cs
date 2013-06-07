@@ -154,6 +154,11 @@ namespace TCS_business.CONTROLER
             guiManager.DisableBuyButton();
         }
 
+        internal void DisableGameSettings()
+        {
+            guiManager.DisableGameSettings();
+        }
+
         internal void UpdateFieldInfoPanel(Field field, bool shouldBuyButtonBeSeen, bool shouldPledgeButtonBeSeen)
         {
             guiManager.UpdateFieldInfoPanel(field, shouldBuyButtonBeSeen, shouldPledgeButtonBeSeen);

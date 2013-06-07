@@ -43,7 +43,8 @@ namespace TCS_business.VIEW
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CONTROLER.ApplicationController.Exit();
+            DialogResult dialogResult = MessageBox.Show("Do you really want to exit?", "Exit", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes) CONTROLER.ApplicationController.Exit();
         }
 
         private void runToolStripMenuItem_Click(object sender, EventArgs e)
@@ -102,6 +103,11 @@ namespace TCS_business.VIEW
             TurnEnd.Enabled = true;
         }
 
+        internal void DisableGameSettings()
+        {
+            gameSettingsToolStripMenuItem.Enabled = false;
+        }
+
         internal void DisableAddingPlayers()
         {
             registerNewPlayerToolStripMenuItem.Enabled = false;
@@ -147,6 +153,11 @@ namespace TCS_business.VIEW
         private void Buy_Click(object sender, EventArgs e)
         {
             ApplicationController.Instance.Game.BuyField();
+        }
+
+        private void infoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AboutBox().Show();
         }
     }
 }

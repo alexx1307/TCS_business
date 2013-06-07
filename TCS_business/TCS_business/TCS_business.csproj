@@ -73,6 +73,12 @@
     <Compile Include="MODEL\StartField.cs" />
     <Compile Include="MODEL\Tax.cs" />
     <Compile Include="MODEL\TurnState.cs" />
+    <Compile Include="VIEW\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\BoardPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -147,6 +153,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="VIEW\AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VIEW\AddPlayerDialog.resx">
       <DependentUpon>AddPlayerDialog.cs</DependentUpon>
     </EmbeddedResource>

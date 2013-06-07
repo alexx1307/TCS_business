@@ -111,6 +111,11 @@ namespace TCS_business.VIEW
             }
         }
 
+        public void DisableGameSettings()
+        {
+            mainWindow.DisableGameSettings();
+        }
+
         public void DisableAddingPlayers()
         {
             mainWindow.DisableAddingPlayers();

@@ -32,5 +32,6 @@ namespace TCS_business.VIEW
         void EnableBuyButton();
         void DisableBuyButton();
         void EnableEndTurnButton();
+        void DisableGameSettings();
     }
 }
