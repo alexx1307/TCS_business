@@ -70,11 +70,11 @@ namespace TCS_business.CONTROLER
         {
             Player player = null;
             foreach (Player p in gameState.PlayersList)
-                if (player == null || 
-                    player.Time == new TimeSpan(0,0,0) || 
-                    (p.Time > new TimeSpan(0,0,0) && p.Cash > player.Cash)) player = p;
+                if (player == null ||
+                    player.Time == new TimeSpan(0, 0, 0) ||
+                    (p.Time > new TimeSpan(0, 0, 0) && p.Cash > player.Cash)) player = p;
             MessageBox.Show("The winner is " + player.ToString());
-            ApplicationController.Exit();     
+            ApplicationController.Exit();
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace TCS_business.CONTROLER
                     gameState.ActivePlayerIndex = (gameState.ActivePlayerIndex + 1) % gameConfig.PlayersNumber;
                 }
                 ApplicationController.Instance.SendMessage("Tura gracza: " + gameState.ActivePlayer.ToString());
-                ApplicationController.Instance.guiManager.ShowTurnPrompt(gameState.ActivePlayer.ToString());
+                ApplicationController.Instance.ShowTurnPrompt(gameState.ActivePlayer.ToString());
                 int meshes = dice.Throw();  // roll of the dice
                 int second = dice.Throw2();
                 ApplicationController.Instance.RollDice(meshes, second);
@@ -98,14 +98,13 @@ namespace TCS_business.CONTROLER
                 Player p = gameState.PlayersList.ElementAt(gameState.ActivePlayerIndex);
                 board.MovePlayer(p, meshes);// move player on the board
                 ApplicationController.Instance.UpdateBoardView(board);
+                ApplicationController.Instance.DisableBuyButton();
                 board.Fields[board.Positions[p]].Action(p);
                 ApplicationController.Instance.UpdateBoardView(board);
                 p.Active = true;
-                lock (nextTurn) Monitor.PulseAll(nextTurn);
                 lock (endOfTurn) Monitor.Wait(endOfTurn);
                 p.Active = false;
                 ApplicationController.Instance.UpdatePlayerDataView(p);
-              
                 gameState.ActivePlayerIndex = (gameState.ActivePlayerIndex + 1) % gameConfig.PlayersNumber;
                 // update active player id
             }
@@ -117,7 +116,7 @@ namespace TCS_business.CONTROLER
         /// </summary>
         /// <param name="source"></param>
         /// <param name="e"></param>
-        public static void OnTimeoutEvent(object source, ElapsedEventArgs e)
+        public static void TurnEndEvent(object source, ElapsedEventArgs e)
         {
             lock (endOfTurn)
             {
@@ -166,14 +165,14 @@ namespace TCS_business.CONTROLER
             gameState.PlayersList.Clear();
         }
 
-        public int PlayersNumber { get { return ApplicationController.Instance.Game.GameState.PlayersList.Count; } }
+        public int PlayersNumber { get { return gameState.PlayersList.Count; } }
 
         internal void BuyField()
         {
             Player p = GameState.ActivePlayer;
             if (!(board.Fields[board.Positions[p]] is IPurchasable))
                 throw new Exception("Cannot buy this field");
-            (board.Fields[board.Positions[p]]as IPurchasable).Buy(p);
+            (board.Fields[board.Positions[p]] as IPurchasable).Buy(p);
         }
 
         internal void Auction()

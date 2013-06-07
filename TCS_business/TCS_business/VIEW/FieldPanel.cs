@@ -57,7 +57,7 @@ namespace TCS_business.VIEW
 
         private void FieldPanel_Click(object sender, EventArgs e)
         {
-            CONTROLER.Game game = CONTROLER.ApplicationController.Instance.game;
+            CONTROLER.Game game = CONTROLER.ApplicationController.Instance.Game;
             bool ownerOfWholeCountry = false;
             bool ownerofTheField = (field.Owner == game.GameState.ActivePlayer);
             if (field is City)

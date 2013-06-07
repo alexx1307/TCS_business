@@ -23,14 +23,14 @@ namespace TCS_business.VIEW
         void ShowMainWindow();
         void UpdateDice(int i, int j);
         void UpdateCommunicate(string s);
-        void ShowBuyPrompt();
+        //void ShowBuyPrompt();
         void ShowTurnPrompt(string playerName);
         void ShowCardPrompt(string s);
-
         void UpdateFieldInfoPanel(Field field, bool shouldBuyButtonBeSeen, bool shouldPledgeButtonBeSeen);
-
         void DisableAddingPlayers();
-
         void EnableAddingPlayers();
+        void EnableBuyButton();
+        void DisableBuyButton();
+        void EnableEndTurnButton();
     }
 }

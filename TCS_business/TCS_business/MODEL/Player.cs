@@ -80,7 +80,7 @@ namespace TCS_business.MODEL
             {
                 time--;
                 if (time == 0) ApplicationController.Instance.Game.End();
-                ApplicationController.Instance.guiManager.UpdatePlayerPanel(this);
+                ApplicationController.Instance.UpdatePlayerDataView(this);
             }
         }
 

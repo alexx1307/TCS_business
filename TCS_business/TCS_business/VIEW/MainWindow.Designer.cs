@@ -36,7 +36,8 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Buy = new System.Windows.Forms.Button();
+            this.TurnEnd = new System.Windows.Forms.Button();
             this.dice2 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.playersListPanel = new System.Windows.Forms.Panel();
@@ -114,21 +115,34 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.button1);
-            this.panel7.Location = new System.Drawing.Point(710, 447);
+            this.panel7.Controls.Add(this.Buy);
+            this.panel7.Controls.Add(this.TurnEnd);
+            this.panel7.Location = new System.Drawing.Point(710, 95);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(197, 84);
+            this.panel7.Size = new System.Drawing.Size(197, 35);
             this.panel7.TabIndex = 6;
             // 
-            // button1
+            // Buy
             // 
-            this.button1.Location = new System.Drawing.Point(56, 48);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 33);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "End turn ";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Buy.Enabled = false;
+            this.Buy.Location = new System.Drawing.Point(3, 3);
+            this.Buy.Name = "Buy";
+            this.Buy.Size = new System.Drawing.Size(92, 23);
+            this.Buy.TabIndex = 1;
+            this.Buy.Text = "Buy field";
+            this.Buy.UseVisualStyleBackColor = true;
+            this.Buy.Click += new System.EventHandler(this.Buy_Click);
+            // 
+            // TurnEnd
+            // 
+            this.TurnEnd.Enabled = false;
+            this.TurnEnd.Location = new System.Drawing.Point(101, 3);
+            this.TurnEnd.Name = "TurnEnd";
+            this.TurnEnd.Size = new System.Drawing.Size(93, 23);
+            this.TurnEnd.TabIndex = 0;
+            this.TurnEnd.Text = "End turn ";
+            this.TurnEnd.UseVisualStyleBackColor = true;
+            this.TurnEnd.Click += new System.EventHandler(this.TurnEnd_Click);
             // 
             // dice2
             // 
@@ -149,9 +163,9 @@
             // 
             // playersListPanel
             // 
-            this.playersListPanel.Location = new System.Drawing.Point(710, 112);
+            this.playersListPanel.Location = new System.Drawing.Point(710, 136);
             this.playersListPanel.Name = "playersListPanel";
-            this.playersListPanel.Size = new System.Drawing.Size(201, 325);
+            this.playersListPanel.Size = new System.Drawing.Size(201, 592);
             this.playersListPanel.TabIndex = 11;
             // 
             // dice1
@@ -214,11 +228,12 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox dice2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button TurnEnd;
         private System.Windows.Forms.Panel playersListPanel;
         private BoardPanel boardPanel1;
         private System.Windows.Forms.PictureBox dice1;
         private FieldInfoPanel fieldInfoPanel1;
+        private System.Windows.Forms.Button Buy;
 
     }
 }

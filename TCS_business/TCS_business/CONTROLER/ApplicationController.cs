@@ -15,13 +15,9 @@ namespace TCS_business.CONTROLER
         private static ApplicationController instance;
 
         ApplicationState appState;
-        public Game game;
-        public Game Game
-        {
-            get { return game; }
-
-        }
-        public IView guiManager;
+        private Game game;
+        public Game Game { get { return game; } }
+        private IView guiManager;
         public static ApplicationController Instance
         {
             get
@@ -31,21 +27,17 @@ namespace TCS_business.CONTROLER
                 return instance;
             }
         }
-        private ApplicationController()
-        {
 
-        }
+        private ApplicationController() { }
+
         public void InitializeAndRun()
         {
-
             appState = ApplicationState.WAITING_FOR_PLAYERS;
-
             guiManager = new GuiManager();
             guiManager.InitializeMainWindow();
             guiManager.ShowMainWindow();
             game = new Game();
             guiManager.AdjustButtonsAvailability(appState);
-
         }
         public void RunGame()
         {
@@ -55,6 +47,7 @@ namespace TCS_business.CONTROLER
             {
                 appState = ApplicationState.GAME_IN_PROGRESS;
                 guiManager.AdjustButtonsAvailability(appState);
+                guiManager.EnableEndTurnButton();
                 game.Start();
             }
             catch (Exception e)
@@ -77,10 +70,10 @@ namespace TCS_business.CONTROLER
             }
             else guiManager.DisableAddingPlayers();
             game.GameConfig = gameConfig;
-            foreach(Player p in game.GameState.PlayersList) 
+            foreach (Player p in game.GameState.PlayersList)
             {
                 p.Cash = gameConfig.StartCash;
-                p.Time = new TimeSpan(0,gameConfig.PlayerTime,0);
+                p.Time = new TimeSpan(0, gameConfig.PlayerTime, 0);
                 guiManager.UpdatePlayerPanel(p);
             }
         }
@@ -94,8 +87,6 @@ namespace TCS_business.CONTROLER
             {
                 guiManager.ShowLoginDialog();
             }
-
-
         }
 
         public static void Exit()
@@ -138,19 +129,34 @@ namespace TCS_business.CONTROLER
             //guiManager.ShowMessage(msg);
         }
 
-        internal void ShowBuyPrompt()
-        {
-            guiManager.ShowBuyPrompt();
-        }
+        //internal void ShowBuyPrompt()
+        //{
+        //    guiManager.ShowBuyPrompt();
+        //}
 
         internal void ShowCardPrompt(string s)
         {
             guiManager.ShowCardPrompt(s);
         }
 
+        internal void ShowTurnPrompt(string playerName)
+        {
+            guiManager.ShowTurnPrompt(playerName);
+        }
+
+        internal void EnableBuyButton()
+        {
+            guiManager.EnableBuyButton();
+        }
+
+        internal void DisableBuyButton()
+        {
+            guiManager.DisableBuyButton();
+        }
+
         internal void UpdateFieldInfoPanel(Field field, bool shouldBuyButtonBeSeen, bool shouldPledgeButtonBeSeen)
         {
-            guiManager.UpdateFieldInfoPanel(field, shouldBuyButtonBeSeen,shouldPledgeButtonBeSeen);
+            guiManager.UpdateFieldInfoPanel(field, shouldBuyButtonBeSeen, shouldPledgeButtonBeSeen);
         }
     }
 }

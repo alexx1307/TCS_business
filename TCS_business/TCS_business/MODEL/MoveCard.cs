@@ -21,7 +21,9 @@ namespace TCS_business.MODEL
 
         public override void Action(Player p)
         {
-            CONTROLER.ApplicationController.Instance.Game.Board.MovePlayer(field, p);
+            MODEL.Board board = CONTROLER.ApplicationController.Instance.Game.Board;
+            board.MovePlayer(field, p);
+            board.Fields[board.Positions[p]].Action(p);
         }
 
         /// <summary>

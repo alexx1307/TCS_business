@@ -52,14 +52,14 @@ namespace TCS_business.VIEW
         private void button1_Click(object sender, EventArgs e)
         {
             (field as MODEL.City).BuildHouse();
-            CONTROLER.Game game = CONTROLER.ApplicationController.Instance.game;
+            CONTROLER.Game game = CONTROLER.ApplicationController.Instance.Game;
             CONTROLER.ApplicationController.Instance.UpdateBoardView(game.Board);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             (field as MODEL.IPurchasable).ChangePledged();
-            CONTROLER.Game game = CONTROLER.ApplicationController.Instance.game;
+            CONTROLER.Game game = CONTROLER.ApplicationController.Instance.Game;
             CONTROLER.ApplicationController.Instance.UpdateBoardView(game.Board);
         }
     }

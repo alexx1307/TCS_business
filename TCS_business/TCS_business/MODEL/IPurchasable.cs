@@ -7,10 +7,10 @@ using TCS_business.CONTROLER;
 
 namespace TCS_business.MODEL
 {
-    public abstract class IPurchasable : Field,IPayable
+    public abstract class IPurchasable : Field, IPayable
     {
         Player owner;
-        int cost;
+        int cost = 100; // todo: zmienic
         bool pledged;
         public virtual Player Owner
         {
@@ -19,8 +19,8 @@ namespace TCS_business.MODEL
         }
         public int Cost
         {
-            get;
-            set;
+            get { return cost; }
+            set { cost = value; }
         }
         private int PledgeValue()
         {
@@ -42,27 +42,25 @@ namespace TCS_business.MODEL
 
             pledged = !pledged;
         }
+
         public void Buy(Player p)
         {
             Owner = p;
+            p.Cash -= cost;
+            ApplicationController.Instance.DisableBuyButton();
+            ApplicationController.Instance.UpdateBoardView(ApplicationController.Instance.Game.Board);
         }
 
 
         public override void Action(Player p)
         {
-            if (owner == null)
+            if (owner == null && p.Cash >= cost) ApplicationController.Instance.EnableBuyButton();
+            else ApplicationController.Instance.DisableBuyButton();
+            if (owner != null && p != owner && !pledged)
             {
-                ApplicationController.Instance.ShowBuyPrompt();
+                p.GiveCash(owner, Stake);
+                MessageBox.Show("Pobrana opłata w wysokości" + Stake.ToString());
             }
-            else if (p != owner)
-            {
-                if (!pledged)
-                {
-                    p.GiveCash(owner, Stake);
-                    MessageBox.Show("Pobrana opłata w wysokości" + Stake.ToString());
-                }
-            }
-
         }
 
         public int Stake

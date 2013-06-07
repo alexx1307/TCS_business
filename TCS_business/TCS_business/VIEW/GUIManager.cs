@@ -21,6 +21,7 @@ namespace TCS_business.VIEW
         {
             mainWindow = new MainWindow();
         }
+        
         public void ShowMainWindow()
         {
             Thread guiThread = new Thread((ThreadStart)delegate
@@ -28,9 +29,7 @@ namespace TCS_business.VIEW
                 Application.Run(mainWindow);
             });
             guiThread.Start();
-
         }
-
 
         public void InitializeGamePanel(Board board)
         {
@@ -100,7 +99,7 @@ namespace TCS_business.VIEW
                     break;
                 case ApplicationState.READY_FOR_GAME:
                     //mainWindow.DisableAddingPlayers();
-                    mainWindow.EnsableGameRun();
+                    mainWindow.EnableGameRun();
                     break;
                 case ApplicationState.GAME_IN_PROGRESS:
                     mainWindow.DisableAddingPlayers();
@@ -137,20 +136,34 @@ namespace TCS_business.VIEW
             mainWindow.BeginInvoke((MethodInvoker)delegate { mainWindow.ChangeCommunicate(s); });
         }
 
-
-        public void ShowBuyPrompt()
+        public void EnableBuyButton()
         {
-            BuyDialog buyDialog = new BuyDialog();
-            buyDialog.ShowDialog();
-            if (buyDialog.DialogResult == DialogResult.Yes)
-            {
-                ApplicationController.Instance.Game.BuyField();
-            }
-            else
-            {
-                ApplicationController.Instance.Game.Auction();
-            }
+            mainWindow.BeginInvoke((MethodInvoker)delegate { mainWindow.EnableBuyButton(); }); 
         }
+
+        public void DisableBuyButton()
+        {
+            mainWindow.BeginInvoke((MethodInvoker)delegate { mainWindow.DisableBuyButton(); }); 
+        }
+
+        public void EnableEndTurnButton()
+        {
+            mainWindow.BeginInvoke((MethodInvoker)delegate { mainWindow.EnableEndTurnButton(); });
+        }
+
+        //public void ShowBuyPrompt()
+        //{
+        //    BuyDialog buyDialog = new BuyDialog();
+        //    buyDialog.ShowDialog();
+        //    if (buyDialog.DialogResult == DialogResult.Yes)
+        //    {
+        //        ApplicationController.Instance.Game.BuyField();
+        //    }
+        //    else
+        //    {
+        //        ApplicationController.Instance.Game.Auction();
+        //    }
+        //}
 
         public void ShowTurnPrompt(string playerName)
         {
@@ -162,7 +175,6 @@ namespace TCS_business.VIEW
             CardDialog cardDialog = new CardDialog(s);
             cardDialog.ShowDialog();
         }
-
 
         public void UpdateFieldInfoPanel(Field field, bool shouldBuyButtonBeSeen, bool shouldPledgeButtonBeSeen)
         {

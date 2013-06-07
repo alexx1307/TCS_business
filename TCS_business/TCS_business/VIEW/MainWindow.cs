@@ -15,12 +15,12 @@ namespace TCS_business.VIEW
     {
         private Dictionary<Player, VIEW.PlayerInfo> playersPanelsMap = new Dictionary<Player, VIEW.PlayerInfo>();
         public Dictionary<Player, VIEW.PlayerInfo> PlayersPanelsMap { get { return playersPanelsMap; } }
-        
-public BoardPanel BoardPanel
+
+        public BoardPanel BoardPanel
         {
             get { return boardPanel1; }
         }
-        
+
         public MainWindow()
         {
             InitializeComponent();
@@ -82,26 +82,40 @@ public BoardPanel BoardPanel
             runToolStripMenuItem.Enabled = false;
         }
 
-        internal void EnsableGameRun()
+        internal void EnableGameRun()
         {
             runToolStripMenuItem.Enabled = true;
+        }
+
+        internal void EnableBuyButton()
+        {
+            Buy.Enabled = true;
+        }
+
+        internal void DisableBuyButton()
+        {
+            Buy.Enabled = false;
+        }
+
+        internal void EnableEndTurnButton()
+        {
+            TurnEnd.Enabled = true;
         }
 
         internal void DisableAddingPlayers()
         {
             registerNewPlayerToolStripMenuItem.Enabled = false;
         }
-        
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Game.OnTimeoutEvent(sender, null);
-        }
 
+        private void TurnEnd_Click(object sender, EventArgs e)
+        {
+            Game.TurnEndEvent(sender, null);
+        }
 
         public void ChangeCommunicate(string s)
         {
-                Action<int> updateAction = new Action<int>((value) => textBox1.Text = s);
-                textBox1.Invoke(updateAction,32);
+            Action<int> updateAction = new Action<int>((value) => textBox1.Text = s);
+            textBox1.Invoke(updateAction, 32);
         }
 
         public void ChangeDice(int i, int j)
@@ -125,10 +139,14 @@ public BoardPanel BoardPanel
             fieldInfoPanel1.Visible = false;
         }
 
-
         internal void UpdateFieldInfoPanel(Field field, bool shouldBuyButtonBeSeen, bool shouldPledgeButtonBeSeen)
         {
             this.fieldInfoPanel1.UpdateContent(field, shouldBuyButtonBeSeen, shouldPledgeButtonBeSeen);
+        }
+
+        private void Buy_Click(object sender, EventArgs e)
+        {
+            ApplicationController.Instance.Game.BuyField();
         }
     }
 }
