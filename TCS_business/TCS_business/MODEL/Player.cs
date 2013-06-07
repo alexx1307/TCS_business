@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 using TCS_business.CONTROLER;
 
 
 namespace TCS_business.MODEL
-{   
+{
     /// <summary>
     /// <author> Anita Ciosek </author>
     /// Class representing player in a game.
@@ -55,13 +56,34 @@ namespace TCS_business.MODEL
             set { inJail = value; }
         }
 
-        private int time; // seconds
+        private Timer timer;
+
+        /// <summary>
+        /// Boolean indicating whether it's this player turn
+        /// </summary>
+        private bool active = false;
+        public bool Active { set { active = value; } get { return active; } }
+
+        /// <summary>
+        /// Time for a game, in seconds
+        /// </summary>
+        private int time;
         public TimeSpan Time
         {
             set { time = value.Seconds + value.Minutes * 60; }
             get { return new TimeSpan(0, time / 60, time % 60); }
         }
-        
+
+        void timer_Tick(object sender, EventArgs e)
+        {
+            if (active)
+            {
+                time--;
+                if (time == 0) ApplicationController.Instance.Game.End();
+                ApplicationController.Instance.guiManager.UpdatePlayerPanel(this);
+            }
+        }
+
         /// <summary>
         /// Constructs new Player with the specified name.
         /// It sets default amount of Cash.
@@ -76,6 +98,10 @@ namespace TCS_business.MODEL
             Id = id;
             cards = new List<Card>();
             this.time = time * 60;
+            timer = new Timer();
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Interval = 1000;
+            timer.Start();
         }
 
         /// <summary>
@@ -96,7 +122,7 @@ namespace TCS_business.MODEL
         public void GoToJail()
         {
             if (cards.Count > 0) cards.RemoveAt(0);
-            else inJail = true; 
+            else inJail = true;
         }
 
         /// <summary>

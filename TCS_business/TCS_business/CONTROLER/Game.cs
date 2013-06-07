@@ -31,15 +31,11 @@ namespace TCS_business.CONTROLER
             get { return gameConfig; }
             set
             {
+                //todo: GameSettings powinno być wyszarzone po uruchomieniu gry
                 if (isRunning) throw new InvalidOperationException("It's impossible to change game properties during game");
                 gameConfig = value;
             }
         }
-
-        /// <summary>
-        ///  Counts time of each turn
-        /// </summary>
-        private System.Timers.Timer timer;
 
         /// <summary>
         ///  Objects needed for synchronization
@@ -52,7 +48,6 @@ namespace TCS_business.CONTROLER
             this.gameConfig = new GameConfig();
             this.gameState = new GameState();
             this.dice = new Dice();
-
             this.isRunning = false;
         }
 
@@ -65,16 +60,21 @@ namespace TCS_business.CONTROLER
             this.board = BoardGenerator.Generate();
             board.Init(gameState);
             ApplicationController.Instance.InitializeGamePanel(board);
-            int minutes = gameConfig.PlayerTime;
-            int miliseconds = minutes * 60000;
-            this.timer = new System.Timers.Timer(3000);
-            this.timer.Elapsed += new ElapsedEventHandler(OnTimeoutEvent);
             this.isRunning = true;
-            
             gameThread = new Thread(new ThreadStart(this.Loop));
             gameThread.IsBackground = true;
             gameThread.Start();
+        }
 
+        public void End()
+        {
+            Player player = null;
+            foreach (Player p in gameState.PlayersList)
+                if (player == null || 
+                    player.Time == new TimeSpan(0,0,0) || 
+                    (p.Time > new TimeSpan(0,0,0) && p.Cash > player.Cash)) player = p;
+            MessageBox.Show("The winner is " + player.ToString());
+            ApplicationController.Exit();     
         }
 
         /// <summary>
@@ -89,6 +89,7 @@ namespace TCS_business.CONTROLER
                     gameState.ActivePlayer.exitJail();
                     gameState.ActivePlayerIndex = (gameState.ActivePlayerIndex + 1) % gameConfig.PlayersNumber;
                 }
+                ApplicationController.Instance.SendMessage("Tura gracza: " + gameState.ActivePlayer.ToString());
                 ApplicationController.Instance.guiManager.ShowTurnPrompt(gameState.ActivePlayer.ToString());
                 int meshes = dice.Throw();  // roll of the dice
                 int second = dice.Throw2();
@@ -99,29 +100,12 @@ namespace TCS_business.CONTROLER
                 ApplicationController.Instance.UpdateBoardView(board);
                 board.Fields[board.Positions[p]].Action(p);
                 ApplicationController.Instance.UpdateBoardView(board);
-
-
-                timer.Start();              // begin to countdown
-                //MessageBox.Show("a");
-                lock (nextTurn)
-                {
-                    Monitor.PulseAll(nextTurn); // notify all that new round has just begun!
-                }
-                /*
-                    * tu takie male zalozenie: watki graczy gdzies czekaja na waicie na nextTurn 
-                    * i sprawdzaja czy activePlayer==ich id, jesli tak to moga grac, wpp.
-                    * idzie spac dalej. Z tym, ze to trzeba jeszcze mocno przemyslec i dopracowac
-                    * ja troche nie wiem jak to zrobic... :c
-                    */
-                //MessageBox.Show("b");
-                lock (endOfTurn)
-                {
-                    Monitor.Wait(endOfTurn);    /* wait for the end of the turn */
-                }                           /* (i.e. user ended his/her turn or run out of time) */
-                //MessageBox.Show("c");
+                p.Active = true;
+                lock (nextTurn) Monitor.PulseAll(nextTurn);
+                lock (endOfTurn) Monitor.Wait(endOfTurn);
+                p.Active = false;
                 ApplicationController.Instance.UpdatePlayerDataView(p);
               
-                timer.Stop();               // end of the countdown
                 gameState.ActivePlayerIndex = (gameState.ActivePlayerIndex + 1) % gameConfig.PlayersNumber;
                 // update active player id
             }

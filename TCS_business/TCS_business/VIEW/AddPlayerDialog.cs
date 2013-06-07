@@ -51,6 +51,5 @@ namespace TCS_business.VIEW
         {
             this.Close();
         }
-
     }
 }
