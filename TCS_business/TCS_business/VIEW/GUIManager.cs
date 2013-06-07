@@ -65,9 +65,8 @@ namespace TCS_business.VIEW
         public void ShowConfigDialog(GameConfig gameConfig)
         {
             GameConfigDialog configDialog = new GameConfigDialog();
-            configDialog.SetGameConfigProperties(gameConfig); //to chyba nie jest juz potrzebne - Anita.
+            configDialog.SetGameConfig(gameConfig);
             configDialog.Show();
-
         }
 
         /// <summary>
