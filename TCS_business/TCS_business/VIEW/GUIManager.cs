@@ -15,7 +15,7 @@ namespace TCS_business.VIEW
     public class GuiManager : IView
     {
         MainWindow mainWindow;
-        
+
 
         public void InitializeMainWindow()
         {
@@ -44,7 +44,7 @@ namespace TCS_business.VIEW
             //tylko main window ma posiadac panel odpowiedzialny za listowanie graczy i jego metode masz wywolac.
             //poza tym zmien nazwe tej metody (jakis update)
         }
-        
+
         public void UpdateFieldState(Field field)
         {
             throw new NotImplementedException();
@@ -86,7 +86,7 @@ namespace TCS_business.VIEW
         public void ShowMessage(string msg)
         {
             mainWindow.BeginInvoke((MethodInvoker)delegate { MessageBox.Show(msg); });
-            
+
             //mainWindow.ChangeCommunicate(msg);
         }
 
@@ -111,6 +111,17 @@ namespace TCS_business.VIEW
                     break;
             }
         }
+
+        public void DisableAddingPlayers()
+        {
+            mainWindow.DisableAddingPlayers();
+        }
+
+        public void EnableAddingPlayers()
+        {
+            mainWindow.EnableAddingPlayers();
+        }
+
         public void UpdateBoard(Board board)
         {
             mainWindow.BoardPanel.Update(board);
@@ -133,11 +144,11 @@ namespace TCS_business.VIEW
             buyDialog.ShowDialog();
             if (buyDialog.DialogResult == DialogResult.Yes)
             {
-                ApplicationController.Instance.Game.BuyField(); 
+                ApplicationController.Instance.Game.BuyField();
             }
             else
             {
-                ApplicationController.Instance.Game.Auction(); 
+                ApplicationController.Instance.Game.Auction();
             }
         }
 

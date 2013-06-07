@@ -19,7 +19,7 @@ namespace TCS_business.CONTROLER
         public Game Game
         {
             get { return game; }
-   
+
         }
         public IView guiManager;
         public static ApplicationController Instance
@@ -70,12 +70,12 @@ namespace TCS_business.CONTROLER
         }
         public void SetNewGameConfig(GameConfig gameConfig)
         {
-            if (game.GameConfig.PlayersNumber < game.PlayersNumber)
+            if (gameConfig.PlayersNumber != game.PlayersNumber)
             {
-                game.ResetPlayerList();
                 appState = ApplicationState.WAITING_FOR_PLAYERS;
                 guiManager.AdjustButtonsAvailability(appState);
             }
+            else guiManager.DisableAddingPlayers();
             game.GameConfig = gameConfig;
         }
         public void ShowAddPlayerDialog()
@@ -103,8 +103,10 @@ namespace TCS_business.CONTROLER
             if (game.AllPlayersJoined())
             {
                 appState = ApplicationState.READY_FOR_GAME;
+                guiManager.DisableAddingPlayers();
                 guiManager.AdjustButtonsAvailability(appState);
             }
+            else guiManager.EnableAddingPlayers();
             guiManager.UpdatePlayersList(game.GameState.PlayersList);
         }
 
@@ -142,7 +144,7 @@ namespace TCS_business.CONTROLER
 
         internal void UpdateFieldInfoPanel(Field field, bool shouldBuyButtonBeSeen)
         {
-            guiManager.UpdateFieldInfoPanel(field,shouldBuyButtonBeSeen);
+            guiManager.UpdateFieldInfoPanel(field, shouldBuyButtonBeSeen);
         }
     }
 }

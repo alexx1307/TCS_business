@@ -67,7 +67,7 @@ namespace TCS_business.CONTROLER
             ApplicationController.Instance.InitializeGamePanel(board);
             int minutes = gameConfig.PlayerTime;
             int miliseconds = minutes * 60000;
-            this.timer = new System.Timers.Timer(miliseconds);
+            this.timer = new System.Timers.Timer(1000);
             this.timer.Elapsed += new ElapsedEventHandler(OnTimeoutEvent);
             this.isRunning = true;
             
@@ -182,9 +182,7 @@ namespace TCS_business.CONTROLER
             gameState.PlayersList.Clear();
         }
 
-
-        public int PlayersNumber { get; set; } // ?
-
+        public int PlayersNumber { get { return ApplicationController.Instance.Game.GameState.PlayersList.Count; } }
 
         internal void BuyField()
         {

@@ -27,5 +27,9 @@ namespace TCS_business.VIEW
         void ShowCardPrompt(string s);
 
         void UpdateFieldInfoPanel(Field field, bool shouldBuyButtonBeSeen);
+
+        void DisableAddingPlayers();
+
+        void EnableAddingPlayers();
     }
 }
