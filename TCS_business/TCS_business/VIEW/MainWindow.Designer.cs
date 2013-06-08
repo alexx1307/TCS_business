@@ -38,18 +38,18 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.Buy = new System.Windows.Forms.Button();
             this.TurnEnd = new System.Windows.Forms.Button();
-            this.dice2 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.playersListPanel = new System.Windows.Forms.Panel();
-            this.dice1 = new System.Windows.Forms.PictureBox();
-            this.boardPanel1 = new TCS_business.VIEW.BoardPanel();
-            this.fieldInfoPanel1 = new TCS_business.VIEW.FieldInfoPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.fieldInfoPanel1 = new TCS_business.VIEW.FieldInfoPanel();
+            this.dice1 = new System.Windows.Forms.PictureBox();
+            this.boardPanel1 = new TCS_business.VIEW.BoardPanel();
+            this.dice2 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dice2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dice1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dice2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -147,14 +147,6 @@
             this.TurnEnd.UseVisualStyleBackColor = true;
             this.TurnEnd.Click += new System.EventHandler(this.TurnEnd_Click);
             // 
-            // dice2
-            // 
-            this.dice2.Location = new System.Drawing.Point(862, 44);
-            this.dice2.Name = "dice2";
-            this.dice2.Size = new System.Drawing.Size(45, 45);
-            this.dice2.TabIndex = 7;
-            this.dice2.TabStop = false;
-            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(710, 42);
@@ -171,33 +163,10 @@
             this.playersListPanel.Size = new System.Drawing.Size(201, 592);
             this.playersListPanel.TabIndex = 11;
             // 
-            // dice1
-            // 
-            this.dice1.Location = new System.Drawing.Point(811, 44);
-            this.dice1.Name = "dice1";
-            this.dice1.Size = new System.Drawing.Size(45, 45);
-            this.dice1.TabIndex = 12;
-            this.dice1.TabStop = false;
-            // 
-            // boardPanel1
-            // 
-            this.boardPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.boardPanel1.Location = new System.Drawing.Point(12, 27);
-            this.boardPanel1.Name = "boardPanel1";
-            this.boardPanel1.Size = new System.Drawing.Size(673, 701);
-            this.boardPanel1.TabIndex = 0;
-            // 
-            // fieldInfoPanel1
-            // 
-            this.fieldInfoPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.fieldInfoPanel1.Location = new System.Drawing.Point(710, 538);
-            this.fieldInfoPanel1.Name = "fieldInfoPanel1";
-            this.fieldInfoPanel1.Size = new System.Drawing.Size(146, 146);
-            this.fieldInfoPanel1.TabIndex = 13;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(200, 224);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
@@ -208,6 +177,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label2.Location = new System.Drawing.Point(200, 187);
@@ -216,6 +186,40 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "Chance";
             this.label2.Visible = false;
+            // 
+            // fieldInfoPanel1
+            // 
+            this.fieldInfoPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.fieldInfoPanel1.Location = new System.Drawing.Point(710, 538);
+            this.fieldInfoPanel1.Name = "fieldInfoPanel1";
+            this.fieldInfoPanel1.Size = new System.Drawing.Size(146, 146);
+            this.fieldInfoPanel1.TabIndex = 13;
+            // 
+            // dice1
+            // 
+            this.dice1.Location = new System.Drawing.Point(811, 44);
+            this.dice1.Name = "dice1";
+            this.dice1.Size = new System.Drawing.Size(45, 45);
+            this.dice1.TabIndex = 12;
+            this.dice1.TabStop = false;
+            // 
+            // boardPanel1
+            // 
+            this.boardPanel1.BackColor = System.Drawing.Color.DarkGray;
+            this.boardPanel1.BackgroundImage = global::TCS_business.Properties.Resources.plansza;
+            this.boardPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.boardPanel1.Location = new System.Drawing.Point(12, 27);
+            this.boardPanel1.Name = "boardPanel1";
+            this.boardPanel1.Size = new System.Drawing.Size(673, 701);
+            this.boardPanel1.TabIndex = 0;
+            // 
+            // dice2
+            // 
+            this.dice2.Location = new System.Drawing.Point(862, 44);
+            this.dice2.Name = "dice2";
+            this.dice2.Size = new System.Drawing.Size(45, 45);
+            this.dice2.TabIndex = 7;
+            this.dice2.TabStop = false;
             // 
             // MainWindow
             // 
@@ -235,8 +239,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dice2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dice1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dice2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
