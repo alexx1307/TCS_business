@@ -81,6 +81,7 @@ namespace TCS_business.CONTROLER
         /// </summary>
         private void Loop()
         {
+            ApplicationController.Instance.UpdateBoardView(board);
             while (!IsEnd())
             {
                 while (gameState.ActivePlayer.InJail)
