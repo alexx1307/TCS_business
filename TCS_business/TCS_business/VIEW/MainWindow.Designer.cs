@@ -42,10 +42,10 @@
             this.playersListPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.fieldInfoPanel1 = new TCS_business.VIEW.FieldInfoPanel();
             this.dice1 = new System.Windows.Forms.PictureBox();
-            this.boardPanel1 = new TCS_business.VIEW.BoardPanel();
             this.dice2 = new System.Windows.Forms.PictureBox();
+            this.boardPanel1 = new TCS_business.VIEW.BoardPanel();
+            this.fieldInfoPanel1 = new TCS_business.VIEW.FieldInfoPanel();
             this.menuStrip1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dice1)).BeginInit();
@@ -108,6 +108,7 @@
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // infoToolStripMenuItem
             // 
@@ -187,14 +188,6 @@
             this.label2.Text = "Chance";
             this.label2.Visible = false;
             // 
-            // fieldInfoPanel1
-            // 
-            this.fieldInfoPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.fieldInfoPanel1.Location = new System.Drawing.Point(710, 538);
-            this.fieldInfoPanel1.Name = "fieldInfoPanel1";
-            this.fieldInfoPanel1.Size = new System.Drawing.Size(146, 146);
-            this.fieldInfoPanel1.TabIndex = 13;
-            // 
             // dice1
             // 
             this.dice1.Location = new System.Drawing.Point(811, 44);
@@ -203,16 +196,6 @@
             this.dice1.TabIndex = 12;
             this.dice1.TabStop = false;
             // 
-            // boardPanel1
-            // 
-            this.boardPanel1.BackColor = System.Drawing.Color.DarkGray;
-            this.boardPanel1.BackgroundImage = global::TCS_business.Properties.Resources.plansza;
-            this.boardPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.boardPanel1.Location = new System.Drawing.Point(12, 27);
-            this.boardPanel1.Name = "boardPanel1";
-            this.boardPanel1.Size = new System.Drawing.Size(673, 701);
-            this.boardPanel1.TabIndex = 0;
-            // 
             // dice2
             // 
             this.dice2.Location = new System.Drawing.Point(862, 44);
@@ -220,6 +203,23 @@
             this.dice2.Size = new System.Drawing.Size(45, 45);
             this.dice2.TabIndex = 7;
             this.dice2.TabStop = false;
+            // 
+            // boardPanel1
+            // 
+            this.boardPanel1.BackColor = System.Drawing.Color.DarkGray;
+            this.boardPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.boardPanel1.Location = new System.Drawing.Point(12, 27);
+            this.boardPanel1.Name = "boardPanel1";
+            this.boardPanel1.Size = new System.Drawing.Size(673, 701);
+            this.boardPanel1.TabIndex = 0;
+            // 
+            // fieldInfoPanel1
+            // 
+            this.fieldInfoPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.fieldInfoPanel1.Location = new System.Drawing.Point(710, 538);
+            this.fieldInfoPanel1.Name = "fieldInfoPanel1";
+            this.fieldInfoPanel1.Size = new System.Drawing.Size(146, 146);
+            this.fieldInfoPanel1.TabIndex = 13;
             // 
             // MainWindow
             // 

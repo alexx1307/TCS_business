@@ -124,6 +124,12 @@
     <Compile Include="VIEW\GameConfigDialog.Designer.cs">
       <DependentUpon>GameConfigDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\HelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\HelpForm.Designer.cs">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\IView.cs" />
     <Compile Include="VIEW\MainWindow.cs">
       <SubType>Form</SubType>
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\GameConfigDialog.resx">
       <DependentUpon>GameConfigDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\HelpForm.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

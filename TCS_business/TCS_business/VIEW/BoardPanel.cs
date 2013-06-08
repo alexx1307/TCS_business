@@ -62,7 +62,7 @@ namespace TCS_business.VIEW
                     move -= fieldPanels[2*fieldsPerSide-i-1].Height;
                 }
             }
-
+            BackgroundImage = global::TCS_business.Properties.Resources.plansza;
         }
 
         internal void Update(Board board)
