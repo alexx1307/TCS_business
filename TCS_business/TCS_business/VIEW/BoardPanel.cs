@@ -72,12 +72,13 @@ namespace TCS_business.VIEW
             {
                 FieldPanel fp = fieldPanels[i];
                 fp.Update(board.Fields[i]);
-                fp.setPawn(System.Drawing.Color.Transparent);
+                fp.removePawns();
             }
+            int k = 0;
             foreach (Player p in board.Positions.Keys)
             {
                 int position = board.Positions[p];
-                fieldPanels[position].setPawn(p.Color);
+                fieldPanels[position].setPawn(p.Color, k++);
             }
         }
     }

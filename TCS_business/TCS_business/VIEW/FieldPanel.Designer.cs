@@ -30,9 +30,15 @@
         {
             this.descriptionLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.placeForPawnPB = new System.Windows.Forms.PictureBox();
+            this.pawn1 = new System.Windows.Forms.PictureBox();
+            this.pawn2 = new System.Windows.Forms.PictureBox();
+            this.pawn3 = new System.Windows.Forms.PictureBox();
+            this.pawn4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.placeForPawnPB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pawn1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pawn2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pawn3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pawn4)).BeginInit();
             this.SuspendLayout();
             // 
             // descriptionLabel
@@ -55,13 +61,37 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // placeForPawnPB
+            // pawn1
             // 
-            this.placeForPawnPB.Location = new System.Drawing.Point(7, 24);
-            this.placeForPawnPB.Name = "placeForPawnPB";
-            this.placeForPawnPB.Size = new System.Drawing.Size(16, 18);
-            this.placeForPawnPB.TabIndex = 1;
-            this.placeForPawnPB.TabStop = false;
+            this.pawn1.Location = new System.Drawing.Point(5, 24);
+            this.pawn1.Name = "pawn1";
+            this.pawn1.Size = new System.Drawing.Size(7, 18);
+            this.pawn1.TabIndex = 1;
+            this.pawn1.TabStop = false;
+            // 
+            // pawn2
+            // 
+            this.pawn2.Location = new System.Drawing.Point(13, 24);
+            this.pawn2.Name = "pawn2";
+            this.pawn2.Size = new System.Drawing.Size(7, 18);
+            this.pawn2.TabIndex = 3;
+            this.pawn2.TabStop = false;
+            // 
+            // pawn3
+            // 
+            this.pawn3.Location = new System.Drawing.Point(21, 24);
+            this.pawn3.Name = "pawn3";
+            this.pawn3.Size = new System.Drawing.Size(7, 18);
+            this.pawn3.TabIndex = 4;
+            this.pawn3.TabStop = false;
+            // 
+            // pawn4
+            // 
+            this.pawn4.Location = new System.Drawing.Point(29, 24);
+            this.pawn4.Name = "pawn4";
+            this.pawn4.Size = new System.Drawing.Size(7, 18);
+            this.pawn4.TabIndex = 5;
+            this.pawn4.TabStop = false;
             // 
             // FieldPanel
             // 
@@ -69,14 +99,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.pawn4);
+            this.Controls.Add(this.pawn3);
+            this.Controls.Add(this.pawn2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.placeForPawnPB);
+            this.Controls.Add(this.pawn1);
             this.Controls.Add(this.descriptionLabel);
             this.Name = "FieldPanel";
             this.Size = new System.Drawing.Size(80, 55);
             this.Click += new System.EventHandler(this.FieldPanel_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.placeForPawnPB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pawn1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pawn2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pawn3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pawn4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -85,8 +121,11 @@
         #endregion
 
         private System.Windows.Forms.Label descriptionLabel;
-        private System.Windows.Forms.PictureBox placeForPawnPB;
+        private System.Windows.Forms.PictureBox pawn1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pawn2;
+        private System.Windows.Forms.PictureBox pawn3;
+        private System.Windows.Forms.PictureBox pawn4;
 
 
     }
