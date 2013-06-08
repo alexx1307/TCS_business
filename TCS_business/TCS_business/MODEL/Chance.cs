@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TCS_business.CONTROLER;
 
 namespace TCS_business.MODEL
 {
@@ -11,12 +12,12 @@ namespace TCS_business.MODEL
     /// </summary>
     class Chance : Field
     {
-        Card[] cards;
-        int i;
+        //Card[] cards;
+        //int i;
         public Chance(string p):base(p)
         {
-            cards = CardGenerator.Generate();
-            i = new Random().Next(0, cards.Length-1);
+            //cards = CardGenerator.Generate();
+            //i = new Random().Next(0, cards.Length-1);
         }
 
         /// <summary>
@@ -24,9 +25,10 @@ namespace TCS_business.MODEL
         /// </summary>
         /// <param name="p">Player who pull the card.</param>
         public override void Action(Player p) {
-            Card c = cards[i % cards.Length];
-            ++i;
-            CONTROLER.ApplicationController.Instance.ShowCardPrompt(c.ToString());
+            //Card c = cards[i % cards.Length];
+            //++i;
+            Card c = ApplicationController.Instance.Game.Board.Deck.NextCard();
+            ApplicationController.Instance.ShowCardPrompt(c.ToString());
             c.Action(p);
         } 
 

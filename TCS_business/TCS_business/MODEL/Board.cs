@@ -20,7 +20,7 @@ namespace TCS_business.MODEL
         ///  List of fields on the board
         /// </summary>
         private Field[] fields;
-        public Field[] Fields{ get{return fields;} }
+        public Field[] Fields { get { return fields; } }
         /// <summary>
         ///  Current positions of players on the board
         /// </summary>
@@ -39,9 +39,14 @@ namespace TCS_business.MODEL
         /// </summary>
         public const int CASHFORSTART = 200;
 
-        public Board() {
+        private Deck deck;
+        public Deck Deck { get { return deck; } }
+
+        public Board()
+        {
             positions = new Dictionary<Player, int>();
             fields = new Field[NOFIELDS];
+            deck = new Deck();
         }
 
         /// <summary>
@@ -54,7 +59,6 @@ namespace TCS_business.MODEL
             {
                 positions.Add(p, 0);
             }
-            // todo: dodac pola do listy
         }
 
         /// <summary>

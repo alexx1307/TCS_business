@@ -9,7 +9,7 @@ namespace TCS_business.MODEL
     {
         public static Card[] Generate()
         {
-            Card[] cards = new Card[20];
+            Card[] cards = new Card[Deck.NOCARDS];
             cards[0] = new GoToJailCard();
             cards[1] = new GetCard("You won a beauty contest. You get 200$", 200);
             cards[2] = new GoOutFromJailCard();

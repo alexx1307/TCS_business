@@ -9,30 +9,29 @@ namespace TCS_business.MODEL
     /// <author> Anita Ciosek </author>
     /// Class representing deck of cards.
     /// </summary>
-    class Deck
+    public class Deck
     {
-        List<Card> cards;
-        int iter;
-
-        Deck()
-        {
-            iter = 0;
-            //w tym miejscu chyba powinno sie dodac te karty?
-        }
-
-        void Shuffle() //todo: Kosti
-        {
-        }
-
         /// <summary>
-        /// Get a deck.
+        /// Number of cards in a deck
         /// </summary>
-        /// <returns>New Deck</returns>
-        public static Deck GetInstance()
-        {
-            return new Deck();
-        }
+        public const int NOCARDS = 20;
 
+        private Card[] cards = CardGenerator.Generate();
+        private int iter = 0;
+        private Random random = new Random();
+
+        public Deck() { Shuffle(); }
+
+        private void Shuffle()
+        {
+            for (int i = cards.Length - 1; i > 0; --i)
+            {
+                int r = random.Next(i + 1); // 0 <= r <= i
+                Card swap = cards[r];
+                cards[r] = cards[i];
+                cards[i] = swap;
+            }
+        }
 
         /// <summary>
         /// Pull the card.
@@ -40,8 +39,8 @@ namespace TCS_business.MODEL
         /// <returns>Next card from the deck</returns>
         public Card NextCard()
         {
-            if (iter < cards.Count) iter = 0;
-            return cards.ElementAt(iter++);
+            if (iter < cards.Length) { Shuffle(); iter = 0; }
+            return cards[iter++];
         }
 
     }
