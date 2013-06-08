@@ -21,7 +21,7 @@ namespace TCS_business.MODEL
         {
             return new Tuple<int, int>(
                 new Random().Next(1, 7), 
-                new Random().Next(1, 7));
+                new Random().Next(1, 120)%6+1);
         }
     }
 }

@@ -85,12 +85,6 @@
     <Compile Include="VIEW\BoardPanel.Designer.cs">
       <DependentUpon>BoardPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="VIEW\BuyDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VIEW\BuyDialog.Designer.cs">
-      <DependentUpon>BuyDialog.cs</DependentUpon>
-    </Compile>
     <Compile Include="VIEW\FieldInfoPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -162,9 +156,6 @@
     <EmbeddedResource Include="VIEW\BoardPanel.resx">
       <DependentUpon>BoardPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VIEW\BuyDialog.resx">
-      <DependentUpon>BuyDialog.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="VIEW\FieldInfoPanel.resx">
       <DependentUpon>FieldInfoPanel.cs</DependentUpon>
     </EmbeddedResource>
@@ -216,9 +207,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\6.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\greece.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\plansza.jpg" />

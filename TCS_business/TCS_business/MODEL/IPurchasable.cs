@@ -59,7 +59,7 @@ namespace TCS_business.MODEL
             if (owner != null && p != owner && !pledged)
             {
                 p.GiveCash(owner, Stake);
-                MessageBox.Show("Pobrana opłata w wysokości" + Stake.ToString());
+                ApplicationController.Instance.ShowPayInfo("Charged at " + Stake.ToString());
             }
         }
 

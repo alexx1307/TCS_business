@@ -89,7 +89,7 @@ namespace TCS_business.CONTROLER
                     gameState.ActivePlayer.exitJail();
                     gameState.ActivePlayerIndex = (gameState.ActivePlayerIndex + 1) % gameConfig.PlayersNumber;
                 }
-                ApplicationController.Instance.SendMessage("Tura gracza: " + gameState.ActivePlayer.ToString());
+                ApplicationController.Instance.SendMessage("Ture player: " + gameState.ActivePlayer.ToString());
                 ApplicationController.Instance.ShowTurnPrompt(gameState.ActivePlayer.ToString());
                 Tuple<int, int> meshes = dice.Throw();
                 ApplicationController.Instance.RollDice(meshes);
@@ -171,11 +171,6 @@ namespace TCS_business.CONTROLER
             if (!(board.Fields[board.Positions[p]] is IPurchasable))
                 throw new Exception("Cannot buy this field");
             (board.Fields[board.Positions[p]] as IPurchasable).Buy(p);
-        }
-
-        internal void Auction()
-        {
-            //throw new NotImplementedException();
         }
     }
 }

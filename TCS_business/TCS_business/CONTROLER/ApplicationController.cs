@@ -163,5 +163,10 @@ namespace TCS_business.CONTROLER
         {
             guiManager.UpdateFieldInfoPanel(field, shouldBuyButtonBeSeen, shouldPledgeButtonBeSeen);
         }
+
+        internal void ShowPayInfo(string s)
+        {
+            guiManager.ShowPayInfo(s);
+        }
     }
 }

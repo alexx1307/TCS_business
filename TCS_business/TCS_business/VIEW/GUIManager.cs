@@ -156,23 +156,9 @@ namespace TCS_business.VIEW
             mainWindow.BeginInvoke((MethodInvoker)delegate { mainWindow.EnableEndTurnButton(); });
         }
 
-        //public void ShowBuyPrompt()
-        //{
-        //    BuyDialog buyDialog = new BuyDialog();
-        //    buyDialog.ShowDialog();
-        //    if (buyDialog.DialogResult == DialogResult.Yes)
-        //    {
-        //        ApplicationController.Instance.Game.BuyField();
-        //    }
-        //    else
-        //    {
-        //        ApplicationController.Instance.Game.Auction();
-        //    }
-        //}
-
         public void ShowTurnPrompt(string playerName)
         {
-            MessageBox.Show("Tura gracza " + playerName);
+            MessageBox.Show("Ture player: " + playerName);
         }
 
         public void ShowCardPrompt(string s)
@@ -183,6 +169,11 @@ namespace TCS_business.VIEW
         public void UpdateFieldInfoPanel(Field field, bool shouldBuyButtonBeSeen, bool shouldPledgeButtonBeSeen)
         {
             mainWindow.UpdateFieldInfoPanel(field, shouldBuyButtonBeSeen, shouldPledgeButtonBeSeen);
+        }
+
+        public void ShowPayInfo(string s)
+        {
+            mainWindow.BeginInvoke((MethodInvoker)delegate { mainWindow.ShowPayInfo(s); });
         }
     }
 }

@@ -47,7 +47,7 @@
             this.close.Name = "close";
             this.close.Size = new System.Drawing.Size(75, 23);
             this.close.TabIndex = 1;
-            this.close.Text = "Zamknij";
+            this.close.Text = "Close";
             this.close.UseVisualStyleBackColor = true;
             this.close.Click += new System.EventHandler(this.close_Click);
             // 

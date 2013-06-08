@@ -137,9 +137,6 @@
             this.textBoxDescription.Size = new System.Drawing.Size(271, 126);
             this.textBoxDescription.TabIndex = 23;
             this.textBoxDescription.TabStop = false;
-            this.textBoxDescription.Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor suscipit" +
-    " libero id elementum. Aenean et tempus erat. \r\n\r\nPellentesque tincidunt at dolor" +
-    " et semper.";
             // 
             // okButton
             // 

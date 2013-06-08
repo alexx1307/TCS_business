@@ -22,7 +22,7 @@ namespace TCS_business.MODEL
         #endregion
 
         #region constraints
-        public const int maxPlayersNumber = 4;
+        public const int maxPlayersNumber = 6;
         public const int minPlayersNumber = 2;
         public const int maxPlayerTime = 20;
         public const int minPlayerTime = 2;
