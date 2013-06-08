@@ -12,12 +12,12 @@ namespace TCS_business.MODEL
     /// </summary>
     class Chance : Field
     {
-        //Card[] cards;
-        //int i;
-        public Chance(string p):base(p)
+        Card[] cards;
+        int i;
+        public Chance(string p, int nr)
         {
-            //cards = CardGenerator.Generate();
-            //i = new Random().Next(0, cards.Length-1);
+            cards = CardGenerator.Generate();
+            i = new Random().Next(0, cards.Length-1)+nr % (cards.Length-1);
         }
 
         /// <summary>

@@ -44,6 +44,8 @@
             this.dice1 = new System.Windows.Forms.PictureBox();
             this.boardPanel1 = new TCS_business.VIEW.BoardPanel();
             this.fieldInfoPanel1 = new TCS_business.VIEW.FieldInfoPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dice2)).BeginInit();
@@ -193,9 +195,33 @@
             this.fieldInfoPanel1.Size = new System.Drawing.Size(146, 146);
             this.fieldInfoPanel1.TabIndex = 13;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(200, 224);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "label1";
+            this.label1.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label2.Location = new System.Drawing.Point(200, 187);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 16);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Chance";
+            this.label2.Visible = false;
+            // 
             // MainWindow
             // 
             this.ClientSize = new System.Drawing.Size(932, 750);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dice1);
             this.Controls.Add(this.boardPanel1);
             this.Controls.Add(this.playersListPanel);
@@ -235,6 +261,8 @@
         private System.Windows.Forms.PictureBox dice1;
         private FieldInfoPanel fieldInfoPanel1;
         private System.Windows.Forms.Button Buy;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
 
     }
 }

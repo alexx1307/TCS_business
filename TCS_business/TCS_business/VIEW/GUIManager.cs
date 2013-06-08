@@ -177,8 +177,7 @@ namespace TCS_business.VIEW
 
         public void ShowCardPrompt(string s)
         {
-            CardDialog cardDialog = new CardDialog(s);
-            cardDialog.ShowDialog();
+            mainWindow.BeginInvoke((MethodInvoker)delegate { mainWindow.ShowCard(s); });
         }
 
         public void UpdateFieldInfoPanel(Field field, bool shouldBuyButtonBeSeen, bool shouldPledgeButtonBeSeen)

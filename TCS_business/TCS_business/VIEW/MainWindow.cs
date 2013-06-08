@@ -115,6 +115,8 @@ namespace TCS_business.VIEW
 
         private void TurnEnd_Click(object sender, EventArgs e)
         {
+            label1.Visible = false;
+            label2.Visible = false;
             Game.TurnEndEvent(sender, null);
         }
 
@@ -158,6 +160,12 @@ namespace TCS_business.VIEW
         private void infoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new AboutBox().Show();
+        }
+        public void ShowCard(string s)
+        {
+            label1.Text = s;
+            label1.Visible = true;
+            label2.Visible = true;
         }
     }
 }

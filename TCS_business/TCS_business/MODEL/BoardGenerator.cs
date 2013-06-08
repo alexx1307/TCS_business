@@ -22,13 +22,13 @@ namespace TCS_business.MODEL
             Board board = new Board();
 
             board.Fields[0]= new StartField("Start");
-            
-            board.Fields[2] = new Chance("Chance1");
-            board.Fields[7] = new Chance("Chance2");
-            board.Fields[17] = new Chance("Chance3");
-            board.Fields[22] = new Chance("Chance4");
-            board.Fields[33] = new Chance("Chance5");
-            board.Fields[36] = new Chance("Chance6");
+
+            board.Fields[2] = new Chance("Chance1", 2);
+            board.Fields[7] = new Chance("Chance2", 7);
+            board.Fields[17] = new Chance("Chance3", 17);
+            board.Fields[22] = new Chance("Chance4", 22);
+            board.Fields[33] = new Chance("Chance5", 33);
+            board.Fields[36] = new Chance("Chance6", 36);
 
             board.Fields[5] = new Railway("North");
             board.Fields[15] = new Railway("East");
