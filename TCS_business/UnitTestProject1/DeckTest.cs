@@ -114,7 +114,7 @@ namespace UnitTestProject1
 
             deck = new Deck();
             int[] counter = new int[Deck.NOCARDS];
-            int diff = 35000;
+            int diff = 30000;
 
             for (int i = 0; i < NOTESTS; ++i)
                 for (int j = 0; j < Deck.NOCARDS; ++j)
