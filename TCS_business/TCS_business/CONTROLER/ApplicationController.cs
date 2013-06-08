@@ -119,9 +119,9 @@ namespace TCS_business.CONTROLER
         {
             guiManager.UpdatePlayerPanel(player);
         }
-        internal void RollDice(int i, int j)
+        internal void RollDice(Tuple<int, int> meshes)
         {
-            guiManager.UpdateDice(i, j);
+            guiManager.UpdateDice(meshes.Item1, meshes.Item2);
         }
         internal void SendMessage(string msg)
         {

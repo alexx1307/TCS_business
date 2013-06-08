@@ -16,7 +16,7 @@ namespace TCS_business.VIEW
     /// </summary>
     public partial class AddPlayerDialog : Form
     {
-        object[] AvailableColors = {Color.Blue, Color.Green, Color.Red, Color.Yellow, Color.Pink, Color.Black, Color.White, Color.Plum, Color.Orange};
+        private object[] AvailableColors = { Color.Blue, Color.Green, Color.Red, Color.Yellow, Color.Black, Color.Plum };
 
         public AddPlayerDialog()
         {
@@ -30,22 +30,26 @@ namespace TCS_business.VIEW
                     comboBox1.Items.Remove((object)MainWindow.OccupiedColors[i]);
                 }
             }
-            
+            textBox1.Text = "Player" + (ApplicationController.Instance.Game.GameState.PlayersList.Count + 1);
         }
-
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (textBox1.Text.Trim().Length > 0)
             {
                 String s = textBox1.Text;
+                foreach(Player p in ApplicationController.Instance.Game.GameState.PlayersList)
+                    if (p.Name.Equals(s))
+                    {
+                        MessageBox.Show("Użytkownik o podanej nazwie jest już w grze. Zmień nazwę na inną.", "Error");
+                        return;
+                    }
                 this.Close();
                 this.DialogResult = DialogResult.OK;
                 MainWindow.SetColor((Color)comboBox1.SelectedItem);
                 ApplicationController.Instance.RegisterNewPlayer(s, (Color)comboBox1.SelectedItem);
             }
         }
-
 
         private void button2_Click(object sender, EventArgs e)
         {

@@ -11,24 +11,17 @@ namespace TCS_business.MODEL
     /// </summary>
     public class Dice
     {
-        public Dice(){}
+        public Dice() { }
 
         /// <summary>
         /// Simulates a roll of the dice
         /// </summary>
-        /// <returns>Number stranded mesh</returns>
-        public int Throw()
+        /// <returns>Number stranded mesh on both dices</returns>
+        public Tuple<int, int> Throw()
         {
-            return new Random().Next(1, 6);
-        }
-
-        /// <summary>
-        /// Simulates a roll of the dice
-        /// </summary>
-        /// <returns>Number stranded mesh</returns>
-        public int Throw2()
-        {
-            return new Random().Next(0, 120) % 6 + 1;
+            return new Tuple<int, int>(
+                new Random().Next(1, 7), 
+                new Random().Next(1, 7));
         }
     }
 }

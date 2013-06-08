@@ -91,12 +91,10 @@ namespace TCS_business.CONTROLER
                 }
                 ApplicationController.Instance.SendMessage("Tura gracza: " + gameState.ActivePlayer.ToString());
                 ApplicationController.Instance.ShowTurnPrompt(gameState.ActivePlayer.ToString());
-                int meshes = dice.Throw();  // roll of the dice
-                int second = dice.Throw2();
-                ApplicationController.Instance.RollDice(meshes, second);
-                meshes += second;
+                Tuple<int, int> meshes = dice.Throw();
+                ApplicationController.Instance.RollDice(meshes);
                 Player p = gameState.PlayersList.ElementAt(gameState.ActivePlayerIndex);
-                board.MovePlayer(p, meshes);// move player on the board
+                board.MovePlayer(p, meshes.Item1 + meshes.Item2); // move player on the board
                 ApplicationController.Instance.UpdateBoardView(board);
                 ApplicationController.Instance.DisableBuyButton();
                 board.Fields[board.Positions[p]].Action(p);
