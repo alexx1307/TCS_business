@@ -39,7 +39,7 @@ namespace TCS_business.MODEL
         /// <returns>Next card from the deck</returns>
         public Card NextCard()
         {
-            if (iter < cards.Length) { Shuffle(); iter = 0; }
+            if (iter >= cards.Length) { Shuffle(); iter = 0; }
             return cards[iter++];
         }
 

@@ -7,12 +7,12 @@ using TCS_business.MODEL;
 namespace UnitTestProject1
 {
     /// <summary>
-    /// Summary description for DiceTest
+    /// Summary description for DeckTest
     /// </summary>
     [TestClass]
-    public class DiceTest
+    public class DeckTest
     {
-        public DiceTest()
+        public DeckTest()
         {
             //
             // TODO: Add constructor logic here
@@ -62,48 +62,66 @@ namespace UnitTestProject1
         /// <summary>
         /// Number of test cases
         /// </summary>
-        private const int NOTESTS = 600000;
+        private const int NOTESTS = 500000;
 
         /// <summary>
-        /// This test checks whether numbers of mashes 
-        /// on dices are uniformly distributed
+        /// This test checks whether each card appears only once
         /// </summary>
         [TestMethod]
-        public void TestDiceDistriubtion()
+        public void TestDeckCardAppearsOnlyOnce()
         {
-            Dice dice = new Dice();
-            int[] firstDice = new int[7];
-            int[] secondDice = new int[7];
-            int diff = 25000;
-
             for (int i = 0; i < NOTESTS; ++i)
             {
-                Tuple<int, int> meshes = dice.Throw();
-                firstDice[meshes.Item1]++;
-                secondDice[meshes.Item2]++;
-            }
-
-            for (int i = 1; i <= 6; ++i)
-            {
-                Assert.IsTrue(Math.Abs(firstDice[i] - NOTESTS / 6) < diff);
-                Assert.IsTrue(Math.Abs(secondDice[i] - NOTESTS / 6) < diff);
+                Deck deck = new Deck();
+                HashSet<Card> appeard = new HashSet<Card>();
+                for (int j = 0; j < Deck.NOCARDS; ++j)
+                {
+                    Card c = deck.NextCard();
+                    Assert.IsFalse(appeard.Contains(c));
+                    appeard.Add(c);
+                }
             }
         }
 
         /// <summary>
-        /// This test checks whether the number of mashes 
-        /// is in correct range
+        /// This test checks whether for a second time
+        /// the deck has a different order
         /// </summary>
         [TestMethod]
-        public void TestDiceRange()
+        public void TestDeckDifferentOrder()
         {
-            Dice dice = new Dice();
+            Deck deck = new Deck();
+            Card[] order = new Card[Deck.NOCARDS];
+
+            for (int i = 0; i < Deck.NOCARDS; ++i)
+                order[i] = deck.NextCard();
+
+            for (int i = 0; i < Deck.NOCARDS; ++i)
+                if (order[i] != deck.NextCard()) return;
+
+            Assert.Fail();
+        }
+
+        /// <summary>
+        /// This test checks whether a card appears on each position
+        /// with the same probability
+        /// </summary>
+        [TestMethod]
+        public void TestDeckDistribution()
+        {
+            Deck deck = new Deck();
+            Card card = deck.NextCard(); // draw one card
+
+            deck = new Deck();
+            int[] counter = new int[Deck.NOCARDS];
+            int diff = 35000;
+
             for (int i = 0; i < NOTESTS; ++i)
-            {
-                Tuple<int, int> meshes = dice.Throw();
-                int sum = meshes.Item1 + meshes.Item2;
-                Assert.IsTrue(sum > 0 && sum <= 12);
-            }
+                for (int j = 0; j < Deck.NOCARDS; ++j)
+                    if (deck.NextCard() == card) counter[j]++;
+
+            for (int i = 0; i < Deck.NOCARDS; ++i)
+                Assert.IsTrue(Math.Abs(counter[i] - NOTESTS / Deck.NOCARDS) < diff);
         }
     }
 }
