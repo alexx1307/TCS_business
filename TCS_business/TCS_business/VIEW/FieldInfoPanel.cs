@@ -53,7 +53,6 @@ namespace TCS_business.VIEW
                 this.button1.Hide();
                 this.button2.Hide();
             }
-            MessageBox.Show("DUPA");
             this.Visible = true;
         }
 

@@ -150,7 +150,9 @@ namespace TCS_business.VIEW
 
         internal void UpdateFieldInfoPanel(Field field, bool shouldBuyButtonBeSeen, bool shouldPledgeButtonBeSeen)
         {
-            MessageBox.Show("DUPA");
+            this.panel1.Controls.Clear();
+            this.fieldInfoPanel1.Location = new Point(0, 0);
+            this.panel1.Controls.Add(this.fieldInfoPanel1);
             this.fieldInfoPanel1.UpdateContent(field, shouldBuyButtonBeSeen, shouldPledgeButtonBeSeen);
         }
 
