@@ -79,9 +79,7 @@
     <Compile Include="VIEW\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="VIEW\BoardPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="VIEW\BoardPanel.cs" />
     <Compile Include="VIEW\BoardPanel.Designer.cs">
       <DependentUpon>BoardPanel.cs</DependentUpon>
     </Compile>

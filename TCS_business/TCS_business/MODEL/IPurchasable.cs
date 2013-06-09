@@ -24,7 +24,11 @@ namespace TCS_business.MODEL
         }
         private int PledgeValue()
         {
-            return 200;
+            return (int)(Cost/20)*10;
+        }
+        private int UnpledgeValue()
+        {
+            return (int)(Cost/20)*15;
         }
         public bool Pledged
         {
@@ -38,7 +42,7 @@ namespace TCS_business.MODEL
             if (pledged == false)
                 Owner.Cash += PledgeValue();
             else
-                Owner.Cash -= PledgeValue();
+                Owner.Cash -= UnpledgeValue();
 
             pledged = !pledged;
         }
@@ -71,7 +75,6 @@ namespace TCS_business.MODEL
             }
             set
             {
-                throw new NotImplementedException();
             }
         }
     }

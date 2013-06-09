@@ -42,7 +42,11 @@ namespace TCS_business.VIEW
                 this.pictureBox1.Hide();
             }
         }
-
+        public void ChangeDescriptionLabel()
+        {
+            field.ChangeDescriptionLabel();
+            descriptionLabel.Text = field.Description;
+        }
         public void Update(Field field)
         {
             if (field.Owner != null)

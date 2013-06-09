@@ -54,7 +54,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::TCS_business.Properties.Resources._lock;
-            this.pictureBox1.Location = new System.Drawing.Point(45, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(45, 14);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 38);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -120,12 +120,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label descriptionLabel;
-        private System.Windows.Forms.PictureBox pawn1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pawn2;
-        private System.Windows.Forms.PictureBox pawn3;
-        private System.Windows.Forms.PictureBox pawn4;
+        public System.Windows.Forms.Label descriptionLabel;
+        public System.Windows.Forms.PictureBox pawn1;
+        public System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.PictureBox pawn2;
+        public System.Windows.Forms.PictureBox pawn3;
+        public System.Windows.Forms.PictureBox pawn4;
 
 
     }

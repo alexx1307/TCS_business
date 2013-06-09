@@ -40,11 +40,41 @@ namespace TCS_business.MODEL
         {
             get
             {
-                throw new NotImplementedException();
+                int val = (int)(Cost / 15);
+                if (val <= 8)
+                {
+                    val = 8;
+                }
+                else if (val <= 12)
+                {
+                    val = 12;
+                }
+                else if (val <= 18)
+                {
+                    val = 18;
+                }
+                else if (val <= 22)
+                {
+                    val = 25;
+                }
+                else if (val <= 30)
+                {
+                    val = 30;
+                }
+                else if (val <= 40)
+                {
+                    val = 40;
+                }
+                else
+                {
+                    val = 50;
+                }
+                int added = 0;
+                added = (int)((Cost * 3) / 4) * Houses;
+                return val + added;
             }
             set
             {
-                throw new NotImplementedException();
             }
         }
     }

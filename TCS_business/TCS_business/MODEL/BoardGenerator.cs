@@ -34,6 +34,10 @@ namespace TCS_business.MODEL
             board.Fields[15] = new Railway("East");
             board.Fields[25] = new Railway("South");
             board.Fields[35] = new Railway("West");
+            (board.Fields[5] as IPurchasable).Cost = 250;
+            (board.Fields[15] as IPurchasable).Cost = 250;
+            (board.Fields[25] as IPurchasable).Cost = 250;
+            (board.Fields[35] as IPurchasable).Cost = 250;
 
             board.Fields[4] = new Tax("tax1");
             board.Fields[38] = new Tax("tax2");
@@ -45,6 +49,8 @@ namespace TCS_business.MODEL
 
             board.Fields[12] = new Powerhouse("Power");
             board.Fields[28] = new Powerhouse("Waterworks");
+            (board.Fields[12] as IPurchasable).Cost = 250;
+            (board.Fields[28] as IPurchasable).Cost = 250;
 
             board.Fields[1] = new City("Saloniki",countries[0]);
             board.Fields[3] = new City("Athens", countries[0]);

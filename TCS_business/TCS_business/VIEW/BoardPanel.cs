@@ -33,6 +33,11 @@ namespace TCS_business.VIEW
                     {
                         fieldPanels[i].Width = 55;
                         fieldPanels[i].Height = 80;
+                        fieldPanels[i].pawn1.Location = new Point(5, 38);
+                        fieldPanels[i].pawn2.Location = new Point(13, 38);
+                        fieldPanels[i].pawn3.Location = new Point(21, 38);
+                        fieldPanels[i].pawn4.Location = new Point(29, 38);
+                        fieldPanels[i].ChangeDescriptionLabel();
                     }
                     if (i % 10 == 0) fieldPanels[i].Height = 80;
                     this.Controls.Add(fieldPanels[i]);

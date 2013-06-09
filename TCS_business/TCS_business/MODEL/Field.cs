@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 using System.Text;
 
 namespace TCS_business.MODEL
@@ -12,15 +13,23 @@ namespace TCS_business.MODEL
     public abstract class Field
     {
         string description;
-        public string Description { get { return description; } set { description = value; } }
+        string name;
+        public string Description 
+        { 
+            get 
+            {
+                return description;
+            } 
+            set {} 
+        }
         /// <summary>
         /// Construct new field.
         /// </summary>
         /// <param name="s">Description of the field.</param>
         public Field(string s)
         {
-            description = s;
-            
+            name = s;
+            MakeDescription();
         }
 
         public Player Owner
@@ -35,7 +44,21 @@ namespace TCS_business.MODEL
         public Field()
         {
         }
-
+        void MakeDescription()
+        {
+            description = name;
+            if (this is IPurchasable)
+            {
+                description += " " + (this as IPurchasable).Cost;
+            }
+        }
+        public void ChangeDescriptionLabel()
+        {
+            if (this is IPurchasable)
+            {
+                description = name + "\n" + (this as IPurchasable).Cost;
+            }
+        }
         /// <summary>
         /// Method used to print the field.
         /// </summary>
