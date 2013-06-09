@@ -18,7 +18,7 @@ namespace TCS_business.MODEL
         {
             get
             {
-                throw new NotImplementedException();
+                return 100;
             }
             set
             {

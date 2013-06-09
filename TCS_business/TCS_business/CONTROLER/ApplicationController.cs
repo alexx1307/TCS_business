@@ -18,6 +18,7 @@ namespace TCS_business.CONTROLER
         private Game game;
         public Game Game { get { return game; } }
         private IView guiManager;
+
         public static ApplicationController Instance
         {
             get

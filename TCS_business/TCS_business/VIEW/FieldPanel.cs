@@ -52,9 +52,27 @@ namespace TCS_business.VIEW
             if (field.Owner != null)
             {
                 this.CreateGraphics().DrawRectangle(new Pen(field.Owner.Color, 7.0f), this.ClientRectangle);
+                if (field is IPurchasable)
+                {
+                    if ((field as IPurchasable).Pledged == true)
+                    {
+                        this.pictureBox1.Show();
+                    }
+                    else
+                    {
+                        this.pictureBox1.Hide();
+                    }
+                }
+                else
+                {
+                    this.pictureBox1.Hide();
+                }
             }
         }
-
+        public void ChangeLockLocation()
+        {
+            this.pictureBox1.Location = new Point(26,40);
+        }
         internal void removePawns()
         {
             foreach (PictureBox pawn in pawns) 

@@ -66,7 +66,9 @@ namespace TCS_business.VIEW
         private void button2_Click(object sender, EventArgs e)
         {
             (field as MODEL.IPurchasable).ChangePledged();
+            this.UpdateContent(field, false, true);
             CONTROLER.Game game = CONTROLER.ApplicationController.Instance.Game;
+            CONTROLER.ApplicationController.Instance.UpdatePlayerDataView(field.Owner);
             CONTROLER.ApplicationController.Instance.UpdateBoardView(game.Board);
         }
     }

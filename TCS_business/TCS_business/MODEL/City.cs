@@ -31,6 +31,16 @@ namespace TCS_business.MODEL
         public void BuildHouse(){
             //sprawdz czy niezastawione
             //pobierz odpowiednia oplate od gracza
+            if (Houses == 4)
+            {
+                MessageBox.Show("Nie możesz kupić więcej domków");
+                return;
+            }
+            if (Owner.Cash < this.Cost)
+            {
+                MessageBox.Show("You don't have enough cash to buy a house");
+                return;
+            }
             ++Houses;
             Owner.Cash -= houseCost();
         }

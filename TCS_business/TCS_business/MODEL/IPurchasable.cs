@@ -10,7 +10,7 @@ namespace TCS_business.MODEL
     public abstract class IPurchasable : Field, IPayable
     {
         Player owner;
-        int cost = 100; // todo: zmienic
+        int cost = 50;
         bool pledged;
         public virtual Player Owner
         {
@@ -19,7 +19,10 @@ namespace TCS_business.MODEL
         }
         public int Cost
         {
-            get { return cost; }
+            get 
+            {
+                return cost;
+            }
             set { cost = value; }
         }
         private int PledgeValue()
@@ -71,7 +74,10 @@ namespace TCS_business.MODEL
         {
             get
             {
-                return 500;
+                if (this is City) return (this as City).Stake;
+                else if (this is Railway) return (this as Railway).Stake;
+                else if (this is Powerhouse) return (this as Powerhouse).Stake;
+                else return 500;
             }
             set
             {
