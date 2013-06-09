@@ -21,31 +21,39 @@ namespace TCS_business.VIEW
         {
             this.field = field;
             label1.Text = field.Description;
-            if (shouldBuyButtonBeSeen)
+            if (field is MODEL.IPurchasable)
             {
-                this.button1.Show();
+                if (shouldBuyButtonBeSeen)
+                {
+                    this.button1.Show();
+                }
+                else
+                {
+                    this.button1.Hide();
+                }
+                if (shouldPledgeButtonBeSeen)
+                {
+                    this.button2.Show();
+                }
+                else
+                {
+                    this.button2.Hide();
+                }
+                if ((field as MODEL.IPurchasable).Pledged == true)
+                {
+                    this.button2.Text = "Unpledge";
+                }
+                else
+                {
+                    this.button2.Text = "Pledge";
+                }
             }
             else
             {
                 this.button1.Hide();
-            }
-            if (shouldPledgeButtonBeSeen)
-            {
-                this.button2.Show();
-            }
-            else
-            {
                 this.button2.Hide();
             }
-            if ((field as MODEL.IPurchasable).Pledged == true)
-            {
-                this.button2.Text = "Unpledge";
-            }
-            else
-            {
-                this.button2.Text = "Pledge";
-            }
-                
+            MessageBox.Show("DUPA");
             this.Visible = true;
         }
 

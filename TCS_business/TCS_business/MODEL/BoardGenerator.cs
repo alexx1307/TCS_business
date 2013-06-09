@@ -48,33 +48,55 @@ namespace TCS_business.MODEL
 
             board.Fields[1] = new City("Saloniki",countries[0]);
             board.Fields[3] = new City("Athens", countries[0]);
+            (board.Fields[1] as IPurchasable).Cost = 80;
+            (board.Fields[3] as IPurchasable).Cost = 100;
 
             board.Fields[6] = new City("Naples", countries[1]);
             board.Fields[8] = new City("Milan", countries[1]);
             board.Fields[9] = new City("Rome", countries[1]);
+            (board.Fields[6] as IPurchasable).Cost = 140;
+            (board.Fields[8] as IPurchasable).Cost = 150;
+            (board.Fields[9] as IPurchasable).Cost = 160;
 
             board.Fields[11] = new City("Barcelona", countries[2]);
             board.Fields[13] = new City("Seville", countries[2]);
             board.Fields[14] = new City("Madrid", countries[2]);
+            (board.Fields[11] as IPurchasable).Cost = 180;
+            (board.Fields[13] as IPurchasable).Cost = 200;
+            (board.Fields[14] as IPurchasable).Cost = 200;
 
             board.Fields[16] = new City("Liverpool", countries[3]);
             board.Fields[18] = new City("Glasgow", countries[3]);
             board.Fields[19] = new City("London", countries[3]);
+            (board.Fields[16] as IPurchasable).Cost = 220;
+            (board.Fields[18] as IPurchasable).Cost = 230;
+            (board.Fields[19] as IPurchasable).Cost = 240;
 
             board.Fields[21] = new City("Rotterdam", countries[4]);
             board.Fields[23] = new City("Brussels", countries[4]);
             board.Fields[24] = new City("Amsterdam", countries[4]);
+            (board.Fields[21] as IPurchasable).Cost = 240;
+            (board.Fields[23] as IPurchasable).Cost = 250;
+            (board.Fields[24] as IPurchasable).Cost = 260;
 
             board.Fields[26] = new City("Malmo", countries[5]);
             board.Fields[27] = new City("Goteborg", countries[5]);
             board.Fields[29] = new City("Stockholm", countries[5]);
+            (board.Fields[26] as IPurchasable).Cost = 280;
+            (board.Fields[27] as IPurchasable).Cost = 290;
+            (board.Fields[29] as IPurchasable).Cost = 300;
 
             board.Fields[31] = new City("Frankfurt", countries[6]);
             board.Fields[32] = new City("Cologne", countries[6]);
             board.Fields[34] = new City("Bonn", countries[6]);
+            (board.Fields[31] as IPurchasable).Cost = 320;
+            (board.Fields[32] as IPurchasable).Cost = 330;
+            (board.Fields[34] as IPurchasable).Cost = 340;
 
             board.Fields[37] = new City("Innsbruck", countries[7]);
             board.Fields[39] = new City("Wien", countries[7]);
+            (board.Fields[37] as IPurchasable).Cost = 400;
+            (board.Fields[39] as IPurchasable).Cost = 450;
 
             return board;
         }
