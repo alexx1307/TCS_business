@@ -12,14 +12,16 @@ namespace TCS_business.MODEL
     public class Tax : Field, IPayable
     {
         int stake;
-        public Tax(string p) :base(p)
-        {
+        public Tax(string p, int stake)
+           : base(p)
 
+        {
+            this.stake = stake;
         }
 
         public override void Action(Player p)
         {
-              //pobieranie oplaty od gracza 
+            p.Cash -= stake;
         }
 
 

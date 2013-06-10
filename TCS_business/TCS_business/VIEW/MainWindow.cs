@@ -193,13 +193,6 @@ namespace TCS_business.VIEW
             label2.Text = s;
             label2.Visible = true;
         }
-        public void ShowInformation(string s)
-        {
-            label1.Text = s;
-            label1.Visible = true;
-            label2.Text = "Information";
-            label2.Visible = true;
-        }
 
     }
 }
