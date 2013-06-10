@@ -15,12 +15,7 @@ namespace UnitTestProject1
     [TestClass]
     public class FormTest
     {
-        public FormTest()
-        {
-            //
-            // TODO: Add constructor logic here
-            //
-        }
+        public FormTest() { }
 
         private TestContext testContextInstance;
 

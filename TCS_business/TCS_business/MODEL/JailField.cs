@@ -5,32 +5,38 @@ using System.Text;
 
 namespace TCS_business.MODEL
 {
-    class JailField:Field
+    /// <summary>
+    /// Class representing Jail field on the board
+    /// </summary>
+    class JailField : Field
     {
-        public JailField(string description) 
-            : base(description)
-        {}
+        /// <summary>
+        /// Dict of players that are in jail, if value is <c>true</c> player should leave jail, 
+        /// otherwise he or she must wait additional one turn
+        /// </summary>
+        private readonly Dictionary<Player, bool> players = new Dictionary<Player, bool>();
+
+        public JailField(string d) : base(d) { }
+
+        /// <summary>
+        /// Checks whether players is only a vistor, if not tests whether he can go out 
+        /// from jail or not
+        /// </summary>
+        /// <param name="p">Player who's on the jail field</param>
         public override void Action(Player p)
         {
-            CONTROLER.ApplicationController.Instance.Game.Board.MovePlayer(10, p);
-            if (p.InJail)
+            if (!p.InJail) return;
+
+            if (players.ContainsKey(p)) // player has already waited one turn
             {
-                //todo: poprawic
-                if (p.Waited == 1) //czekał już jedną kolejkę, teraz czeka drugą i w następnym ruchu może iść
+                if (players[p])
                 {
-                    p.InJail = false;
-                    p.Waited = 0;
-                    return;
+                    players.Remove(p);
+                    p.exitJail();
                 }
-                else
-                {
-                    p.Waited++;
-                }
+                else players[p] = true;
             }
-            else //gracz jest tylko odwiedzającym
-            {
-                return;
-            }
+            else players.Add(p, false);
         }
     }
 }

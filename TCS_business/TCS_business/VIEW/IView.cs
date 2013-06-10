@@ -26,6 +26,7 @@ namespace TCS_business.VIEW
         //void ShowBuyPrompt();
         void ShowTurnPrompt(string playerName);
         void ShowCardPrompt(string s);
+        void ShowInformation(string s);
         void UpdateFieldInfoPanel(Field field, bool shouldBuyButtonBeSeen, bool shouldPledgeButtonBeSeen);
         void DisableAddingPlayers();
         void EnableAddingPlayers();

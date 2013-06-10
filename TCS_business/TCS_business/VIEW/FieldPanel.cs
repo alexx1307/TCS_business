@@ -53,9 +53,12 @@ namespace TCS_business.VIEW
         {
             BeginInvoke((MethodInvoker)delegate
             {
-                if (field.Owner != null)
+                if (field is IPurchasable && (field as IPurchasable).Owner != null)
                 {
-                    this.CreateGraphics().DrawRectangle(new Pen(field.Owner.Color, 7.0f), this.ClientRectangle);
+                    this.CreateGraphics().DrawRectangle(
+                        new Pen((field as IPurchasable).Owner.Color, 7.0f),
+                        this.ClientRectangle);
+
                     if (field is IPurchasable)
                     {
                         if ((field as IPurchasable).Pledged == true)
@@ -91,13 +94,15 @@ namespace TCS_business.VIEW
         {
             CONTROLER.Game game = CONTROLER.ApplicationController.Instance.Game;
             bool ownerOfWholeCountry = false;
-            bool ownerofTheField = (field.Owner == game.GameState.ActivePlayer);
+            bool ownerofTheField = false;
+            if (field is IPurchasable)
+                ownerofTheField = ((field as IPurchasable).Owner == game.GameState.ActivePlayer);
             if (field is City)
             {
                 ownerOfWholeCountry = true;
                 foreach (Field f in (field as City).Country.Fields)
                 {
-                    if (f.Owner != game.GameState.ActivePlayer)
+                    if ((f as IPurchasable).Owner != game.GameState.ActivePlayer)
                     {
                         ownerOfWholeCountry = false;
                         break;

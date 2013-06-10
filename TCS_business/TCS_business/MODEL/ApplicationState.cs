@@ -10,6 +10,5 @@ namespace TCS_business.MODEL
         WAITING_FOR_PLAYERS,
         READY_FOR_GAME,
         GAME_IN_PROGRESS
-
     }
 }

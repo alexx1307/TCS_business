@@ -136,6 +136,11 @@ namespace TCS_business.CONTROLER
             guiManager.ShowCardPrompt(s);
         }
 
+        internal void ShowInformation(string s)
+        {
+            guiManager.ShowInformation(s);
+        }
+
         internal void ShowTurnPrompt(string playerName)
         {
             guiManager.ShowTurnPrompt(playerName);

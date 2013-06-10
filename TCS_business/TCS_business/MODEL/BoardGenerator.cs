@@ -10,6 +10,7 @@ namespace TCS_business.MODEL
     {
         public static Board Generate()
         {
+            #region Countries
             Country[] countries = new Country[8];
             countries[0] = new Country("Greece", Color.LavenderBlush);
             countries[1] = new Country("Italy", Color.LightGreen);
@@ -19,17 +20,21 @@ namespace TCS_business.MODEL
             countries[5] = new Country("Sweden", Color.PaleTurquoise);
             countries[6] = new Country("Germany", Color.SandyBrown);
             countries[7] = new Country("Austria", Color.Gray);
-            Board board = new Board();
+            #endregion
 
+            Board board = new Board();
             board.Fields[0]= new StartField("Start");
 
+            #region Chances
             board.Fields[2] = new Chance("Chance1");
             board.Fields[7] = new Chance("Chance2");
             board.Fields[17] = new Chance("Chance3");
             board.Fields[22] = new Chance("Chance4");
             board.Fields[33] = new Chance("Chance5");
             board.Fields[36] = new Chance("Chance6");
+            #endregion
 
+            #region Railways
             board.Fields[5] = new Railway("North");
             board.Fields[15] = new Railway("East");
             board.Fields[25] = new Railway("South");
@@ -38,20 +43,28 @@ namespace TCS_business.MODEL
             (board.Fields[15] as IPurchasable).Cost = 250;
             (board.Fields[25] as IPurchasable).Cost = 250;
             (board.Fields[35] as IPurchasable).Cost = 250;
+            #endregion
 
-            board.Fields[4] = new Tax("tax1");
-            board.Fields[38] = new Tax("tax2");
+            #region Taxes
+            board.Fields[4] = new Tax("Secure \nparking", 200);
+            board.Fields[38] = new Tax("Wealth tax", 100);
+            #endregion
 
-            board.Fields[10] = new FreeField("Jail");
+            #region Jail
+            board.Fields[10] = new JailField("Jail");
+            board.Fields[30] = new PolicemanField("Go to jail");
+            #endregion
 
             board.Fields[20] = new FreeParking("Parking");
-            board.Fields[30] = new JailField("Go to jail");
-            
+
+            #region Powerhouses
             board.Fields[12] = new Powerhouse("Power");
             board.Fields[28] = new Powerhouse("Waterworks");
             (board.Fields[12] as IPurchasable).Cost = 250;
             (board.Fields[28] as IPurchasable).Cost = 250;
+            #endregion
 
+            #region Cities
             board.Fields[1] = new City("Saloniki",countries[0]);
             board.Fields[3] = new City("Athens", countries[0]);
             (board.Fields[1] as IPurchasable).Cost = 80;
@@ -103,9 +116,9 @@ namespace TCS_business.MODEL
             board.Fields[39] = new City("Wien", countries[7]);
             (board.Fields[37] as IPurchasable).Cost = 400;
             (board.Fields[39] as IPurchasable).Cost = 450;
+            #endregion
 
             return board;
         }
-
     }
 }

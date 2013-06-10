@@ -12,12 +12,14 @@ namespace TCS_business.MODEL
         Player owner;
         int cost = 50;
         bool pledged;
+
         public virtual Player Owner
         {
             get { return owner; }
             set { owner = value; }
         }
-        virtual public int Cost
+        public int Cost
+
         {
             get 
             {

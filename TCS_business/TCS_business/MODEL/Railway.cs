@@ -33,7 +33,7 @@ namespace TCS_business.MODEL
                 int owned = 0;
                 for (int i = 5; i < 40; i += 10)
                 {
-                    if (Board.Fields[i].Owner == this.Owner)
+                    if ((Board.Fields[i] as IPurchasable).Owner == this.Owner)
                         owned++;
                 }
                 return 50 * owned;

@@ -19,8 +19,12 @@ namespace TCS_business.MODEL
 
         public override void Action(Player p)
         {
-            CONTROLER.ApplicationController.Instance.Game.Board.MovePlayer(10, p);
-            p.GoToJail();
+            if (p.Cards.Count > 0) p.Cards.RemoveAt(0);
+            else
+            {
+                CONTROLER.ApplicationController.Instance.Game.Board.MovePlayer(10, p);
+                p.GoToJail();
+            }
         }
 
         /// <summary>
