@@ -15,8 +15,8 @@ namespace TCS_business.MODEL
             countries[0] = new Country("Greece", Color.LavenderBlush);
             countries[1] = new Country("Italy", Color.LightGreen);
             countries[2] = new Country("Spain", Color.LightSkyBlue);
-            countries[3] = new Country("Great Britain", Color.LightPink);
-            countries[4] = new Country("Benelux", Color.PaleGoldenrod);
+            countries[3] = new Country("Great Britain",Color.PaleGoldenrod );
+            countries[4] = new Country("Benelux", Color.LightPink);
             countries[5] = new Country("Sweden", Color.PaleTurquoise);
             countries[6] = new Country("Germany", Color.SandyBrown);
             countries[7] = new Country("Austria", Color.Gray);
