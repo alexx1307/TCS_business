@@ -98,7 +98,9 @@ namespace TCS_business.CONTROLER
                 ApplicationController.Instance.UpdateBoardView(board);
                 ApplicationController.Instance.DisableBuyButton();
                 board.Fields[board.Positions[p]].Action(p);
+                ApplicationController.Instance.UpdatePlayerDataView(p);
                 ApplicationController.Instance.UpdateBoardView(board);
+                if (p.Cash < 0) End();
                 p.Active = true;
                 lock (endOfTurn) Monitor.Wait(endOfTurn);
                 p.Active = false;
@@ -107,6 +109,7 @@ namespace TCS_business.CONTROLER
                 // update active player id
             }
             this.isRunning = false;
+            End();
         }
 
         /// <summary>
@@ -135,7 +138,7 @@ namespace TCS_business.CONTROLER
             int positive = 0;
             foreach (Player player in gameState.PlayersList)
             {
-                if (player.Cash > 0) positive++;
+                if (player.Cash >= 0) positive++;
             }
             return positive < 2;
         }
