@@ -52,6 +52,7 @@
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "label2";
+            this.label2.Visible = false;
             // 
             // label3
             // 
@@ -61,6 +62,7 @@
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "label3";
+            this.label3.Visible = false;
             // 
             // button1
             // 

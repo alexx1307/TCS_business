@@ -54,9 +54,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::TCS_business.Properties.Resources._lock;
-            this.pictureBox1.Location = new System.Drawing.Point(42, 14);
+            this.pictureBox1.Location = new System.Drawing.Point(53, 24);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 38);
+            this.pictureBox1.Size = new System.Drawing.Size(21, 28);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
