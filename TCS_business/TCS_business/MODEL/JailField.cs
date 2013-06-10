@@ -12,9 +12,10 @@ namespace TCS_business.MODEL
         {}
         public override void Action(Player p)
         {
+            CONTROLER.ApplicationController.Instance.Game.Board.MovePlayer(10, p);
             if (p.InJail)
             {
-                
+                //todo: poprawic
                 if (p.Waited == 1) //czekał już jedną kolejkę, teraz czeka drugą i w następnym ruchu może iść
                 {
                     p.InJail = false;

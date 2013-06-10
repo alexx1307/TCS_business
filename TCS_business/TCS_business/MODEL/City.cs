@@ -33,7 +33,7 @@ namespace TCS_business.MODEL
             //pobierz odpowiednia oplate od gracza
             if (Houses == 4)
             {
-                MessageBox.Show("Nie możesz kupić więcej domków");
+                MessageBox.Show("You cannot buy more houses in this city.");
                 return;
             }
             if (Owner.Cash < this.Cost)

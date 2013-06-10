@@ -11,6 +11,7 @@ namespace TCS_business.MODEL
     /// </summary>
     class FreeField : Field
     {
+        public FreeField(String d) : base(d) { }
         public override void Action(Player p) {} //do nothing
     }
 }

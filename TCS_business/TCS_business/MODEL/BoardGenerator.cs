@@ -42,11 +42,11 @@ namespace TCS_business.MODEL
             board.Fields[4] = new Tax("tax1");
             board.Fields[38] = new Tax("tax2");
 
-            board.Fields[10] = new JailField("JAIL");
+            board.Fields[10] = new FreeField("Jail");
 
             board.Fields[20] = new FreeParking("Parking");
-            board.Fields[30] = new FreeField();
-
+            board.Fields[30] = new JailField("Go to jail");
+            
             board.Fields[12] = new Powerhouse("Power");
             board.Fields[28] = new Powerhouse("Waterworks");
             (board.Fields[12] as IPurchasable).Cost = 250;

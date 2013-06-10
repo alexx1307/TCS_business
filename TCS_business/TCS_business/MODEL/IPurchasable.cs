@@ -66,7 +66,7 @@ namespace TCS_business.MODEL
             if (owner != null && p != owner && !pledged)
             {
                 p.GiveCash(owner, Stake);
-                ApplicationController.Instance.ShowPayInfo("Charged at " + Stake.ToString());
+                ApplicationController.Instance.ShowPayInfo("Charged $" + Stake.ToString() + " in " + this.ToString());
             }
         }
 
