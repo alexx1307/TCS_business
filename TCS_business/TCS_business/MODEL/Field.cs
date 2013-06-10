@@ -12,8 +12,11 @@ namespace TCS_business.MODEL
     /// </summary>
     public abstract class Field
     {
-        string description;
-        string name;
+        private string description;
+        private string name;
+
+        public string Name { get { return name; } }
+
         public string Description 
         { 
             get 

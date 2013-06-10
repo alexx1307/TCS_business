@@ -79,6 +79,10 @@ namespace TCS_business.CONTROLER
                 guiManager.UpdatePlayerPanel(p);
             }
         }
+        public void HideFieldInfoPanel()
+        {
+            guiManager.HideFieldInfoPanel();
+        }
         public void ShowAddPlayerDialog()
         {
             if (game.AllPlayersJoined())

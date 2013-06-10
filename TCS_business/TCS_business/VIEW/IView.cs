@@ -11,8 +11,6 @@ namespace TCS_business.VIEW
         void InitializeMainWindow();
         void InitializeGamePanel(Board board);
         void UpdatePlayersList(List<Player> list);
-        void UpdateFieldState(Field field);
-        void UpdateTurnStatePanel(TurnState turnState, GameState gameState);
         void ShowLoginDialog();
         void ShowConfigDialog(GameConfig gameConfig);
         void UpdatePlayerPanel(Player player);
@@ -35,5 +33,6 @@ namespace TCS_business.VIEW
         void EnableEndTurnButton();
         void DisableGameSettings();
         void ShowPayInfo(string s);
+        void HideFieldInfoPanel();
     }
 }
