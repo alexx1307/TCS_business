@@ -29,6 +29,7 @@ namespace TCS_business.VIEW
         void DisableAddingPlayers();
         void EnableAddingPlayers();
         void EnableBuyButton();
+        void ShowInformation(string s);
         void DisableBuyButton();
         void EnableEndTurnButton();
         void DisableGameSettings();
