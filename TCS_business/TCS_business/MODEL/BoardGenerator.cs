@@ -51,8 +51,8 @@ namespace TCS_business.MODEL
             #endregion
 
             #region Jail
-            board.Fields[10] = new JailField("Jail");
-            board.Fields[30] = new PolicemanField("Go to jail");
+            board.Fields[10] = new JailField("");
+            board.Fields[30] = new PolicemanField(""); // images instead
             #endregion
 
             board.Fields[20] = new FreeParking("Free parking");
