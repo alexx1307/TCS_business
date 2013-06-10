@@ -26,7 +26,7 @@ namespace TCS_business.VIEW
                 label2.Text = "Stakes:\n";
                 if (this.field is MODEL.City)
                 {
-                    label2.Text += "without no house: " + (this.field as MODEL.City).BasicStake.ToString() + "\n";
+                    label2.Text += "without house: " + (this.field as MODEL.City).BasicStake.ToString() + "\n";
                     label2.Text += "with 1 house: " + ((this.field as MODEL.City).Stake + ((this.field as MODEL.City).Cost*3)/4).ToString() + "\n";
                     label2.Text += "with 2 houses: " + ((this.field as MODEL.City).Stake + ((this.field as MODEL.City).Cost*6)/4).ToString() + "\n";
                     label2.Text += "with 3 houses: " + ((this.field as MODEL.City).Stake + ((this.field as MODEL.City).Cost * 9) / 4).ToString() + "\n";
