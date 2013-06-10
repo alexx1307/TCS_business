@@ -65,36 +65,36 @@
             // 
             // pawn1
             // 
-            this.pawn1.Location = new System.Drawing.Point(5, 24);
+            this.pawn1.Location = new System.Drawing.Point(12, 34);
             this.pawn1.Name = "pawn1";
-            this.pawn1.Size = new System.Drawing.Size(7, 18);
+            this.pawn1.Size = new System.Drawing.Size(7, 16);
             this.pawn1.TabIndex = 1;
             this.pawn1.TabStop = false;
             this.pawn1.Click += new System.EventHandler(this.FieldPanel_Click);
             // 
             // pawn2
             // 
-            this.pawn2.Location = new System.Drawing.Point(13, 24);
+            this.pawn2.Location = new System.Drawing.Point(20, 34);
             this.pawn2.Name = "pawn2";
-            this.pawn2.Size = new System.Drawing.Size(7, 18);
+            this.pawn2.Size = new System.Drawing.Size(7, 16);
             this.pawn2.TabIndex = 3;
             this.pawn2.TabStop = false;
             this.pawn2.Click += new System.EventHandler(this.FieldPanel_Click);
             // 
             // pawn3
             // 
-            this.pawn3.Location = new System.Drawing.Point(21, 24);
+            this.pawn3.Location = new System.Drawing.Point(28, 34);
             this.pawn3.Name = "pawn3";
-            this.pawn3.Size = new System.Drawing.Size(7, 18);
+            this.pawn3.Size = new System.Drawing.Size(7, 16);
             this.pawn3.TabIndex = 4;
             this.pawn3.TabStop = false;
             this.pawn3.Click += new System.EventHandler(this.FieldPanel_Click);
             // 
             // pawn4
             // 
-            this.pawn4.Location = new System.Drawing.Point(29, 24);
+            this.pawn4.Location = new System.Drawing.Point(36, 34);
             this.pawn4.Name = "pawn4";
-            this.pawn4.Size = new System.Drawing.Size(7, 18);
+            this.pawn4.Size = new System.Drawing.Size(7, 16);
             this.pawn4.TabIndex = 5;
             this.pawn4.TabStop = false;
             this.pawn4.Click += new System.EventHandler(this.FieldPanel_Click);

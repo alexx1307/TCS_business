@@ -17,7 +17,7 @@ namespace TCS_business.MODEL
             get { return owner; }
             set { owner = value; }
         }
-        public int Cost
+        virtual public int Cost
         {
             get 
             {

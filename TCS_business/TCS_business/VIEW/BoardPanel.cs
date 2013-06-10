@@ -29,6 +29,7 @@ namespace TCS_business.VIEW
                 for (int i = 0; i < Board.NOFIELDS; i++)
                 {
                     fieldPanels[i] = new FieldPanel(board.Fields[i]);
+                    fieldPanels[i].ChangeDescriptionLabel();
                     if ((i > 0 && i < 10) || (i > 20 && i < 30))
                     {
                         fieldPanels[i].Width = 55;
@@ -36,8 +37,7 @@ namespace TCS_business.VIEW
                         fieldPanels[i].pawn1.Location = new Point(5, 38);
                         fieldPanels[i].pawn2.Location = new Point(13, 38);
                         fieldPanels[i].pawn3.Location = new Point(21, 38);
-                        fieldPanels[i].pawn4.Location = new Point(29, 38);
-                        fieldPanels[i].ChangeDescriptionLabel();
+                        fieldPanels[i].pawn4.Location = new Point(29, 38);                  
                         fieldPanels[i].ChangeLockLocation();
                     }
                     if (i % 10 == 0) fieldPanels[i].Height = 80;
