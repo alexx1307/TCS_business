@@ -40,6 +40,7 @@ namespace TCS_business.CONTROLER
             game = new Game();
             guiManager.AdjustButtonsAvailability(appState);
         }
+
         public void RunGame()
         {
             if (appState != ApplicationState.READY_FOR_GAME)
@@ -56,8 +57,8 @@ namespace TCS_business.CONTROLER
                 guiManager.ShowMessage("Error during game executution: " + e.Message);
                 Exit();
             }
-
         }
+
         public void ShowGameConfigDialog()
         {
             guiManager.ShowConfigDialog(game.GameConfig);
@@ -129,11 +130,6 @@ namespace TCS_business.CONTROLER
             guiManager.UpdateCommunicate(msg);
             //guiManager.ShowMessage(msg);
         }
-
-        //internal void ShowBuyPrompt()
-        //{
-        //    guiManager.ShowBuyPrompt();
-        //}
 
         internal void ShowCardPrompt(string s)
         {

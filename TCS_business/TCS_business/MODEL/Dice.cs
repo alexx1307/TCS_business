@@ -13,6 +13,8 @@ namespace TCS_business.MODEL
     {
         public Dice() { }
 
+        private static readonly Random random = new Random();
+
         /// <summary>
         /// Simulates a roll of the dice
         /// </summary>
@@ -20,8 +22,8 @@ namespace TCS_business.MODEL
         public Tuple<int, int> Throw()
         {
             return new Tuple<int, int>(
-                new Random().Next(1, 7), 
-                new Random().Next(1, 120)%6+1);
+                random.Next(1, 7),
+                random.Next(1, 7));
         }
     }
 }

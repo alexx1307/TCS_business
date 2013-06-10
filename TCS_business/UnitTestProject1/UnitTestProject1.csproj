@@ -55,7 +55,7 @@
     <Compile Include="BoardTest.cs" />
     <Compile Include="DeckTest.cs" />
     <Compile Include="DiceTest.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="FormTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -21,6 +21,7 @@ namespace TCS_business.MODEL
         /// </summary>
         private Field[] fields;
         public Field[] Fields { get { return fields; } }
+
         /// <summary>
         ///  Current positions of players on the board
         /// </summary>
@@ -29,15 +30,18 @@ namespace TCS_business.MODEL
         {
             get { return positions; }
         }
+
+        #region Constants
         /// <summary>
         ///  Number of fields on the board
         /// </summary>
         public const int NOFIELDS = 40;
-
+        
         /// <summary>
         ///  Money which player gets when passes through the start
         /// </summary>
         public const int CASHFORSTART = 200;
+        #endregion
 
         private Deck deck;
         public Deck Deck { get { return deck; } }
@@ -79,6 +83,7 @@ namespace TCS_business.MODEL
             }
         }
 
+        /// <summary>
         ///  Move player to specific field.
         /// </summary>
         /// <param name="player">player to move</param>

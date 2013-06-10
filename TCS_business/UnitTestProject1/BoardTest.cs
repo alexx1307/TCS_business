@@ -106,5 +106,34 @@ namespace UnitTestProject1
             board.MovePlayer(r, player);
             Assert.AreEqual(r, board.Positions[player]);
         }
+
+        private const int NOITERATIONS = 100000;
+        private static readonly Random random = new Random();
+
+        /// <summary>
+        /// This test checks whether player gets cash for 
+        /// passing through the start
+        /// </summary>
+        [TestMethod]
+        public void TestBoardCashForStart()
+        {
+            Board board = new Board();
+            Game game = new Game();
+            int startCash = 0;
+            Player player = new Player("test", 0, Color.Black, startCash, 60);
+            game.RegisterNewPlayer(player);
+            board.Init(game.GameState);
+
+            int sum = 0;
+            for (int i = 0; i < NOITERATIONS; ++i)
+            {
+                int r = random.Next(1, 12);
+                board.MovePlayer(player, r);
+                sum += r;
+            }
+
+            int expectedCash = sum / Board.NOFIELDS * Board.CASHFORSTART;
+            Assert.AreEqual(expectedCash, player.Cash);
+        }
     }
 }
