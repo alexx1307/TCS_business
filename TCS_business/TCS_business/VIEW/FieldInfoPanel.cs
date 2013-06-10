@@ -70,6 +70,11 @@ namespace TCS_business.VIEW
             CONTROLER.Game game = CONTROLER.ApplicationController.Instance.Game;
             CONTROLER.ApplicationController.Instance.UpdatePlayerDataView((field as MODEL.IPurchasable).Owner);
             CONTROLER.ApplicationController.Instance.UpdateBoardView(game.Board);
+            if(game.Board.Fields[game.Board.Positions[game.GameState.ActivePlayer]] is MODEL.IPurchasable)
+            {
+                if(game.GameState.ActivePlayer.Cash > (game.Board.Fields[game.Board.Positions[game.GameState.ActivePlayer]] as MODEL.IPurchasable).Cost)
+                    CONTROLER.ApplicationController.Instance.EnableBuyButton();
+            }
         }
     }
 }
