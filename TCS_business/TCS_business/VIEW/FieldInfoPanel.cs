@@ -68,7 +68,7 @@ namespace TCS_business.VIEW
             (field as MODEL.IPurchasable).ChangePledged();
             this.UpdateContent(field, false, true);
             CONTROLER.Game game = CONTROLER.ApplicationController.Instance.Game;
-            CONTROLER.ApplicationController.Instance.UpdatePlayerDataView(field.Owner);
+            CONTROLER.ApplicationController.Instance.UpdatePlayerDataView((field as MODEL.IPurchasable).Owner);
             CONTROLER.ApplicationController.Instance.UpdateBoardView(game.Board);
         }
     }

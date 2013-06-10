@@ -12,12 +12,7 @@ namespace UnitTestProject1
     [TestClass]
     public class DiceTest
     {
-        public DiceTest()
-        {
-            //
-            // TODO: Add constructor logic here
-            //
-        }
+        public DiceTest() { }
 
         private TestContext testContextInstance;
 

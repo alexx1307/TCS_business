@@ -32,15 +32,6 @@ namespace TCS_business.MODEL
             MakeDescription();
         }
 
-        public Player Owner
-        {
-            get
-            {
-                if (!(this is IPurchasable))
-                    return null;
-                else return (this as IPurchasable).Owner;
-            }
-        }
         public Field()
         {
         }

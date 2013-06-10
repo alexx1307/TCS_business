@@ -14,12 +14,7 @@ namespace UnitTestProject1
     [TestClass]
     public class BoardTest
     {
-        public BoardTest()
-        {
-            //
-            // TODO: Add constructor logic here
-            //
-        }
+        public BoardTest() { }
 
         private TestContext testContextInstance;
 

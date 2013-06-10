@@ -67,6 +67,7 @@
     <Compile Include="MODEL\JailField.cs" />
     <Compile Include="MODEL\MoveCard.cs" />
     <Compile Include="MODEL\PayCard.cs" />
+    <Compile Include="MODEL\PolicemanField.cs" />
     <Compile Include="MODEL\Powerhouse.cs" />
     <Compile Include="MODEL\Prompt.cs" />
     <Compile Include="MODEL\Railway.cs" />

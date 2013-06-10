@@ -41,12 +41,6 @@ namespace TCS_business.MODEL
             get { return cash; }
             set { cash = value; }
         }
-        private int waited = 0;
-        public int Waited
-        {
-            get { return waited; }
-            set { waited = value; }
-        }
 
         private bool inJail = false;
         public bool InJail
@@ -120,8 +114,7 @@ namespace TCS_business.MODEL
         /// </summary>
         public void GoToJail()
         {
-            if (cards.Count > 0) cards.RemoveAt(0);
-            else inJail = true;
+            inJail = true;
         }
 
         /// <summary>
