@@ -16,7 +16,6 @@ namespace TCS_business.MODEL
         private string name;
 
         public string Name { get { return name; } }
-
         public string Description 
         { 
             get 

@@ -34,6 +34,7 @@
             this.pawn2 = new System.Windows.Forms.PictureBox();
             this.pawn3 = new System.Windows.Forms.PictureBox();
             this.pawn4 = new System.Windows.Forms.PictureBox();
+            this.houses = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pawn1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pawn2)).BeginInit();
@@ -99,12 +100,22 @@
             this.pawn4.TabStop = false;
             this.pawn4.Click += new System.EventHandler(this.FieldPanel_Click);
             // 
+            // houses
+            // 
+            this.houses.AutoSize = true;
+            this.houses.Location = new System.Drawing.Point(41, 5);
+            this.houses.Name = "houses";
+            this.houses.Size = new System.Drawing.Size(35, 13);
+            this.houses.TabIndex = 6;
+            this.houses.Text = "label1";
+            // 
             // FieldPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.houses);
             this.Controls.Add(this.pawn4);
             this.Controls.Add(this.pawn3);
             this.Controls.Add(this.pawn2);
@@ -132,6 +143,7 @@
         public System.Windows.Forms.PictureBox pawn2;
         public System.Windows.Forms.PictureBox pawn3;
         public System.Windows.Forms.PictureBox pawn4;
+        private System.Windows.Forms.Label houses;
 
 
     }

@@ -13,8 +13,12 @@ namespace TCS_business.MODEL
     public class City : IPurchasable,IPayable 
     {
         Country country;
-        byte Houses = 0;
-        
+        byte houses = 0;
+        public byte Houses
+        {
+            set { houses = value; }
+            get { return houses; }
+        }
         public Country Country{
             get { return country; }
         }

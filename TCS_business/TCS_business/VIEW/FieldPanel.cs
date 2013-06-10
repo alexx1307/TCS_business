@@ -75,6 +75,9 @@ namespace TCS_business.VIEW
                         this.pictureBox1.Hide();
                     }
                 }
+                if (field is City && (field as City).Houses>0)
+                    this.houses.Text = (field as City).Houses.ToString();
+                else this.houses.Text = "";
             });
         }
 
