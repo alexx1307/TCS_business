@@ -46,8 +46,8 @@ namespace TCS_business.MODEL
             #endregion
 
             #region Taxes
-            board.Fields[4] = new Tax("tax1");
-            board.Fields[38] = new Tax("tax2");
+            board.Fields[4] = new Tax("Secure \nparking", 200);
+            board.Fields[38] = new Tax("Wealth tax", 100);
             #endregion
 
             #region Jail
