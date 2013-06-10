@@ -14,7 +14,7 @@ namespace TCS_business.MODEL
         public Powerhouse(string s)
             : base(s)
         { }
-        public int Stake
+        public new int Stake
         {
             get
             {

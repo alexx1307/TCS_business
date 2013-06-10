@@ -24,7 +24,7 @@ namespace TCS_business.MODEL
         {
         }
 
-        public int Stake
+        public new int Stake
         {
             get
             {

@@ -60,7 +60,7 @@ namespace TCS_business.VIEW
             for (int i = 0; i < list.Count(); i++)
             {
                 PlayerInfo PlayerPanel = new PlayerInfo(list[i].Name, list[i].Cash, list[i].Color, list[i].Time);
-                PlayerPanel.Location = new Point(0, i * 74);
+                PlayerPanel.Location = new Point(0, i * 76);
                 playersListPanel.Controls.Add(PlayerPanel);
                 playersPanelsMap.Add(list[i], PlayerPanel);
             }

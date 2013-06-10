@@ -44,10 +44,10 @@
             // descriptionLabel
             // 
             this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionLabel.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.descriptionLabel.Location = new System.Drawing.Point(4, 5);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(41, 13);
+            this.descriptionLabel.Size = new System.Drawing.Size(31, 15);
             this.descriptionLabel.TabIndex = 0;
             this.descriptionLabel.Text = "label1";
             this.descriptionLabel.Click += new System.EventHandler(this.FieldPanel_Click);
@@ -55,7 +55,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::TCS_business.Properties.Resources._lock;
-            this.pictureBox1.Location = new System.Drawing.Point(53, 24);
+            this.pictureBox1.Location = new System.Drawing.Point(56, 24);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(21, 28);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

@@ -14,7 +14,6 @@ namespace TCS_business.MODEL
     /// </summary>
     public class Player
     {
-        List<Field> fields;
         List<Card> cards;
         private string name;
         private System.Drawing.Color color;
