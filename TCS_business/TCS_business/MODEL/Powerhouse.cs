@@ -18,7 +18,14 @@ namespace TCS_business.MODEL
         {
             get
             {
-                return 100;
+                CONTROLER.Game game = CONTROLER.ApplicationController.Instance.Game;
+                Board Board = game.Board;
+                int owned = 0;
+                    if ((Board.Fields[12] as IPurchasable).Owner == this.Owner)
+                        owned++;
+                    if ((Board.Fields[28] as IPurchasable).Owner == this.Owner)
+                        owned++;
+                return 50 * owned;
             }
             set
             {

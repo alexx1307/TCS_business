@@ -49,7 +49,42 @@ namespace TCS_business.MODEL
             Owner.Cash -= houseCost();
         }
 
-
+        public int BasicStake
+        {
+            get
+            {
+                int val = (int)(Cost / 15);
+                if (val <= 8)
+                {
+                    val = 8;
+                }
+                else if (val <= 12)
+                {
+                    val = 12;
+                }
+                else if (val <= 18)
+                {
+                    val = 18;
+                }
+                else if (val <= 22)
+                {
+                    val = 25;
+                }
+                else if (val <= 30)
+                {
+                    val = 30;
+                }
+                else if (val <= 40)
+                {
+                    val = 40;
+                }
+                else
+                {
+                    val = 50;
+                }
+                return val;
+            }
+        }
         public new int Stake
         {
             get

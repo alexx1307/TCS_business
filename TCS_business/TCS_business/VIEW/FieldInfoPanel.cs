@@ -20,7 +20,31 @@ namespace TCS_business.VIEW
         internal void UpdateContent(MODEL.Field field, bool shouldBuyButtonBeSeen, bool shouldPledgeButtonBeSeen)
         {
             this.field = field;
-            label1.Text = field.Description;
+            label1.Text = field.Description + "\n";
+            if (this.field is MODEL.IPurchasable)
+            {
+                label2.Text = "Stakes:\n";
+                if (this.field is MODEL.City)
+                {
+                    label2.Text += "without no house: " + (this.field as MODEL.City).BasicStake.ToString() + "\n";
+                    label2.Text += "with 1 house: " + ((this.field as MODEL.City).Stake + ((this.field as MODEL.City).Cost*3)/4).ToString() + "\n";
+                    label2.Text += "with 2 houses: " + ((this.field as MODEL.City).Stake + ((this.field as MODEL.City).Cost*6)/4).ToString() + "\n";
+                    label2.Text += "with 3 houses: " + ((this.field as MODEL.City).Stake + ((this.field as MODEL.City).Cost * 9) / 4).ToString() + "\n";
+                    label2.Text += "with 4 houses: " + ((this.field as MODEL.City).Stake + 3 * (this.field as MODEL.City).Cost).ToString() + "\n";
+                }
+                else if (this.field is MODEL.Powerhouse)
+                {
+                    label2.Text += "when 1 owned: 50\n";
+                    label2.Text += "when 2 owned: 100\n";
+                }
+                else  if (this.field is MODEL.Railway)
+                {
+                    label2.Text += "when 1 owned: 50\n";
+                    label2.Text += "when 2 owned: 100\n";
+                    label2.Text += "when 3 owned: 150\n";
+                    label2.Text += "when 4 owned: 200\n";
+                }
+            }
             if (field is MODEL.IPurchasable)
             {
                 if (shouldBuyButtonBeSeen)
