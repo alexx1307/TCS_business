@@ -42,40 +42,46 @@ namespace TCS_business.VIEW
                 this.pictureBox1.Hide();
             }
         }
+
         public void ChangeDescriptionLabel()
         {
             field.ChangeDescriptionLabel();
             descriptionLabel.Text = field.Description;
         }
+
         public void Update(Field field)
         {
-            if (field.Owner != null)
+            BeginInvoke((MethodInvoker)delegate
             {
-                this.CreateGraphics().DrawRectangle(new Pen(field.Owner.Color, 7.0f), this.ClientRectangle);
-                if (field is IPurchasable)
+                if (field.Owner != null)
                 {
-                    if ((field as IPurchasable).Pledged == true)
+                    this.CreateGraphics().DrawRectangle(new Pen(field.Owner.Color, 7.0f), this.ClientRectangle);
+                    if (field is IPurchasable)
                     {
-                        this.pictureBox1.Show();
+                        if ((field as IPurchasable).Pledged == true)
+                        {
+                            this.pictureBox1.Show();
+                        }
+                        else
+                        {
+                            this.pictureBox1.Hide();
+                        }
                     }
                     else
                     {
                         this.pictureBox1.Hide();
                     }
                 }
-                else
-                {
-                    this.pictureBox1.Hide();
-                }
-            }
+            });
         }
+
         public void ChangeLockLocation()
         {
-            this.pictureBox1.Location = new Point(26,40);
+            this.pictureBox1.Location = new Point(26, 40);
         }
         internal void removePawns()
         {
-            foreach (PictureBox pawn in pawns) 
+            foreach (PictureBox pawn in pawns)
                 pawn.BackColor = System.Drawing.Color.Transparent;
         }
 

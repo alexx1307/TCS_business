@@ -50,6 +50,7 @@
             this.descriptionLabel.Size = new System.Drawing.Size(41, 13);
             this.descriptionLabel.TabIndex = 0;
             this.descriptionLabel.Text = "label1";
+            this.descriptionLabel.Click += new System.EventHandler(this.FieldPanel_Click);
             // 
             // pictureBox1
             // 
@@ -60,6 +61,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.FieldPanel_Click);
             // 
             // pawn1
             // 
@@ -68,6 +70,7 @@
             this.pawn1.Size = new System.Drawing.Size(7, 18);
             this.pawn1.TabIndex = 1;
             this.pawn1.TabStop = false;
+            this.pawn1.Click += new System.EventHandler(this.FieldPanel_Click);
             // 
             // pawn2
             // 
@@ -76,6 +79,7 @@
             this.pawn2.Size = new System.Drawing.Size(7, 18);
             this.pawn2.TabIndex = 3;
             this.pawn2.TabStop = false;
+            this.pawn2.Click += new System.EventHandler(this.FieldPanel_Click);
             // 
             // pawn3
             // 
@@ -84,6 +88,7 @@
             this.pawn3.Size = new System.Drawing.Size(7, 18);
             this.pawn3.TabIndex = 4;
             this.pawn3.TabStop = false;
+            this.pawn3.Click += new System.EventHandler(this.FieldPanel_Click);
             // 
             // pawn4
             // 
@@ -92,6 +97,7 @@
             this.pawn4.Size = new System.Drawing.Size(7, 18);
             this.pawn4.TabIndex = 5;
             this.pawn4.TabStop = false;
+            this.pawn4.Click += new System.EventHandler(this.FieldPanel_Click);
             // 
             // FieldPanel
             // 
