@@ -78,7 +78,6 @@ namespace TCS_business.VIEW
         {
             registerNewPlayerToolStripMenuItem.Enabled = true;
         }
-
         internal void DisableGameRun()
         {
             runToolStripMenuItem.Enabled = false;
@@ -172,7 +171,10 @@ namespace TCS_business.VIEW
             label2.Text = "Chance";
             label2.Visible = true;
         }
-
+        internal void HideFieldInfoPanel()
+        {
+            BeginInvoke((MethodInvoker)delegate { this.fieldInfoPanel1.Hide(); });
+        }
         public void ShowInformation(string s)
         {
             label1.Text = s;

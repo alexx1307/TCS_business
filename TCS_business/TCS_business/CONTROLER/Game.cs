@@ -106,6 +106,7 @@ namespace TCS_business.CONTROLER
                 p.Active = false;
                 ApplicationController.Instance.UpdatePlayerDataView(p);
                 gameState.ActivePlayerIndex = (gameState.ActivePlayerIndex + 1) % gameConfig.PlayersNumber;
+                ApplicationController.Instance.HideFieldInfoPanel();
                 // update active player id
             }
             this.isRunning = false;

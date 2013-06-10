@@ -88,7 +88,10 @@ namespace TCS_business.VIEW
 
             //mainWindow.ChangeCommunicate(msg);
         }
-
+        public void HideFieldInfoPanel()
+        {
+            mainWindow.HideFieldInfoPanel();
+        }
         public void AdjustButtonsAvailability(ApplicationState appState)
         {
             switch (appState)
