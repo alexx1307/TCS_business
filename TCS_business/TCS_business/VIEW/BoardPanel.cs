@@ -41,6 +41,8 @@ namespace TCS_business.VIEW
                         fieldPanels[i].ChangeLockLocation();
                     }
                     if (i % 10 == 0) fieldPanels[i].Height = 80;
+                    if (i == 10) fieldPanels[i].BackgroundImage = global::TCS_business.Properties.Resources.jail;
+                    if (i == 30) fieldPanels[i].BackgroundImage = global::TCS_business.Properties.Resources.go_to_jail;
                     this.Controls.Add(fieldPanels[i]);
                 }
                 Point origin = new Point(5, 5);

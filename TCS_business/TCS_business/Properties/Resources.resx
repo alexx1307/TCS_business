@@ -142,4 +142,10 @@
   <data name="plansza" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plansza.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="go_to_jail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\go_to_jail.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jail.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
