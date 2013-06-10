@@ -166,6 +166,11 @@ namespace TCS_business.VIEW
             mainWindow.BeginInvoke((MethodInvoker)delegate { mainWindow.ShowCard(s); });
         }
 
+        public void ShowInformation(string s)
+        {
+            mainWindow.BeginInvoke((MethodInvoker)delegate { mainWindow.ShowInformation(s); });
+        }
+
         public void UpdateFieldInfoPanel(Field field, bool shouldBuyButtonBeSeen, bool shouldPledgeButtonBeSeen)
         {
             mainWindow.UpdateFieldInfoPanel(field, shouldBuyButtonBeSeen, shouldPledgeButtonBeSeen);

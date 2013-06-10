@@ -173,6 +173,14 @@ namespace TCS_business.VIEW
             label2.Visible = true;
         }
 
+        public void ShowInformation(string s)
+        {
+            label1.Text = s;
+            label1.Visible = true;
+            label2.Text = "Information";
+            label2.Visible = true;
+        }
+
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new HelpForm().Show();
