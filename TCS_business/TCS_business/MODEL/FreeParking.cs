@@ -5,13 +5,10 @@ using System.Text;
 
 namespace TCS_business.MODEL
 {
-    class FreeParking:Field
+    class FreeParking : Field
     {
-        public FreeParking(string description) :base(description)
-        {}
-        public override void Action(Player p)
-        {
-            
-        }
+        public FreeParking(string description) : base(description) { }
+        
+        public override void Action(Player p) { }
     }
 }

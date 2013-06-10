@@ -21,7 +21,7 @@ namespace TCS_business.VIEW
         {
             mainWindow = new MainWindow();
         }
-        
+
         public void ShowMainWindow()
         {
             Thread guiThread = new Thread((ThreadStart)delegate
@@ -42,16 +42,6 @@ namespace TCS_business.VIEW
             //todo: Zygmunt: to ma nie byc wywolywane z main window 
             //tylko main window ma posiadac panel odpowiedzialny za listowanie graczy i jego metode masz wywolac.
             //poza tym zmien nazwe tej metody (jakis update)
-        }
-
-        public void UpdateFieldState(Field field)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateTurnStatePanel(TurnState turnState, GameState gameState)
-        {
-            throw new NotImplementedException();
         }
 
         public void ShowLoginDialog()
@@ -146,12 +136,12 @@ namespace TCS_business.VIEW
 
         public void EnableBuyButton()
         {
-            mainWindow.BeginInvoke((MethodInvoker)delegate { mainWindow.EnableBuyButton(); }); 
+            mainWindow.BeginInvoke((MethodInvoker)delegate { mainWindow.EnableBuyButton(); });
         }
 
         public void DisableBuyButton()
         {
-            mainWindow.BeginInvoke((MethodInvoker)delegate { mainWindow.DisableBuyButton(); }); 
+            mainWindow.BeginInvoke((MethodInvoker)delegate { mainWindow.DisableBuyButton(); });
         }
 
         public void EnableEndTurnButton()

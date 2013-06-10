@@ -9,9 +9,9 @@ namespace TCS_business.MODEL
 {
     public abstract class IPurchasable : Field, IPayable
     {
-        Player owner;
-        int cost = 50;
-        bool pledged;
+        private Player owner;
+        private int cost = 50;
+        private bool pledged;
 
         public virtual Player Owner
         {
@@ -68,7 +68,7 @@ namespace TCS_business.MODEL
             if (owner != null && p != owner && !pledged)
             {
                 p.GiveCash(owner, Stake);
-                ApplicationController.Instance.ShowPayInfo("Charged $" + Stake.ToString() + " in " + this.ToString());
+                ApplicationController.Instance.ShowPayInfo("Charged $" + Stake.ToString() + " in " + Name);
             }
         }
 

@@ -55,7 +55,7 @@ namespace TCS_business.MODEL
             board.Fields[30] = new PolicemanField("Go to jail");
             #endregion
 
-            board.Fields[20] = new FreeParking("Parking");
+            board.Fields[20] = new FreeParking("Free parking");
 
             #region Powerhouses
             board.Fields[12] = new Powerhouse("Power");

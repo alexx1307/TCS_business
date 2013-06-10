@@ -56,7 +56,6 @@
     <Compile Include="MODEL\City.cs" />
     <Compile Include="MODEL\Country.cs" />
     <Compile Include="MODEL\Deck.cs" />
-    <Compile Include="MODEL\FreeField.cs" />
     <Compile Include="MODEL\FreeParking.cs" />
     <Compile Include="MODEL\GameConfig.cs" />
     <Compile Include="MODEL\GetCard.cs" />
@@ -69,11 +68,9 @@
     <Compile Include="MODEL\PayCard.cs" />
     <Compile Include="MODEL\PolicemanField.cs" />
     <Compile Include="MODEL\Powerhouse.cs" />
-    <Compile Include="MODEL\Prompt.cs" />
     <Compile Include="MODEL\Railway.cs" />
     <Compile Include="MODEL\StartField.cs" />
     <Compile Include="MODEL\Tax.cs" />
-    <Compile Include="MODEL\TurnState.cs" />
     <Compile Include="VIEW\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
