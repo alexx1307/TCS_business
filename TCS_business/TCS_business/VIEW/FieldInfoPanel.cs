@@ -44,7 +44,28 @@ namespace TCS_business.VIEW
                     label2.Text += "when 3 owned: 150\n";
                     label2.Text += "when 4 owned: 200\n";
                 }
+
             }
+            else if (this.field is MODEL.Chance)
+            {
+                label2.Text = "You'll draw\n cards here";
+            }
+            else if (this.field is MODEL.StartField)
+            {
+                label2.Text = "For passing through\nthis field you'll get 200";
+            }
+            else if (this.field is MODEL.Tax)
+            {
+                label2.Text = "For staying on\nthis field you'll \nhave to pay "+(field as MODEL.Tax).Stake;
+            }
+            else if (this.field is MODEL.FreeParking)
+            {
+                label2.Text = "Stay here and\n take a rest";
+            }else{
+                label2.Text = "";
+            }
+            
+
             if (field is MODEL.IPurchasable)
             {
                 if (shouldBuyButtonBeSeen)
