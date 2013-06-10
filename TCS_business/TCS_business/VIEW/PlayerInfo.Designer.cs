@@ -114,7 +114,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "PlayerInfo";
-            this.Size = new System.Drawing.Size(197, 70);
+            this.Size = new System.Drawing.Size(197, 76);
             this.Load += new System.EventHandler(this.PlayerInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);

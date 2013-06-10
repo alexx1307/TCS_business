@@ -44,9 +44,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dice1 = new System.Windows.Forms.PictureBox();
             this.dice2 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.boardPanel1 = new TCS_business.VIEW.BoardPanel();
             this.fieldInfoPanel1 = new TCS_business.VIEW.FieldInfoPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dice1)).BeginInit();
@@ -61,7 +61,7 @@
             this.infoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(932, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(930, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -130,6 +130,7 @@
             // Buy
             // 
             this.Buy.Enabled = false;
+            this.Buy.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Buy.Location = new System.Drawing.Point(3, 3);
             this.Buy.Name = "Buy";
             this.Buy.Size = new System.Drawing.Size(92, 23);
@@ -141,6 +142,7 @@
             // TurnEnd
             // 
             this.TurnEnd.Enabled = false;
+            this.TurnEnd.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.TurnEnd.Location = new System.Drawing.Point(101, 3);
             this.TurnEnd.Name = "TurnEnd";
             this.TurnEnd.Size = new System.Drawing.Size(93, 23);
@@ -205,6 +207,13 @@
             this.dice2.TabIndex = 7;
             this.dice2.TabStop = false;
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(710, 401);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(201, 242);
+            this.panel1.TabIndex = 15;
+            // 
             // boardPanel1
             // 
             this.boardPanel1.BackColor = System.Drawing.Color.DarkGray;
@@ -222,16 +231,9 @@
             this.fieldInfoPanel1.Size = new System.Drawing.Size(146, 146);
             this.fieldInfoPanel1.TabIndex = 13;
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(710, 401);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(201, 242);
-            this.panel1.TabIndex = 15;
-            // 
             // MainWindow
             // 
-            this.ClientSize = new System.Drawing.Size(932, 750);
+            this.ClientSize = new System.Drawing.Size(930, 748);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
