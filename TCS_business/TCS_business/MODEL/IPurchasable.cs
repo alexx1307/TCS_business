@@ -88,6 +88,8 @@ namespace TCS_business.MODEL
 
         internal void BuyByAuction(Player winner, int price)
         {
+            if (Owner != null)
+                Owner.Cash += price;
             Owner = winner;
             winner.Cash -= price;
             ApplicationController.Instance.UpdateBoardView(ApplicationController.Instance.Game.Board);

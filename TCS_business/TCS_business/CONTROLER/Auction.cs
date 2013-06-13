@@ -29,7 +29,7 @@ namespace TCS_business.CONTROLER
             while (true)
             {
 
-                if (activePlayers.Count < 1) return;
+                if (activePlayers.Count < 1) break;
                 while (!activePlayers.Contains(currentPlayer = gameState.NextPlayer())) { }
 
                 if (currentPlayer.Cash < currentPrice * MIN_INCREMENT)
