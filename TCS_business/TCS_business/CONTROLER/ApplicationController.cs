@@ -173,5 +173,15 @@ namespace TCS_business.CONTROLER
         {
             guiManager.ShowPayInfo(s);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="currentPlayer"></param>
+        /// <param name="minPrice"></param>
+        /// <returns>new stake or -1 when player gave up</returns>
+        internal int ShowAuctionDialog(Player currentPlayer, int minPrice)
+        {
+           return guiManager.ShowAuctionDialog(currentPlayer, minPrice);
+        }
     }
 }

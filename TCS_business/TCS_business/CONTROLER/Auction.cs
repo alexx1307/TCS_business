@@ -8,6 +8,8 @@ namespace TCS_business.CONTROLER
 {
     public class Auction
     {
+        const double MIN_INCREMENT=1.1;
+
         List<Player> playersList;
         Auction(List<Player> playersList)
         {
@@ -23,8 +25,12 @@ namespace TCS_business.CONTROLER
             GameState gameState = ApplicationController.Instance.Game.GameState;
             Player currentPlayer = gameState.NextPlayer();
 
-            //CONTROLER.ApplicationController.Instance
+            int newPrice = CONTROLER.ApplicationController.Instance.ShowAuctionDialog(currentPlayer, (int)(currentPrice*MIN_INCREMENT));
+            if(newPrice==-1){
+                playersList.Remove(currentPlayer);
+            }else{
 
+            }
 
             gameState.ActivePlayer = p;
         }

@@ -173,5 +173,11 @@ namespace TCS_business.VIEW
         {
             mainWindow.BeginInvoke((MethodInvoker)delegate { mainWindow.ShowPayInfo(s); });
         }
+
+
+        public int ShowAuctionDialog(Player currentPlayer, int minPrice)
+        {
+            return -1;
+        }
     }
 }

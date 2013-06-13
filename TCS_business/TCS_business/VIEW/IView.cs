@@ -34,5 +34,7 @@ namespace TCS_business.VIEW
         void DisableGameSettings();
         void ShowPayInfo(string s);
         void HideFieldInfoPanel();
+
+        int ShowAuctionDialog(Player currentPlayer, int minPrice);
     }
 }
