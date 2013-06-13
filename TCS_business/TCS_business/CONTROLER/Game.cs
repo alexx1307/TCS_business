@@ -107,7 +107,11 @@ namespace TCS_business.CONTROLER
                     MessageBox.Show(p.ToString() + " was busted");
                     foreach (Field f in board.Fields)
                         if (f is IPurchasable && (f as IPurchasable).Owner == p)
+                        {
+                            if ((f as IPurchasable).Pledged) (f as IPurchasable).ChangePledged();
                             (f as IPurchasable).Owner = null;
+                            if (f is City) (f as City).Houses = 0;
+                        }
                     ApplicationController.Instance.UpdatePlayerDataView(p);
                     ApplicationController.Instance.UpdateBoardView(board);
                 }

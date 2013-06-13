@@ -12,7 +12,7 @@ namespace TCS_business.MODEL
     public class Country
     {
         string name;
-        Player owner;
+        //Player owner;
         System.Drawing.Color color;
         List<Field> fields;
         public System.Drawing.Color Color
@@ -45,13 +45,13 @@ namespace TCS_business.MODEL
             fields.Add(f);
         }
 
-        /// <summary>
-        /// Set who is the owner of all country
-        /// </summary>
-        /// <param name="p">Player who has all the fields of this country</param>
-        void SetOwner(Player p)
-        {
-            owner = p;
-        }
+        ///// <summary>
+        ///// Set who is the owner of all country
+        ///// </summary>
+        ///// <param name="p">Player who has all the fields of this country</param>
+        //void SetOwner(Player p)
+        //{
+        //    owner = p;
+        //}
     }
 }
