@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TCS_business.MODEL;
 
-namespace TCS_business.MODEL
+namespace TCS_business.CONTROLER
 {
-    class Auction
+    public class Auction
     {
         List<Player> playersList;
         Auction(List<Player> playersList)
@@ -19,10 +20,10 @@ namespace TCS_business.MODEL
         void StartAuction(Player p, IPurchasable field)
         {
             int currentPrice = field.Cost;
-            GameState gameState = CONTROLER.ApplicationController.Instance.Game.GameState;
+            GameState gameState = ApplicationController.Instance.Game.GameState;
             Player currentPlayer = gameState.NextPlayer();
 
-
+            //CONTROLER.ApplicationController.Instance
 
 
             gameState.ActivePlayer = p;
