@@ -87,13 +87,13 @@ namespace TCS_business.CONTROLER
                 while (gameState.ActivePlayer.InJail)
                 {
                     gameState.ActivePlayer.exitJail();
-                    gameState.ActivePlayerIndex = (gameState.ActivePlayerIndex + 1) % gameConfig.PlayersNumber;
+                    gameState.NextPlayer();
                 }
                 ApplicationController.Instance.SendMessage("Turn of player: " + gameState.ActivePlayer.ToString());
                 ApplicationController.Instance.ShowTurnPrompt(gameState.ActivePlayer.ToString());
                 Tuple<int, int> meshes = dice.Throw();
                 ApplicationController.Instance.RollDice(meshes);
-                Player p = gameState.PlayersList.ElementAt(gameState.ActivePlayerIndex);
+                Player p = gameState.ActivePlayer;
                 board.MovePlayer(p, meshes.Item1 + meshes.Item2); // move player on the board
                 ApplicationController.Instance.UpdateBoardView(board);
                 ApplicationController.Instance.DisableBuyButton();
@@ -105,7 +105,7 @@ namespace TCS_business.CONTROLER
                 lock (endOfTurn) Monitor.Wait(endOfTurn);
                 p.Active = false;
                 ApplicationController.Instance.UpdatePlayerDataView(p);
-                gameState.ActivePlayerIndex = gameState.NextPlayer();
+                gameState.NextPlayer();
                 ApplicationController.Instance.HideFieldInfoPanel();
                 // update active player id
             }

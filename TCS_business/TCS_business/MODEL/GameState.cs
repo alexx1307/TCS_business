@@ -16,6 +16,14 @@ namespace TCS_business.MODEL
         public Player ActivePlayer
         {
             get { return playersInGame[ActivePlayerIndex]; }
+            set { 
+                Player ap = ActivePlayer;
+                for (int i = 0; i <= PlayersLeft; i++) //zabezpieczenie przed zapetleniem
+                {
+                    if (ActivePlayer != value)
+                        NextPlayer();
+                }
+            }
         }
         public int PlayersLeft
         {
@@ -31,10 +39,10 @@ namespace TCS_business.MODEL
         public List<Player> PlayersList { get { return playersInGame; }  }
 
 
-        internal int NextPlayer()
+        internal Player NextPlayer()
         {
             activePlayerIndex = (activePlayerIndex + 1) % PlayersLeft;
-            return activePlayerIndex;
+            return ActivePlayer;
         }
         void removeLoser(Player p)
         {
@@ -46,5 +54,6 @@ namespace TCS_business.MODEL
             playersList.Add(p);
             playersInGame.Add(p);
         }
+        
     }
 }
