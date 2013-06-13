@@ -104,6 +104,12 @@ namespace TCS_business.CONTROLER
                 p.Active = true;
                 lock (endOfTurn) Monitor.Wait(endOfTurn);
                 p.Active = false;
+                Field activeField = gameState.ActivePlayerPosition();
+                if (activeField is IPurchasable && (activeField as IPurchasable).Owner == null)
+                {
+                    Auction auction = new Auction(gameState.PlayersList);
+                    auction.StartAuction(gameState.ActivePlayer, activeField as IPurchasable);
+                }
                 ApplicationController.Instance.UpdatePlayerDataView(p);
                 gameState.NextPlayer();
                 ApplicationController.Instance.HideFieldInfoPanel();

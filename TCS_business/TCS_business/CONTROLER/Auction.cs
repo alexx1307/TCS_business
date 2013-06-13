@@ -11,7 +11,7 @@ namespace TCS_business.CONTROLER
         const double MIN_INCREMENT = 1.1;
 
         List<Player> activePlayers;
-        Auction(List<Player> playersList)
+        public Auction(List<Player> playersList)
         {
             this.activePlayers = playersList;
         }
@@ -19,7 +19,7 @@ namespace TCS_business.CONTROLER
         /// Method simulate an auction
         /// </summary>
         /// <param name="p">active player - This player will get turn after auction</param>
-        void StartAuction(Player p, IPurchasable field)
+        public void StartAuction(Player p, IPurchasable field)
         {
             Player winner = null;
             int currentPrice = field.Cost;

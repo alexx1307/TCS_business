@@ -54,6 +54,11 @@ namespace TCS_business.MODEL
             playersList.Add(p);
             playersInGame.Add(p);
         }
-        
+
+
+        internal Field ActivePlayerPosition()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
