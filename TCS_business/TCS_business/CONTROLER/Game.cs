@@ -199,6 +199,7 @@ namespace TCS_business.CONTROLER
             Player p = gameState.ActivePlayer;
             Auction auction = new Auction(gameState.PlayersList);
             auction.StartAuction(gameState.ActivePlayer, field as IPurchasable);
+
         }
     }
 }

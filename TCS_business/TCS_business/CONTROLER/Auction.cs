@@ -15,6 +15,15 @@ namespace TCS_business.CONTROLER
         {
             this.activePlayers = new List<Player>( playersList);
         }
+
+        private void win(Player winner,IPurchasable field, int currentPrice)
+        {
+            field.BuyByAuction(winner, currentPrice);
+          
+            ApplicationController.Instance.ShowMessage("Player: " + winner + " wins! He pays " + currentPrice + " for " + field);
+            ApplicationController.Instance.UpdatePlayerDataView(winner);
+            ApplicationController.Instance.UpdateFieldInfoPanel(field, false, false);
+        }
         /// <summary>
         /// Method simulate an auction
         /// </summary>
@@ -29,10 +38,17 @@ namespace TCS_business.CONTROLER
             while (true)
             {
 
-                if (activePlayers.Count < 1) break;
+                if (activePlayers.Count < 1)
+                {
+                    if (winner != null)
+                    {
+                        win(winner,field,currentPrice);
+                        break;
+                    }
+                }
                 while (!activePlayers.Contains(currentPlayer = gameState.NextPlayer())) { }
 
-                if (currentPlayer.Cash < currentPrice * MIN_INCREMENT)
+                if (currentPlayer.Cash < (int)(currentPrice * MIN_INCREMENT))
                 {
                     activePlayers.Remove(currentPlayer);
                     continue;
@@ -49,11 +65,8 @@ namespace TCS_business.CONTROLER
                 }
                 if (activePlayers.Count == 1 && winner != null)
                 {
-                    field.BuyByAuction(winner, currentPrice);
                     gameState.ActivePlayer = p;
-                    ApplicationController.Instance.ShowMessage("Player: " + winner + " wins! He pays " + currentPrice + " for " + field);
-                    ApplicationController.Instance.UpdatePlayerDataView(winner);
-                    ApplicationController.Instance.UpdateFieldInfoPanel(field, false, false);
+                    win(winner,field,currentPrice);
                     break;
                 }
             }

@@ -188,9 +188,15 @@ namespace TCS_business.CONTROLER
         {
             guiManager.ShowMessage(p);
         }
-        internal void AuctionField(Field field)
-        {
+        internal void AuctionField(Field field){
+
+            Field f = game.Board.PlayerPosition(game.GameState.ActivePlayer);
             game.MakeAuction(field);
+            if (f is IPurchasable &&
+                game.GameState.ActivePlayer.Cash >
+                (f as IPurchasable).Cost &&
+                (f as IPurchasable).Owner == null)
+                EnableBuyButton();
         }
     }
 }
