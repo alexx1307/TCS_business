@@ -90,10 +90,12 @@ namespace TCS_business.VIEW
                     if ((field as IPurchasable).Owner == CONTROLER.ApplicationController.Instance.Game.GameState.ActivePlayer)
                     {
                         sellFieldButton.Visible = true;
+                        
                     }
                     else
                     {
-                        sellFieldButton.Visible = false;
+                       
+                        sellFieldButton.Hide();
                     }
                 }
 
@@ -137,7 +139,7 @@ namespace TCS_business.VIEW
 
         private void sellFieldButton_Click(object sender, EventArgs e)
         {
-
+            CONTROLER.ApplicationController.Instance.AuctionField(this.field);
         }
     }
 }

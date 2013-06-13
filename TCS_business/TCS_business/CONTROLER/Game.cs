@@ -107,8 +107,7 @@ namespace TCS_business.CONTROLER
                 Field activeField = board.PlayerPosition(gameState.ActivePlayer);
                 if (activeField is IPurchasable && (activeField as IPurchasable).Owner == null)
                 {
-                    Auction auction = new Auction(gameState.PlayersList);
-                    auction.StartAuction(gameState.ActivePlayer, activeField as IPurchasable);
+                    MakeAuction(activeField);
                 }
                 ApplicationController.Instance.UpdatePlayerDataView(p);
                 gameState.NextPlayer();
@@ -181,6 +180,13 @@ namespace TCS_business.CONTROLER
             if (!(board.Fields[board.Positions[p]] is IPurchasable))
                 throw new Exception("Cannot buy this field");
             (board.Fields[board.Positions[p]] as IPurchasable).Buy(p);
+        }
+
+        internal void MakeAuction(Field field)
+        {
+            Player p = gameState.ActivePlayer;
+            Auction auction = new Auction(gameState.PlayersList);
+            auction.StartAuction(gameState.ActivePlayer, field as IPurchasable);
         }
     }
 }

@@ -188,5 +188,9 @@ namespace TCS_business.CONTROLER
         {
             guiManager.ShowMessage(p);
         }
+        internal void AuctionField(Field field)
+        {
+            game.MakeAuction(field);
+        }
     }
 }

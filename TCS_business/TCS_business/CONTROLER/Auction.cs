@@ -50,7 +50,10 @@ namespace TCS_business.CONTROLER
                 if (activePlayers.Count == 1 && winner != null)
                 {
                     field.BuyByAuction(winner, currentPrice);
+                    gameState.ActivePlayer = p;
                     ApplicationController.Instance.ShowMessage("Player: " + winner + " wins! He pays " + currentPrice + " for " + field);
+                    ApplicationController.Instance.UpdatePlayerDataView(winner);
+                    ApplicationController.Instance.UpdateFieldInfoPanel(field, false, false);
                     break;
                 }
             }
