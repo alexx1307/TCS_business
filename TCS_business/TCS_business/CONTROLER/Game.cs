@@ -89,7 +89,7 @@ namespace TCS_business.CONTROLER
                     gameState.ActivePlayer.exitJail();
                     gameState.ActivePlayerIndex = (gameState.ActivePlayerIndex + 1) % gameConfig.PlayersNumber;
                 }
-                ApplicationController.Instance.SendMessage("Ture player: " + gameState.ActivePlayer.ToString());
+                ApplicationController.Instance.SendMessage("Turn of player: " + gameState.ActivePlayer.ToString());
                 ApplicationController.Instance.ShowTurnPrompt(gameState.ActivePlayer.ToString());
                 Tuple<int, int> meshes = dice.Throw();
                 ApplicationController.Instance.RollDice(meshes);
