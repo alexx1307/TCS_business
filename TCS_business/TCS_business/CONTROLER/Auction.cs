@@ -10,28 +10,44 @@ namespace TCS_business.CONTROLER
     {
         const double MIN_INCREMENT=1.1;
 
-        List<Player> playersList;
+        List<Player> activePlayers;
         Auction(List<Player> playersList)
         {
-            this.playersList = playersList;
+            this.activePlayers = playersList;
         }
         /// <summary>
         /// Method simulate an auction
         /// </summary>
         /// <param name="p">active player - This player will get turn after auction</param>
         void StartAuction(Player p, IPurchasable field)
-        {
+        {    
+            Player winner = null;
             int currentPrice = field.Cost;
             GameState gameState = ApplicationController.Instance.Game.GameState;
-            Player currentPlayer = gameState.NextPlayer();
+            Player currentPlayer;
+            while(true){
+            
+                if(activePlayers.Count<1) return;
+                while(!activePlayers.Contains( currentPlayer=gameState.NextPlayer())){}
 
-            int newPrice = CONTROLER.ApplicationController.Instance.ShowAuctionDialog(currentPlayer, (int)(currentPrice*MIN_INCREMENT));
+                if(currentPlayer.Cash<currentPrice*MIN_INCREMENT){
+                    activePlayers.Remove(currentPlayer);
+                    continue;
+                }
+            int newPrice = ApplicationController.Instance.ShowAuctionDialog(currentPlayer, (int)(currentPrice*MIN_INCREMENT));
             if(newPrice==-1){
-                playersList.Remove(currentPlayer);
+                activePlayers.Remove(currentPlayer);
             }else{
-
+                currentPrice = newPrice;
+                winner = currentPlayer;
             }
-
+            if(activePlayers.Count==1 && winner!=null){
+                ApplicationController.Instance.SendMessage("Player: "+winner+" wins! He pays "+currentPrice+" for "+field);
+                field.BuyByAuction(winner,currentPrice);
+                return;
+            }
+            
+            }
             gameState.ActivePlayer = p;
         }
     }
