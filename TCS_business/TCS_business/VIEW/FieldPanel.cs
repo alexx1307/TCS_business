@@ -84,6 +84,7 @@ namespace TCS_business.VIEW
                         this.CreateGraphics().DrawRectangle(
                            new Pen(c, 7.0f),
                            this.ClientRectangle);
+                        if ((field as IPurchasable).Pledged) pictureBox1.Hide();
                     }
                 }
                 if (field is City && (field as City).Houses>0)
