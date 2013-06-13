@@ -41,6 +41,11 @@ namespace TCS_business.MODEL
 
         internal Player NextPlayer()
         {
+            if (PlayersLeft == 0)
+            {
+                //TODO 
+                return ActivePlayer;
+            }
             activePlayerIndex = (activePlayerIndex + 1) % PlayersLeft;
             return ActivePlayer;
         }
@@ -55,10 +60,5 @@ namespace TCS_business.MODEL
             playersInGame.Add(p);
         }
 
-
-        internal Field ActivePlayerPosition()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -183,5 +183,10 @@ namespace TCS_business.CONTROLER
         {
            return guiManager.ShowAuctionDialog(currentPlayer, field,minPrice);
         }
+
+        internal void ShowMessage(string p)
+        {
+            guiManager.ShowMessage(p);
+        }
     }
 }

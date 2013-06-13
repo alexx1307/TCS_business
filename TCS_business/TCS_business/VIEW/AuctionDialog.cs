@@ -11,10 +11,18 @@ namespace TCS_business.VIEW
 {
     public partial class AuctionDialog : Form
     {
-        int offer = -1; 
+        int offer = -1;
+        public int Result
+        {
+            get
+            {
+                return offer;
+            }
+        }
         public AuctionDialog(string playerName,Color color, string fieldName, int minStake, int maxStake)
         {
             InitializeComponent();
+            this.Location = new Point(200,200); 
             numericUpDown1.Minimum = minStake;
             numericUpDown1.Maximum = maxStake;
             numericUpDown1.Value=minStake;

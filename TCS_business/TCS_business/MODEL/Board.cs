@@ -112,5 +112,10 @@ namespace TCS_business.MODEL
             positions = (Dictionary<Player, int>)info.GetValue("positions", typeof(Dictionary<Player, int>));
         }
         #endregion
+
+        internal Field PlayerPosition(Player p)
+        {
+            return fields[positions[p]];
+        }
     }
 }

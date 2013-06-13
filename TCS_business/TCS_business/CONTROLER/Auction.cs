@@ -13,7 +13,7 @@ namespace TCS_business.CONTROLER
         List<Player> activePlayers;
         public Auction(List<Player> playersList)
         {
-            this.activePlayers = playersList;
+            this.activePlayers = new List<Player>( playersList);
         }
         /// <summary>
         /// Method simulate an auction
@@ -24,6 +24,7 @@ namespace TCS_business.CONTROLER
             Player winner = null;
             int currentPrice = field.Cost;
             GameState gameState = ApplicationController.Instance.Game.GameState;
+            activePlayers.Remove(p);
             Player currentPlayer;
             while (true)
             {
@@ -48,8 +49,8 @@ namespace TCS_business.CONTROLER
                 }
                 if (activePlayers.Count == 1 && winner != null)
                 {
-                    ApplicationController.Instance.SendMessage("Player: " + winner + " wins! He pays " + currentPrice + " for " + field);
                     field.BuyByAuction(winner, currentPrice);
+                    ApplicationController.Instance.ShowMessage("Player: " + winner + " wins! He pays " + currentPrice + " for " + field);
                     break;
                 }
             }

@@ -178,7 +178,8 @@ namespace TCS_business.VIEW
         public int ShowAuctionDialog(Player currentPlayer, IPurchasable field, int minPrice)
         {
             AuctionDialog auctionDialog = new AuctionDialog(currentPlayer.Name, currentPlayer.Color, field.Name, minPrice, currentPlayer.Cash);
-            return -1;
+            auctionDialog.ShowDialog();
+            return auctionDialog.Result;
         }
     }
 }
