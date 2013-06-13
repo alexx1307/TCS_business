@@ -25,7 +25,7 @@ namespace TCS_business.MODEL
         /// <summary>
         ///  Current positions of players on the board
         /// </summary>
-        private Dictionary<Player, int> positions;      // czy to nie powinno byc bezposrednio w klasie GameState?
+        private Dictionary<Player, int> positions;     
         public Dictionary<Player, int> Positions
         {
             get { return positions; }

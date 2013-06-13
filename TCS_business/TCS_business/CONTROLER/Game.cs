@@ -105,7 +105,7 @@ namespace TCS_business.CONTROLER
                 lock (endOfTurn) Monitor.Wait(endOfTurn);
                 p.Active = false;
                 ApplicationController.Instance.UpdatePlayerDataView(p);
-                gameState.ActivePlayerIndex = (gameState.ActivePlayerIndex + 1) % gameConfig.PlayersNumber;
+                gameState.ActivePlayerIndex = gameState.NextPlayer();
                 ApplicationController.Instance.HideFieldInfoPanel();
                 // update active player id
             }
@@ -156,7 +156,7 @@ namespace TCS_business.CONTROLER
         /// </summary>
         public void RegisterNewPlayer(Player p)
         {
-            gameState.PlayersList.Add(p);
+            gameState.AddPlayer(p);
         }
         public int NextPlayerId()
         {

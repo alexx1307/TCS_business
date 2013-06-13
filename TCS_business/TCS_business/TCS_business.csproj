@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="CONTROLER\Game.cs" />
     <Compile Include="MODEL\ApplicationState.cs" />
+    <Compile Include="MODEL\Auction.cs" />
     <Compile Include="MODEL\Bank.cs" />
     <Compile Include="MODEL\BoardGenerator.cs" />
     <Compile Include="MODEL\Card.cs" />

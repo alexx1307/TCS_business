@@ -151,7 +151,7 @@ namespace TCS_business.VIEW
 
         public void ShowTurnPrompt(string playerName)
         {
-            MessageBox.Show("Ture player: " + playerName);
+            MessageBox.Show("Turn of player: " + playerName);
         }
 
         public void ShowCardPrompt(string s)

@@ -132,7 +132,6 @@ namespace TCS_business.CONTROLER
         internal void SendMessage(string msg)
         {
             guiManager.UpdateCommunicate(msg);
-            //guiManager.ShowMessage(msg);
         }
 
         internal void ShowCardPrompt(string s)
