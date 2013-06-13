@@ -75,6 +75,17 @@ namespace TCS_business.VIEW
                         this.pictureBox1.Hide();
                     }
                 }
+                else
+                {
+                    if (field is IPurchasable)
+                    {
+                        Color c = Color.White;
+                        if (field is City) c = (field as City).Country.Color;
+                        this.CreateGraphics().DrawRectangle(
+                           new Pen(c, 7.0f),
+                           this.ClientRectangle);
+                    }
+                }
                 if (field is City && (field as City).Houses>0)
                     this.houses.Text = (field as City).Houses.ToString();
                 else this.houses.Text = "";

@@ -49,7 +49,7 @@ namespace TCS_business.MODEL
             activePlayerIndex = (activePlayerIndex + 1) % PlayersLeft;
             return ActivePlayer;
         }
-        void removeLoser(Player p)
+        internal void removeLoser(Player p)
         {
             playersInGame.Remove(p);
         }

@@ -100,16 +100,29 @@ namespace TCS_business.CONTROLER
                 board.Fields[board.Positions[p]].Action(p);
                 ApplicationController.Instance.UpdatePlayerDataView(p);
                 ApplicationController.Instance.UpdateBoardView(board);
-                if (p.Cash < 0) End();
-                p.Active = true;
-                lock (endOfTurn) Monitor.Wait(endOfTurn);
-                p.Active = false;
-                Field activeField = board.PlayerPosition(gameState.ActivePlayer);
-                if (activeField is IPurchasable && (activeField as IPurchasable).Owner == null)
+                if (p.Cash < 0)
                 {
-                    MakeAuction(activeField);
+                    gameState.removeLoser(p);
+                    if (IsEnd()) End();
+                    MessageBox.Show(p.ToString() + " was busted");
+                    foreach (Field f in board.Fields)
+                        if (f is IPurchasable && (f as IPurchasable).Owner == p)
+                            (f as IPurchasable).Owner = null;
+                    ApplicationController.Instance.UpdatePlayerDataView(p);
+                    ApplicationController.Instance.UpdateBoardView(board);
                 }
-                ApplicationController.Instance.UpdatePlayerDataView(p);
+                else
+                {
+                    p.Active = true;
+                    lock (endOfTurn) Monitor.Wait(endOfTurn);
+                    p.Active = false;
+                    Field activeField = board.PlayerPosition(gameState.ActivePlayer);
+                    if (activeField is IPurchasable && (activeField as IPurchasable).Owner == null)
+                    {
+                        MakeAuction(activeField);
+                    }
+                    ApplicationController.Instance.UpdatePlayerDataView(p);
+                }
                 gameState.NextPlayer();
                 ApplicationController.Instance.HideFieldInfoPanel();
                 // update active player id
@@ -141,12 +154,7 @@ namespace TCS_business.CONTROLER
         /// </returns>
         private bool IsEnd()
         {
-            int positive = 0;
-            foreach (Player player in gameState.PlayersList)
-            {
-                if (player.Cash >= 0) positive++;
-            }
-            return positive < 2;
+            return gameState.PlayersLeft < 2;
         }
 
 
