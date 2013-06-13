@@ -44,7 +44,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dice1 = new System.Windows.Forms.PictureBox();
             this.dice2 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.fieldInfoPanel = new TCS_business.VIEW.FieldInfoPanel();
             this.boardPanel1 = new TCS_business.VIEW.BoardPanel();
             this.fieldInfoPanel1 = new TCS_business.VIEW.FieldInfoPanel();
             this.menuStrip1.SuspendLayout();
@@ -165,7 +165,7 @@
             // 
             this.playersListPanel.Location = new System.Drawing.Point(710, 136);
             this.playersListPanel.Name = "playersListPanel";
-            this.playersListPanel.Size = new System.Drawing.Size(201, 259);
+            this.playersListPanel.Size = new System.Drawing.Size(201, 307);
             this.playersListPanel.TabIndex = 11;
             // 
             // label1
@@ -208,12 +208,13 @@
             this.dice2.TabIndex = 7;
             this.dice2.TabStop = false;
             // 
-            // panel1
+            // fieldInfoPanel
             // 
-            this.panel1.Location = new System.Drawing.Point(710, 401);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(201, 242);
-            this.panel1.TabIndex = 15;
+            this.fieldInfoPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.fieldInfoPanel.Location = new System.Drawing.Point(710, 449);
+            this.fieldInfoPanel.Name = "fieldInfoPanel";
+            this.fieldInfoPanel.Size = new System.Drawing.Size(201, 240);
+            this.fieldInfoPanel.TabIndex = 15;
             // 
             // boardPanel1
             // 
@@ -235,7 +236,7 @@
             // MainWindow
             // 
             this.ClientSize = new System.Drawing.Size(930, 748);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.fieldInfoPanel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dice1);
@@ -279,7 +280,7 @@
         private System.Windows.Forms.Button Buy;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
+        private FieldInfoPanel fieldInfoPanel;
 
     }
 }

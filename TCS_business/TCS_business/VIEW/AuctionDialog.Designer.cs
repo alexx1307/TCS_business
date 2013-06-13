@@ -42,7 +42,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(14, 45);
+            this.label1.Location = new System.Drawing.Point(12, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 17);
             this.label1.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             // bidButton
             // 
-            this.bidButton.Location = new System.Drawing.Point(174, 123);
+            this.bidButton.Location = new System.Drawing.Point(327, 174);
             this.bidButton.Name = "bidButton";
             this.bidButton.Size = new System.Drawing.Size(75, 23);
             this.bidButton.TabIndex = 1;
@@ -60,7 +60,7 @@
             // 
             // passButton
             // 
-            this.passButton.Location = new System.Drawing.Point(12, 123);
+            this.passButton.Location = new System.Drawing.Point(12, 174);
             this.passButton.Name = "passButton";
             this.passButton.Size = new System.Drawing.Size(75, 23);
             this.passButton.TabIndex = 2;
@@ -70,7 +70,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(12, 86);
+            this.numericUpDown1.Location = new System.Drawing.Point(12, 148);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown1.TabIndex = 3;
@@ -87,9 +87,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(207, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(181, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(42, 71);
+            this.pictureBox1.Size = new System.Drawing.Size(221, 22);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
@@ -97,7 +97,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(261, 158);
+            this.ClientSize = new System.Drawing.Size(414, 209);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.numericUpDown1);

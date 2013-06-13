@@ -24,6 +24,7 @@ namespace TCS_business.VIEW
         public MainWindow()
         {
             InitializeComponent();
+            //this.Controls.Add(this.fieldInfoPanel1);
             Text = "TCS Business";
         }
 
@@ -144,15 +145,12 @@ namespace TCS_business.VIEW
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            fieldInfoPanel1.Visible = false;
+            fieldInfoPanel.Visible = false;
         }
 
         internal void UpdateFieldInfoPanel(Field field, bool shouldBuyButtonBeSeen, bool shouldPledgeButtonBeSeen)
         {
-            this.panel1.Controls.Clear();
-            this.fieldInfoPanel1.Location = new Point(0, 0);
-            this.panel1.Controls.Add(this.fieldInfoPanel1);
-            this.fieldInfoPanel1.UpdateContent(field, shouldBuyButtonBeSeen, shouldPledgeButtonBeSeen);
+            this.fieldInfoPanel.UpdateContent(field, shouldBuyButtonBeSeen, shouldPledgeButtonBeSeen);
         }
 
         private void Buy_Click(object sender, EventArgs e)
@@ -173,7 +171,7 @@ namespace TCS_business.VIEW
         }
         internal void HideFieldInfoPanel()
         {
-            BeginInvoke((MethodInvoker)delegate { this.fieldInfoPanel1.Hide(); });
+            BeginInvoke((MethodInvoker)delegate { this.fieldInfoPanel.Hide(); });
         }
         public void ShowInformation(string s)
         {

@@ -33,6 +33,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.sellFieldButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -65,9 +66,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(7, 88);
+            this.button1.Location = new System.Drawing.Point(3, 215);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 45);
+            this.button1.Size = new System.Drawing.Size(100, 22);
             this.button1.TabIndex = 3;
             this.button1.Text = "buy a house";
             this.button1.UseVisualStyleBackColor = true;
@@ -75,26 +76,37 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(77, 88);
+            this.button2.Location = new System.Drawing.Point(109, 215);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(55, 45);
+            this.button2.Size = new System.Drawing.Size(89, 22);
             this.button2.TabIndex = 4;
             this.button2.Text = "Pledge";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // sellFieldButton
+            // 
+            this.sellFieldButton.Location = new System.Drawing.Point(109, 186);
+            this.sellFieldButton.Name = "sellFieldButton";
+            this.sellFieldButton.Size = new System.Drawing.Size(89, 23);
+            this.sellFieldButton.TabIndex = 5;
+            this.sellFieldButton.Text = "Sell field";
+            this.sellFieldButton.UseVisualStyleBackColor = true;
+            this.sellFieldButton.Click += new System.EventHandler(this.sellFieldButton_Click);
             // 
             // FieldInfoPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Controls.Add(this.sellFieldButton);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FieldInfoPanel";
-            this.Size = new System.Drawing.Size(146, 146);
+            this.Size = new System.Drawing.Size(201, 240);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,5 +119,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button sellFieldButton;
     }
 }

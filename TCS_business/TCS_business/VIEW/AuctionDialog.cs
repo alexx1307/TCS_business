@@ -26,8 +26,9 @@ namespace TCS_business.VIEW
             numericUpDown1.Minimum = minStake;
             numericUpDown1.Maximum = maxStake;
             numericUpDown1.Value=minStake;
+            pictureBox1.BackColor = color;
             label2.Text = playerName;
-            label1.Text = "If you want to buy field " + fieldName + ", make an offer with minimum stake of " + minStake + ",\nor pass if you don't want to spend money";
+            label1.Text = "If you want to buy field " + fieldName + ",\nmake an offer with minimum stake of " + minStake + ",\nor pass if you don't want to spend money";
         }
 
         private void passButton_Click(object sender, EventArgs e)

@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using TCS_business.MODEL;
 
 namespace TCS_business.VIEW
 {
@@ -84,6 +85,18 @@ namespace TCS_business.VIEW
                 {
                     this.button2.Hide();
                 }
+                if (field is IPurchasable)
+                {
+                    if ((field as IPurchasable).Owner == CONTROLER.ApplicationController.Instance.Game.GameState.ActivePlayer)
+                    {
+                        sellFieldButton.Visible = true;
+                    }
+                    else
+                    {
+                        sellFieldButton.Visible = false;
+                    }
+                }
+
                 if ((field as MODEL.IPurchasable).Pledged == true)
                 {
                     this.button2.Text = "Unpledge";
@@ -120,6 +133,11 @@ namespace TCS_business.VIEW
                 if(game.GameState.ActivePlayer.Cash > (game.Board.Fields[game.Board.Positions[game.GameState.ActivePlayer]] as MODEL.IPurchasable).Cost)
                     CONTROLER.ApplicationController.Instance.EnableBuyButton();
             }
+        }
+
+        private void sellFieldButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
