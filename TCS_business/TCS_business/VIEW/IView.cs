@@ -35,6 +35,6 @@ namespace TCS_business.VIEW
         void ShowPayInfo(string s);
         void HideFieldInfoPanel();
 
-        int ShowAuctionDialog(Player currentPlayer, int minPrice);
+        int ShowAuctionDialog(Player currentPlayer, IPurchasable field, int minPrice);
     }
 }

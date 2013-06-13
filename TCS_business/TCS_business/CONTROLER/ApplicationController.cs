@@ -179,9 +179,9 @@ namespace TCS_business.CONTROLER
         /// <param name="currentPlayer"></param>
         /// <param name="minPrice"></param>
         /// <returns>new stake or -1 when player gave up</returns>
-        internal int ShowAuctionDialog(Player currentPlayer, int minPrice)
+        internal int ShowAuctionDialog(Player currentPlayer, IPurchasable field, int minPrice)
         {
-           return guiManager.ShowAuctionDialog(currentPlayer, minPrice);
+           return guiManager.ShowAuctionDialog(currentPlayer, field,minPrice);
         }
     }
 }

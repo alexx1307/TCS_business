@@ -78,6 +78,12 @@
     <Compile Include="VIEW\AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\AuctionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\AuctionDialog.Designer.cs">
+      <DependentUpon>AuctionDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\BoardPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\AddPlayerDialog.resx">
       <DependentUpon>AddPlayerDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\AuctionDialog.resx">
+      <DependentUpon>AuctionDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\BoardPanel.resx">
       <DependentUpon>BoardPanel.cs</DependentUpon>
