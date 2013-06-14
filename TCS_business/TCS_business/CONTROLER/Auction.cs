@@ -46,22 +46,33 @@ namespace TCS_business.CONTROLER
                         break;
                     }
                 }
-                while (!activePlayers.Contains(currentPlayer = gameState.NextPlayer())) { }
-
+                int count = 0;
+                while (!activePlayers.Contains(currentPlayer = gameState.NextPlayer()))
+                {
+                    if (count++ > 10)
+                    {
+                        gameState.ActivePlayer = p;
+                        return;
+                    }
+                }
+                
                 if (currentPlayer.Cash < (int)(currentPrice * MIN_INCREMENT))
                 {
                     activePlayers.Remove(currentPlayer);
                     continue;
                 }
-                int newPrice = ApplicationController.Instance.ShowAuctionDialog(currentPlayer, field, (int)(currentPrice * MIN_INCREMENT));
-                if (newPrice == -1)
+                if (activePlayers.Count > 1 || (activePlayers.Count == 1 && winner == null))
                 {
-                    activePlayers.Remove(currentPlayer);
-                }
-                else
-                {
-                    currentPrice = newPrice;
-                    winner = currentPlayer;
+                    int newPrice = ApplicationController.Instance.ShowAuctionDialog(currentPlayer, field, (int)(currentPrice * MIN_INCREMENT));
+                    if (newPrice == -1)
+                    {
+                        activePlayers.Remove(currentPlayer);
+                    }
+                    else
+                    {
+                        currentPrice = newPrice;
+                        winner = currentPlayer;
+                    }
                 }
                 if (activePlayers.Count == 1 && winner != null)
                 {

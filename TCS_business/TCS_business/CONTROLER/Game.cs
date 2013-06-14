@@ -100,9 +100,17 @@ namespace TCS_business.CONTROLER
                 board.Fields[board.Positions[p]].Action(p);
                 ApplicationController.Instance.UpdatePlayerDataView(p);
                 ApplicationController.Instance.UpdateBoardView(board);
+
+
+                p.Active = true;
+                lock (endOfTurn) Monitor.Wait(endOfTurn);
+                p.Active = false;
+                
                 if (p.Cash < 0)
                 {
+                    Player nextPlayer = GameState.NextPlayer();
                     gameState.removeLoser(p);
+                    GameState.ActivePlayer = nextPlayer;
                     if (IsEnd()) End();
                     MessageBox.Show(p.ToString() + " was busted");
                     foreach (Field f in board.Fields)
@@ -112,22 +120,29 @@ namespace TCS_business.CONTROLER
                             (f as IPurchasable).Owner = null;
                             if (f is City) (f as City).Houses = 0;
                         }
-                    ApplicationController.Instance.UpdatePlayerDataView(p);
+
                     ApplicationController.Instance.UpdateBoardView(board);
+                    ApplicationController.Instance.UpdatePlayerDataView(p);
+                    ApplicationController.Instance.UpdatePlayerDataView(nextPlayer);
+                    ApplicationController.Instance.HideFieldInfoPanel();
+                    continue;
                 }
                 else
                 {
-                    p.Active = true;
-                    lock (endOfTurn) Monitor.Wait(endOfTurn);
-                    p.Active = false;
+
                     Field activeField = board.PlayerPosition(gameState.ActivePlayer);
                     if (activeField is IPurchasable && (activeField as IPurchasable).Owner == null)
                     {
+                        
                         MakeAuction(activeField);
+                       
                     }
-                    ApplicationController.Instance.UpdatePlayerDataView(p);
+
                 }
+                ApplicationController.Instance.UpdatePlayerDataView(p);
                 gameState.NextPlayer();
+                
+                ApplicationController.Instance.UpdateBoardView(board);
                 ApplicationController.Instance.HideFieldInfoPanel();
                 // update active player id
             }
