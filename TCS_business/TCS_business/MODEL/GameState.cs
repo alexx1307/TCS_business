@@ -52,6 +52,7 @@ namespace TCS_business.MODEL
         internal void removeLoser(Player p)
         {
             playersInGame.Remove(p);
+            ActivePlayerIndex = 0;
         }
 
         internal void AddPlayer(Player p)

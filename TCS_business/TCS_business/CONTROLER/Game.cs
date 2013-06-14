@@ -108,9 +108,9 @@ namespace TCS_business.CONTROLER
                 
                 if (p.Cash < 0)
                 {
-                    Player nextPlayer = GameState.NextPlayer();
+                    
                     gameState.removeLoser(p);
-                    GameState.ActivePlayer = nextPlayer;
+
                     if (IsEnd()) End();
                     MessageBox.Show(p.ToString() + " was busted");
                     foreach (Field f in board.Fields)
@@ -122,9 +122,7 @@ namespace TCS_business.CONTROLER
                         }
 
                     ApplicationController.Instance.UpdateBoardView(board);
-                    ApplicationController.Instance.UpdatePlayerDataView(p);
-                    ApplicationController.Instance.UpdatePlayerDataView(nextPlayer);
-                    ApplicationController.Instance.HideFieldInfoPanel();
+
                     continue;
                 }
                 else
